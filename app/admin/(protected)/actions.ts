@@ -2,7 +2,6 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { ContentStatus, LeadStatus } from "@prisma/client";
 import { auth, signOut } from "@/auth";
 import {
   contentStatusOptions,
@@ -15,6 +14,7 @@ import {
   type FeaturedContentType,
   type StatusContentType,
 } from "@/server/admin";
+import { setReviewApproval, deleteReview } from "@/server/reviews";
 
 async function requireAdmin() {
   const session = await auth();
@@ -29,13 +29,13 @@ export async function updateLeadStatusAction(formData: FormData) {
   await requireAdmin();
 
   const leadId = String(formData.get("leadId") ?? "");
-  const status = String(formData.get("status") ?? "") as LeadStatus;
+  const status = String(formData.get("status") ?? "");
 
-  if (!leadId || !leadStatusOptions.includes(status)) {
+  if (!leadId || !leadStatusOptions.includes(status as never)) {
     throw new Error("Invalid lead status update.");
   }
 
-  await updateLeadStatus(leadId, status);
+  await updateLeadStatus(leadId, status as import("@/server/admin").LeadStatus);
   revalidatePath("/admin");
   revalidatePath("/admin/leads");
 }
@@ -45,19 +45,38 @@ export async function setContentStatusAction(formData: FormData) {
 
   const type = String(formData.get("type") ?? "") as StatusContentType;
   const id = String(formData.get("id") ?? "");
-  const status = String(formData.get("status") ?? "") as ContentStatus;
+  const status = String(formData.get("status") ?? "");
 
   if (
     !id ||
     !statusContentTypes.includes(type) ||
-    !contentStatusOptions.includes(status)
+    !contentStatusOptions.includes(status as never)
   ) {
     throw new Error("Invalid content status update.");
   }
 
-  await setContentStatus(type, id, status);
+  await setContentStatus(type, id, status as import("@/server/admin").ContentStatus);
   revalidatePath("/admin");
   revalidatePath("/admin/content");
+}
+
+export async function approveReviewAction(formData: FormData) {
+  await requireAdmin();
+  const id = String(formData.get("id") ?? "");
+  const isApproved = formData.get("isApproved") === "true";
+  if (!id) throw new Error("Missing review id.");
+  await setReviewApproval(id, isApproved);
+  revalidatePath("/admin/reviews");
+  revalidatePath("/");
+}
+
+export async function deleteReviewAction(formData: FormData) {
+  await requireAdmin();
+  const id = String(formData.get("id") ?? "");
+  if (!id) throw new Error("Missing review id.");
+  await deleteReview(id);
+  revalidatePath("/admin/reviews");
+  revalidatePath("/");
 }
 
 export async function setContentFeaturedAction(formData: FormData) {

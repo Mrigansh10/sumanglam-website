@@ -1,42 +1,48 @@
-import { db } from "@/lib/db";
-import { ContentStatus } from "@prisma/client";
+import { supabase, rows, camelizeRecord } from "@/lib/supabase";
+import type { Collection, Inspiration } from "@/lib/db-types";
 
 export async function getCollections() {
-  return db.collection.findMany({
-    where: { status: ContentStatus.PUBLISHED },
-    include: { space: true },
-    orderBy: { title: "asc" },
-  });
+  const { data } = await supabase
+    .from("collections")
+    .select("*, space:spaces(id, title, slug)")
+    .eq("status", "published")
+    .order("title", { ascending: true });
+  return rows<Collection>(data);
 }
 
 export async function getCollectionBySlug(slug: string) {
-  const collection = await db.collection.findUnique({
-    where: { slug },
-    include: { space: true },
-  });
-  if (!collection || collection.status !== ContentStatus.PUBLISHED) return null;
+  const { data: raw } = await supabase
+    .from("collections")
+    .select("*, space:spaces(id, title, slug)")
+    .eq("slug", slug)
+    .eq("status", "published")
+    .limit(1);
 
-  const [memberships, relatedCollections] = await Promise.all([
-    db.collectionInspiration.findMany({
-      where: {
-        collectionId: collection.id,
-        inspiration: { status: ContentStatus.PUBLISHED },
-      },
-      include: { inspiration: { include: { space: true } } },
-    }),
-    db.collection.findMany({
-      where: {
-        id: { not: collection.id },
-        spaceId: collection.spaceId,
-        status: ContentStatus.PUBLISHED,
-      },
-      take: 3,
-    }),
+  if (!raw?.length) return null;
+  const collection = camelizeRecord<Collection>(raw[0]);
+
+  const [memberLinks, relatedRaw] = await Promise.all([
+    supabase
+      .from("collection_inspirations")
+      .select("inspiration:inspirations(*, space:spaces(id, title, slug))")
+      .eq("collection_id", collection.id),
+    supabase
+      .from("collections")
+      .select("*")
+      .eq("space_id", collection.spaceId as string)
+      .eq("status", "published")
+      .neq("id", collection.id)
+      .limit(3),
   ]);
+
+  const inspirations = ((memberLinks.data ?? []) as Array<{ inspiration: Record<string, unknown> | null }>)
+    .map((m) => m.inspiration)
+    .filter((i): i is Record<string, unknown> => i !== null && i.status === "published")
+    .map((i) => camelizeRecord<Inspiration>(i));
 
   return {
     collection,
-    inspirations: memberships.map((membership) => membership.inspiration),
-    relatedCollections,
+    inspirations,
+    relatedCollections: rows<Collection>(relatedRaw.data),
   };
 }

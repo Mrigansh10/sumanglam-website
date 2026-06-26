@@ -1,7 +1,7 @@
-import { LeadStatus } from "@prisma/client";
 import { auth } from "@/auth";
 import { errors, handleRoute, ok } from "@/lib/api/response";
 import {
+  type LeadStatus,
   getAdminLead,
   leadStatusOptions,
   updateLeadStatus,

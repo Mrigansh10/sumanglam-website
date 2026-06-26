@@ -1,7 +1,6 @@
 import { auth } from "@/auth";
-import { mapPrismaConstraintError } from "@/lib/api/prisma-errors";
-import { errors, handleRoute, ok } from "@/lib/api/response";
-import { db } from "@/lib/db";
+import { errors, fail, handleRoute, ok } from "@/lib/api/response";
+import { supabase, camelizeRecord } from "@/lib/supabase";
 import { createInspirationSchema } from "@/lib/validation/admin-content";
 
 export const dynamic = "force-dynamic";
@@ -14,30 +13,52 @@ export async function POST(request: Request) {
     const body = await request.json().catch(() => null);
     if (!body) return errors.badRequest("Request body must be valid JSON.");
 
-    const { collectionIds, brandIds, productIds, ...data } =
-      createInspirationSchema.parse(body);
+    const { collectionIds, brandIds, productIds, ...data } = createInspirationSchema.parse(body);
 
-    try {
-      const inspiration = await db.inspiration.create({
-        data: {
-          ...data,
-          collections: collectionIds?.length
-            ? { create: collectionIds.map((collectionId) => ({ collectionId })) }
-            : undefined,
-          brands: brandIds?.length
-            ? { create: brandIds.map((brandId) => ({ brandId })) }
-            : undefined,
-          products: productIds?.length
-            ? { create: productIds.map((productId) => ({ productId })) }
-            : undefined,
-        },
-        include: { collections: true, brands: true, products: true },
-      });
-      return ok({ inspiration }, { status: 201 });
-    } catch (error) {
-      const mapped = mapPrismaConstraintError(error);
-      if (mapped) return mapped;
+    const id = crypto.randomUUID();
+
+    const { data: inspiration, error } = await supabase
+      .from("inspirations")
+      .insert({
+        id,
+        title: data.title,
+        slug: data.slug,
+        short_description: data.shortDescription,
+        long_description: data.longDescription,
+        primary_image: data.primaryImage,
+        gallery_images: data.galleryImages,
+        video_url: data.videoUrl,
+        space_id: data.spaceId,
+        is_featured: data.isFeatured ?? false,
+        status: data.status?.toLowerCase() ?? "draft",
+      })
+      .select()
+      .single();
+
+    if (error) {
+      if (error.code === "23505") return fail("DUPLICATE_SLUG", "An inspiration with this slug already exists.", 409);
       throw error;
     }
+
+    // Insert junction rows in parallel
+    await Promise.all([
+      collectionIds?.length
+        ? supabase.from("collection_inspirations").insert(
+            collectionIds.map((collectionId) => ({ collection_id: collectionId, inspiration_id: id }))
+          )
+        : Promise.resolve(),
+      brandIds?.length
+        ? supabase.from("inspiration_brands").insert(
+            brandIds.map((brandId) => ({ inspiration_id: id, brand_id: brandId }))
+          )
+        : Promise.resolve(),
+      productIds?.length
+        ? supabase.from("inspiration_products").insert(
+            productIds.map((productId) => ({ inspiration_id: id, product_id: productId }))
+          )
+        : Promise.resolve(),
+    ]);
+
+    return ok({ inspiration: camelizeRecord(inspiration) }, { status: 201 });
   });
 }

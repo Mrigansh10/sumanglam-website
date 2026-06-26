@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import type { ContentStatus } from "@prisma/client";
+import type { ContentStatus } from "@/server/admin";
 import {
   Card,
   CardContent,

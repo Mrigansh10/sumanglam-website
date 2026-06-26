@@ -1,8 +1,6 @@
-import { ContentStatus } from "@prisma/client";
 import { auth } from "@/auth";
-import { mapPrismaConstraintError } from "@/lib/api/prisma-errors";
-import { errors, handleRoute, ok } from "@/lib/api/response";
-import { db } from "@/lib/db";
+import { errors, fail, handleRoute, ok } from "@/lib/api/response";
+import { supabase, camelizeRecord } from "@/lib/supabase";
 import { updateInspirationSchema } from "@/lib/validation/admin-content";
 
 export const dynamic = "force-dynamic";
@@ -16,52 +14,70 @@ export async function PUT(
     if (!session?.user) return errors.unauthorized();
 
     const { id } = await params;
-    const existing = await db.inspiration.findUnique({
-      where: { id },
-      select: { id: true },
-    });
-    if (!existing) {
-      return errors.notFound("INSPIRATION_NOT_FOUND", "Inspiration not found.");
-    }
+    const { data: existing } = await supabase.from("inspirations").select("id").eq("id", id).single();
+    if (!existing) return errors.notFound("INSPIRATION_NOT_FOUND", "Inspiration not found.");
 
     const body = await request.json().catch(() => null);
     if (!body) return errors.badRequest("Request body must be valid JSON.");
 
-    const { collectionIds, brandIds, productIds, ...data } =
-      updateInspirationSchema.parse(body);
+    const { collectionIds, brandIds, productIds, ...data } = updateInspirationSchema.parse(body);
 
-    try {
-      const inspiration = await db.inspiration.update({
-        where: { id },
-        data: {
-          ...data,
-          collections: collectionIds
-            ? {
-                deleteMany: {},
-                create: collectionIds.map((collectionId) => ({ collectionId })),
-              }
-            : undefined,
-          brands: brandIds
-            ? {
-                deleteMany: {},
-                create: brandIds.map((brandId) => ({ brandId })),
-              }
-            : undefined,
-          products: productIds
-            ? {
-                deleteMany: {},
-                create: productIds.map((productId) => ({ productId })),
-              }
-            : undefined,
-        },
-        include: { collections: true, brands: true, products: true },
-      });
-      return ok({ inspiration });
-    } catch (error) {
-      const mapped = mapPrismaConstraintError(error);
-      if (mapped) return mapped;
+    const update: Record<string, unknown> = {};
+    if (data.title !== undefined) update.title = data.title;
+    if (data.slug !== undefined) update.slug = data.slug;
+    if (data.shortDescription !== undefined) update.short_description = data.shortDescription;
+    if (data.longDescription !== undefined) update.long_description = data.longDescription;
+    if (data.primaryImage !== undefined) update.primary_image = data.primaryImage;
+    if (data.galleryImages !== undefined) update.gallery_images = data.galleryImages;
+    if (data.videoUrl !== undefined) update.video_url = data.videoUrl;
+    if (data.spaceId !== undefined) update.space_id = data.spaceId;
+    if (data.isFeatured !== undefined) update.is_featured = data.isFeatured;
+    if (data.status !== undefined) update.status = data.status.toLowerCase();
+
+    const { data: inspiration, error } = await supabase
+      .from("inspirations")
+      .update(update)
+      .eq("id", id)
+      .select()
+      .single();
+
+    if (error) {
+      if (error.code === "23505") return fail("DUPLICATE_SLUG", "An inspiration with this slug already exists.", 409);
       throw error;
     }
+
+    // Replace junction rows for any relation arrays that were provided
+    await Promise.all([
+      collectionIds !== undefined
+        ? supabase.from("collection_inspirations").delete().eq("inspiration_id", id).then(() =>
+            collectionIds.length
+              ? supabase.from("collection_inspirations").insert(
+                  collectionIds.map((collectionId) => ({ collection_id: collectionId, inspiration_id: id }))
+                )
+              : Promise.resolve()
+          )
+        : Promise.resolve(),
+      brandIds !== undefined
+        ? supabase.from("inspiration_brands").delete().eq("inspiration_id", id).then(() =>
+            brandIds.length
+              ? supabase.from("inspiration_brands").insert(
+                  brandIds.map((brandId) => ({ inspiration_id: id, brand_id: brandId }))
+                )
+              : Promise.resolve()
+          )
+        : Promise.resolve(),
+      productIds !== undefined
+        ? supabase.from("inspiration_products").delete().eq("inspiration_id", id).then(() =>
+            productIds.length
+              ? supabase.from("inspiration_products").insert(
+                  productIds.map((productId) => ({ inspiration_id: id, product_id: productId }))
+                )
+              : Promise.resolve()
+          )
+        : Promise.resolve(),
+    ]);
+
+    return ok({ inspiration: camelizeRecord(inspiration) });
   });
 }
 
@@ -74,19 +90,17 @@ export async function DELETE(
     if (!session?.user) return errors.unauthorized();
 
     const { id } = await params;
-    const existing = await db.inspiration.findUnique({
-      where: { id },
-      select: { id: true },
-    });
-    if (!existing) {
-      return errors.notFound("INSPIRATION_NOT_FOUND", "Inspiration not found.");
-    }
+    const { data: existing } = await supabase.from("inspirations").select("id").eq("id", id).single();
+    if (!existing) return errors.notFound("INSPIRATION_NOT_FOUND", "Inspiration not found.");
 
-    // Documented decision: DELETE archives content instead of hard-deleting.
-    const inspiration = await db.inspiration.update({
-      where: { id },
-      data: { status: ContentStatus.ARCHIVED },
-    });
-    return ok({ inspiration });
+    // Archive instead of hard-delete
+    const { data: inspiration } = await supabase
+      .from("inspirations")
+      .update({ status: "archived" })
+      .eq("id", id)
+      .select()
+      .single();
+
+    return ok({ inspiration: inspiration ? camelizeRecord(inspiration) : null });
   });
 }

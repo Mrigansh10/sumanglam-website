@@ -1,7 +1,6 @@
 import { auth } from "@/auth";
-import { mapPrismaConstraintError } from "@/lib/api/prisma-errors";
-import { errors, handleRoute, ok } from "@/lib/api/response";
-import { db } from "@/lib/db";
+import { errors, fail, handleRoute, ok } from "@/lib/api/response";
+import { supabase, camelizeRecord } from "@/lib/supabase";
 import { createCollectionSchema } from "@/lib/validation/admin-content";
 
 export const dynamic = "force-dynamic";
@@ -16,13 +15,26 @@ export async function POST(request: Request) {
 
     const data = createCollectionSchema.parse(body);
 
-    try {
-      const collection = await db.collection.create({ data });
-      return ok({ collection }, { status: 201 });
-    } catch (error) {
-      const mapped = mapPrismaConstraintError(error);
-      if (mapped) return mapped;
+    const { data: collection, error } = await supabase
+      .from("collections")
+      .insert({
+        id: crypto.randomUUID(),
+        title: data.title,
+        slug: data.slug,
+        short_description: data.shortDescription,
+        long_description: data.longDescription,
+        cover_image: data.coverImage,
+        space_id: data.spaceId,
+        status: data.status?.toLowerCase() ?? "draft",
+      })
+      .select()
+      .single();
+
+    if (error) {
+      if (error.code === "23505") return fail("DUPLICATE_SLUG", "A collection with this slug already exists.", 409);
       throw error;
     }
+
+    return ok({ collection: camelizeRecord(collection) }, { status: 201 });
   });
 }

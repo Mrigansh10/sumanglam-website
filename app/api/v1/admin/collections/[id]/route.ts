@@ -1,7 +1,6 @@
 import { auth } from "@/auth";
-import { mapPrismaConstraintError } from "@/lib/api/prisma-errors";
-import { errors, handleRoute, ok } from "@/lib/api/response";
-import { db } from "@/lib/db";
+import { errors, fail, handleRoute, ok } from "@/lib/api/response";
+import { supabase, camelizeRecord } from "@/lib/supabase";
 import { updateCollectionSchema } from "@/lib/validation/admin-content";
 
 export const dynamic = "force-dynamic";
@@ -15,26 +14,35 @@ export async function PUT(
     if (!session?.user) return errors.unauthorized();
 
     const { id } = await params;
-    const existing = await db.collection.findUnique({
-      where: { id },
-      select: { id: true },
-    });
-    if (!existing) {
-      return errors.notFound("COLLECTION_NOT_FOUND", "Collection not found.");
-    }
+    const { data: existing } = await supabase.from("collections").select("id").eq("id", id).single();
+    if (!existing) return errors.notFound("COLLECTION_NOT_FOUND", "Collection not found.");
 
     const body = await request.json().catch(() => null);
     if (!body) return errors.badRequest("Request body must be valid JSON.");
 
     const data = updateCollectionSchema.parse(body);
 
-    try {
-      const collection = await db.collection.update({ where: { id }, data });
-      return ok({ collection });
-    } catch (error) {
-      const mapped = mapPrismaConstraintError(error);
-      if (mapped) return mapped;
+    const update: Record<string, unknown> = {};
+    if (data.title !== undefined) update.title = data.title;
+    if (data.slug !== undefined) update.slug = data.slug;
+    if (data.shortDescription !== undefined) update.short_description = data.shortDescription;
+    if (data.longDescription !== undefined) update.long_description = data.longDescription;
+    if (data.coverImage !== undefined) update.cover_image = data.coverImage;
+    if (data.spaceId !== undefined) update.space_id = data.spaceId;
+    if (data.status !== undefined) update.status = data.status.toLowerCase();
+
+    const { data: collection, error } = await supabase
+      .from("collections")
+      .update(update)
+      .eq("id", id)
+      .select()
+      .single();
+
+    if (error) {
+      if (error.code === "23505") return fail("DUPLICATE_SLUG", "A collection with this slug already exists.", 409);
       throw error;
     }
+
+    return ok({ collection: camelizeRecord(collection) });
   });
 }

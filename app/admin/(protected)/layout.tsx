@@ -6,9 +6,12 @@ import { signOutAdmin } from "./actions";
 
 const adminNav = [
   { label: "Overview", href: "/admin" },
+  { label: "Brands", href: "/admin/brands" },
+  { label: "Inspirations", href: "/admin/inspirations" },
   { label: "Leads", href: "/admin/leads" },
   { label: "Consultations", href: "/admin/consultations" },
   { label: "Content", href: "/admin/content" },
+  { label: "Reviews", href: "/admin/reviews" },
 ];
 
 export const dynamic = "force-dynamic";

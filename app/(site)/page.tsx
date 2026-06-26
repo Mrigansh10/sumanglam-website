@@ -7,7 +7,6 @@ import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/layout/heading";
 import { Reveal } from "@/components/motion/reveal";
 import { Parallax } from "@/components/motion/parallax";
-import { HeroAmbient } from "@/components/motion/hero-ambient";
 import { VisualCard } from "@/components/shared/visual-card";
 import { BrandCard } from "@/components/shared/brand-card";
 import { PageViewTracker } from "@/components/shared/page-view-tracker";
@@ -15,8 +14,21 @@ import { WhatsAppButton } from "@/features/whatsapp/whatsapp-button";
 import { getHomepageData } from "@/server/homepage";
 import { safeQuery } from "@/server/safe";
 import { resolveImage } from "@/lib/images";
+import { ReviewsSection } from "@/components/shared/reviews-section";
+import { getGoogleReviews } from "@/server/google-reviews";
+import { getApprovedReviews } from "@/server/reviews";
 
 export const dynamic = "force-dynamic";
+
+// ── Homepage image slots ───────────────────────────────────────────────────────
+// Replace any value with a Cloudinary public ID (e.g. "sumanglam/hero/abc123")
+// or an absolute URL. Leave as-is to keep the SVG placeholder.
+const IMAGES = {
+  hero: "https://www.nolte-kuechen.com/.imaging/focalpoint/4x3/2400/dam/jcr:39342db0-6073-4b2a-b656-b8864dce07d3/23277_Nolte_Frame%20Lack-Magnolia_Tavola-Eiche%20Pinot_001.jpg",
+  kitchens: "/images/placeholders/kitchen-2.svg",
+  wardrobes: "/images/placeholders/wardrobe-1.svg",
+  hardware: "/images/placeholders/hardware-1.svg",
+};
 
 const whySumanglam = [
   {
@@ -32,16 +44,16 @@ const whySumanglam = [
     copy: "Nolte, Hettich, Bosch, Häfele and more — curated partners we trust enough to put our name beside.",
   },
   {
-    title: "Showroom Experience",
-    copy: "Walk through full-scale kitchens and wardrobes. Touch the finishes. Open every drawer.",
+    title: "Craftsmanship, Not Just Design",
+    copy: "A kitchen or wardrobe is only as good as how it's installed. We hold our fitters to the same standard as our designers — every hinge, every finish, every edge.",
   },
   {
     title: "Design Support",
     copy: "From first sketch to final handover, one team stays accountable for your project.",
   },
   {
-    title: "Trusted Local Presence",
-    copy: "A showroom you can visit, people you can call, and work you can see in homes nearby.",
+    title: "A Name People Pass On",
+    copy: "Most of our clients were referred by someone whose home we'd already worked on. That trust — passed from one family to the next — is the reputation we work hardest to protect.",
   },
 ];
 
@@ -55,6 +67,10 @@ export default async function HomePage() {
       showroomHighlights: [],
     },
   );
+  const [googleReviews, siteReviews] = await Promise.all([
+    getGoogleReviews().catch(() => null),
+    getApprovedReviews().catch(() => []),
+  ]);
 
   return (
     <>
@@ -64,7 +80,7 @@ export default async function HomePage() {
       <section className="relative flex min-h-[100svh] items-end overflow-hidden bg-ink">
         <Parallax amount={12}>
           <Image
-            src={resolveImage("/images/placeholders/hero.svg")}
+            src={resolveImage(IMAGES.hero, { width: 1920 })}
             alt=""
             fill
             priority
@@ -73,8 +89,7 @@ export default async function HomePage() {
           />
         </Parallax>
         <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/35 to-ink/10" />
-        <HeroAmbient />
-        <Container size="wide" className="relative z-10 pb-40 pt-40 text-background sm:pb-28">
+<Container size="wide" className="relative z-10 pb-40 pt-40 text-background sm:pb-28">
           <p className="mb-4 text-xs font-medium uppercase tracking-luxe text-accent-soft animate-fade-up">
             Premium Kitchens · Wardrobes · Hardware · Appliances
           </p>
@@ -107,27 +122,38 @@ export default async function HomePage() {
               description="Start with the spaces you live in, or the details that complete them."
             />
           </Reveal>
-          <div className="mt-10 grid gap-8 md:grid-cols-2">
+          <div className="mt-10 grid gap-8 md:grid-cols-3">
             <Reveal>
               <VisualCard
-                href="/inspiration"
-                image="/images/placeholders/kitchen-2.svg"
-                eyebrow="Kitchens · Wardrobes · Interiors"
-                title="Explore Spaces"
-                description="Browse complete kitchens, wardrobes, and interior ideas — then meet the brands and products behind them."
+                href="/kitchens"
+                image={IMAGES.kitchens}
+                eyebrow="Nolte · Mrida · Bosch · Siemens"
+                title="Kitchens & Appliances"
+                description="Complete kitchen systems from Nolte and Mrida, paired with built-in appliances from Bosch, Siemens, Blaupunkt, and Liebherr."
                 emphasis
-                imageSizes="(min-width: 768px) 50vw, 100vw"
+                imageSizes="(min-width: 768px) 33vw, 100vw"
               />
             </Reveal>
-            <Reveal delay={0.1}>
+            <Reveal delay={0.08}>
+              <VisualCard
+                href="/wardrobes"
+                image={IMAGES.wardrobes}
+                eyebrow="Mrida · Modular · Walk-in"
+                title="Wardrobes"
+                description="Sliding doors, walk-in configurations, and modular storage systems — designed for your space and seen full-scale in our showroom."
+                emphasis
+                imageSizes="(min-width: 768px) 33vw, 100vw"
+              />
+            </Reveal>
+            <Reveal delay={0.16}>
               <VisualCard
                 href="/hardware-appliances"
-                image="/images/placeholders/hardware-1.svg"
-                eyebrow="Hardware · Appliances"
-                title="Explore Hardware & Appliances"
-                description="The hinges, locks, ovens, and systems that decide how a home feels every day."
+                image={IMAGES.hardware}
+                eyebrow="Hettich · Blum · Häfele · Yale"
+                title="Hardware"
+                description="Hinges, handles, channels, locks, and fittings from Hettich, Blum, Häfele, Yale, Godrej, Dorset, and more — available independently."
                 emphasis
-                imageSizes="(min-width: 768px) 50vw, 100vw"
+                imageSizes="(min-width: 768px) 33vw, 100vw"
               />
             </Reveal>
           </div>
@@ -214,7 +240,7 @@ export default async function HomePage() {
           <Reveal>
             <Heading
               eyebrow="Why Sumanglam"
-              title="What a showroom should be"
+              title="The standard your home deserves"
               tone="light"
             />
           </Reveal>
@@ -283,7 +309,22 @@ export default async function HomePage() {
         </Container>
       </Section>
 
-      {/* 7 — Consultation CTA */}
+      {/* 7 — Reviews */}
+      <Section tone="clay">
+        <Container size="wide">
+          <Reveal>
+            <Heading
+              eyebrow="What Our Clients Say"
+              title="Trusted by homeowners across Jaipur"
+            />
+          </Reveal>
+          <div className="mt-12">
+            <ReviewsSection googleData={googleReviews} siteReviews={siteReviews} />
+          </div>
+        </Container>
+      </Section>
+
+      {/* 8 — Consultation CTA */}
       <Section tone="clay" spacing="spacious">
         <Container size="narrow" className="text-center">
           <Reveal>

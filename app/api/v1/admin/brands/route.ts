@@ -1,7 +1,6 @@
 import { auth } from "@/auth";
-import { mapPrismaConstraintError } from "@/lib/api/prisma-errors";
-import { errors, handleRoute, ok } from "@/lib/api/response";
-import { db } from "@/lib/db";
+import { errors, fail, handleRoute, ok } from "@/lib/api/response";
+import { supabase, camelizeRecord } from "@/lib/supabase";
 import { createBrandSchema } from "@/lib/validation/admin-content";
 
 export const dynamic = "force-dynamic";
@@ -16,13 +15,29 @@ export async function POST(request: Request) {
 
     const data = createBrandSchema.parse(body);
 
-    try {
-      const brand = await db.brand.create({ data });
-      return ok({ brand }, { status: 201 });
-    } catch (error) {
-      const mapped = mapPrismaConstraintError(error);
-      if (mapped) return mapped;
+    const { data: brand, error } = await supabase
+      .from("brands")
+      .insert({
+        id: crypto.randomUUID(),
+        name: data.name,
+        slug: data.slug,
+        brand_type: data.brandType?.toLowerCase(),
+        parent_brand_id: data.parentBrandId,
+        description: data.description,
+        story: data.story,
+        logo: data.logo,
+        hero_image: data.heroImage,
+        is_featured: data.isFeatured ?? false,
+        status: data.status?.toLowerCase() ?? "draft",
+      })
+      .select()
+      .single();
+
+    if (error) {
+      if (error.code === "23505") return fail("DUPLICATE_SLUG", "A brand with this slug already exists.", 409);
       throw error;
     }
+
+    return ok({ brand: camelizeRecord(brand) }, { status: 201 });
   });
 }

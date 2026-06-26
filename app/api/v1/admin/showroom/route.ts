@@ -1,7 +1,6 @@
 import { auth } from "@/auth";
-import { mapPrismaConstraintError } from "@/lib/api/prisma-errors";
 import { errors, handleRoute, ok } from "@/lib/api/response";
-import { db } from "@/lib/db";
+import { supabase, camelizeRecord } from "@/lib/supabase";
 import { createShowroomSectionSchema } from "@/lib/validation/admin-content";
 
 export const dynamic = "force-dynamic";
@@ -14,27 +13,38 @@ export async function POST(request: Request) {
     const body = await request.json().catch(() => null);
     if (!body) return errors.badRequest("Request body must be valid JSON.");
 
-    const { brandIds, inspirationIds, ...data } =
-      createShowroomSectionSchema.parse(body);
+    const { brandIds, inspirationIds, ...data } = createShowroomSectionSchema.parse(body);
 
-    try {
-      const showroomSection = await db.showroomSection.create({
-        data: {
-          ...data,
-          brands: brandIds?.length
-            ? { create: brandIds.map((brandId) => ({ brandId })) }
-            : undefined,
-          inspirations: inspirationIds?.length
-            ? { create: inspirationIds.map((inspirationId) => ({ inspirationId })) }
-            : undefined,
-        },
-        include: { brands: true, inspirations: true },
-      });
-      return ok({ showroomSection }, { status: 201 });
-    } catch (error) {
-      const mapped = mapPrismaConstraintError(error);
-      if (mapped) return mapped;
-      throw error;
-    }
+    const id = crypto.randomUUID();
+
+    const { data: showroomSection, error } = await supabase
+      .from("showroom_sections")
+      .insert({
+        id,
+        name: data.name,
+        description: data.description,
+        floor_number: data.floorNumber,
+        images: data.images,
+        video_url: data.videoUrl,
+      })
+      .select()
+      .single();
+
+    if (error) throw error;
+
+    await Promise.all([
+      brandIds?.length
+        ? supabase.from("showroom_brand_mappings").insert(
+            brandIds.map((brandId) => ({ showroom_section_id: id, brand_id: brandId }))
+          )
+        : Promise.resolve(),
+      inspirationIds?.length
+        ? supabase.from("showroom_inspiration_mappings").insert(
+            inspirationIds.map((inspirationId) => ({ showroom_section_id: id, inspiration_id: inspirationId }))
+          )
+        : Promise.resolve(),
+    ]);
+
+    return ok({ showroomSection: camelizeRecord(showroomSection) }, { status: 201 });
   });
 }

@@ -38,7 +38,7 @@ export default async function BrandsPage() {
         <Container size="wide">
           <Reveal>
             <Heading
-              eyebrow="Solution Brands"
+              eyebrow="Kitchens"
               title="Complete spaces, designed end to end"
               description="Nolte and Mrida don't sell components — they design entire kitchens, wardrobes, and interiors."
             />
@@ -65,37 +65,81 @@ export default async function BrandsPage() {
         </Container>
       </Section>
 
-      {/* Product brands */}
-      <Section tone="clay">
-        <Container size="wide">
-          <Reveal>
-            <Heading
-              eyebrow="Product Brands"
-              title="The specialists behind the details"
-              description="Hardware and appliance brands chosen for engineering, longevity, and how they perform in real homes."
-            />
-          </Reveal>
-          {productBrands.length > 0 ? (
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {productBrands.map((brand, index) => (
-                <Reveal key={brand.id} delay={(index % 3) * 0.08}>
-                  <BrandCard
-                    href={`/brands/${brand.slug}`}
-                    name={brand.name}
-                    description={brand.description}
-                    heroImage={brand.heroImage}
-                    parentBrandName={brand.parentBrand?.name}
-                  />
-                </Reveal>
-              ))}
-            </div>
-          ) : (
-            <div className="mt-10">
-              <EmptyState title="Product brands coming soon" />
-            </div>
-          )}
-        </Container>
-      </Section>
+      {/* Appliance brands */}
+      {(() => {
+        const APPLIANCE_SLUGS = new Set(["bosch", "siemens", "liebherr", "blaupunkt", "hafele"]);
+        const applianceBrands = productBrands.filter((b) => APPLIANCE_SLUGS.has(b.slug));
+        return (
+          <Section tone="clay">
+            <Container size="wide">
+              <Reveal>
+                <Heading
+                  eyebrow="Appliances"
+                  title="Built-in performance, engineered to last"
+                  description="Appliance brands chosen for precision engineering, reliability, and how well they integrate into the kitchens we build."
+                />
+              </Reveal>
+              {applianceBrands.length > 0 ? (
+                <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {applianceBrands.map((brand, index) => (
+                    <Reveal key={brand.id} delay={(index % 3) * 0.08}>
+                      <BrandCard
+                        href={`/brands/${brand.slug}`}
+                        name={brand.name}
+                        description={brand.description}
+                        heroImage={brand.heroImage}
+                        parentBrandName={brand.parentBrand?.name}
+                      />
+                    </Reveal>
+                  ))}
+                </div>
+              ) : (
+                <div className="mt-10">
+                  <EmptyState title="Appliance brands coming soon" />
+                </div>
+              )}
+            </Container>
+          </Section>
+        );
+      })()}
+
+      {/* Hardware brands */}
+      {(() => {
+        const APPLIANCE_SLUGS = new Set(["bosch", "siemens", "liebherr", "blaupunkt", "hafele"]);
+        const hardwareBrands = productBrands.filter((b) => !APPLIANCE_SLUGS.has(b.slug));
+        return (
+          <Section>
+            <Container size="wide">
+              <Reveal>
+                <Heading
+                  eyebrow="Hardware"
+                  title="The fittings that make furniture feel premium"
+                  description="Hardware brands stocked for their engineering, finish quality, and the difference they make when a drawer closes or a door locks."
+                />
+              </Reveal>
+              {hardwareBrands.length > 0 ? (
+                <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {hardwareBrands.map((brand, index) => (
+                    <Reveal key={brand.id} delay={(index % 3) * 0.08}>
+                      <BrandCard
+                        href={`/brands/${brand.slug}`}
+                        name={brand.name}
+                        description={brand.description}
+                        heroImage={brand.heroImage}
+                        parentBrandName={brand.parentBrand?.name}
+                      />
+                    </Reveal>
+                  ))}
+                </div>
+              ) : (
+                <div className="mt-10">
+                  <EmptyState title="Hardware brands coming soon" />
+                </div>
+              )}
+            </Container>
+          </Section>
+        );
+      })()}
     </>
   );
 }

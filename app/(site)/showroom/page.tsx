@@ -165,15 +165,17 @@ export default async function ShowroomPage() {
               </div>
             </Reveal>
             <Reveal delay={0.1}>
-              <div className="flex h-full min-h-64 items-center justify-center border border-background/20 bg-background/5 p-8 text-center">
-                <p className="text-sm text-background/60">
-                  Map embed placeholder — official address and map location to be
-                  confirmed.{" "}
-                  <Link href="/contact" className="text-accent-soft hover:underline">
-                    See contact page
-                  </Link>
-                </p>
-              </div>
+              <iframe
+                src={siteConfig.contact.mapsEmbed}
+                width="100%"
+                height="360"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Sumanglam showroom location"
+                className="min-h-64 w-full"
+              />
             </Reveal>
           </div>
         </Container>

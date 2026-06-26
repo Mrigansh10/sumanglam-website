@@ -30,7 +30,6 @@
   --tracking-luxe: 0.18em;
 
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
-
   @keyframes fade-up {
     from {
       opacity: 0;
@@ -40,6 +39,11 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
   }
 }
 
@@ -84,3 +88,19 @@ body {
 .gsap-reveal {
   opacity: 1;
 }
+
+/* Admin form input baseline */
+.admin-input {
+  width: 100%;
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--color-ink);
+  outline: none;
+  transition: border-color 0.15s;
+}
+.admin-input:focus {
+  border-color: var(--color-ink);
+}
+

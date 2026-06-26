@@ -11,12 +11,18 @@ export const siteConfig = {
     "Sumanglam is a premium digital showroom for modular kitchens, wardrobes, premium hardware, appliances, and interior solutions.",
   url: clientEnv.NEXT_PUBLIC_SITE_URL,
   contact: {
-    // [PLACEHOLDER] Confirm official business details before launch.
-    phone: clientEnv.NEXT_PUBLIC_CONTACT_PHONE || "+91 00000 00000",
-    email: clientEnv.NEXT_PUBLIC_CONTACT_EMAIL || "hello@sumanglam.co",
-    whatsappNumber: clientEnv.NEXT_PUBLIC_WHATSAPP_NUMBER,
-    address: "Sumanglam Showroom, [address to be confirmed]",
-    hours: "Open daily, 10:00 AM – 8:00 PM",
+    phone: clientEnv.NEXT_PUBLIC_CONTACT_PHONE || "+91 94140 78298",
+    phoneSecondary: "+91 96940 99093",
+    email: clientEnv.NEXT_PUBLIC_CONTACT_EMAIL || "inquiries@sumanglam.co",
+    whatsappNumber: clientEnv.NEXT_PUBLIC_WHATSAPP_NUMBER || "919694099093",
+    address: "S-13, New Aatish Market, Devi Nagar, Jaipur, Rajasthan 302019",
+    addressShort: "S-13, New Aatish Market, Jaipur",
+    mapsUrl: "https://maps.app.goo.gl/mkgkSVioTnZftXRU6",
+    googleReviewUrl: "https://share.google/G7s64ZUGEhSvjXlG0",
+    mapsEmbed:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.765097726519!2d75.7584208!3d26.8792033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db457e77f7c4f%3A0xe14b0ebfccecb10a!2sSumanglam!5e0!3m2!1sen!2sin",
+    hours: "Mon–Sat, 10:30 AM – 8:00 PM",
+    hoursClosed: "Closed on Sundays",
   },
 } as const;
 

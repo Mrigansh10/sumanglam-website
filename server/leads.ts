@@ -1,5 +1,14 @@
-import { db } from "@/lib/db";
-import { ContactMethod, ProjectType } from "@prisma/client";
+import { supabase, camelizeRecord } from "@/lib/supabase";
+
+// String union types matching DB enum values (lowercase)
+export type ProjectType =
+  | "kitchen"
+  | "wardrobe"
+  | "complete_home"
+  | "hardware_appliances"
+  | "other";
+
+export type ContactMethod = "phone" | "whatsapp" | "email";
 
 export type ConsultationInput = {
   name: string;
@@ -19,43 +28,65 @@ export type ConsultationInput = {
  * updated rather than duplicated, preserving its pipeline status.
  */
 export async function createConsultation(input: ConsultationInput) {
-  const existingLead = await db.lead.findFirst({
-    where: { phone: input.phone },
-    orderBy: { createdAt: "desc" },
-  });
+  const { data: existing } = await supabase
+    .from("leads")
+    .select("*")
+    .eq("phone", input.phone)
+    .order("created_at", { ascending: false })
+    .limit(1);
 
-  const lead = existingLead
-    ? await db.lead.update({
-        where: { id: existingLead.id },
-        data: {
-          name: input.name,
-          email: input.email ?? existingLead.email,
-          sourcePage: input.sourcePage ?? existingLead.sourcePage,
-          leadSource: input.sourceType ?? existingLead.leadSource,
-          referringUrl: input.referringUrl ?? existingLead.referringUrl,
-        },
+  let lead: Record<string, unknown>;
+
+  if (existing?.length) {
+    const existingLead = camelizeRecord<Record<string, unknown>>(existing[0]);
+    const { data: updated } = await supabase
+      .from("leads")
+      .update({
+        name: input.name,
+        email: input.email ?? existingLead.email,
+        source_page: input.sourcePage ?? existingLead.sourcePage,
+        lead_source: input.sourceType ?? existingLead.leadSource,
+        referring_url: input.referringUrl ?? existingLead.referringUrl,
       })
-    : await db.lead.create({
-        data: {
-          name: input.name,
-          phone: input.phone,
-          email: input.email ?? null,
-          leadSource: input.sourceType ?? "consultation_form",
-          sourcePage: input.sourcePage ?? null,
-          referringUrl: input.referringUrl ?? null,
-        },
-      });
+      .eq("id", existingLead.id as string)
+      .select()
+      .single();
+    lead = updated ? camelizeRecord<Record<string, unknown>>(updated) : existingLead;
+  } else {
+    const { data: created } = await supabase
+      .from("leads")
+      .insert({
+        name: input.name,
+        phone: input.phone,
+        email: input.email ?? null,
+        lead_source: input.sourceType ?? "consultation_form",
+        source_page: input.sourcePage ?? null,
+        referring_url: input.referringUrl ?? null,
+      })
+      .select()
+      .single();
+    if (!created) throw new Error("Failed to create lead");
+    lead = camelizeRecord<Record<string, unknown>>(created);
+  }
 
-  const consultation = await db.consultation.create({
-    data: {
-      leadId: lead.id,
-      projectType: input.projectType,
+  const { data: consultData } = await supabase
+    .from("consultations")
+    .insert({
+      lead_id: lead.id as string,
+      // Form may submit uppercase values; DB stores lowercase
+      project_type: input.projectType.toLowerCase(),
       requirements: input.requirements,
-      preferredContactMethod: input.preferredContactMethod ?? null,
-    },
-  });
+      preferred_contact_method: input.preferredContactMethod
+        ? input.preferredContactMethod.toLowerCase()
+        : null,
+    })
+    .select()
+    .single();
 
-  notifyAdmin(lead.name, consultation.id);
+  if (!consultData) throw new Error("Failed to create consultation");
+  const consultation = camelizeRecord<Record<string, unknown>>(consultData);
+
+  notifyAdmin(lead.name as string, consultation.id as string);
 
   return { lead, consultation };
 }

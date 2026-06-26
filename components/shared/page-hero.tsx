@@ -59,7 +59,7 @@ export function PageHero({
 
   return (
     <div className="border-b border-line bg-clay">
-      <Container size="wide" className="py-16 sm:py-24">
+      <Container size="wide" className="pb-16 pt-28 sm:pb-24 sm:pt-36">
         <Heading as="h1" eyebrow={eyebrow} title={title} description={description} />
         {children ? <div className="mt-8 flex flex-wrap gap-3">{children}</div> : null}
       </Container>

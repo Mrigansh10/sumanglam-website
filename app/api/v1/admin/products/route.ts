@@ -1,7 +1,6 @@
 import { auth } from "@/auth";
-import { mapPrismaConstraintError } from "@/lib/api/prisma-errors";
-import { errors, handleRoute, ok } from "@/lib/api/response";
-import { db } from "@/lib/db";
+import { errors, fail, handleRoute, ok } from "@/lib/api/response";
+import { supabase, camelizeRecord } from "@/lib/supabase";
 import { createProductSchema } from "@/lib/validation/admin-content";
 
 export const dynamic = "force-dynamic";
@@ -16,21 +15,42 @@ export async function POST(request: Request) {
 
     const { categoryIds, ...data } = createProductSchema.parse(body);
 
-    try {
-      const product = await db.product.create({
-        data: {
-          ...data,
-          categories: {
-            create: categoryIds.map((categoryId) => ({ categoryId })),
-          },
-        },
-        include: { categories: true },
-      });
-      return ok({ product }, { status: 201 });
-    } catch (error) {
-      const mapped = mapPrismaConstraintError(error);
-      if (mapped) return mapped;
+    const id = crypto.randomUUID();
+
+    const { data: product, error } = await supabase
+      .from("products")
+      .insert({
+        id,
+        name: data.name,
+        slug: data.slug,
+        sku: data.sku,
+        brand_id: data.brandId,
+        product_type_id: data.productTypeId,
+        subcategory_id: data.subcategoryId,
+        short_description: data.shortDescription,
+        long_description: data.longDescription,
+        price_range: data.priceRange,
+        primary_image: data.primaryImage,
+        gallery_images: data.galleryImages,
+        availability_status: data.availabilityStatus?.toLowerCase(),
+        technical_specs: data.technicalSpecs,
+        is_featured: data.isFeatured ?? false,
+        status: data.status?.toLowerCase() ?? "draft",
+      })
+      .select()
+      .single();
+
+    if (error) {
+      if (error.code === "23505") return fail("DUPLICATE_SLUG", "A product with this slug already exists.", 409);
       throw error;
     }
+
+    if (categoryIds.length) {
+      await supabase.from("product_category_mappings").insert(
+        categoryIds.map((categoryId) => ({ product_id: id, category_id: categoryId }))
+      );
+    }
+
+    return ok({ product: camelizeRecord(product) }, { status: 201 });
   });
 }

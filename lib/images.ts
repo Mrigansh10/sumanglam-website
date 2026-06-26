@@ -19,7 +19,8 @@ export function resolveImage(
   if (!cloudName) return FALLBACK_IMAGE;
   const transforms = ["f_auto", "q_auto"];
   if (options?.width) transforms.push(`w_${options.width}`);
-  if (options?.height) transforms.push(`h_${options.height}`, "c_fill");
+  if (options?.height) transforms.push(`h_${options.height}`);
+  if (options?.width && options?.height) transforms.push("c_fill");
   return `https://res.cloudinary.com/${cloudName}/image/upload/${transforms.join(",")}/${value}`;
 }
 

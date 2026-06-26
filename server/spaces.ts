@@ -1,25 +1,41 @@
-import { db } from "@/lib/db";
-import { ContentStatus } from "@prisma/client";
+import { supabase, rows, camelizeRecord } from "@/lib/supabase";
+import type { Space, Collection, Inspiration } from "@/lib/db-types";
 
 export async function getSpaces() {
-  return db.space.findMany({ orderBy: { title: "asc" } });
+  const { data } = await supabase.from("spaces").select("*").order("title", { ascending: true });
+  return rows<Space>(data);
 }
 
 export async function getSpaceBySlug(slug: string) {
-  const space = await db.space.findUnique({ where: { slug } });
-  if (!space) return null;
+  const { data: raw } = await supabase
+    .from("spaces")
+    .select("*")
+    .eq("slug", slug)
+    .limit(1);
 
-  const [collections, featuredInspirations] = await Promise.all([
-    db.collection.findMany({
-      where: { spaceId: space.id, status: ContentStatus.PUBLISHED },
-      orderBy: { title: "asc" },
-    }),
-    db.inspiration.findMany({
-      where: { spaceId: space.id, status: ContentStatus.PUBLISHED },
-      orderBy: [{ isFeatured: "desc" }, { updatedAt: "desc" }],
-      take: 12,
-    }),
+  if (!raw?.length) return null;
+  const space = camelizeRecord<Space>(raw[0]);
+
+  const [collectionsRaw, inspirationsRaw] = await Promise.all([
+    supabase
+      .from("collections")
+      .select("*")
+      .eq("space_id", space.id)
+      .eq("status", "published")
+      .order("title", { ascending: true }),
+    supabase
+      .from("inspirations")
+      .select("*")
+      .eq("space_id", space.id)
+      .eq("status", "published")
+      .order("is_featured", { ascending: false })
+      .order("updated_at", { ascending: false })
+      .limit(12),
   ]);
 
-  return { space, collections, featuredInspirations };
+  return {
+    space,
+    collections: rows<Collection>(collectionsRaw.data),
+    featuredInspirations: rows<Inspiration>(inspirationsRaw.data),
+  };
 }

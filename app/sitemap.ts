@@ -1,10 +1,20 @@
 import type { MetadataRoute } from "next";
-import { db } from "@/lib/db";
+import { supabase } from "@/lib/supabase";
 import { siteConfig } from "@/lib/site";
-import { safeQuery } from "@/server/safe";
-import { ContentStatus } from "@prisma/client";
 
 export const dynamic = "force-dynamic";
+
+async function fetchSlugs(table: string) {
+  try {
+    const { data } = await supabase
+      .from(table)
+      .select("slug, updated_at")
+      .eq("status", "published");
+    return (data ?? []).map((r) => ({ slug: r.slug as string, updatedAt: new Date(r.updated_at as string) }));
+  } catch {
+    return [];
+  }
+}
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = siteConfig.url.replace(/\/$/, "");
@@ -32,38 +42,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   const [inspirations, collections, brands, products] = await Promise.all([
-    safeQuery(
-      () =>
-        db.inspiration.findMany({
-          where: { status: ContentStatus.PUBLISHED },
-          select: { slug: true, updatedAt: true },
-        }),
-      [],
-    ),
-    safeQuery(
-      () =>
-        db.collection.findMany({
-          where: { status: ContentStatus.PUBLISHED },
-          select: { slug: true, updatedAt: true },
-        }),
-      [],
-    ),
-    safeQuery(
-      () =>
-        db.brand.findMany({
-          where: { status: ContentStatus.PUBLISHED },
-          select: { slug: true, updatedAt: true },
-        }),
-      [],
-    ),
-    safeQuery(
-      () =>
-        db.product.findMany({
-          where: { status: ContentStatus.PUBLISHED },
-          select: { slug: true, updatedAt: true },
-        }),
-      [],
-    ),
+    fetchSlugs("inspirations"),
+    fetchSlugs("collections"),
+    fetchSlugs("brands"),
+    fetchSlugs("products"),
   ]);
 
   return [

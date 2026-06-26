@@ -1,31 +1,45 @@
-import { db } from "@/lib/db";
-import { ContentStatus } from "@prisma/client";
+import { supabase, rows } from "@/lib/supabase";
+import type { Brand, Inspiration, Product, ShowroomSection } from "@/lib/db-types";
 
-/** Data for GET /api/v1/homepage and the homepage itself. */
 export async function getHomepageData() {
-  const [featuredInspirations, featuredBrands, featuredProducts, showroomHighlights] =
-    await Promise.all([
-      db.inspiration.findMany({
-        where: { isFeatured: true, status: ContentStatus.PUBLISHED },
-        include: { space: true },
-        orderBy: { updatedAt: "desc" },
-        take: 6,
-      }),
-      db.brand.findMany({
-        where: { isFeatured: true, status: ContentStatus.PUBLISHED },
-        orderBy: [{ brandType: "asc" }, { name: "asc" }],
-        take: 8,
-      }),
-      db.product.findMany({
-        where: { isFeatured: true, status: ContentStatus.PUBLISHED },
-        include: { brand: true },
-        orderBy: { updatedAt: "desc" },
-        take: 8,
-      }),
-      db.showroomSection.findMany({
-        orderBy: { floorNumber: "asc" },
-      }),
-    ]);
+  const [
+    { data: inspirData },
+    { data: brandsData },
+    { data: productsData },
+    { data: showroomData },
+  ] = await Promise.all([
+    supabase
+      .from("inspirations")
+      .select("*, space:spaces(id, title, slug, hero_image)")
+      .eq("is_featured", true)
+      .eq("status", "published")
+      .order("updated_at", { ascending: false })
+      .limit(6),
+    supabase
+      .from("brands")
+      .select("*")
+      .eq("is_featured", true)
+      .eq("status", "published")
+      .order("brand_type", { ascending: true })
+      .order("name", { ascending: true })
+      .limit(8),
+    supabase
+      .from("products")
+      .select("*, brand:brands(id, name, slug, logo, hero_image)")
+      .eq("is_featured", true)
+      .eq("status", "published")
+      .order("updated_at", { ascending: false })
+      .limit(8),
+    supabase
+      .from("showroom_sections")
+      .select("*")
+      .order("floor_number", { ascending: true }),
+  ]);
 
-  return { featuredInspirations, featuredBrands, featuredProducts, showroomHighlights };
+  return {
+    featuredInspirations: rows<Inspiration>(inspirData),
+    featuredBrands: rows<Brand>(brandsData),
+    featuredProducts: rows<Product>(productsData),
+    showroomHighlights: rows<ShowroomSection>(showroomData),
+  };
 }

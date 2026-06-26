@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { LeadStatus } from "@prisma/client";
+import type { LeadStatus } from "@/server/admin";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select } from "@/components/ui/select";
 import {
@@ -29,7 +29,7 @@ export default async function AdminLeadsPage({
   const params = await searchParams;
   const status =
     params?.status && leadStatusOptions.includes(params.status as LeadStatus)
-      ? (params.status as LeadStatus)
+      ? (params.status as unknown as LeadStatus)
       : undefined;
   const data = await getAdminLeads({ status });
 

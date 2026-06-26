@@ -89,12 +89,17 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="flex min-h-72 items-center justify-center border border-line bg-clay p-8 text-center">
-              <p className="text-sm text-ink-soft">
-                Map embed placeholder — the official showroom address and map
-                location will be added once confirmed.
-              </p>
-            </div>
+            <iframe
+              src={siteConfig.contact.mapsEmbed}
+              width="100%"
+              height="360"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Sumanglam showroom location"
+              className="min-h-72 w-full"
+            />
           </div>
         </Container>
       </Section>
