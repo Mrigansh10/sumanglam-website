@@ -14,7 +14,11 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-function formatDate(date: Date) {
+function formatDate(value: string | number | Date | null | undefined) {
+  if (value === null || value === undefined || value === "") return "—";
+  // Supabase REST returns timestamps as ISO strings; coerce before formatting.
+  const date = value instanceof Date ? value : new Date(value);
+  if (Number.isNaN(date.getTime())) return "—";
   return new Intl.DateTimeFormat("en-IN", {
     dateStyle: "medium",
     timeStyle: "short",
