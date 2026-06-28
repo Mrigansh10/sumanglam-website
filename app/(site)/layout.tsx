@@ -21,7 +21,7 @@ const localBusinessJsonLd = {
 export default async function SiteLayout({ children }: { children: React.ReactNode }) {
   const { data: rawBrands } = await supabase
     .from("brands")
-    .select("name, slug, logo")
+    .select("name, slug, logo, hero_image")
     .eq("status", "published")
     .order("brand_type", { ascending: true })
     .order("name", { ascending: true });

@@ -14,6 +14,55 @@ interface ImageUploadProps {
 
 type Mode = "file" | "url";
 
+// Cloudinary's free plan rejects uploads over 10 MB. Hero/banner images only
+// ever render at ~2560px wide, so we downscale large source photos in the
+// browser before upload — this keeps full-res phone shots (often 12–25 MB)
+// well under the limit and avoids the "Something went wrong" upload failure.
+const MAX_EDGE = 3000;
+const TARGET_BYTES = 9 * 1024 * 1024;
+
+function canvasToBlob(canvas: HTMLCanvasElement, quality: number): Promise<Blob | null> {
+  return new Promise((resolve) => canvas.toBlob(resolve, "image/jpeg", quality));
+}
+
+/**
+ * Returns a downscaled JPEG Blob, or null to signal "upload the original as-is"
+ * (small enough already, or not a rasterizable image like SVG).
+ */
+async function compressImage(file: File): Promise<Blob | null> {
+  if (!file.type.startsWith("image/") || file.type === "image/svg+xml") return null;
+
+  const bitmap = await createImageBitmap(file, { imageOrientation: "from-image" }).catch(() => null);
+  if (!bitmap) return null;
+
+  const scale = Math.min(1, MAX_EDGE / Math.max(bitmap.width, bitmap.height));
+  if (scale === 1 && file.size <= TARGET_BYTES) {
+    bitmap.close?.();
+    return null; // already small enough — keep original quality
+  }
+
+  const w = Math.round(bitmap.width * scale);
+  const h = Math.round(bitmap.height * scale);
+  const canvas = document.createElement("canvas");
+  canvas.width = w;
+  canvas.height = h;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) {
+    bitmap.close?.();
+    return null;
+  }
+  ctx.drawImage(bitmap, 0, 0, w, h);
+  bitmap.close?.();
+
+  let quality = 0.85;
+  let blob = await canvasToBlob(canvas, quality);
+  while (blob && blob.size > TARGET_BYTES && quality > 0.5) {
+    quality -= 0.1;
+    blob = await canvasToBlob(canvas, quality);
+  }
+  return blob;
+}
+
 export function ImageUpload({
   value,
   onChange,
@@ -54,8 +103,20 @@ export function ImageUpload({
   }
 
   async function handleFile(file: File) {
+    setError(null);
+    let blob: Blob | null = null;
+    try {
+      blob = await compressImage(file);
+    } catch {
+      blob = null; // fall back to the original file if anything goes wrong
+    }
     const body = new FormData();
-    body.append("file", file);
+    if (blob) {
+      const name = file.name.replace(/\.[^./\\]+$/, "") + ".jpg";
+      body.append("file", blob, name);
+    } else {
+      body.append("file", file);
+    }
     body.append("folder", folder);
     await upload(body);
   }
@@ -97,7 +158,7 @@ export function ImageUpload({
                 <p className="text-sm font-medium text-ink-soft">
                   {value ? "Replace image" : "Click or drag to upload"}
                 </p>
-                <p className="text-xs text-ink-faint">JPG, PNG, WEBP · max 20 MB</p>
+                <p className="text-xs text-ink-faint">JPG, PNG, WEBP · large photos optimized automatically</p>
               </>
             )}
           </div>

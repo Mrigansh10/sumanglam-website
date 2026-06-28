@@ -121,6 +121,22 @@ export type CreateBrandInput = z.infer<typeof createBrandSchema>;
 export type UpdateBrandInput = z.infer<typeof updateBrandSchema>;
 
 // ---------------------------------------------------------------------------
+// Spaces
+// ---------------------------------------------------------------------------
+
+export const spaceSchema = z.object({
+  title: requiredText(160),
+  description: optionalText(2000),
+  heroImage: mediaUrlSchema.optional(),
+});
+
+// Spaces are a fixed taxonomy; only their hero image and copy are editable.
+// Slug is intentionally omitted — page code looks spaces up by slug.
+export const updateSpaceSchema = spaceSchema.partial();
+
+export type UpdateSpaceInput = z.infer<typeof updateSpaceSchema>;
+
+// ---------------------------------------------------------------------------
 // Collections
 // ---------------------------------------------------------------------------
 

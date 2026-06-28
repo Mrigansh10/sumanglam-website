@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/layout/heading";
@@ -11,6 +13,7 @@ import { Reveal } from "@/components/motion/reveal";
 import { WhatsAppButton } from "@/features/whatsapp/whatsapp-button";
 import { getSpaceBySlug } from "@/server/spaces";
 import { getBrandBySlug } from "@/server/brands";
+import { getProductTaxonomy } from "@/server/products";
 import { safeQuery } from "@/server/safe";
 import { resolveImage } from "@/lib/images";
 
@@ -23,14 +26,16 @@ export const metadata: Metadata = {
 };
 
 export default async function KitchensPage() {
-  const [kitchenSpace, nolte, mrida] = await Promise.all([
+  const [kitchenSpace, nolte, mrida, taxonomy] = await Promise.all([
     safeQuery(() => getSpaceBySlug("kitchen"), null),
     safeQuery(() => getBrandBySlug("nolte"), null),
     safeQuery(() => getBrandBySlug("mrida"), null),
+    safeQuery(getProductTaxonomy, []),
   ]);
 
   const inspirations = kitchenSpace?.featuredInspirations ?? [];
   const collections = kitchenSpace?.collections ?? [];
+  const appliance = taxonomy.find((type) => type.slug === "appliance");
 
   return (
     <>
@@ -125,6 +130,38 @@ export default async function KitchensPage() {
           </div>
         </Container>
       </Section>
+
+      {/* Built-in appliances */}
+      {appliance && appliance.categories.length > 0 ? (
+        <Section>
+          <Container size="wide">
+            <Reveal>
+              <Heading
+                eyebrow="Appliances"
+                title="Built to live inside the kitchen"
+                description="Cooking, cooling, and cleaning, integrated into the cabinetry — Bosch, Siemens, Liebherr, Häfele, and Blaupunkt."
+              />
+            </Reveal>
+            <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+              {appliance.categories.map((category) => (
+                <Link
+                  key={category.id}
+                  href={`/products?type=appliance&category=${category.slug}`}
+                  className="group flex items-center justify-between gap-2 border border-line bg-surface px-5 py-4 transition-colors hover:border-accent"
+                >
+                  <span className="text-sm font-medium text-ink sm:text-base">
+                    {category.name}
+                  </span>
+                  <ArrowRight
+                    className="size-4 shrink-0 text-ink-faint transition-transform group-hover:translate-x-1 group-hover:text-accent-deep"
+                    aria-hidden
+                  />
+                </Link>
+              ))}
+            </div>
+          </Container>
+        </Section>
+      ) : null}
 
       {/* Kitchen inspirations */}
       {inspirations.length > 0 ? (

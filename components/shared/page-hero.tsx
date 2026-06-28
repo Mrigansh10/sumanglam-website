@@ -34,7 +34,7 @@ export function PageHero({
       >
         <Parallax amount={8}>
           <Image
-            src={resolveImage(image, { width: 1920 })}
+            src={resolveImage(image, { width: 2560 })}
             alt=""
             fill
             priority

@@ -33,7 +33,17 @@ export default function BrandEditPage() {
     fetch(`/api/v1/admin/brands/${id}`)
       .then((r) => r.json())
       .then((json) => {
-        const b = json.data?.brand ?? null;
+        const raw = json.data?.brand ?? null;
+        // Supabase stores enums lowercase ("solution"/"published"), but the
+        // admin API contract + <select> options use uppercase. Normalize on
+        // load so the form sends the values the validator expects.
+        const b: Brand | null = raw
+          ? {
+              ...raw,
+              brandType: raw.brandType?.toUpperCase() ?? "PRODUCT",
+              status: raw.status?.toUpperCase() ?? "PUBLISHED",
+            }
+          : null;
         setBrand(b);
         if (b) setForm(b);
       });

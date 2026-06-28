@@ -39,17 +39,23 @@ export async function POST(request: Request) {
         return errors.badRequest("Could not fetch image from that URL. Try downloading and uploading the file instead.");
       }
     } else if (file && file.size > 0) {
-      if (file.size > 20 * 1024 * 1024) return errors.badRequest("File exceeds 20 MB limit.");
+      if (file.size > 10 * 1024 * 1024) {
+        return errors.badRequest("Image exceeds Cloudinary's 10 MB limit. Large photos are normally optimized automatically in the browser — try re-selecting the file.");
+      }
       const bytes = await file.arrayBuffer();
       const buffer = Buffer.from(bytes);
-      result = await new Promise((resolve, reject) => {
-        cloudinary.uploader
-          .upload_stream({ folder, resource_type: "image" }, (error, res) => {
-            if (error || !res) return reject(error ?? new Error("Upload failed"));
-            resolve(res);
-          })
-          .end(buffer);
-      });
+      try {
+        result = await new Promise((resolve, reject) => {
+          cloudinary.uploader
+            .upload_stream({ folder, resource_type: "image" }, (error, res) => {
+              if (error || !res) return reject(error ?? new Error("Upload failed"));
+              resolve(res);
+            })
+            .end(buffer);
+        });
+      } catch (e) {
+        return errors.badRequest(e instanceof Error ? e.message : "Upload failed.");
+      }
     } else {
       return errors.badRequest("Provide either a file or a URL.");
     }

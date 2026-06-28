@@ -1,8 +1,17 @@
 # HANDOFF — Sumanglam Digital Showroom
 
-**Last updated:** 2026-06-26
+**Last updated:** 2026-06-28
 **Repo:** https://github.com/Mrigansh10/sumanglam-website
 **Dev server:** `npm run dev` → http://localhost:3000
+
+> ⚠️ **Uncommitted work on disk** (working tree, not yet committed) — safe to commit as one batch:
+> - `lib/images.ts` Cloudinary auto-polish (this one IS committed, c5b9038)
+> - `app/admin/(protected)/brands/[id]/page.tsx` — brand enum-casing fix
+> - `app/admin/(protected)/layout.tsx` — adds "Spaces" to admin nav
+> - `components/shared/page-hero.tsx` — hero source width 1920→2560
+> - `lib/validation/admin-content.ts` — adds `spaceSchema` / `updateSpaceSchema`
+> - `app/admin/(protected)/spaces/` (new) — Spaces list + edit pages
+> - `app/api/v1/admin/spaces/[id]/route.ts` (new) — GET/PUT for a space
 
 ---
 
@@ -52,7 +61,9 @@ A premium **digital showroom** (NOT ecommerce) for Sumanglam — modular kitchen
 |---|---|
 | `lib/supabase.ts` | Supabase client + `rows<T>()`, `camelizeRecord<T>()`, `firstRow<T>()` helpers |
 | `lib/db-types.ts` | TypeScript interfaces for all DB models |
-| `lib/images.ts` | `resolveImage()` — Cloudinary URL builder |
+| `lib/images.ts` | `resolveImage(value, { width, height, enhance })` — Cloudinary URL builder. Bare public IDs (admin uploads) flow through the transform branch and get `f_auto,q_auto:good` auto-polish; full URLs / `/`-paths pass through untouched |
+| `components/shared/page-hero.tsx` | Shared page header. Image hero renders at `opacity-75` under a top gradient; source requested at `width: 2560` for Retina sharpness |
+| `app/admin/(protected)/spaces/` | Admin editor for Spaces (category pages — Kitchens, Wardrobes…). List + per-space edit (title, intro copy, hero image upload to `sumanglam/spaces`) |
 | `lib/site.ts` | Site config: name, contact details, social links |
 | `app/(site)/layout.tsx` | Site layout — fetches brands for nav, renders header/footer |
 | `components/layout/site-header.tsx` | Floating glass pill nav with mega-menu + scroll-hide behaviour |
@@ -95,9 +106,10 @@ npm run dev
   - Hide: 850ms `cubic-bezier(0.65, 0, 0.35, 1)` | Reveal: 400ms `cubic-bezier(0, 0, 0.2, 1)`
 
 **Admin**
-- Login, overview, brands list+edit, inspirations list+create+edit, content toggles, leads, reviews moderation
-- Image upload (dual-mode: file drag-drop + URL import via Cloudinary)
+- Login, overview, brands list+edit, **spaces list+edit (hero image + intro copy)**, inspirations list+create+edit, content toggles, leads, reviews moderation
+- Image upload (dual-mode: file drag-drop + URL import via Cloudinary). Stores **bare public IDs**, not full URLs, so they pick up auto-polish via `resolveImage()`
 - All admin API routes now use Supabase (rewritten from Prisma on 2026-06-26)
+- Hero images: set per-category in **Admin → Spaces → Edit**. Landscape source recommended; Cloudinary handles responsive sizing. Portrait sources look wrong in the wide hero — outpaint to ~16:9 before uploading
 
 **Design system**
 - All buttons `rounded-full` (pill) — site-wide, intentional
@@ -113,6 +125,7 @@ npm run dev
 | **Homepage category card images** — showing SVG placeholders | High | Upload real photos to Cloudinary, update `IMAGES` in `app/(site)/page.tsx` |
 | **Brand logos/hero images missing** for most brands | High | Admin → `/admin/brands/[id]` → URL import tab → paste image URL |
 | **TypeScript build errors suppressed** — `ignoreBuildErrors: true` in `next.config.ts` | Low | Update pages using uppercase Prisma enums (e.g. `"PUBLISHED"`) to lowercase (Supabase returns lowercase) |
+| **Supabase REST shape vs old Prisma shape** — REST returns timestamps as ISO **strings** (not `Date`) and enums **lowercase** (not uppercase). Root cause of the content-page `Invalid time value` crash and the brand-save enum error. | Medium | When porting code that assumed Prisma's shape: coerce dates with `new Date(value)` before formatting, and `.toUpperCase()` enums on load if the form/API contract expects uppercase. Fixed in the 4 admin list pages + brands edit; **still un-swept:** public brands page hardcodes `brandType="SOLUTION"`, homepage passes lowercase; `availabilityStatus` enum unchecked. |
 
 ---
 
@@ -179,6 +192,14 @@ Documentation audit across all 16 source docs. Fixed discovery flow inconsistenc
 - `framer-motion` installed (was imported but missing from package.json)
 - GitHub repo transferred from `speedvibecode/sumanglam-website` to `Mrigansh10/sumanglam-website` with full history
 - This HANDOFF.md created
+
+### Session 4 — 2026-06-27/28 (Images + Spaces editor)
+- **Cloudinary auto-polish** wired into `resolveImage()` — bare public IDs get `f_auto,q_auto:good` (+ `e_improve` when `enhance` set); committed c5b9038
+- **Fixed admin content-page crash** (`Invalid time value`) — Supabase ISO-string timestamps; patched `formatDate` in content/consultations/leads/reviews pages (committed 12618e5)
+- **Fixed brand-save enum error** — form sent lowercase from Supabase; normalize to uppercase on load in brands edit page (uncommitted)
+- **Built Spaces admin editor** — set each category page's hero banner + intro copy from `/admin/spaces` (uncommitted; see top-of-file list)
+- **Bumped hero source width** 1920→2560 in `page-hero.tsx` for sharper Retina rendering (uncommitted)
+- **Photo workflow established** — AI-retouch phone photos via Gemini (locked v2 prompt), then Cloudinary serves them. "Realistic enough to read as a photograph, not a render" is the bar.
 
 ---
 

@@ -19,11 +19,12 @@ export type HeaderBrand = {
   name: string;
   slug: string;
   logo: string | null;
+  heroImage: string | null;
 };
 
 type MegaPanel =
   | { kind: "columns"; title: string; titleHref: string; sections: { heading?: string; links: NavLink[] }[] }
-  | { kind: "split"; title: string; titleHref: string; sections: { heading?: string; links: NavLink[] }[]; cards: { label: string; sub: string; href: string; image: string }[] }
+  | { kind: "split"; title: string; titleHref: string; sections: { heading?: string; links: NavLink[] }[]; cards: { label: string; sub: string; href: string; image: string; slug?: string }[] }
   | { kind: "brands" };
 
 // ── Static nav data ───────────────────────────────────────────────────────────
@@ -71,8 +72,8 @@ const primaryNav: { label: string; href: string; mega?: MegaPanel }[] = [
         },
       ],
       cards: [
-        { label: "Nolte", sub: "German kitchen systems", href: "/nolte", image: "/images/placeholders/kitchen-1.svg" },
-        { label: "Mrida Kitchens", sub: "Modular kitchens for Indian homes", href: "/mrida", image: "/images/placeholders/kitchen-2.svg" },
+        { label: "Nolte", sub: "German kitchen systems", href: "/nolte", image: "/images/placeholders/kitchen-1.svg", slug: "nolte" },
+        { label: "Mrida Kitchens", sub: "Modular kitchens for Indian homes", href: "/mrida", image: "/images/placeholders/kitchen-2.svg", slug: "mrida" },
       ],
     },
   },
@@ -140,7 +141,7 @@ const mobileNav: NavLink[] = [
   { label: "Inspiration", href: "/inspiration" },
   { label: "Kitchens", href: "/kitchens" },
   { label: "Wardrobes", href: "/wardrobes" },
-  { label: "Hardware & Appliances", href: "/hardware-appliances" },
+  { label: "Hardware", href: "/hardware-appliances" },
   { label: "Brands", href: "/brands" },
   { label: "Showroom", href: "/showroom" },
   { label: "Architects & Designers", href: "/architects-designers" },
@@ -183,7 +184,10 @@ function ColumnsPanel({ panel }: { panel: Extract<MegaPanel, { kind: "columns" }
   );
 }
 
-function SplitPanel({ panel }: { panel: Extract<MegaPanel, { kind: "split" }> }) {
+function SplitPanel({ panel, brands }: { panel: Extract<MegaPanel, { kind: "split" }>; brands: HeaderBrand[] }) {
+  const heroBySlug = Object.fromEntries(
+    brands.filter((b) => b.heroImage).map((b) => [b.slug, b.heroImage as string]),
+  );
   return (
     <div className="p-8 pb-10">
       <Link href={panel.titleHref} className="group inline-flex items-baseline gap-2">
@@ -207,11 +211,13 @@ function SplitPanel({ panel }: { panel: Extract<MegaPanel, { kind: "split" }> })
           ))}
         </div>
         <div className="flex gap-4">
-          {panel.cards.map((card) => (
+          {panel.cards.map((card) => {
+            const hero = card.slug ? heroBySlug[card.slug] : undefined;
+            return (
             <Link key={card.href + card.label} href={card.href} className="group w-48 shrink-0">
               <div className="relative aspect-[4/3] overflow-hidden bg-sand">
                 <Image
-                  src={card.image}
+                  src={hero ? resolveImage(hero, { width: 480 }) : card.image}
                   alt={card.label}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
@@ -220,7 +226,8 @@ function SplitPanel({ panel }: { panel: Extract<MegaPanel, { kind: "split" }> })
               <p className="mt-2 text-sm font-medium text-ink group-hover:text-accent-deep">{card.label}</p>
               <p className="text-xs text-ink-faint">{card.sub}</p>
             </Link>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>
@@ -443,7 +450,7 @@ export function SiteHeader({ brands = [] }: { brands?: HeaderBrand[] }) {
           >
             <div className="rounded-[2rem] border border-white/30 bg-gradient-to-b from-white/70 to-background/96 shadow-[inset_0_1.5px_0_rgba(255,255,255,0.9),0_24px_64px_rgba(0,0,0,0.18)] backdrop-blur-[32px]">
               {activePanel.kind === "columns" && <ColumnsPanel panel={activePanel} />}
-              {activePanel.kind === "split" && <SplitPanel panel={activePanel} />}
+              {activePanel.kind === "split" && <SplitPanel panel={activePanel} brands={brands} />}
               {activePanel.kind === "brands" && <BrandsPanel brands={brands} />}
             </div>
           </div>
