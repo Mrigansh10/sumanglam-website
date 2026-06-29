@@ -47,6 +47,13 @@ It should not communicate: Sumanglam is a hardware shop.
 * Primary CTA and secondary CTA.
 * Very subtle animation only.
 
+## Managed Imagery
+
+The hero banner and the three "Explore Your Journey" category card images
+(Kitchens, Wardrobes, Hardware) are admin-managed via the **Homepage** admin page,
+stored in [[Database - site_settings]]. They fall back to built-in defaults when
+unset. See [[Implementation Decisions]].
+
 ## Interaction Requirements
 
 * Desktop visual cards may have hover effects.

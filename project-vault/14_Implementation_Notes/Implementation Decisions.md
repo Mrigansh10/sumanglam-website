@@ -139,6 +139,21 @@ Taxonomy (spaces, collections, brands, categories, showroom sections) is seeded 
 
 The Supabase session pooler caps at 15 clients on the free tier; `DATABASE_URL` must include `connection_limit=4&pool_timeout=20` (dev/long-running) or use the transaction pooler with `pgbouncer=true&connection_limit=1` (serverless). Without this, parallel Prisma pools exhaust the pooler and pages serve empty fallbacks.
 
+### Homepage Image Slots Are Admin-Managed
+
+The homepage hero banner and the three "Explore Your Journey" category card images
+(Kitchens, Wardrobes, Hardware) were previously hardcoded as an `IMAGES` constant
+in `app/(site)/page.tsx`. They are now stored in the [[Database - site_settings]]
+key/value table (`home_hero`, `home_kitchens`, `home_wardrobes`, `home_hardware`)
+and edited from a new admin **Homepage** page that reuses the shared `ImageUpload`
+widget. `server/site-settings.ts` reads them with built-in defaults applied for any
+unset key, so behaviour is unchanged until an admin overrides a slot. Uploaded 3D
+renders (Cloudinary public IDs) get the `enhance: "render"` restore/upscale pass at
+the homepage call sites.
+
+Reason: "Hardcoded content where a content model can exist" is a documented
+anti-pattern; these slots needed first-class admin editing for the render rollout.
+
 ### SEO Foundation
 
 `app/sitemap.ts` (static routes + published slugs), `app/robots.ts` (disallow `/admin`, `/api`), relative canonical (`alternates: { canonical: "./" }`) resolved per page against `metadataBase`, LocalBusiness JSON-LD in the site layout with placeholder contact details.

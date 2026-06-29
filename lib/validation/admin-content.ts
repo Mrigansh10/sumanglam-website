@@ -173,3 +173,18 @@ export const updateShowroomSectionSchema = createShowroomSectionSchema.partial()
 
 export type CreateShowroomSectionInput = z.infer<typeof createShowroomSectionSchema>;
 export type UpdateShowroomSectionInput = z.infer<typeof updateShowroomSectionSchema>;
+
+// ---------------------------------------------------------------------------
+// Site settings — homepage image slots (project-vault/10_Database/
+// Database - site_settings.md). Each slot is an optional media reference;
+// only provided slots are written.
+// ---------------------------------------------------------------------------
+
+export const homepageSettingsSchema = z.object({
+  hero: mediaUrlSchema.optional(),
+  kitchens: mediaUrlSchema.optional(),
+  wardrobes: mediaUrlSchema.optional(),
+  hardware: mediaUrlSchema.optional(),
+});
+
+export type HomepageSettingsInput = z.infer<typeof homepageSettingsSchema>;

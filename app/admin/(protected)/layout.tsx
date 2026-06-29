@@ -6,6 +6,7 @@ import { signOutAdmin } from "./actions";
 
 const adminNav = [
   { label: "Overview", href: "/admin" },
+  { label: "Homepage", href: "/admin/homepage" },
   { label: "Brands", href: "/admin/brands" },
   { label: "Spaces", href: "/admin/spaces" },
   { label: "Inspirations", href: "/admin/inspirations" },

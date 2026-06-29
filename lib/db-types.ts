@@ -144,3 +144,9 @@ export type Review = {
   createdAt: string;
   updatedAt: string;
 };
+
+export type SiteSetting = {
+  key: string;
+  value: string | null;
+  updatedAt: string;
+};

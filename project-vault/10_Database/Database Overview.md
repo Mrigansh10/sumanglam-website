@@ -30,6 +30,7 @@ Avoid premature scaling.
 * [[Database - leads]]
 * [[Database - consultations]]
 * [[Database - junction tables]]
+* [[Database - site_settings]]
 
 ## Core Query Patterns
 

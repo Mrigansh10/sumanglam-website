@@ -366,3 +366,17 @@ model Review {
   @@index([isApproved])
   @@map("reviews")
 }
+
+// ---------------------------------------------------------------------------
+// Site settings — singleton key/value config (project-vault/10_Database/
+// Database - site_settings.md). Currently the admin-managed homepage image
+// slots that were previously hardcoded in page code.
+// ---------------------------------------------------------------------------
+
+model SiteSetting {
+  key       String   @id
+  value     String?
+  updatedAt DateTime @default(now()) @updatedAt @map("updated_at")
+
+  @@map("site_settings")
+}

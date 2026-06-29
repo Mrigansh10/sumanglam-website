@@ -12,6 +12,7 @@ import { BrandCard } from "@/components/shared/brand-card";
 import { PageViewTracker } from "@/components/shared/page-view-tracker";
 import { WhatsAppButton } from "@/features/whatsapp/whatsapp-button";
 import { getHomepageData } from "@/server/homepage";
+import { getHomepageImages } from "@/server/site-settings";
 import { safeQuery } from "@/server/safe";
 import { resolveImage } from "@/lib/images";
 import { ReviewsSection } from "@/components/shared/reviews-section";
@@ -20,15 +21,9 @@ import { getApprovedReviews } from "@/server/reviews";
 
 export const dynamic = "force-dynamic";
 
-// ── Homepage image slots ───────────────────────────────────────────────────────
-// Replace any value with a Cloudinary public ID (e.g. "sumanglam/hero/abc123")
-// or an absolute URL. Leave as-is to keep the SVG placeholder.
-const IMAGES = {
-  hero: "https://www.nolte-kuechen.com/.imaging/focalpoint/4x3/2400/dam/jcr:39342db0-6073-4b2a-b656-b8864dce07d3/23277_Nolte_Frame%20Lack-Magnolia_Tavola-Eiche%20Pinot_001.jpg",
-  kitchens: "/images/placeholders/kitchen-2.svg",
-  wardrobes: "/images/placeholders/wardrobe-1.svg",
-  hardware: "/images/placeholders/hardware-1.svg",
-};
+// Homepage hero + "Explore Your Journey" card images are admin-managed via the
+// site_settings table (Admin → Homepage). getHomepageImages() applies built-in
+// defaults for any unset slot. See server/site-settings.ts.
 
 const whySumanglam = [
   {
@@ -71,6 +66,7 @@ export default async function HomePage() {
     getGoogleReviews().catch(() => null),
     getApprovedReviews().catch(() => []),
   ]);
+  const IMAGES = await getHomepageImages();
 
   return (
     <>

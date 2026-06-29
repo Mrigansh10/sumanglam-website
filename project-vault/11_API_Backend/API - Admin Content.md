@@ -37,6 +37,13 @@ Showroom:
 * `POST /api/v1/admin/showroom`
 * `PUT /api/v1/admin/showroom/:id`
 
+Site settings (singleton homepage image slots, see [[Database - site_settings]]):
+
+* `GET /api/v1/admin/settings/homepage` — current homepage image slots, with
+  built-in defaults applied for any unset key.
+* `PUT /api/v1/admin/settings/homepage` — update one or more of `hero`,
+  `kitchens`, `wardrobes`, `hardware`. Only provided keys are written (upsert).
+
 ## Outputs
 
 Use standard success/error response format.
