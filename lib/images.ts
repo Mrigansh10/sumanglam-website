@@ -15,13 +15,20 @@ import { clientEnv } from "@/lib/env";
  * - g_auto + c_fill — content-aware cropping when a fixed box is requested, so
  *                    the subject (not the edge) survives the crop.
  *
- * Pass `enhance: true` to add a light Cloudinary `e_improve` pass. It is OFF by
- * default so it never double-processes photos already retouched in Gemini; use
- * it only for raw, un-retouched uploads.
+ * The `enhance` option:
+ * - `true` / `"improve"` — a light Cloudinary `e_improve` pass. OFF by default so
+ *   it never double-processes photos already retouched in Gemini; use it only for
+ *   raw, un-retouched uploads.
+ * - `"render"` — generative restore + AI super-resolution (`e_gen_restore` +
+ *   `e_upscale`) applied BEFORE the sizing pass. Built for the low-res 3D kitchen
+ *   renders (small, soft, JPEG-artifacted): it rebuilds detail so they look sharp
+ *   at hero/full-bleed size, then the delivery `w_` downsamples for a crisp,
+ *   sensibly-sized file. Generative — reserve it for render content; never use it
+ *   on logos or real product/proof photography, where it can invent details.
  */
 export function resolveImage(
   value: string | null | undefined,
-  options?: { width?: number; height?: number; enhance?: boolean },
+  options?: { width?: number; height?: number; enhance?: boolean | "improve" | "render" },
 ): string {
   if (!value) return FALLBACK_IMAGE;
   if (value.startsWith("http://") || value.startsWith("https://") || value.startsWith("/")) {
@@ -29,12 +36,21 @@ export function resolveImage(
   }
   const cloudName = clientEnv.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
   if (!cloudName) return FALLBACK_IMAGE;
-  const transforms = ["f_auto", "q_auto:good"];
-  if (options?.enhance) transforms.push("e_improve");
-  if (options?.width) transforms.push(`w_${options.width}`);
-  if (options?.height) transforms.push(`h_${options.height}`);
-  if (options?.width && options?.height) transforms.push("c_fill", "g_auto");
-  return `https://res.cloudinary.com/${cloudName}/image/upload/${transforms.join(",")}/${value}`;
+
+  // Each entry is a separate "/"-delimited transformation component, applied in
+  // order. The render restoration must run as its own components ahead of the
+  // delivery/sizing pass.
+  const components: string[] = [];
+  if (options?.enhance === "render") components.push("e_gen_restore", "e_upscale");
+
+  const delivery = ["f_auto", "q_auto:good"];
+  if (options?.enhance === true || options?.enhance === "improve") delivery.push("e_improve");
+  if (options?.width) delivery.push(`w_${options.width}`);
+  if (options?.height) delivery.push(`h_${options.height}`);
+  if (options?.width && options?.height) delivery.push("c_fill", "g_auto");
+  components.push(delivery.join(","));
+
+  return `https://res.cloudinary.com/${cloudName}/image/upload/${components.join("/")}/${value}`;
 }
 
 export const FALLBACK_IMAGE = "/images/placeholders/fallback.svg";

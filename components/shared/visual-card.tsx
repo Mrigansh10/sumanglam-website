@@ -42,7 +42,7 @@ export function VisualCard({
         )}
       >
         <Image
-          src={resolveImage(image, { width: 1200 })}
+          src={resolveImage(image, { width: 1200, enhance: "render" })}
           alt={title}
           fill
           sizes={imageSizes}

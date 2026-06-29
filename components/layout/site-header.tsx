@@ -217,7 +217,7 @@ function SplitPanel({ panel, brands }: { panel: Extract<MegaPanel, { kind: "spli
             <Link key={card.href + card.label} href={card.href} className="group w-48 shrink-0">
               <div className="relative aspect-[4/3] overflow-hidden bg-sand">
                 <Image
-                  src={hero ? resolveImage(hero, { width: 480 }) : card.image}
+                  src={hero ? resolveImage(hero, { width: 480, enhance: "render" }) : card.image}
                   alt={card.label}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"

@@ -1,17 +1,16 @@
 # HANDOFF — Sumanglam Digital Showroom
 
-**Last updated:** 2026-06-28
+**Last updated:** 2026-06-29
 **Repo:** https://github.com/Mrigansh10/sumanglam-website
 **Dev server:** `npm run dev` → http://localhost:3000
 
-> ⚠️ **Uncommitted work on disk** (working tree, not yet committed) — safe to commit as one batch:
-> - `lib/images.ts` Cloudinary auto-polish (this one IS committed, c5b9038)
-> - `app/admin/(protected)/brands/[id]/page.tsx` — brand enum-casing fix
-> - `app/admin/(protected)/layout.tsx` — adds "Spaces" to admin nav
-> - `components/shared/page-hero.tsx` — hero source width 1920→2560
-> - `lib/validation/admin-content.ts` — adds `spaceSchema` / `updateSpaceSchema`
-> - `app/admin/(protected)/spaces/` (new) — Spaces list + edit pages
-> - `app/api/v1/admin/spaces/[id]/route.ts` (new) — GET/PUT for a space
+> ⚠️ **Uncommitted work on disk** (working tree, not yet committed) — the **render upscaling pipeline** (one batch, tested & working, safe to commit):
+> - `lib/images.ts` — new `enhance: "render"` mode → `e_gen_restore` + `e_upscale`
+> - `components/shared/page-hero.tsx`, `visual-card.tsx`, `brand-card.tsx` — pass `enhance: "render"`
+> - `app/(site)/page.tsx` (homepage hero), `kitchens/page.tsx`, `wardrobes/page.tsx`, `inspiration/[slug]/page.tsx` — pass `enhance: "render"`
+> - `components/layout/site-header.tsx` — mega-menu kitchen cards pass `enhance: "render"`
+>
+> Everything from Session 4 (Spaces editor, brand enum fix, hero width) **is now committed** in `ab3048b`, along with the Session 5 mega-menu / kitchen-appliance / upload-fix work.
 
 ---
 
@@ -61,7 +60,8 @@ A premium **digital showroom** (NOT ecommerce) for Sumanglam — modular kitchen
 |---|---|
 | `lib/supabase.ts` | Supabase client + `rows<T>()`, `camelizeRecord<T>()`, `firstRow<T>()` helpers |
 | `lib/db-types.ts` | TypeScript interfaces for all DB models |
-| `lib/images.ts` | `resolveImage(value, { width, height, enhance })` — Cloudinary URL builder. Bare public IDs (admin uploads) flow through the transform branch and get `f_auto,q_auto:good` auto-polish; full URLs / `/`-paths pass through untouched |
+| `lib/images.ts` | `resolveImage(value, { width, height, enhance })` — Cloudinary URL builder. Bare public IDs (admin uploads) get `f_auto,q_auto:good` auto-polish; full URLs / `/`-paths pass through untouched. **`enhance` modes:** `true`/`"improve"` = light `e_improve`; **`"render"` = `e_gen_restore` + `e_upscale`** (restores + 4× super-resolves the low-res 3D renders, then `w_` downsamples). Wired into the large render slots only — NOT logos, product catalog, showroom/proof, or admin preview |
+| `components/admin/image-upload.tsx` | Admin uploader. Downscales/compresses large photos in-browser (canvas → JPEG, ≤3000px, <9 MB) before upload so they clear Cloudinary's **10 MB** free-plan limit. Stores bare public IDs |
 | `components/shared/page-hero.tsx` | Shared page header. Image hero renders at `opacity-75` under a top gradient; source requested at `width: 2560` for Retina sharpness |
 | `app/admin/(protected)/spaces/` | Admin editor for Spaces (category pages — Kitchens, Wardrobes…). List + per-space edit (title, intro copy, hero image upload to `sumanglam/spaces`) |
 | `lib/site.ts` | Site config: name, contact details, social links |
@@ -84,7 +84,7 @@ npm run dev
 
 ---
 
-## Current State (as of 2026-06-26)
+## Current State (as of 2026-06-29)
 
 ### Working
 
@@ -92,10 +92,16 @@ npm run dev
 - Homepage with hero, featured brands/inspirations, why-us, showroom highlights, reviews, CTA
 - `/brands` — all 15 brands, split into Kitchens / Appliances / Hardware
 - `/nolte`, `/mrida` — dedicated solution brand pages
-- `/kitchens`, `/wardrobes`, `/hardware-appliances` — category pages
+- `/kitchens` — **now hosts the Appliances section** (built-in appliance categories). `/wardrobes` separate. `/hardware-appliances` route is now **Hardware-only** (appliances removed; featured filtered to `type=hardware`; nav label "Hardware"). Category structure: **Kitchens+Appliances together · Wardrobes separate · Hardware separate**
 - `/inspiration`, `/inspiration/[slug]` — gallery + detail
 - `/showroom`, `/book-consultation`, `/about`, `/contact`, `/architects-designers`
 - All pages load without crashes (DB errors handled gracefully by `safeQuery`)
+
+**Imagery / photo strategy**
+- **3D renders are the primary medium** for the aspirational layer (homepage hero, page/category heroes, inspiration galleries, brand + mega-menu kitchen cards). User has ~50 clean renders. Real photos reserved for a **future "real projects / proof" section** only. **Reviews stay photo-less.**
+- Renders are low-res (~1080px, ~150 KB, soft + JPEG-artifacted), no source 3D files to re-export. Fixed at delivery via Cloudinary `enhance: "render"` (`e_gen_restore` + `e_upscale`, verified enabled on cloud `de9turgsy`). No manual processing — upload via admin, the pipeline restores+upscales automatically and CDN-caches.
+- Caveat: `e_gen_restore` is generative — it reinvents small props / garbles visible text & logos on a render. Eyeball heroes after upload. Excluded from logos, product catalog, showroom/proof, admin preview.
+- Mega-menu Kitchens cards (Nolte / Mrida) now pull each brand's **hero image by slug** (was placeholder SVGs)
 
 **Navigation**
 - Floating glass pill header (`fixed left-12 right-12 top-3 z-50`)
@@ -122,8 +128,8 @@ npm run dev
 | Issue | Priority | Fix |
 |---|---|---|
 | **Reviews table RLS** — anon key cannot read or write reviews | Medium | Supabase dashboard → Table Editor → `reviews` → RLS → disable, or add anon read policy |
-| **Homepage category card images** — showing SVG placeholders | High | Upload real photos to Cloudinary, update `IMAGES` in `app/(site)/page.tsx` |
-| **Brand logos/hero images missing** for most brands | High | Admin → `/admin/brands/[id]` → URL import tab → paste image URL |
+| **Homepage category card images** — showing SVG placeholders | High | Upload real renders to Cloudinary, update `IMAGES` in `app/(site)/page.tsx` |
+| **Brand logos/hero images missing** for most brands | High | Admin → `/admin/brands/[id]` → upload/URL import. Brand hero images now also drive the Kitchens mega-menu cards |
 | **TypeScript build errors suppressed** — `ignoreBuildErrors: true` in `next.config.ts` | Low | Update pages using uppercase Prisma enums (e.g. `"PUBLISHED"`) to lowercase (Supabase returns lowercase) |
 | **Supabase REST shape vs old Prisma shape** — REST returns timestamps as ISO **strings** (not `Date`) and enums **lowercase** (not uppercase). Root cause of the content-page `Invalid time value` crash and the brand-save enum error. | Medium | When porting code that assumed Prisma's shape: coerce dates with `new Date(value)` before formatting, and `.toUpperCase()` enums on load if the form/API contract expects uppercase. Fixed in the 4 admin list pages + brands edit; **still un-swept:** public brands page hardcodes `brandType="SOLUTION"`, homepage passes lowercase; `availabilityStatus` enum unchecked. |
 
@@ -131,14 +137,15 @@ npm run dev
 
 ## Pending Tasks (Priority Order)
 
-1. **Upload brand logos** — all 15 brands via admin URL import
-2. **Upload brand hero images** — Nolte, Mrida, key brands
-3. **Homepage category card photos** — update `IMAGES` in `app/(site)/page.tsx`
-4. **Mark featured content** — set `is_featured=true` in Supabase for brands + inspirations to appear on homepage
-5. **Add inspiration content** — create inspirations via admin with real images
-6. **Fix reviews RLS** — disable on `reviews` table in Supabase dashboard
-7. **Populate showroom sections** — add floors/sections via admin
-8. **Deploy to Vercel** — import `Mrigansh10/sumanglam-website`, add env vars, set domain
+1. **Commit the render pipeline** — the uncommitted `enhance: "render"` batch (see top banner)
+2. **Photo placement pass** — map the ~50 renders to slots: homepage hero, category/page heroes (via Admin → Spaces), inspiration entries, brand heroes. ("Where to put what photos" — the next thing to work on.)
+3. **Upload brand logos + hero images** — all 15 brands via admin (Nolte, Mrida, key brands first; brand hero also feeds the Kitchens mega-menu)
+4. **Homepage card photos** — update `IMAGES` in `app/(site)/page.tsx`
+5. **Mark featured content** — set `is_featured=true` in Supabase for brands + inspirations to appear on homepage
+6. **Add inspiration content** — create inspirations via admin with renders
+7. **Fix reviews RLS** — disable on `reviews` table in Supabase dashboard
+8. **Populate showroom sections** — add floors/sections via admin (real photos, future)
+9. **Deploy to Vercel** — import `Mrigansh10/sumanglam-website`, add env vars, set domain
 
 ---
 
@@ -200,6 +207,17 @@ Documentation audit across all 16 source docs. Fixed discovery flow inconsistenc
 - **Built Spaces admin editor** — set each category page's hero banner + intro copy from `/admin/spaces` (uncommitted; see top-of-file list)
 - **Bumped hero source width** 1920→2560 in `page-hero.tsx` for sharper Retina rendering (uncommitted)
 - **Photo workflow established** — AI-retouch phone photos via Gemini (locked v2 prompt), then Cloudinary serves them. "Realistic enough to read as a photograph, not a render" is the bar.
+
+### Session 5 — 2026-06-28/29 (Mega-menu heroes, category reorg, upload fix, render pipeline)
+- **Committed `ab3048b`** (pushed):
+  - Mega-menu Kitchens cards (Nolte/Mrida) now use each brand's **hero image by slug** instead of placeholder SVGs; header brand query selects `hero_image`
+  - **Category reorg:** moved the Appliances section onto `/kitchens`; made `/hardware-appliances` **Hardware-only** (featured filtered to `type=hardware`); relabeled nav "Hardware & Appliances" → "Hardware". Final structure: Kitchens+Appliances · Wardrobes · Hardware
+  - **Image upload fix:** big hero photos were failing because they exceeded Cloudinary's **10 MB** free-plan cap (app wrongly advertised 20 MB). Now compresses/downscales in-browser before upload; server backstop lowered to 10 MB and surfaces the real Cloudinary error instead of a generic 500
+  - (also folded in the Session 4 batch: Spaces editor, brand enum fix, hero width 1920→2560)
+- **Render upscaling pipeline (UNCOMMITTED — see top banner):**
+  - Decision: 3D renders become the primary medium for inspiration/heroes (relaxes the old "not a render" bar for those surfaces); real photos only for the future proof section; reviews photo-less
+  - Tested Cloudinary AI on a sample: `e_gen_restore` + `e_upscale` both enabled; 1086×724 / 137 KB → crisp 2560×1707 / ~324 KB
+  - Added `enhance: "render"` to `resolveImage()` and wired it into the large render slots (page-hero, visual-card, brand-card, kitchens/wardrobes heroes, homepage hero, inspiration detail, mega-menu kitchen cards). Automatic + CDN-cached; no manual per-file work
 
 ---
 

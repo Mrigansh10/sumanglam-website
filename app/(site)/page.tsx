@@ -80,7 +80,7 @@ export default async function HomePage() {
       <section className="relative flex min-h-[100svh] items-end overflow-hidden bg-ink">
         <Parallax amount={12}>
           <Image
-            src={resolveImage(IMAGES.hero, { width: 1920 })}
+            src={resolveImage(IMAGES.hero, { width: 1920, enhance: "render" })}
             alt=""
             fill
             priority

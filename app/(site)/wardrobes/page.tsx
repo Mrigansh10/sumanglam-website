@@ -82,7 +82,7 @@ export default async function WardrobesPage() {
                 <Image
                   src={resolveImage(
                     mrida?.brand.heroImage ?? "/images/placeholders/wardrobe-2.svg",
-                    { width: 1200 }
+                    { width: 1200, enhance: "render" }
                   )}
                   alt="Mrida wardrobes"
                   fill

@@ -29,7 +29,7 @@ export function BrandCard({
     >
       <div className="relative aspect-[16/9] overflow-hidden bg-sand">
         <Image
-          src={resolveImage(heroImage, { width: 800 })}
+          src={resolveImage(heroImage, { width: 800, enhance: "render" })}
           alt={name}
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"

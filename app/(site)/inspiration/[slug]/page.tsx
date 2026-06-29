@@ -92,7 +92,7 @@ export default async function InspirationDetailPage({ params }: { params: Params
               {inspiration.galleryImages.slice(1).map((image, index) => (
                 <div key={index} className="relative aspect-[3/2] overflow-hidden bg-sand">
                   <Image
-                    src={resolveImage(image, { width: 1200 })}
+                    src={resolveImage(image, { width: 1200, enhance: "render" })}
                     alt={`${inspiration.title} — view ${index + 2}`}
                     fill
                     sizes="(min-width: 640px) 50vw, 100vw"

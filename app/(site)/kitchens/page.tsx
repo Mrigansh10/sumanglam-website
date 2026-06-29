@@ -61,7 +61,7 @@ export default async function KitchensPage() {
             <Reveal>
               <div className="relative aspect-[4/3] overflow-hidden bg-sand">
                 <Image
-                  src={resolveImage(nolte?.brand.heroImage ?? "/images/placeholders/kitchen-1.svg", { width: 1200 })}
+                  src={resolveImage(nolte?.brand.heroImage ?? "/images/placeholders/kitchen-1.svg", { width: 1200, enhance: "render" })}
                   alt="Nolte kitchens"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
@@ -99,7 +99,7 @@ export default async function KitchensPage() {
             <Reveal className="lg:order-2">
               <div className="relative aspect-[4/3] overflow-hidden bg-sand">
                 <Image
-                  src={resolveImage(mrida?.brand.heroImage ?? "/images/placeholders/kitchen-2.svg", { width: 1200 })}
+                  src={resolveImage(mrida?.brand.heroImage ?? "/images/placeholders/kitchen-2.svg", { width: 1200, enhance: "render" })}
                   alt="Mrida kitchens"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
