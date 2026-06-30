@@ -39,7 +39,7 @@ export default async function HardwareAppliancesPage() {
         eyebrow="Hardware"
         title="The details that decide how a home feels"
         description="Browse by category, meet the brands behind each one, and start a conversation about the right fit — research first, never a checkout."
-        image="/images/placeholders/hardware-1.svg"
+        image="sumanglam/hardware/hardware-hero-drawer"
       >
         <Button href="/products?type=hardware" variant="accent">
           Browse Hardware
