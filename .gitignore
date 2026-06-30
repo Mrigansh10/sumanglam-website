@@ -34,3 +34,7 @@ next-env.d.ts
 
 # prisma
 /prisma/generated
+
+# vendor catalogue source PDFs (large/copyrighted; extracted data lives in
+# scripts/yale-catalogue/data — keep the source PDFs local, not in git)
+/*.pdf

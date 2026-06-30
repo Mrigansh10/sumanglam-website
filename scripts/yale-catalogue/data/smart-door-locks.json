@@ -1,0 +1,296 @@
+{
+  "category": "Smart Door Locks",
+  "mapsToCategory": "digital-locks",
+  "brand": "yale",
+  "productType": "hardware",
+  "source": "Yale Price List 2026 (w.e.f 24 April 2026), internal pages 01-06",
+  "products": [
+    {
+      "name": "Yale Luna Pro+ Facial",
+      "sku": "LunaProPlus-Facial",
+      "priceRange": "₹1,31,099",
+      "srcPage": 5, "srcSide": "left-top",
+      "shortDescription": "Flagship facial-recognition smart lock with face, fingerprint, PIN, RFID and mechanical key access. Yale Home Kit included.",
+      "technicalSpecs": {
+        "Key Features": "Face Recognition, Biometric, PIN code, RFID card, Mechanical key, Remote control, Up to 5 years warranty",
+        "Face recognition": "Up to 100 users",
+        "Fingerprint": "Up to 50 users",
+        "PIN code": "Up to 100 users",
+        "RFID keytag": "Up to 100 users",
+        "Remote control": "Optional (sold separately)",
+        "Emergency Mechanical key": "2 pcs available",
+        "Color": "Matte black with champagne gold trimming",
+        "Front body": "103(W) x 424(H) x 49(D) mm",
+        "Main body": "76(W) x 420(H) x 62.7(D) mm",
+        "Backset": "60 mm",
+        "Door thickness": "40 - 100 mm",
+        "Battery": "Lithium ion battery",
+        "Accessories": "Bluetooth Module and Connect Bridge",
+        "Inclusions": "Yale Home Kit included"
+      }
+    },
+    {
+      "name": "Yale Luna Pro",
+      "sku": "LunaPro",
+      "priceRange": "₹97,199",
+      "srcPage": 5, "srcSide": "left-bottom",
+      "shortDescription": "Push-pull smart lock with biometric, PIN, RFID and mechanical key access. Yale Home Kit included.",
+      "technicalSpecs": {
+        "Key Features": "Biometric, PIN code, RFID card, Mechanical key, Remote control, Up to 5 years warranty",
+        "Color / Finish": "Matte black with champagne gold trimming",
+        "Door thickness": "40 - 100 mm",
+        "Inclusions": "Yale Home Kit included"
+      }
+    },
+    {
+      "name": "Yale Zuri",
+      "sku": "Yzuri/BL",
+      "priceRange": "₹29,999 – ₹40,499",
+      "srcPage": 5, "srcSide": "right-top",
+      "shortDescription": "Built-in Bluetooth smart lock with fingerprint, PIN, RFID and mechanical key. Available in Black and Antique Bronze.",
+      "technicalSpecs": {
+        "Key Features": "Built-in Bluetooth, Biometric, PIN code, RFID card, Mechanical key, Up to 3 years warranty",
+        "In-built Bluetooth": "Available",
+        "Fingerprint": "Up to 100 users",
+        "PIN code": "Up to 100 users",
+        "RFID keytag": "Up to 100 users",
+        "Emergency Mechanical key": "2 pcs available",
+        "Color": "Black / Antique Bronze",
+        "Front body": "70(W) x 322(H) x 27(D) mm",
+        "Main body": "70(W) x 322(H) x 30.5(D) mm",
+        "Backset": "60 mm",
+        "Door thickness": "35 - 65 mm",
+        "Battery": "4 x AA Alkaline battery",
+        "Variant – Yzuri/BL (Black)": "₹29,999",
+        "Variant – Yzuri/BL/BD (Black, Wifi Bridge Bundle)": "₹39,999",
+        "Variant – Yzuri/AB (Antique Bronze)": "₹30,999",
+        "Variant – Yzuri/AB/BD (Antique Bronze, Wifi Bridge Bundle)": "₹40,499"
+      }
+    },
+    {
+      "name": "Yale Zuri S",
+      "sku": "YzuriS/BL",
+      "priceRange": "₹21,399 – ₹31,999",
+      "srcPage": 5, "srcSide": "right-bottom",
+      "shortDescription": "Compact built-in Bluetooth smart lock with fingerprint, PIN, RFID and mechanical key. Available in Black and Antique Bronze.",
+      "technicalSpecs": {
+        "Key Features": "Built-in Bluetooth, Biometric, PIN code, RFID card, Mechanical key, Up to 3 years warranty",
+        "In-built Bluetooth": "Available",
+        "Fingerprint": "Up to 100 users",
+        "PIN code": "Up to 100 users",
+        "RFID keytag": "Up to 100 users",
+        "Emergency Mechanical key": "2 pcs available",
+        "Color": "Black / Antique Bronze",
+        "Front body": "63(W) x 270(H) x 27(D) mm",
+        "Main body": "63(W) x 270(H) x 27(D) mm",
+        "Backset": "55 mm",
+        "Door thickness": "35 - 65 mm",
+        "Battery": "4 x AA Alkaline battery",
+        "Variant – YzuriS/BL (Black)": "₹21,399",
+        "Variant – YzuriS/BL/BD (Black, Wifi Bridge Bundle)": "₹30,899",
+        "Variant – YzuriS/AB (Antique Bronze)": "₹22,499",
+        "Variant – YzuriS/AB/BD (Antique Bronze, Wifi Bridge Bundle)": "₹31,999"
+      }
+    },
+    {
+      "name": "Yale YMI70A-YH",
+      "sku": "YMI70A-YH",
+      "priceRange": "₹89,299",
+      "srcPage": 6, "srcSide": "left-1",
+      "shortDescription": "Single push-action smart lock with biometric, PIN, RFID and mechanical key. Yale Home Kit included.",
+      "technicalSpecs": {
+        "Key Features": "Single push action, Biometric, PIN code, RFID card, Mechanical key, Remote control, Up to 5 years warranty",
+        "Available finish": "Matt Black, Red Bronze, Champagne Gold",
+        "Door thickness": "40 - 100 mm",
+        "Inclusions": "Yale Home Kit included"
+      }
+    },
+    {
+      "name": "Yale Kyra Pro",
+      "sku": "KyraPro",
+      "priceRange": "₹66,199",
+      "srcPage": 6, "srcSide": "left-2",
+      "shortDescription": "Smart lock with biometric, PIN, RFID and mechanical key access. Available in Matt Black and Gold.",
+      "technicalSpecs": {
+        "Key Features": "Biometric, PIN code, RFID card, Mechanical key, Remote control, Up to 5 years warranty",
+        "Available finish": "Matt Black, Gold",
+        "Door thickness": "40 - 100 mm"
+      }
+    },
+    {
+      "name": "Yale YDM7116A-YH",
+      "sku": "YDM7116A-YH",
+      "priceRange": "₹79,999",
+      "srcPage": 6, "srcSide": "left-3",
+      "shortDescription": "Mortise smart lock with biometric, PIN, RFID and mechanical key. Yale Home Kit included.",
+      "technicalSpecs": {
+        "Key Features": "Biometric, PIN code, RFID card, Mechanical key, Remote control, Up to 5 years warranty",
+        "Available finish": "Matt Black, Red Bronze, Champagne Gold",
+        "Door thickness": "40 - 90 mm",
+        "Inclusions": "Yale Home Kit included"
+      }
+    },
+    {
+      "name": "Yale ByYou V Pro",
+      "sku": "ByYou-V-Pro",
+      "priceRange": "₹52,499",
+      "srcPage": 6, "srcSide": "left-4",
+      "shortDescription": "Built-in BLE smart lock with biometric, PIN, RFID and mechanical key. Available in Matt Black and Gold.",
+      "technicalSpecs": {
+        "Key Features": "Built-in BLE, Biometric, PIN code, RFID card, Mechanical key, Up to 5 years warranty",
+        "Available finish": "Matt Black, Gold",
+        "Door thickness": "30 - 50 mm"
+      }
+    },
+    {
+      "name": "Yale ByYou Mortise",
+      "sku": "ByYou-Mortise",
+      "priceRange": "₹53,599",
+      "srcPage": 6, "srcSide": "right-1",
+      "shortDescription": "Built-in BLE mortise smart lock with biometric, PIN, RFID and mechanical key. Available in Matt Black and Gold.",
+      "technicalSpecs": {
+        "Key Features": "Built-in BLE, Biometric, PIN code, RFID card, Mechanical key, Up to 5 years warranty",
+        "Available finish": "Matt Black, Gold",
+        "Door thickness": "40 - 80 mm"
+      }
+    },
+    {
+      "name": "Yale YDM4109A RL",
+      "sku": "YDM4109A-RL",
+      "priceRange": "₹59,999",
+      "srcPage": 6, "srcSide": "right-2",
+      "shortDescription": "Smart lock with biometric, PIN and mechanical key access. Available in Black and Gold.",
+      "technicalSpecs": {
+        "Key Features": "Biometric, PIN code, Mechanical key, Remote control, Up to 5 years warranty",
+        "Available finish": "Black, Gold",
+        "Door thickness": "40 - 80 mm"
+      }
+    },
+    {
+      "name": "Yale YDM4109 A",
+      "sku": "YDM4109-A",
+      "priceRange": "₹57,699 – ₹60,399",
+      "srcPage": 6, "srcSide": "right-3",
+      "shortDescription": "Smart lock with biometric, PIN and mechanical key access. Available in Black and Gold.",
+      "technicalSpecs": {
+        "Key Features": "Biometric, PIN code, Mechanical key, Remote control, Up to 5 years warranty",
+        "Available finish": "Black, Gold",
+        "Door thickness": "38 - 80 mm",
+        "Variant – Black": "₹57,699",
+        "Variant – Gold": "₹60,399"
+      }
+    },
+    {
+      "name": "Yale YDM 4115A",
+      "sku": "YDM-4115A",
+      "priceRange": "₹47,999",
+      "srcPage": 6, "srcSide": "right-4",
+      "shortDescription": "Smart lock with biometric, PIN and mechanical key access. Brown finish.",
+      "technicalSpecs": {
+        "Key Features": "Biometric, PIN code, Mechanical key, Remote control, Up to 3 years warranty",
+        "Finish": "Brown",
+        "Door thickness": "38 - 80 mm"
+      }
+    },
+    {
+      "name": "Yale YDM 3115A",
+      "sku": "YDM-3115A",
+      "priceRange": "₹34,599 – ₹38,199",
+      "srcPage": 7, "srcSide": "left-1",
+      "shortDescription": "Smart lock with PIN, RFID and mechanical key access. Available in Matt Black and Silver.",
+      "technicalSpecs": {
+        "Key Features": "PIN code, RFID card, Mechanical key, Remote control, Up to 3 years warranty",
+        "Available finish": "Matt Black, Silver",
+        "Door thickness": "38 - 80 mm",
+        "Variant – Silver": "₹34,599",
+        "Variant – Matt Black": "₹38,199"
+      }
+    },
+    {
+      "name": "Yale YDR 50GA",
+      "sku": "YDR-50GA",
+      "priceRange": "₹55,999",
+      "srcPage": 7, "srcSide": "left-2",
+      "shortDescription": "Rim smart lock suitable for metal doors, with biometric, PIN, RFID and mechanical key. Black finish.",
+      "technicalSpecs": {
+        "Key Features": "Biometric, PIN code, RFID card, Suitable for Metal Door, Mechanical key, Remote control, Up to 5 years warranty",
+        "Finish": "Black",
+        "Door thickness": "32 - 55 mm"
+      }
+    },
+    {
+      "name": "Yale YDR 414A",
+      "sku": "YDR-414A",
+      "priceRange": "₹45,999",
+      "srcPage": 7, "srcSide": "left-3",
+      "shortDescription": "Rim smart lock with biometric, PIN and mechanical key access. Black finish.",
+      "technicalSpecs": {
+        "Key Features": "Biometric, PIN code, Mechanical key, Remote control, Up to 5 years warranty",
+        "Finish": "Black",
+        "Door thickness": "35 - 55 mm"
+      }
+    },
+    {
+      "name": "Yale YDR 41A",
+      "sku": "YDR-41A",
+      "priceRange": "₹43,999",
+      "srcPage": 7, "srcSide": "left-4",
+      "shortDescription": "Rim smart lock suitable for sliding doors, with biometric and PIN access. Black finish.",
+      "technicalSpecs": {
+        "Key Features": "Biometric, PIN code, Suitable for Sliding Door, Remote control, Up to 5 years warranty",
+        "Finish": "Black",
+        "Door thickness": "32 - 55 mm"
+      }
+    },
+    {
+      "name": "Yale YDD 724A",
+      "sku": "YDD-724A",
+      "priceRange": "₹52,999",
+      "srcPage": 7, "srcSide": "right-1",
+      "shortDescription": "Smart lock with biometric, PIN, RFID and mechanical key access. Black finish.",
+      "technicalSpecs": {
+        "Key Features": "Biometric, PIN code, RFID card, Mechanical key, Remote control, Up to 5 years warranty",
+        "Finish": "Black",
+        "Door thickness": "38 - 55 mm"
+      }
+    },
+    {
+      "name": "Yale YDG 413A GL",
+      "sku": "YDG-413A-GL",
+      "priceRange": "₹43,999",
+      "srcPage": 7, "srcSide": "right-2",
+      "shortDescription": "Glass-door smart lock with biometric and PIN access. Silver finish. Glass-to-glass bracket sold separately.",
+      "technicalSpecs": {
+        "Key Features": "Biometric, PIN code, Up to 5 years warranty",
+        "Finish": "Silver",
+        "Door thickness": "9 - 13 mm",
+        "Note": "Glass to Glass bracket sold separately (MRP ₹4,999)"
+      }
+    },
+    {
+      "name": "Yale Smart Code Handle (PVC Door & Window)",
+      "sku": "SmartCodeHandle-PVC",
+      "priceRange": "₹17,899",
+      "srcPage": 7, "srcSide": "right-3",
+      "shortDescription": "PIN-code smart handle for PVC patio/balcony doors and windows. Satin Chrome finish.",
+      "technicalSpecs": {
+        "Key Features": "PIN code, Up to 1 year warranty, For Patio/Balcony Windows",
+        "Finish": "Satin Chrome",
+        "Application": "PVC Door & Window"
+      }
+    },
+    {
+      "name": "Yale YDL325 Series",
+      "sku": "YDL325",
+      "priceRange": "₹14,999",
+      "srcPage": 7, "srcSide": "right-4",
+      "shortDescription": "Built-in BLE smart lever handle lock with biometric and mechanical key. Black finish (YDL325 S / YDL325 C).",
+      "technicalSpecs": {
+        "Key Features": "Built-in BLE, Biometric, Mechanical key, Up to 1 year warranty",
+        "Finish": "Black",
+        "Variants": "YDL325 S, YDL325 C",
+        "Door thickness": "35 - 60 mm"
+      }
+    }
+  ]
+}

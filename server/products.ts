@@ -96,6 +96,9 @@ export async function getProductBySlug(slug: string) {
 
   if (!raw?.length) return null;
   const product = camelizeRecord<Record<string, unknown>>(raw[0]);
+  // Supabase column `technical_specs_json` camelizes to `technicalSpecsJson`,
+  // but the UI (ported from Prisma) reads `technicalSpecs`. Bridge the names.
+  if (product.technicalSpecs === undefined) product.technicalSpecs = product.technicalSpecsJson;
 
   const [catMappings, inspirLinks] = await Promise.all([
     supabase
