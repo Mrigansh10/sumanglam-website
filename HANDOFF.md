@@ -1,14 +1,32 @@
 # HANDOFF — Sumanglam Digital Showroom
 
-**Last updated:** 2026-06-29
+**Last updated:** 2026-07-02
 **Repo:** https://github.com/Mrigansh10/sumanglam-website
 **Dev server:** `npm run dev` → http://localhost:3000
 
 > ✅ **Working tree clean** — everything below is committed and pushed to `master`.
+> - **`c22fa3f`** — hardware page hero image (walnut-drawer photo on `/hardware-appliances`). Authored as Darsh-Ch.
+> - **`e7ca483`** — Yale Smart Door Locks catalog import (20 products, live) + product-detail spec-render fix. Authored as Darsh-Ch.
 > - **`e077fd6`** — render upscaling pipeline (`enhance: "render"` → `e_gen_restore` + `e_upscale`, wired into all large render slots)
-> - **`52ac94c`** — homepage image admin (new `site_settings` table + **Admin → Homepage** page; hero + 3 journey cards now DB-managed instead of a hardcoded `IMAGES` const). Authored as Darsh-Ch.
->
-> **Next session:** upload the actual 3D renders through **Admin → Homepage** and the per-category **Admin → Spaces** / brand editors. The plumbing is done; it's now a content-population pass.
+> - **`52ac94c`** — homepage image admin (new `site_settings` table + **Admin → Homepage** page). Authored as Darsh-Ch.
+
+## 🎯 CURRENT DIRECTION (set 2026-07-02) — Release readiness, NOT product depth
+
+**Strategic decision (after a stakeholder discussion):** do **NOT** keep building the
+detailed per-product hardware catalog. Going product-by-product/vendor-by-vendor
+(like the Yale Smart Door Locks import) would require **massively scaling up** the
+content operation, which we don't need right now.
+
+**Instead, the goal for the next sessions is to get the site RELEASE-READY:**
+1. **Put up the photos** — place the ~50 3D renders into their slots (homepage hero + journey cards, category/page heroes, inspiration entries, brand heroes), plus general/hero photography where products aren't rendered (e.g. the hardware heroes just added).
+2. **Beautify the pages** — polish layout, spacing, typography, visual consistency across every page.
+3. **Animations** — refine/extend the Framer Motion work (reveals, transitions) for a premium feel.
+4. **Complete & ship** — finish remaining rough edges and deploy for release.
+
+The Yale import stays live as a working **proof of concept** (and the reusable
+`scripts/yale-catalogue/` pipeline is kept for if/when we choose to scale up
+later), but **it is paused — do not continue importing more products/categories
+now.** See the Session 7 log and the `yale-catalogue-import` memory for details.
 
 ---
 
@@ -137,15 +155,23 @@ npm run dev
 
 ---
 
-## Pending Tasks (Priority Order)
+## Pending Tasks (Priority Order — RELEASE FOCUS)
 
-1. **Photo placement pass** — map the ~50 renders to slots: homepage hero + journey cards (**Admin → Homepage**), category/page heroes (**Admin → Spaces**), inspiration entries, brand heroes. ("Where to put what photos" — the main thing to continue tomorrow.)
+**Theme: photos + beautification + animations → ship.** (Product-catalog depth is
+paused — see Current Direction.)
+
+1. **Photo placement pass** — map the ~50 renders to slots: homepage hero + journey cards (**Admin → Homepage**), category/page heroes (**Admin → Spaces**), inspiration entries, brand heroes. Plus general/hero photography where products aren't rendered. ("Where to put what photos" — the main content pass.)
 2. **Upload brand logos + hero images** — all 15 brands via admin (Nolte, Mrida, key brands first; brand hero also feeds the Kitchens mega-menu)
-3. **Mark featured content** — set `is_featured=true` in Supabase for brands + inspirations to appear on homepage
-4. **Add inspiration content** — create inspirations via admin with renders
-5. **Fix reviews RLS** — disable on `reviews` table in Supabase dashboard
-6. **Populate showroom sections** — add floors/sections via admin (real photos, future)
-7. **Deploy to Vercel** — import `Mrigansh10/sumanglam-website`, add env vars, set domain
+3. **Beautify pages + animations** — layout/spacing/typography polish and Framer Motion refinement across every page for a premium, release-ready feel
+4. **Mark featured content** — set `is_featured=true` in Supabase for brands + inspirations to appear on homepage
+5. **Add inspiration content** — create inspirations via admin with renders
+6. **Fix reviews RLS** — disable on `reviews` table in Supabase dashboard
+7. **Populate showroom sections** — add floors/sections via admin (real photos, future)
+8. **Deploy to Vercel** — import `Mrigansh10/sumanglam-website`, add env vars, set domain
+
+**Paused (do not resume without a new decision):** importing more Yale/vendor
+product categories via `scripts/yale-catalogue/`. The Smart Door Locks import is
+live as a proof of concept; scaling it to the full catalog is explicitly deferred.
 
 ---
 
@@ -230,6 +256,21 @@ Documentation audit across all 16 source docs. Fixed discovery flow inconsistenc
   - Table created directly in Supabase via `prisma db execute` (DIRECT_URL); RLS off (matches other tables); anon reads verified
 - **Workflow note:** harness blocks direct pushes to `master`; the working pattern is **branch → commit → `git checkout master` → `git merge --ff-only` → `git push origin master` → delete branch**
 - **Debugged "site not loading"** — turned out to be a stale `next dev` build cache 404'ing the CSS chunk (page rendered unstyled). Fixed by `rm -rf .next` + restart. See Known Issues
+
+### Session 7 — 2026-07-02 (Yale catalog proof-of-concept, hardware heroes, strategic pivot)
+- **Explored the hardware-catalogue idea end-to-end.** Assessed the `datalab-to/marker` PDF tool (good for tables, but only extracts the same low-res embedded images — not worth the PyTorch setup vs. direct transcription). Inspected the Yale 2026 price list (37 spreads, 21 categories, ~150–250 SKUs).
+- **Built + shipped Smart Door Locks as a live proof of concept — committed `e7ca483`:**
+  - 20 Smart Door Lock products imported into `products` + mapped to the **Digital Locks** category, with full specs (`technical_specs_json`, kept flat), pricing, and images. Verified live (list + detail pages).
+  - **Images:** sourced clean studio shots from Yale's official India store **yaleonline.in** (Shopify `products.json`) — pick whitest pack shot if genuinely clean, else the store's hero image (avoids infographics); PDF-cropped the 3 SKUs not on the store. All uploaded to Cloudinary `sumanglam/hardware/yale/smart-door-locks/`.
+  - **Reusable pipeline** at `scripts/yale-catalogue/` — `import-category.mjs <key> [--dry-run]` (Cloudinary upload + Supabase insert + category mapping; supplies own cuid `id` + ISO timestamps since the DB has no defaults; skips existing SKUs). Data in `data/`, crops in `crops/`.
+  - **Bug fixed:** product-detail spec table never rendered — column `technical_specs_json` camelizes to `technicalSpecsJson` but the UI reads `product.technicalSpecs` (Supabase-REST-shape trap). Bridged in `server/products.ts` `getProductBySlug`; also un-broke the pre-existing demo products.
+- **Hardware hero images — committed `c22fa3f` + a DB change:**
+  - `/hardware-appliances` PageHero → walnut cutlery-drawer photo (`sumanglam/hardware/hardware-hero-drawer`), replacing the placeholder SVG (file edit).
+  - Homepage **Hardware** journey card → minimalist silver-lever photo (`sumanglam/home/hardware-card-handle`), set via `site_settings.home_hardware` (DB, not code). Kitchens/Wardrobes cards already had real images; this completes the row.
+  - Both from Unsplash (free for commercial use, no attribution required).
+- **Generalization discussion (parked):** user is gathering 2–3 more vendor catalogues; we'll then decide vendor-by-vendor whether a general pipeline / admin "Catalogue Import" UI is worth building. Options weighed: config-driven CLI vs. admin UI vs. phased; and Claude-vision auto-extraction vs. manual transcription. No build started.
+- **STRATEGIC PIVOT (end of session):** decided **not** to pursue detailed per-product catalogs now (would need to massively scale content ops). New focus = **photos + beautification + animations + ship for release.** See Current Direction at top. Yale import stays live but paused.
+- Vendor catalogue PDFs are now **gitignored** (`/*.pdf`) — kept local, out of git history.
 
 ## Hard Rules (Do Not Violate)
 
