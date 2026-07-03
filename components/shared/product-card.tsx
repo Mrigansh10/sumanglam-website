@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import { FadeInImage } from "@/components/motion/fade-in-image";
 import { resolveImage } from "@/lib/images";
 
 type ProductCardProps = {
@@ -39,7 +39,7 @@ export function ProductCard({
       className="group block transition-transform duration-500 ease-out will-change-transform hover:-translate-y-1"
     >
       <div className="relative aspect-square overflow-hidden bg-sand">
-        <Image
+        <FadeInImage
           src={resolveImage(primaryImage, { width: 800 })}
           alt={name}
           fill

@@ -25,6 +25,10 @@ import { clientEnv } from "@/lib/env";
  *   at hero/full-bleed size, then the delivery `w_` downsamples for a crisp,
  *   sensibly-sized file. Generative — reserve it for render content; never use it
  *   on logos or real product/proof photography, where it can invent details.
+ *   Guarded by a Cloudinary condition (`if_w_lt_2000_and_h_lt_2000`): e_upscale
+ *   hard-fails with a 400 on sources over 4.2 MP, which broke large uploads
+ *   entirely (blank <img>). Large sources don't need restoring — they skip the
+ *   pass and just get the delivery transforms.
  */
 export function resolveImage(
   value: string | null | undefined,
@@ -41,7 +45,9 @@ export function resolveImage(
   // order. The render restoration must run as its own components ahead of the
   // delivery/sizing pass.
   const components: string[] = [];
-  if (options?.enhance === "render") components.push("e_gen_restore", "e_upscale");
+  if (options?.enhance === "render") {
+    components.push("if_w_lt_2000_and_h_lt_2000", "e_gen_restore", "e_upscale", "if_end");
+  }
 
   const delivery = ["f_auto", "q_auto:good"];
   if (options?.enhance === true || options?.enhance === "improve") delivery.push("e_improve");

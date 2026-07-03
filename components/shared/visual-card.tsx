@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { FadeInImage } from "@/components/motion/fade-in-image";
 import { resolveImage } from "@/lib/images";
 import { cn } from "@/lib/utils";
 
@@ -44,7 +44,7 @@ export function VisualCard({
           ratio === "square" && "aspect-square",
         )}
       >
-        <Image
+        <FadeInImage
           src={resolveImage(image, { width: 1200, enhance: "render" })}
           alt={title}
           fill

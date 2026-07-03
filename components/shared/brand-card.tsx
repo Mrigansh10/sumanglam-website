@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { FadeInImage } from "@/components/motion/fade-in-image";
 import { resolveImage } from "@/lib/images";
 
 type BrandCardProps = {
@@ -28,7 +28,7 @@ export function BrandCard({
       className="group flex flex-col border border-line bg-surface transition-[transform,border-color,box-shadow] duration-500 ease-out will-change-transform hover:-translate-y-1 hover:border-accent-soft hover:shadow-[0_18px_40px_-24px_rgba(34,29,23,0.35)]"
     >
       <div className="relative aspect-[16/9] overflow-hidden bg-sand">
-        <Image
+        <FadeInImage
           src={resolveImage(heroImage, { width: 800, enhance: "render" })}
           alt={name}
           fill
