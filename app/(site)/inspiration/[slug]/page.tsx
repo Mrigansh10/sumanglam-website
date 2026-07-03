@@ -9,6 +9,8 @@ import { PageHero } from "@/components/shared/page-hero";
 import { VisualCard } from "@/components/shared/visual-card";
 import { ProductCard } from "@/components/shared/product-card";
 import { PageViewTracker } from "@/components/shared/page-view-tracker";
+import { Reveal } from "@/components/motion/reveal";
+import { Stagger } from "@/components/motion/stagger";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { WhatsAppButton } from "@/features/whatsapp/whatsapp-button";
@@ -67,20 +69,22 @@ export default async function InspirationDetailPage({ params }: { params: Params
 
       <Section spacing="compact">
         <Container>
-          <div className="flex flex-wrap items-center gap-2">
-            {collections.map((collection) => (
-              <Link key={collection.id} href={`/collections/${collection.slug}`}>
-                <Badge variant="outline" className="hover:border-accent">
-                  {collection.title}
-                </Badge>
-              </Link>
-            ))}
-          </div>
-          {inspiration.longDescription ? (
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
-              {inspiration.longDescription}
-            </p>
-          ) : null}
+          <Reveal>
+            <div className="flex flex-wrap items-center gap-2">
+              {collections.map((collection) => (
+                <Link key={collection.id} href={`/collections/${collection.slug}`}>
+                  <Badge variant="outline" className="hover:border-accent">
+                    {collection.title}
+                  </Badge>
+                </Link>
+              ))}
+            </div>
+            {inspiration.longDescription ? (
+              <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
+                {inspiration.longDescription}
+              </p>
+            ) : null}
+          </Reveal>
         </Container>
       </Section>
 
@@ -88,7 +92,7 @@ export default async function InspirationDetailPage({ params }: { params: Params
       {inspiration.galleryImages.length > 1 ? (
         <Section spacing="compact">
           <Container size="wide">
-            <div className="grid gap-4 sm:grid-cols-2">
+            <Stagger className="grid gap-4 sm:grid-cols-2">
               {inspiration.galleryImages.slice(1).map((image, index) => (
                 <div key={index} className="relative aspect-[3/2] overflow-hidden bg-sand">
                   <Image
@@ -100,7 +104,7 @@ export default async function InspirationDetailPage({ params }: { params: Params
                   />
                 </div>
               ))}
-            </div>
+            </Stagger>
           </Container>
         </Section>
       ) : null}
@@ -109,12 +113,14 @@ export default async function InspirationDetailPage({ params }: { params: Params
       {products.length > 0 ? (
         <Section tone="clay">
           <Container size="wide">
-            <Heading
-              eyebrow="The Details"
-              title="Products in this space"
-              description="The hardware and appliances that make this design work."
-            />
-            <div className="mt-10 grid grid-cols-2 gap-x-5 gap-y-10 lg:grid-cols-4">
+            <Reveal>
+              <Heading
+                eyebrow="The Details"
+                title="Products in this space"
+                description="The hardware and appliances that make this design work."
+              />
+            </Reveal>
+            <Stagger className="mt-10 grid grid-cols-2 gap-x-5 gap-y-10 lg:grid-cols-4" each={0.06}>
               {products.map((product) => (
                 <ProductCard
                   key={product.id}
@@ -126,7 +132,7 @@ export default async function InspirationDetailPage({ params }: { params: Params
                   availabilityStatus={product.availabilityStatus}
                 />
               ))}
-            </div>
+            </Stagger>
           </Container>
         </Section>
       ) : null}
@@ -135,8 +141,10 @@ export default async function InspirationDetailPage({ params }: { params: Params
       {brands.length > 0 ? (
         <Section spacing="compact">
           <Container size="wide">
-            <Heading eyebrow="Behind the Design" title="Brands in this space" />
-            <div className="mt-8 flex flex-wrap gap-3">
+            <Reveal>
+              <Heading eyebrow="Behind the Design" title="Brands in this space" />
+            </Reveal>
+            <Stagger className="mt-8 flex flex-wrap gap-3" y={16} each={0.05}>
               {brands.map((brand) => (
                 <Link
                   key={brand.id}
@@ -152,7 +160,7 @@ export default async function InspirationDetailPage({ params }: { params: Params
                   {brand.name}
                 </Link>
               ))}
-            </div>
+            </Stagger>
           </Container>
         </Section>
       ) : null}
@@ -161,8 +169,10 @@ export default async function InspirationDetailPage({ params }: { params: Params
       {relatedInspirations.length > 0 ? (
         <Section>
           <Container size="wide">
-            <Heading eyebrow="Keep Exploring" title="Related inspirations" />
-            <div className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+            <Reveal>
+              <Heading eyebrow="Keep Exploring" title="Related inspirations" />
+            </Reveal>
+            <Stagger className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
               {relatedInspirations.map((related) => (
                 <VisualCard
                   key={related.id}
@@ -173,7 +183,7 @@ export default async function InspirationDetailPage({ params }: { params: Params
                   description={related.shortDescription}
                 />
               ))}
-            </div>
+            </Stagger>
           </Container>
         </Section>
       ) : null}

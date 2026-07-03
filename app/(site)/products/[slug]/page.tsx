@@ -8,6 +8,9 @@ import { Heading } from "@/components/layout/heading";
 import { VisualCard } from "@/components/shared/visual-card";
 import { ProductCard } from "@/components/shared/product-card";
 import { PageViewTracker } from "@/components/shared/page-view-tracker";
+import { Reveal } from "@/components/motion/reveal";
+import { Stagger } from "@/components/motion/stagger";
+import { SplitHeadline } from "@/components/motion/split-headline";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { WhatsAppButton } from "@/features/whatsapp/whatsapp-button";
@@ -55,9 +58,9 @@ export default async function ProductDetailPage({ params }: { params: Params }) 
     <>
       <PageViewTracker event="product_viewed" sourceType="product" sourceId={product.slug} />
 
-      <Section spacing="compact" className="pt-10">
+      <Section spacing="compact" className="pt-28 sm:pt-32">
         <Container size="wide">
-          <nav aria-label="Breadcrumb" className="text-xs text-ink-faint">
+          <nav aria-label="Breadcrumb" className="text-xs text-ink-faint animate-fade-up">
             <Link href="/hardware-appliances" className="hover:text-ink">
               Hardware & Appliances
             </Link>
@@ -78,7 +81,7 @@ export default async function ProductDetailPage({ params }: { params: Params }) 
 
           <div className="mt-8 grid gap-10 lg:grid-cols-2">
             {/* Gallery */}
-            <div className="space-y-4">
+            <div className="space-y-4 animate-fade-up [animation-delay:80ms]">
               <div className="relative aspect-square overflow-hidden bg-sand">
                 <Image
                   src={resolveImage(product.primaryImage, { width: 1200 })}
@@ -110,18 +113,23 @@ export default async function ProductDetailPage({ params }: { params: Params }) 
             <div>
               <Link
                 href={`/brands/${brand.slug}`}
-                className="text-xs font-medium uppercase tracking-luxe text-accent-deep hover:underline"
+                className="inline-block text-xs font-medium uppercase tracking-luxe text-accent-deep hover:underline animate-fade-up"
               >
                 {brand.name}
               </Link>
-              <h1 className="mt-2 font-display text-3xl font-medium tracking-tight sm:text-4xl">
+              <SplitHeadline
+                delay={0.1}
+                className="mt-2 font-display text-3xl font-medium tracking-tight sm:text-4xl"
+              >
                 {product.name}
-              </h1>
+              </SplitHeadline>
               {product.sku ? (
-                <p className="mt-1 text-xs text-ink-faint">SKU: {product.sku}</p>
+                <p className="mt-1 text-xs text-ink-faint animate-fade-up [animation-delay:160ms]">
+                  SKU: {product.sku}
+                </p>
               ) : null}
 
-              <div className="mt-4 flex flex-wrap items-center gap-2">
+              <div className="mt-4 flex flex-wrap items-center gap-2 animate-fade-up [animation-delay:220ms]">
                 {availability ? (
                   <Badge variant={availability.variant}>{availability.label}</Badge>
                 ) : null}
@@ -138,7 +146,7 @@ export default async function ProductDetailPage({ params }: { params: Params }) 
               </div>
 
               {product.priceRange ? (
-                <p className="mt-6 font-display text-xl text-ink">
+                <p className="mt-6 font-display text-xl text-ink animate-fade-up [animation-delay:300ms]">
                   {product.priceRange}
                   <span className="ml-2 align-middle text-xs font-sans text-ink-faint">
                     indicative range — confirmed during consultation
@@ -147,12 +155,12 @@ export default async function ProductDetailPage({ params }: { params: Params }) 
               ) : null}
 
               {product.shortDescription ? (
-                <p className="mt-5 text-base leading-relaxed text-ink-soft">
+                <p className="mt-5 text-base leading-relaxed text-ink-soft animate-fade-up [animation-delay:380ms]">
                   {product.shortDescription}
                 </p>
               ) : null}
 
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row animate-fade-up [animation-delay:460ms]">
                 <WhatsAppButton
                   sourceType="product"
                   sourceId={product.slug}
@@ -168,7 +176,7 @@ export default async function ProductDetailPage({ params }: { params: Params }) 
 
               {/* Technical specifications */}
               {specs.length > 0 ? (
-                <div className="mt-10">
+                <div className="mt-10 animate-fade-up [animation-delay:540ms]">
                   <h2 className="text-xs font-medium uppercase tracking-luxe text-ink-faint">
                     Technical Specifications
                   </h2>
@@ -191,12 +199,14 @@ export default async function ProductDetailPage({ params }: { params: Params }) 
       {inspirations.length > 0 ? (
         <Section tone="clay">
           <Container size="wide">
-            <Heading
-              eyebrow="In Context"
-              title="Spaces using this product"
-              description="See how this detail behaves in a finished design."
-            />
-            <div className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+            <Reveal>
+              <Heading
+                eyebrow="In Context"
+                title="Spaces using this product"
+                description="See how this detail behaves in a finished design."
+              />
+            </Reveal>
+            <Stagger className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
               {inspirations.map((inspiration) => (
                 <VisualCard
                   key={inspiration.id}
@@ -207,7 +217,7 @@ export default async function ProductDetailPage({ params }: { params: Params }) 
                   description={inspiration.shortDescription}
                 />
               ))}
-            </div>
+            </Stagger>
           </Container>
         </Section>
       ) : null}
@@ -216,8 +226,10 @@ export default async function ProductDetailPage({ params }: { params: Params }) 
       {relatedProducts.length > 0 ? (
         <Section>
           <Container size="wide">
-            <Heading eyebrow="Compare" title="Related products" />
-            <div className="mt-10 grid grid-cols-2 gap-x-5 gap-y-10 lg:grid-cols-4">
+            <Reveal>
+              <Heading eyebrow="Compare" title="Related products" />
+            </Reveal>
+            <Stagger className="mt-10 grid grid-cols-2 gap-x-5 gap-y-10 lg:grid-cols-4" each={0.06}>
               {relatedProducts.map((related) => (
                 <ProductCard
                   key={related.id}
@@ -229,7 +241,7 @@ export default async function ProductDetailPage({ params }: { params: Params }) 
                   availabilityStatus={related.availabilityStatus}
                 />
               ))}
-            </div>
+            </Stagger>
           </Container>
         </Section>
       ) : null}
