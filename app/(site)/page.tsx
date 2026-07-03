@@ -6,6 +6,8 @@ import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/layout/heading";
 import { Reveal } from "@/components/motion/reveal";
+import { Stagger } from "@/components/motion/stagger";
+import { SplitHeadline } from "@/components/motion/split-headline";
 import { Parallax } from "@/components/motion/parallax";
 import { VisualCard } from "@/components/shared/visual-card";
 import { BrandCard } from "@/components/shared/brand-card";
@@ -89,9 +91,12 @@ export default async function HomePage() {
           <p className="mb-4 text-xs font-medium uppercase tracking-luxe text-accent-soft animate-fade-up">
             Premium Kitchens · Wardrobes · Hardware · Appliances
           </p>
-          <h1 className="max-w-3xl font-display text-5xl font-medium leading-[1.05] tracking-tight text-balance sm:text-6xl lg:text-7xl animate-fade-up [animation-delay:120ms]">
+          <SplitHeadline
+            delay={0.15}
+            className="max-w-3xl font-display text-5xl font-medium leading-[1.05] tracking-tight text-balance sm:text-6xl lg:text-7xl"
+          >
             Designed around your home.
-          </h1>
+          </SplitHeadline>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-background/80 sm:text-lg animate-fade-up [animation-delay:240ms]">
             A showroom where kitchens, wardrobes, and the details that hold them
             together are chosen the way they should be — in person, unhurried,
@@ -118,41 +123,35 @@ export default async function HomePage() {
               description="Start with the spaces you live in, or the details that complete them."
             />
           </Reveal>
-          <div className="mt-10 grid gap-8 md:grid-cols-3">
-            <Reveal>
-              <VisualCard
-                href="/kitchens"
-                image={IMAGES.kitchens}
-                eyebrow="Nolte · Mrida · Bosch · Siemens"
-                title="Kitchens & Appliances"
-                description="Complete kitchen systems from Nolte and Mrida, paired with built-in appliances from Bosch, Siemens, Blaupunkt, and Liebherr."
-                emphasis
-                imageSizes="(min-width: 768px) 33vw, 100vw"
-              />
-            </Reveal>
-            <Reveal delay={0.08}>
-              <VisualCard
-                href="/wardrobes"
-                image={IMAGES.wardrobes}
-                eyebrow="Mrida · Modular · Walk-in"
-                title="Wardrobes"
-                description="Sliding doors, walk-in configurations, and modular storage systems — designed for your space and seen full-scale in our showroom."
-                emphasis
-                imageSizes="(min-width: 768px) 33vw, 100vw"
-              />
-            </Reveal>
-            <Reveal delay={0.16}>
-              <VisualCard
-                href="/hardware-appliances"
-                image={IMAGES.hardware}
-                eyebrow="Hettich · Blum · Häfele · Yale"
-                title="Hardware"
-                description="Hinges, handles, channels, locks, and fittings from Hettich, Blum, Häfele, Yale, Godrej, Dorset, and more — available independently."
-                emphasis
-                imageSizes="(min-width: 768px) 33vw, 100vw"
-              />
-            </Reveal>
-          </div>
+          <Stagger className="mt-10 grid gap-8 md:grid-cols-3">
+            <VisualCard
+              href="/kitchens"
+              image={IMAGES.kitchens}
+              eyebrow="Nolte · Mrida · Bosch · Siemens"
+              title="Kitchens & Appliances"
+              description="Complete kitchen systems from Nolte and Mrida, paired with built-in appliances from Bosch, Siemens, Blaupunkt, and Liebherr."
+              emphasis
+              imageSizes="(min-width: 768px) 33vw, 100vw"
+            />
+            <VisualCard
+              href="/wardrobes"
+              image={IMAGES.wardrobes}
+              eyebrow="Mrida · Modular · Walk-in"
+              title="Wardrobes"
+              description="Sliding doors, walk-in configurations, and modular storage systems — designed for your space and seen full-scale in our showroom."
+              emphasis
+              imageSizes="(min-width: 768px) 33vw, 100vw"
+            />
+            <VisualCard
+              href="/hardware-appliances"
+              image={IMAGES.hardware}
+              eyebrow="Hettich · Blum · Häfele · Yale"
+              title="Hardware"
+              description="Hinges, handles, channels, locks, and fittings from Hettich, Blum, Häfele, Yale, Godrej, Dorset, and more — available independently."
+              emphasis
+              imageSizes="(min-width: 768px) 33vw, 100vw"
+            />
+          </Stagger>
         </Container>
       </Section>
 
@@ -173,19 +172,18 @@ export default async function HomePage() {
                 </Button>
               </div>
             </Reveal>
-            <div className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-              {featuredInspirations.map((inspiration, index) => (
-                <Reveal key={inspiration.id} delay={(index % 3) * 0.08}>
-                  <VisualCard
-                    href={`/inspiration/${inspiration.slug}`}
-                    image={inspiration.primaryImage}
-                    eyebrow={inspiration.space?.title}
-                    title={inspiration.title}
-                    description={inspiration.shortDescription}
-                  />
-                </Reveal>
+            <Stagger className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+              {featuredInspirations.map((inspiration) => (
+                <VisualCard
+                  key={inspiration.id}
+                  href={`/inspiration/${inspiration.slug}`}
+                  image={inspiration.primaryImage}
+                  eyebrow={inspiration.space?.title}
+                  title={inspiration.title}
+                  description={inspiration.shortDescription}
+                />
               ))}
-            </div>
+            </Stagger>
           </Container>
         </Section>
       ) : null}
@@ -207,25 +205,24 @@ export default async function HomePage() {
                 </Button>
               </div>
             </Reveal>
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {featuredBrands.slice(0, 6).map((brand, index) => (
-                <Reveal key={brand.id} delay={(index % 3) * 0.08}>
-                  <BrandCard
-                    href={
-                      brand.slug === "nolte"
-                        ? "/nolte"
-                        : brand.slug === "mrida"
-                          ? "/mrida"
-                          : `/brands/${brand.slug}`
-                    }
-                    name={brand.name}
-                    description={brand.description}
-                    heroImage={brand.heroImage}
-                    brandType={brand.brandType}
-                  />
-                </Reveal>
+            <Stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {featuredBrands.slice(0, 6).map((brand) => (
+                <BrandCard
+                  key={brand.id}
+                  href={
+                    brand.slug === "nolte"
+                      ? "/nolte"
+                      : brand.slug === "mrida"
+                        ? "/mrida"
+                        : `/brands/${brand.slug}`
+                  }
+                  name={brand.name}
+                  description={brand.description}
+                  heroImage={brand.heroImage}
+                  brandType={brand.brandType}
+                />
               ))}
-            </div>
+            </Stagger>
           </Container>
         </Section>
       ) : null}
@@ -240,21 +237,19 @@ export default async function HomePage() {
               tone="light"
             />
           </Reveal>
-          <div className="mt-12 grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+          <Stagger className="mt-12 grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
             {whySumanglam.map((item, index) => (
-              <Reveal key={item.title} delay={(index % 3) * 0.08}>
-                <div className="border-t border-background/20 pt-5">
-                  <p className="font-display text-sm text-accent-soft">
-                    {String(index + 1).padStart(2, "0")}
-                  </p>
-                  <h3 className="mt-2 font-display text-xl">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-background/65">
-                    {item.copy}
-                  </p>
-                </div>
-              </Reveal>
+              <div key={item.title} className="border-t border-background/20 pt-5">
+                <p className="font-display text-sm text-accent-soft">
+                  {String(index + 1).padStart(2, "0")}
+                </p>
+                <h3 className="mt-2 font-display text-xl">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-background/65">
+                  {item.copy}
+                </p>
+              </div>
             ))}
-          </div>
+          </Stagger>
         </Container>
       </Section>
 
@@ -268,13 +263,10 @@ export default async function HomePage() {
               description="From a welcome at reception to full-scale Nolte and Mrida displays — see everything in person before you decide anything."
             />
           </Reveal>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {(showroomHighlights.length > 0
-              ? showroomHighlights
-              : []
-            ).map((section, index) => (
-              <Reveal key={section.id} delay={(index % 4) * 0.08}>
-                <Link href="/showroom" className="group block">
+          <Stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {(showroomHighlights.length > 0 ? showroomHighlights : []).map(
+              (section) => (
+                <Link key={section.id} href="/showroom" className="group block">
                   <div className="relative aspect-[3/4] overflow-hidden bg-sand">
                     <Image
                       src={resolveImage(section.images[0], { width: 800 })}
@@ -291,9 +283,9 @@ export default async function HomePage() {
                     {section.description}
                   </p>
                 </Link>
-              </Reveal>
-            ))}
-          </div>
+              ),
+            )}
+          </Stagger>
           <Reveal>
             <div className="mt-10">
               <Button href="/showroom" variant="outline">

@@ -25,7 +25,7 @@ export function BrandCard({
   return (
     <Link
       href={href}
-      className="group flex flex-col border border-line bg-surface transition-colors hover:border-accent-soft"
+      className="group flex flex-col border border-line bg-surface transition-[transform,border-color,box-shadow] duration-500 ease-out will-change-transform hover:-translate-y-1 hover:border-accent-soft hover:shadow-[0_18px_40px_-24px_rgba(34,29,23,0.35)]"
     >
       <div className="relative aspect-[16/9] overflow-hidden bg-sand">
         <Image
@@ -33,7 +33,11 @@ export function BrandCard({
           alt={name}
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/25 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         />
       </div>
       <div className="flex flex-1 flex-col p-5 sm:p-6">

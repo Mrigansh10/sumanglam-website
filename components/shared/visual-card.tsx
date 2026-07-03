@@ -32,7 +32,10 @@ export function VisualCard({
   imageSizes = "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw",
 }: VisualCardProps) {
   return (
-    <Link href={href} className="group block">
+    <Link
+      href={href}
+      className="group block transition-transform duration-500 ease-out will-change-transform hover:-translate-y-1"
+    >
       <div
         className={cn(
           "relative overflow-hidden bg-sand",
@@ -46,7 +49,11 @@ export function VisualCard({
           alt={title}
           fill
           sizes={imageSizes}
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/30 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         />
       </div>
       <div className={cn("pt-4", emphasis && "pt-5")}>
