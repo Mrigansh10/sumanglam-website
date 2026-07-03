@@ -5,6 +5,7 @@ import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/layout/heading";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
+import { Stagger } from "@/components/motion/stagger";
 import { VisualCard } from "@/components/shared/visual-card";
 import { SolutionBrandPage } from "@/features/brands/solution-brand-page";
 import { getBrandBySlug } from "@/server/brands";
@@ -73,26 +74,22 @@ export default async function MridaPage() {
               </Button>
             </div>
           </Reveal>
-          <div className="mt-10 grid gap-8 md:grid-cols-2">
-            <Reveal>
-              <VisualCard
-                href="/wardrobes"
-                image="/images/placeholders/wardrobe-1.svg"
-                title="Walk-In Wardrobes"
-                description="Dedicated dressing spaces with open hanging, glass drawers, and islands."
-                imageSizes="(min-width: 768px) 50vw, 100vw"
-              />
-            </Reveal>
-            <Reveal delay={0.1}>
-              <VisualCard
-                href="/wardrobes"
-                image="/images/placeholders/wardrobe-2.svg"
-                title="Sliding & Storage Walls"
-                description="Full-height wardrobes that read as architecture, not furniture."
-                imageSizes="(min-width: 768px) 50vw, 100vw"
-              />
-            </Reveal>
-          </div>
+          <Stagger className="mt-10 grid gap-8 md:grid-cols-2">
+            <VisualCard
+              href="/wardrobes"
+              image="/images/placeholders/wardrobe-1.svg"
+              title="Walk-In Wardrobes"
+              description="Dedicated dressing spaces with open hanging, glass drawers, and islands."
+              imageSizes="(min-width: 768px) 50vw, 100vw"
+            />
+            <VisualCard
+              href="/wardrobes"
+              image="/images/placeholders/wardrobe-2.svg"
+              title="Sliding & Storage Walls"
+              description="Full-height wardrobes that read as architecture, not furniture."
+              imageSizes="(min-width: 768px) 50vw, 100vw"
+            />
+          </Stagger>
         </Container>
       </Section>
     </SolutionBrandPage>

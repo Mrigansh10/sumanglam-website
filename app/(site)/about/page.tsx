@@ -6,6 +6,7 @@ import { Heading } from "@/components/layout/heading";
 import { PageHero } from "@/components/shared/page-hero";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
+import { Stagger } from "@/components/motion/stagger";
 import { resolveImage } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -73,18 +74,16 @@ export default function AboutPage() {
           <Reveal>
             <Heading eyebrow="What We Believe" title="The values behind the showroom" />
           </Reveal>
-          <div className="mt-10 grid gap-x-12 gap-y-10 sm:grid-cols-2">
-            {values.map((value, index) => (
-              <Reveal key={value.title} delay={(index % 2) * 0.08}>
-                <div className="border-t border-ink/15 pt-5">
-                  <h3 className="font-display text-xl text-ink">{value.title}</h3>
-                  <p className="mt-2 max-w-md text-sm leading-relaxed text-ink-soft">
-                    {value.copy}
-                  </p>
-                </div>
-              </Reveal>
+          <Stagger className="mt-10 grid gap-x-12 gap-y-10 sm:grid-cols-2">
+            {values.map((value) => (
+              <div key={value.title} className="border-t border-ink/15 pt-5">
+                <h3 className="font-display text-xl text-ink">{value.title}</h3>
+                <p className="mt-2 max-w-md text-sm leading-relaxed text-ink-soft">
+                  {value.copy}
+                </p>
+              </div>
             ))}
-          </div>
+          </Stagger>
         </Container>
       </Section>
 

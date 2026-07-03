@@ -5,6 +5,7 @@ import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/layout/heading";
 import { PageHero } from "@/components/shared/page-hero";
 import { VisualCard } from "@/components/shared/visual-card";
+import { Stagger } from "@/components/motion/stagger";
 import { EmptyState } from "@/components/shared/empty-state";
 import { PageViewTracker } from "@/components/shared/page-view-tracker";
 import { Button } from "@/components/ui/button";
@@ -101,7 +102,7 @@ export default async function InspirationPage({
 
           {items.length > 0 ? (
             <>
-              <div className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+              <Stagger className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
                 {items.map((inspiration) => (
                   <VisualCard
                     key={inspiration.id}
@@ -112,7 +113,7 @@ export default async function InspirationPage({
                     description={inspiration.shortDescription}
                   />
                 ))}
-              </div>
+              </Stagger>
               {pagination.totalPages > 1 ? (
                 <div className="mt-12 flex items-center justify-center gap-3">
                   {pagination.page > 1 ? (
@@ -168,7 +169,7 @@ export default async function InspirationPage({
               title="Browse by collection"
               description="Groupings our designers return to again and again."
             />
-            <div className="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+            <Stagger className="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
               {collections.map((collection) => (
                 <VisualCard
                   key={collection.id}
@@ -180,7 +181,7 @@ export default async function InspirationPage({
                   ratio="landscape"
                 />
               ))}
-            </div>
+            </Stagger>
           </Container>
         </Section>
       ) : null}

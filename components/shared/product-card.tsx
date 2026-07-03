@@ -34,14 +34,21 @@ export function ProductCard({
       : null;
 
   return (
-    <Link href={href} className="group block">
+    <Link
+      href={href}
+      className="group block transition-transform duration-500 ease-out will-change-transform hover:-translate-y-1"
+    >
       <div className="relative aspect-square overflow-hidden bg-sand">
         <Image
           src={resolveImage(primaryImage, { width: 800 })}
           alt={name}
           fill
           sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/25 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         />
         {availability ? (
           <div className="absolute left-3 top-3">

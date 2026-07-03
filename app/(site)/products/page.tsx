@@ -4,6 +4,7 @@ import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { PageHero } from "@/components/shared/page-hero";
 import { ProductCard } from "@/components/shared/product-card";
+import { Stagger } from "@/components/motion/stagger";
 import { EmptyState } from "@/components/shared/empty-state";
 import { PageViewTracker } from "@/components/shared/page-view-tracker";
 import { Button } from "@/components/ui/button";
@@ -197,7 +198,7 @@ export default async function ProductsPage({ searchParams }: { searchParams: Sea
                   <p className="text-sm text-ink-soft">
                     {pagination.total} product{pagination.total === 1 ? "" : "s"}
                   </p>
-                  <div className="mt-6 grid grid-cols-2 gap-x-5 gap-y-10 lg:grid-cols-3">
+                  <Stagger className="mt-6 grid grid-cols-2 gap-x-5 gap-y-10 lg:grid-cols-3" each={0.06}>
                     {items.map((product) => (
                       <ProductCard
                         key={product.id}
@@ -209,7 +210,7 @@ export default async function ProductsPage({ searchParams }: { searchParams: Sea
                         availabilityStatus={product.availabilityStatus}
                       />
                     ))}
-                  </div>
+                  </Stagger>
                   {pagination.totalPages > 1 ? (
                     <div className="mt-12 flex items-center justify-center gap-3">
                       {pagination.page > 1 ? (

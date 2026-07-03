@@ -5,6 +5,7 @@ import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/layout/heading";
 import { PageHero } from "@/components/shared/page-hero";
 import { VisualCard } from "@/components/shared/visual-card";
+import { Stagger } from "@/components/motion/stagger";
 import { EmptyState } from "@/components/shared/empty-state";
 import { PageViewTracker } from "@/components/shared/page-view-tracker";
 import { getCollectionBySlug } from "@/server/collections";
@@ -48,7 +49,7 @@ export default async function CollectionPage({ params }: { params: Params }) {
       <Section>
         <Container size="wide">
           {inspirations.length > 0 ? (
-            <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+            <Stagger className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
               {inspirations.map((inspiration) => (
                 <VisualCard
                   key={inspiration.id}
@@ -59,7 +60,7 @@ export default async function CollectionPage({ params }: { params: Params }) {
                   description={inspiration.shortDescription}
                 />
               ))}
-            </div>
+            </Stagger>
           ) : (
             <EmptyState
               title="This collection is being curated"
@@ -74,7 +75,7 @@ export default async function CollectionPage({ params }: { params: Params }) {
         <Section tone="clay" spacing="compact">
           <Container size="wide">
             <Heading eyebrow="More to Explore" title="Related collections" />
-            <div className="mt-8 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+            <Stagger className="mt-8 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
               {relatedCollections.map((related) => (
                 <VisualCard
                   key={related.id}
@@ -84,7 +85,7 @@ export default async function CollectionPage({ params }: { params: Params }) {
                   description={related.shortDescription}
                 />
               ))}
-            </div>
+            </Stagger>
           </Container>
         </Section>
       ) : null}

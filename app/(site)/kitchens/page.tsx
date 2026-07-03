@@ -10,6 +10,7 @@ import { VisualCard } from "@/components/shared/visual-card";
 import { PageViewTracker } from "@/components/shared/page-view-tracker";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
+import { Stagger } from "@/components/motion/stagger";
 import { WhatsAppButton } from "@/features/whatsapp/whatsapp-button";
 import { getSpaceBySlug } from "@/server/spaces";
 import { getBrandBySlug } from "@/server/brands";
@@ -174,18 +175,17 @@ export default async function KitchensPage() {
                 description="Complete kitchen concepts from our studio and showroom floors."
               />
             </Reveal>
-            <div className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-              {inspirations.slice(0, 6).map((inspiration, index) => (
-                <Reveal key={inspiration.id} delay={(index % 3) * 0.08}>
-                  <VisualCard
-                    href={`/inspiration/${inspiration.slug}`}
-                    image={inspiration.primaryImage}
-                    title={inspiration.title}
-                    description={inspiration.shortDescription}
-                  />
-                </Reveal>
+            <Stagger className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+              {inspirations.slice(0, 6).map((inspiration) => (
+                <VisualCard
+                  key={inspiration.id}
+                  href={`/inspiration/${inspiration.slug}`}
+                  image={inspiration.primaryImage}
+                  title={inspiration.title}
+                  description={inspiration.shortDescription}
+                />
               ))}
-            </div>
+            </Stagger>
             <div className="mt-10">
               <Button href="/inspiration?space=kitchen" variant="outline">
                 All Kitchen Inspirations

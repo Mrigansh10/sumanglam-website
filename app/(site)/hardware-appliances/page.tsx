@@ -9,6 +9,7 @@ import { ProductCard } from "@/components/shared/product-card";
 import { PageViewTracker } from "@/components/shared/page-view-tracker";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
+import { Stagger } from "@/components/motion/stagger";
 import { WhatsAppButton } from "@/features/whatsapp/whatsapp-button";
 import { getProductTaxonomy, listProducts } from "@/server/products";
 import { safeQuery } from "@/server/safe";
@@ -58,7 +59,7 @@ export default async function HardwareAppliancesPage() {
                 description="From soft-close hinges to digital locks — hardware from Häfele, Hettich, Blum, Godrej, Yale, and more."
               />
             </Reveal>
-            <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            <Stagger className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4" y={16} each={0.05}>
               {hardware.categories.map((category) => (
                 <Link
                   key={category.id}
@@ -74,7 +75,7 @@ export default async function HardwareAppliancesPage() {
                   />
                 </Link>
               ))}
-            </div>
+            </Stagger>
           </Container>
         </Section>
       ) : null}
@@ -92,7 +93,7 @@ export default async function HardwareAppliancesPage() {
                 </Button>
               </div>
             </Reveal>
-            <div className="mt-10 grid grid-cols-2 gap-x-5 gap-y-10 lg:grid-cols-4">
+            <Stagger className="mt-10 grid grid-cols-2 gap-x-5 gap-y-10 lg:grid-cols-4" each={0.06}>
               {featured.items.map((product) => (
                 <ProductCard
                   key={product.id}
@@ -104,7 +105,7 @@ export default async function HardwareAppliancesPage() {
                   availabilityStatus={product.availabilityStatus}
                 />
               ))}
-            </div>
+            </Stagger>
           </Container>
         </Section>
       ) : null}

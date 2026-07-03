@@ -7,6 +7,7 @@ import { BrandCard } from "@/components/shared/brand-card";
 import { PageViewTracker } from "@/components/shared/page-view-tracker";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
+import { Stagger } from "@/components/motion/stagger";
 import { WhatsAppButton } from "@/features/whatsapp/whatsapp-button";
 import { getBrands } from "@/server/brands";
 import { safeQuery } from "@/server/safe";
@@ -69,18 +70,16 @@ export default async function ArchitectsDesignersPage() {
               title="What working with us looks like"
             />
           </Reveal>
-          <div className="mt-10 grid gap-x-12 gap-y-10 sm:grid-cols-2">
-            {supports.map((item, index) => (
-              <Reveal key={item.title} delay={(index % 2) * 0.08}>
-                <div className="border-t border-line pt-5">
-                  <h3 className="font-display text-xl text-ink">{item.title}</h3>
-                  <p className="mt-2 max-w-md text-sm leading-relaxed text-ink-soft">
-                    {item.copy}
-                  </p>
-                </div>
-              </Reveal>
+          <Stagger className="mt-10 grid gap-x-12 gap-y-10 sm:grid-cols-2">
+            {supports.map((item) => (
+              <div key={item.title} className="border-t border-line pt-5">
+                <h3 className="font-display text-xl text-ink">{item.title}</h3>
+                <p className="mt-2 max-w-md text-sm leading-relaxed text-ink-soft">
+                  {item.copy}
+                </p>
+              </div>
             ))}
-          </div>
+          </Stagger>
         </Container>
       </Section>
 
@@ -93,19 +92,18 @@ export default async function ArchitectsDesignersPage() {
                 title="Brands you can specify with confidence"
               />
             </Reveal>
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {productBrands.slice(0, 6).map((brand, index) => (
-                <Reveal key={brand.id} delay={(index % 3) * 0.08}>
-                  <BrandCard
-                    href={`/brands/${brand.slug}`}
-                    name={brand.name}
-                    description={brand.description}
-                    heroImage={brand.heroImage}
-                    parentBrandName={brand.parentBrand?.name}
-                  />
-                </Reveal>
+            <Stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {productBrands.slice(0, 6).map((brand) => (
+                <BrandCard
+                  key={brand.id}
+                  href={`/brands/${brand.slug}`}
+                  name={brand.name}
+                  description={brand.description}
+                  heroImage={brand.heroImage}
+                  parentBrandName={brand.parentBrand?.name}
+                />
               ))}
-            </div>
+            </Stagger>
             <div className="mt-10">
               <Button href="/brands" variant="outline">
                 Explore All Brands

@@ -9,6 +9,7 @@ import { PageHero } from "@/components/shared/page-hero";
 import { PageViewTracker } from "@/components/shared/page-view-tracker";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
+import { Stagger } from "@/components/motion/stagger";
 import { WhatsAppButton } from "@/features/whatsapp/whatsapp-button";
 import { getShowroomSections } from "@/server/showroom";
 import { safeQuery } from "@/server/safe";
@@ -112,19 +113,17 @@ export default async function ShowroomPage() {
               title="No pressure, just a plan"
             />
           </Reveal>
-          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <Stagger className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {consultationProcess.map((item, index) => (
-              <Reveal key={item.step} delay={index * 0.08}>
-                <div className="border-t border-ink/15 pt-5">
-                  <p className="font-display text-sm text-accent-deep">
-                    {String(index + 1).padStart(2, "0")}
-                  </p>
-                  <h3 className="mt-2 font-display text-lg text-ink">{item.step}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-soft">{item.copy}</p>
-                </div>
-              </Reveal>
+              <div key={item.step} className="border-t border-ink/15 pt-5">
+                <p className="font-display text-sm text-accent-deep">
+                  {String(index + 1).padStart(2, "0")}
+                </p>
+                <h3 className="mt-2 font-display text-lg text-ink">{item.step}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-soft">{item.copy}</p>
+              </div>
             ))}
-          </div>
+          </Stagger>
         </Container>
       </Section>
 

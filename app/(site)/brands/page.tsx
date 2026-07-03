@@ -7,6 +7,7 @@ import { BrandCard } from "@/components/shared/brand-card";
 import { EmptyState } from "@/components/shared/empty-state";
 import { PageViewTracker } from "@/components/shared/page-view-tracker";
 import { Reveal } from "@/components/motion/reveal";
+import { Stagger } from "@/components/motion/stagger";
 import { getBrands } from "@/server/brands";
 import { safeQuery } from "@/server/safe";
 
@@ -44,19 +45,18 @@ export default async function BrandsPage() {
             />
           </Reveal>
           {solutionBrands.length > 0 ? (
-            <div className="mt-10 grid gap-8 md:grid-cols-2">
-              {solutionBrands.map((brand, index) => (
-                <Reveal key={brand.id} delay={index * 0.08}>
-                  <BrandCard
-                    href={brand.slug === "nolte" ? "/nolte" : brand.slug === "mrida" ? "/mrida" : `/brands/${brand.slug}`}
-                    name={brand.name}
-                    description={brand.description}
-                    heroImage={brand.heroImage}
-                    brandType="SOLUTION"
-                  />
-                </Reveal>
+            <Stagger className="mt-10 grid gap-8 md:grid-cols-2">
+              {solutionBrands.map((brand) => (
+                <BrandCard
+                  key={brand.id}
+                  href={brand.slug === "nolte" ? "/nolte" : brand.slug === "mrida" ? "/mrida" : `/brands/${brand.slug}`}
+                  name={brand.name}
+                  description={brand.description}
+                  heroImage={brand.heroImage}
+                  brandType="SOLUTION"
+                />
               ))}
-            </div>
+            </Stagger>
           ) : (
             <div className="mt-10">
               <EmptyState title="Solution brands coming soon" />
@@ -80,19 +80,18 @@ export default async function BrandsPage() {
                 />
               </Reveal>
               {applianceBrands.length > 0 ? (
-                <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                  {applianceBrands.map((brand, index) => (
-                    <Reveal key={brand.id} delay={(index % 3) * 0.08}>
-                      <BrandCard
-                        href={`/brands/${brand.slug}`}
-                        name={brand.name}
-                        description={brand.description}
-                        heroImage={brand.heroImage}
-                        parentBrandName={brand.parentBrand?.name}
-                      />
-                    </Reveal>
+                <Stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {applianceBrands.map((brand) => (
+                    <BrandCard
+                      key={brand.id}
+                      href={`/brands/${brand.slug}`}
+                      name={brand.name}
+                      description={brand.description}
+                      heroImage={brand.heroImage}
+                      parentBrandName={brand.parentBrand?.name}
+                    />
                   ))}
-                </div>
+                </Stagger>
               ) : (
                 <div className="mt-10">
                   <EmptyState title="Appliance brands coming soon" />
@@ -118,19 +117,18 @@ export default async function BrandsPage() {
                 />
               </Reveal>
               {hardwareBrands.length > 0 ? (
-                <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                  {hardwareBrands.map((brand, index) => (
-                    <Reveal key={brand.id} delay={(index % 3) * 0.08}>
-                      <BrandCard
-                        href={`/brands/${brand.slug}`}
-                        name={brand.name}
-                        description={brand.description}
-                        heroImage={brand.heroImage}
-                        parentBrandName={brand.parentBrand?.name}
-                      />
-                    </Reveal>
+                <Stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {hardwareBrands.map((brand) => (
+                    <BrandCard
+                      key={brand.id}
+                      href={`/brands/${brand.slug}`}
+                      name={brand.name}
+                      description={brand.description}
+                      heroImage={brand.heroImage}
+                      parentBrandName={brand.parentBrand?.name}
+                    />
                   ))}
-                </div>
+                </Stagger>
               ) : (
                 <div className="mt-10">
                   <EmptyState title="Hardware brands coming soon" />

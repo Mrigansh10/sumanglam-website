@@ -8,6 +8,7 @@ import { VisualCard } from "@/components/shared/visual-card";
 import { PageViewTracker } from "@/components/shared/page-view-tracker";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
+import { Stagger } from "@/components/motion/stagger";
 import { WhatsAppButton } from "@/features/whatsapp/whatsapp-button";
 import { getSpaceBySlug } from "@/server/spaces";
 import { getBrandBySlug } from "@/server/brands";
@@ -124,20 +125,19 @@ export default async function WardrobesPage() {
               description="From dedicated walk-in suites to space-saving sliding systems — every configuration is built to Mrida's standard."
             />
           </Reveal>
-          <div className="mt-10 grid gap-8 md:grid-cols-3">
-            {wardrobeTypes.map((type, index) => (
-              <Reveal key={type.title} delay={index * 0.08}>
-                <VisualCard
-                  href="/book-consultation"
-                  image={type.image}
-                  eyebrow={type.eyebrow}
-                  title={type.title}
-                  description={type.description}
-                  imageSizes="(min-width: 768px) 33vw, 100vw"
-                />
-              </Reveal>
+          <Stagger className="mt-10 grid gap-8 md:grid-cols-3">
+            {wardrobeTypes.map((type) => (
+              <VisualCard
+                key={type.title}
+                href="/book-consultation"
+                image={type.image}
+                eyebrow={type.eyebrow}
+                title={type.title}
+                description={type.description}
+                imageSizes="(min-width: 768px) 33vw, 100vw"
+              />
             ))}
-          </div>
+          </Stagger>
         </Container>
       </Section>
 
@@ -152,18 +152,17 @@ export default async function WardrobesPage() {
                 description="Walk-ins, sliding systems, and storage walls from the Mrida studio."
               />
             </Reveal>
-            <div className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-              {inspirations.slice(0, 6).map((inspiration, index) => (
-                <Reveal key={inspiration.id} delay={(index % 3) * 0.08}>
-                  <VisualCard
-                    href={`/inspiration/${inspiration.slug}`}
-                    image={inspiration.primaryImage}
-                    title={inspiration.title}
-                    description={inspiration.shortDescription}
-                  />
-                </Reveal>
+            <Stagger className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+              {inspirations.slice(0, 6).map((inspiration) => (
+                <VisualCard
+                  key={inspiration.id}
+                  href={`/inspiration/${inspiration.slug}`}
+                  image={inspiration.primaryImage}
+                  title={inspiration.title}
+                  description={inspiration.shortDescription}
+                />
               ))}
-            </div>
+            </Stagger>
             <div className="mt-10">
               <Button href="/inspiration?space=wardrobe" variant="outline">
                 All Wardrobe Inspirations
