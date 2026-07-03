@@ -1,4 +1,5 @@
 import * as React from "react";
+import { DrawRule } from "@/components/motion/draw-rule";
 import { cn } from "@/lib/utils";
 
 type HeadingProps = {
@@ -32,10 +33,12 @@ export function Heading({
       {eyebrow ? (
         <p
           className={cn(
-            "mb-3 text-xs font-medium uppercase tracking-luxe",
+            "mb-3 flex items-center gap-3 text-xs font-medium uppercase tracking-luxe",
+            align === "center" && "justify-center",
             tone === "light" ? "text-accent-soft" : "text-accent-deep",
           )}
         >
+          <DrawRule className={tone === "light" ? "bg-accent-soft" : "bg-accent"} />
           {eyebrow}
         </p>
       ) : null}

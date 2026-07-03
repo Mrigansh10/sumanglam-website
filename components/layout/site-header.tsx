@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site";
 import { resolveImage } from "@/lib/images";
@@ -300,6 +300,7 @@ export function SiteHeader({ brands = [] }: { brands?: HeaderBrand[] }) {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
   const overHeaderRef = useRef(false);
@@ -317,6 +318,7 @@ export function SiteHeader({ brands = [] }: { brands?: HeaderBrand[] }) {
     function onScroll() {
       const currentY = window.scrollY;
       const delta = currentY - lastScrollY.current;
+      setScrolled(currentY > 24);
       if (currentY < OFFSET) {
         setHidden(false);
       } else if (delta > TOLERANCE) {
@@ -380,7 +382,12 @@ export function SiteHeader({ brands = [] }: { brands?: HeaderBrand[] }) {
           onMouseEnter={() => { overHeaderRef.current = true; cancelClose(); }}
           onMouseLeave={() => { overHeaderRef.current = false; scheduleClose(); }}
         >
-          <div className="flex h-16 items-center justify-between gap-6 px-6 sm:px-8">
+          <div
+            className={cn(
+              "flex items-center justify-between gap-6 px-6 transition-[height] duration-300 ease-out sm:px-8",
+              scrolled ? "h-14" : "h-16",
+            )}
+          >
             {/* Logo */}
             <Link
               href="/"
@@ -442,19 +449,25 @@ export function SiteHeader({ brands = [] }: { brands?: HeaderBrand[] }) {
         </header>
 
         {/* ── Mega-menu panel ── */}
-        {activePanel && (
-          <div
-            className="absolute inset-x-0 top-full pt-2"
-            onMouseEnter={() => { overPanelRef.current = true; cancelClose(); }}
-            onMouseLeave={() => { overPanelRef.current = false; scheduleClose(); }}
-          >
-            <div className="rounded-[2rem] border border-white/30 bg-gradient-to-b from-white/70 to-background/96 shadow-[inset_0_1.5px_0_rgba(255,255,255,0.9),0_24px_64px_rgba(0,0,0,0.18)] backdrop-blur-[32px]">
-              {activePanel.kind === "columns" && <ColumnsPanel panel={activePanel} />}
-              {activePanel.kind === "split" && <SplitPanel panel={activePanel} brands={brands} />}
-              {activePanel.kind === "brands" && <BrandsPanel brands={brands} />}
-            </div>
-          </div>
-        )}
+        <AnimatePresence>
+          {activePanel && (
+            <motion.div
+              className="absolute inset-x-0 top-full pt-2"
+              initial={{ opacity: 0, y: -8, scale: 0.99 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -6, scale: 0.99 }}
+              transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+              onMouseEnter={() => { overPanelRef.current = true; cancelClose(); }}
+              onMouseLeave={() => { overPanelRef.current = false; scheduleClose(); }}
+            >
+              <div className="rounded-[2rem] border border-white/30 bg-gradient-to-b from-white/70 to-background/96 shadow-[inset_0_1.5px_0_rgba(255,255,255,0.9),0_24px_64px_rgba(0,0,0,0.18)] backdrop-blur-[32px]">
+                {activePanel.kind === "columns" && <ColumnsPanel panel={activePanel} />}
+                {activePanel.kind === "split" && <SplitPanel panel={activePanel} brands={brands} />}
+                {activePanel.kind === "brands" && <BrandsPanel brands={brands} />}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
 
       {/* ── Mobile overlay ── */}
