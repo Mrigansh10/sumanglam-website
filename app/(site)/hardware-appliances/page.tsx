@@ -10,7 +10,9 @@ import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
 import { Stagger } from "@/components/motion/stagger";
 import { WhatsAppButton } from "@/features/whatsapp/whatsapp-button";
+import { BrandCard } from "@/components/shared/brand-card";
 import { getProductTaxonomy, listProducts } from "@/server/products";
+import { getBrands } from "@/server/brands";
 import { safeQuery } from "@/server/safe";
 
 export const dynamic = "force-dynamic";
@@ -22,15 +24,18 @@ export const metadata: Metadata = {
 };
 
 export default async function HardwareAppliancesPage() {
-  const [taxonomy, featured] = await Promise.all([
+  const [taxonomy, featured, { productBrands }] = await Promise.all([
     safeQuery(getProductTaxonomy, []),
     safeQuery(() => listProducts({ type: "hardware", limit: 8 }), {
       items: [],
       pagination: { page: 1, limit: 8, total: 0, totalPages: 1 },
     }),
+    safeQuery(getBrands, { solutionBrands: [], productBrands: [] }),
   ]);
 
   const hardware = taxonomy.find((type) => type.slug === "hardware");
+  const APPLIANCE_SLUGS = new Set(["bosch", "siemens", "liebherr", "blaupunkt"]);
+  const hardwareBrands = productBrands.filter((b) => !APPLIANCE_SLUGS.has(b.slug));
 
   return (
     <>
@@ -58,16 +63,44 @@ export default async function HardwareAppliancesPage() {
                 description="From soft-close hinges to digital locks — hardware from Häfele, Hettich, Blum, Godrej, Yale, and more."
               />
             </Reveal>
-            <Stagger className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4" y={16} each={0.05}>
+            {/* Capability list, not buttons — categories aren't clickable while
+                the catalog is unpublished */}
+            <Stagger className="mt-10 flex flex-wrap gap-x-10 gap-y-4" y={12} each={0.04}>
               {hardware.categories.map((category) => (
-                <div
-                  key={category.id}
-                  className="border border-line bg-surface px-5 py-4"
-                >
-                  <span className="text-sm font-medium text-ink sm:text-base">
+                <div key={category.id} className="flex items-center gap-3">
+                  <span aria-hidden className="h-px w-5 bg-accent" />
+                  <span className="font-display text-lg text-ink sm:text-xl">
                     {category.name}
                   </span>
                 </div>
+              ))}
+            </Stagger>
+          </Container>
+        </Section>
+      ) : null}
+
+      {/* Hardware brands — the roster carries the page while the product
+          catalog is unpublished */}
+      {hardwareBrands.length > 0 ? (
+        <Section tone="clay">
+          <Container size="wide">
+            <Reveal>
+              <Heading
+                eyebrow="The Roster"
+                title="Brands we stock and stand behind"
+                description="We sold hardware long before we built kitchens — these are the names that earned their shelf space."
+              />
+            </Reveal>
+            <Stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {hardwareBrands.map((brand) => (
+                <BrandCard
+                  key={brand.id}
+                  href={`/brands/${brand.slug}`}
+                  name={brand.name}
+                  description={brand.description}
+                  heroImage={brand.heroImage}
+                  parentBrandName={brand.parentBrand?.name}
+                />
               ))}
             </Stagger>
           </Container>

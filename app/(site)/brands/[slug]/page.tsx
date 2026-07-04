@@ -149,7 +149,6 @@ export default async function BrandDetailPage({ params }: { params: Params }) {
               {inspirations.slice(0, 3).map((inspiration) => (
                 <VisualCard
                   key={inspiration.id}
-                  href={`/inspiration/${inspiration.slug}`}
                   image={inspiration.primaryImage}
                   eyebrow={inspiration.space?.title}
                   title={inspiration.title}

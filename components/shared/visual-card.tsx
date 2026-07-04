@@ -5,7 +5,8 @@ import { resolveImage } from "@/lib/images";
 import { cn } from "@/lib/utils";
 
 type VisualCardProps = {
-  href: string;
+  /** Omit for a purely visual (non-clickable) tile — Nolte-style browsing. */
+  href?: string;
   image?: string | null;
   eyebrow?: string;
   title: string;
@@ -19,7 +20,8 @@ type VisualCardProps = {
 
 /**
  * Image-first editorial card used for inspirations, collections, spaces, and
- * journey entry points. Whole card is tappable (mobile-first).
+ * journey entry points. With `href` the whole card is tappable; without it,
+ * the card is a quiet visual tile (no lift, no Explore affordance).
  */
 export function VisualCard({
   href,
@@ -31,11 +33,8 @@ export function VisualCard({
   emphasis = false,
   imageSizes = "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw",
 }: VisualCardProps) {
-  return (
-    <Link
-      href={href}
-      className="group block transition-transform duration-500 ease-out will-change-transform hover:-translate-y-1"
-    >
+  const body = (
+    <>
       <div
         className={cn(
           "relative overflow-hidden bg-sand",
@@ -75,11 +74,25 @@ export function VisualCard({
             {description}
           </p>
         ) : null}
-        <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-ink">
-          Explore
-          <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" aria-hidden />
-        </span>
+        {href ? (
+          <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-ink">
+            Explore
+            <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" aria-hidden />
+          </span>
+        ) : null}
       </div>
+    </>
+  );
+
+  if (!href) {
+    return <div className="group block">{body}</div>;
+  }
+  return (
+    <Link
+      href={href}
+      className="group block transition-transform duration-500 ease-out will-change-transform hover:-translate-y-1"
+    >
+      {body}
     </Link>
   );
 }

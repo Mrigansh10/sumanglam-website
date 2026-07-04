@@ -141,18 +141,18 @@ export default async function KitchensPage() {
                 description="Cooking, cooling, and cleaning, integrated into the cabinetry — Bosch, Siemens, Liebherr, Häfele, and Blaupunkt."
               />
             </Reveal>
-            <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            {/* Capability list, not buttons — categories aren't clickable while
+                the catalog is unpublished */}
+            <Stagger className="mt-10 flex flex-wrap gap-x-10 gap-y-4" y={12} each={0.04}>
               {appliance.categories.map((category) => (
-                <div
-                  key={category.id}
-                  className="border border-line bg-surface px-5 py-4"
-                >
-                  <span className="text-sm font-medium text-ink sm:text-base">
+                <div key={category.id} className="flex items-center gap-3">
+                  <span aria-hidden className="h-px w-5 bg-accent" />
+                  <span className="font-display text-lg text-ink sm:text-xl">
                     {category.name}
                   </span>
                 </div>
               ))}
-            </div>
+            </Stagger>
           </Container>
         </Section>
       ) : null}
@@ -172,7 +172,6 @@ export default async function KitchensPage() {
               {inspirations.slice(0, 6).map((inspiration) => (
                 <VisualCard
                   key={inspiration.id}
-                  href={`/inspiration/${inspiration.slug}`}
                   image={inspiration.primaryImage}
                   title={inspiration.title}
                   description={inspiration.shortDescription}

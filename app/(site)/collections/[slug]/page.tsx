@@ -53,7 +53,6 @@ export default async function CollectionPage({ params }: { params: Params }) {
               {inspirations.map((inspiration) => (
                 <VisualCard
                   key={inspiration.id}
-                  href={`/inspiration/${inspiration.slug}`}
                   image={inspiration.primaryImage}
                   eyebrow={inspiration.space?.title}
                   title={inspiration.title}

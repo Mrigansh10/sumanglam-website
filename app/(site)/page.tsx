@@ -24,10 +24,10 @@ import { getApprovedReviews } from "@/server/reviews";
 
 export const dynamic = "force-dynamic";
 
-// Homepage title targets local search intent ("modular kitchen showroom
-// Jaipur") while the template appends the brand name.
+// Brand-first tab title (user preference: "Sumanglam" must be visible even on
+// a narrow tab); local search intent carried by the rest of the title + description.
 export const metadata: Metadata = {
-  title: "Premium Modular Kitchen Showroom in Jaipur",
+  title: { absolute: "Sumanglam — Premium Modular Kitchens, Jaipur" },
   description:
     "Sumanglam is Jaipur's premium showroom for modular kitchens — German kitchens by Nolte, luxury personalized kitchens by Mrida — plus wardrobes, branded hardware, and built-in appliances. Visit us at New Aatish Market.",
 };
@@ -185,7 +185,6 @@ export default async function HomePage() {
               {featuredInspirations.map((inspiration) => (
                 <VisualCard
                   key={inspiration.id}
-                  href={`/inspiration/${inspiration.slug}`}
                   image={inspiration.primaryImage}
                   eyebrow={inspiration.space?.title}
                   title={inspiration.title}

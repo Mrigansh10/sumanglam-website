@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
@@ -13,6 +14,7 @@ import { listInspirations } from "@/server/inspirations";
 import { getCollections } from "@/server/collections";
 import { getSpaces } from "@/server/spaces";
 import { safeQuery } from "@/server/safe";
+import { resolveImage } from "@/lib/images";
 import { cn } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
@@ -102,18 +104,43 @@ export default async function InspirationPage({
 
           {items.length > 0 ? (
             <>
-              <Stagger className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+              {/* Nolte-style visual browsing: each space's cover carries the
+                  caption; its gallery angles flow beneath it at varied crops.
+                  Masonry via CSS columns; tiles are purely visual (no detail
+                  pages). */}
+              <div className="mt-10 columns-1 gap-6 sm:columns-2 lg:columns-3">
                 {items.map((inspiration) => (
-                  <VisualCard
-                    key={inspiration.id}
-                    href={`/inspiration/${inspiration.slug}`}
-                    image={inspiration.primaryImage}
-                    eyebrow={inspiration.space?.title}
-                    title={inspiration.title}
-                    description={inspiration.shortDescription}
-                  />
+                  <div key={inspiration.id} className="mb-10 break-inside-avoid">
+                    <VisualCard
+                      image={inspiration.primaryImage}
+                      eyebrow={inspiration.space?.title}
+                      title={inspiration.title}
+                      description={inspiration.shortDescription}
+                    />
+                    {(inspiration.galleryImages ?? []).slice(1).map((image, i) => (
+                      <div
+                        key={i}
+                        className={cn(
+                          "group relative mt-6 overflow-hidden bg-sand",
+                          i % 2 === 0 ? "aspect-[4/5]" : "aspect-[4/3]",
+                        )}
+                      >
+                        <Image
+                          src={resolveImage(image, {
+                            width: 1200,
+                            height: i % 2 === 0 ? 1500 : 900,
+                            enhance: "render",
+                          })}
+                          alt={`${inspiration.title} — view ${i + 2}`}
+                          fill
+                          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 ))}
-              </Stagger>
+              </div>
               {pagination.totalPages > 1 ? (
                 <div className="mt-12 flex items-center justify-center gap-3">
                   {pagination.page > 1 ? (

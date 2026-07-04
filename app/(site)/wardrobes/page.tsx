@@ -82,7 +82,9 @@ export default async function WardrobesPage() {
               <div className="relative aspect-[4/3] overflow-hidden bg-sand">
                 <Image
                   src={resolveImage(
-                    mrida?.brand.heroImage ?? "/images/placeholders/wardrobe-2.svg",
+                    // Always a wardrobe render here — Mrida's brand hero is a
+                    // kitchen, which read wrong beside wardrobe copy.
+                    "sumanglam/inspirations/bronze-glass-walk-in-2",
                     { width: 1200, enhance: "render" }
                   )}
                   alt="Mrida wardrobes"
@@ -156,7 +158,6 @@ export default async function WardrobesPage() {
               {inspirations.slice(0, 6).map((inspiration) => (
                 <VisualCard
                   key={inspiration.id}
-                  href={`/inspiration/${inspiration.slug}`}
                   image={inspiration.primaryImage}
                   title={inspiration.title}
                   description={inspiration.shortDescription}
