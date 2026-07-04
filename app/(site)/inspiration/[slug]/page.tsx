@@ -17,6 +17,7 @@ import { WhatsAppButton } from "@/features/whatsapp/whatsapp-button";
 import { getInspirationBySlug } from "@/server/inspirations";
 import { safeQuery } from "@/server/safe";
 import { resolveImage } from "@/lib/images";
+import { cn } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
 
@@ -88,23 +89,56 @@ export default async function InspirationDetailPage({ params }: { params: Params
         </Container>
       </Section>
 
-      {/* Gallery */}
+      {/* Gallery — editorial pacing (Nolte reference): a full-width 2:1 lead,
+          then staggered pairs at varied crops. Different aspect ratios re-crop
+          each render (c_fill + g_auto), so the set reads like photography
+          rather than a row of perfect elevations. */}
       {inspiration.galleryImages.length > 1 ? (
         <Section spacing="compact">
           <Container size="wide">
-            <Stagger className="grid gap-4 sm:grid-cols-2">
-              {inspiration.galleryImages.slice(1).map((image, index) => (
-                <div key={index} className="relative aspect-[3/2] overflow-hidden bg-sand">
-                  <Image
-                    src={resolveImage(image, { width: 1200, enhance: "render" })}
-                    alt={`${inspiration.title} — view ${index + 2}`}
-                    fill
-                    sizes="(min-width: 640px) 50vw, 100vw"
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </Stagger>
+            <Reveal>
+              <div className="relative aspect-[2/1] overflow-hidden bg-sand">
+                <Image
+                  src={resolveImage(inspiration.galleryImages[1], {
+                    width: 2400,
+                    height: 1200,
+                    enhance: "render",
+                  })}
+                  alt={`${inspiration.title} — view 2`}
+                  fill
+                  sizes="100vw"
+                  className="object-cover"
+                />
+              </div>
+            </Reveal>
+            {inspiration.galleryImages.length > 2 ? (
+              <Stagger className="mt-4 grid items-start gap-4 sm:grid-cols-2">
+                {inspiration.galleryImages.slice(2).map((image, index) => {
+                  const portrait = index % 2 === 1;
+                  return (
+                    <div
+                      key={index}
+                      className={cn(
+                        "relative overflow-hidden bg-sand",
+                        portrait ? "aspect-[4/5] sm:mt-12" : "aspect-[4/3]",
+                      )}
+                    >
+                      <Image
+                        src={resolveImage(image, {
+                          width: 1200,
+                          height: portrait ? 1500 : 900,
+                          enhance: "render",
+                        })}
+                        alt={`${inspiration.title} — view ${index + 3}`}
+                        fill
+                        sizes="(min-width: 640px) 50vw, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
+                  );
+                })}
+              </Stagger>
+            ) : null}
           </Container>
         </Section>
       ) : null}
