@@ -8,7 +8,7 @@ export const siteConfig = {
   name: "Sumanglam",
   tagline: "Designed Around Your Home",
   description:
-    "Sumanglam is a premium digital showroom for modular kitchens, wardrobes, premium hardware, appliances, and interior solutions.",
+    "Premium modular kitchen showroom in Jaipur — German kitchens by Nolte, personalized luxury kitchens by Mrida, plus wardrobes, branded hardware, and built-in appliances. Visit the showroom at New Aatish Market.",
   url: clientEnv.NEXT_PUBLIC_SITE_URL,
   contact: {
     phone: clientEnv.NEXT_PUBLIC_CONTACT_PHONE || "+91 94140 78298",
@@ -28,8 +28,8 @@ export const siteConfig = {
 
 export const navigation = {
   main: [
-    { label: "Inspiration", href: "/inspiration" },
     { label: "Kitchens", href: "/kitchens" },
+    { label: "Inspiration", href: "/inspiration" },
     { label: "Hardware", href: "/hardware-appliances" },
     { label: "Brands", href: "/brands" },
     { label: "Showroom", href: "/showroom" },
@@ -39,8 +39,8 @@ export const navigation = {
   ],
   footer: {
     explore: [
-      { label: "Inspiration", href: "/inspiration" },
       { label: "Kitchens", href: "/kitchens" },
+      { label: "Inspiration", href: "/inspiration" },
       { label: "Hardware", href: "/hardware-appliances" },
       { label: "Brands", href: "/brands" },
       { label: "Showroom Experience", href: "/showroom" },

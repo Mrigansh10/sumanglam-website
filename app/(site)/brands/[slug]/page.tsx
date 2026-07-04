@@ -7,7 +7,6 @@ import { Heading } from "@/components/layout/heading";
 import { PageHero } from "@/components/shared/page-hero";
 import { VisualCard } from "@/components/shared/visual-card";
 import { ProductCard } from "@/components/shared/product-card";
-import { EmptyState } from "@/components/shared/empty-state";
 import { PageViewTracker } from "@/components/shared/page-view-tracker";
 import { Button } from "@/components/ui/button";
 import { WhatsAppButton } from "@/features/whatsapp/whatsapp-button";
@@ -114,16 +113,12 @@ export default async function BrandDetailPage({ params }: { params: Params }) {
         </Section>
       ) : null}
 
-      {/* Products */}
-      <Section tone="clay">
-        <Container size="wide">
-          <div className="flex flex-wrap items-end justify-between gap-4">
+      {/* Products — whole section hides while the catalog is unpublished
+          (marketing-first launch; flip products back to published to restore) */}
+      {products.length > 0 ? (
+        <Section tone="clay">
+          <Container size="wide">
             <Heading eyebrow="Catalog" title={`${brand.name} products`} />
-            <Button href={`/products?brand=${brand.slug}`} variant="outline" size="sm">
-              View All
-            </Button>
-          </div>
-          {products.length > 0 ? (
             <div className="mt-10 grid grid-cols-2 gap-x-5 gap-y-10 lg:grid-cols-4">
               {products.slice(0, 8).map((product) => (
                 <ProductCard
@@ -137,17 +132,9 @@ export default async function BrandDetailPage({ params }: { params: Params }) {
                 />
               ))}
             </div>
-          ) : (
-            <div className="mt-10">
-              <EmptyState
-                title={`${brand.name} products are being added`}
-                description="The showroom carries the full range — ask us about anything specific."
-                action={{ label: "Contact Us", href: "/contact" }}
-              />
-            </div>
-          )}
-        </Container>
-      </Section>
+          </Container>
+        </Section>
+      ) : null}
 
       {/* Inspirations */}
       {inspirations.length > 0 ? (

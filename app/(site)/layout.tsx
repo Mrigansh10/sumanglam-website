@@ -6,8 +6,7 @@ import { siteConfig } from "@/lib/site";
 import { supabase, rows } from "@/lib/supabase";
 import type { HeaderBrand } from "@/components/layout/site-header";
 
-// LocalBusiness structured data. Address/phone are placeholders until the
-// business confirms official details (project-vault/15_Open_Questions.md).
+// LocalBusiness structured data — drives the "near me" / local-pack surface.
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "HomeGoodsStore",
@@ -16,6 +15,34 @@ const localBusinessJsonLd = {
   url: siteConfig.url,
   telephone: siteConfig.contact.phone,
   email: siteConfig.contact.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "S-13, New Aatish Market, Devi Nagar",
+    addressLocality: "Jaipur",
+    addressRegion: "Rajasthan",
+    postalCode: "302019",
+    addressCountry: "IN",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 26.8792033,
+    longitude: 75.7584208,
+  },
+  hasMap: siteConfig.contact.mapsUrl,
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    opens: "10:30",
+    closes: "20:00",
+  },
+  knowsAbout: [
+    "modular kitchens",
+    "German kitchens",
+    "luxury acrylic kitchens",
+    "wardrobes",
+    "kitchen hardware",
+    "built-in appliances",
+  ],
 };
 
 export default async function SiteLayout({ children }: { children: React.ReactNode }) {

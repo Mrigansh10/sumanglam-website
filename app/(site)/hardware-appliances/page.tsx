@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
@@ -42,8 +41,8 @@ export default async function HardwareAppliancesPage() {
         description="Browse by category, meet the brands behind each one, and start a conversation about the right fit — research first, never a checkout."
         image="sumanglam/hardware/hardware-hero-drawer"
       >
-        <Button href="/products?type=hardware" variant="accent">
-          Browse Hardware
+        <Button href="/showroom" variant="accent">
+          Visit Showroom
         </Button>
         <WhatsAppButton sourceType="general" variant="outline-light" />
       </PageHero>
@@ -61,19 +60,14 @@ export default async function HardwareAppliancesPage() {
             </Reveal>
             <Stagger className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4" y={16} each={0.05}>
               {hardware.categories.map((category) => (
-                <Link
+                <div
                   key={category.id}
-                  href={`/products?type=hardware&category=${category.slug}`}
-                  className="group flex items-center justify-between gap-2 border border-line bg-surface px-5 py-4 transition-colors hover:border-accent"
+                  className="border border-line bg-surface px-5 py-4"
                 >
                   <span className="text-sm font-medium text-ink sm:text-base">
                     {category.name}
                   </span>
-                  <ArrowRight
-                    className="size-4 shrink-0 text-ink-faint transition-transform group-hover:translate-x-1 group-hover:text-accent-deep"
-                    aria-hidden
-                  />
-                </Link>
+                </div>
               ))}
             </Stagger>
           </Container>

@@ -31,6 +31,29 @@ type MegaPanel =
 
 const primaryNav: { label: string; href: string; mega?: MegaPanel }[] = [
   {
+    label: "Kitchens",
+    href: "/kitchens",
+    mega: {
+      kind: "split",
+      title: "Kitchens & Appliances",
+      titleHref: "/kitchens",
+      sections: [
+        {
+          links: [
+            { label: "German Kitchens", href: "/nolte" },
+            { label: "Modular Kitchens", href: "/mrida" },
+            { label: "Built-in Appliances", href: "/kitchens" },
+            { label: "Kitchen Inspirations", href: "/inspiration?space=kitchen" },
+          ],
+        },
+      ],
+      cards: [
+        { label: "Nolte", sub: "German kitchen systems", href: "/nolte", image: "/images/placeholders/kitchen-1.svg", slug: "nolte" },
+        { label: "Mrida Kitchens", sub: "Modular kitchens for Indian homes", href: "/mrida", image: "/images/placeholders/kitchen-2.svg", slug: "mrida" },
+      ],
+    },
+  },
+  {
     label: "Inspiration",
     href: "/inspiration",
     mega: {
@@ -51,29 +74,6 @@ const primaryNav: { label: string; href: string; mega?: MegaPanel }[] = [
             { label: "Appliance Ideas", href: "/inspiration?space=appliances" },
           ],
         },
-      ],
-    },
-  },
-  {
-    label: "Kitchens",
-    href: "/kitchens",
-    mega: {
-      kind: "split",
-      title: "Kitchens & Appliances",
-      titleHref: "/kitchens",
-      sections: [
-        {
-          links: [
-            { label: "German Kitchens", href: "/nolte" },
-            { label: "Modular Kitchens", href: "/mrida" },
-            { label: "Built-in Appliances", href: "/kitchens" },
-            { label: "Kitchen Inspirations", href: "/inspiration?space=kitchen" },
-          ],
-        },
-      ],
-      cards: [
-        { label: "Nolte", sub: "German kitchen systems", href: "/nolte", image: "/images/placeholders/kitchen-1.svg", slug: "nolte" },
-        { label: "Mrida Kitchens", sub: "Modular kitchens for Indian homes", href: "/mrida", image: "/images/placeholders/kitchen-2.svg", slug: "mrida" },
       ],
     },
   },
@@ -138,8 +138,8 @@ const primaryNav: { label: string; href: string; mega?: MegaPanel }[] = [
 ];
 
 const mobileNav: NavLink[] = [
-  { label: "Inspiration", href: "/inspiration" },
   { label: "Kitchens", href: "/kitchens" },
+  { label: "Inspiration", href: "/inspiration" },
   { label: "Wardrobes", href: "/wardrobes" },
   { label: "Hardware", href: "/hardware-appliances" },
   { label: "Brands", href: "/brands" },

@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/layout/heading";
@@ -21,9 +19,9 @@ import { resolveImage } from "@/lib/images";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Kitchens",
+  title: "Premium Modular Kitchens in Jaipur",
   description:
-    "Premium modular kitchens by Nolte and Mrida — German precision and personalized Indian design under one roof.",
+    "Premium modular kitchens in Jaipur by Nolte and Mrida — German precision, luxury acrylic and lacquer finishes, and personalized Indian design under one roof.",
 };
 
 export default async function KitchensPage() {
@@ -145,19 +143,14 @@ export default async function KitchensPage() {
             </Reveal>
             <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
               {appliance.categories.map((category) => (
-                <Link
+                <div
                   key={category.id}
-                  href={`/products?type=appliance&category=${category.slug}`}
-                  className="group flex items-center justify-between gap-2 border border-line bg-surface px-5 py-4 transition-colors hover:border-accent"
+                  className="border border-line bg-surface px-5 py-4"
                 >
                   <span className="text-sm font-medium text-ink sm:text-base">
                     {category.name}
                   </span>
-                  <ArrowRight
-                    className="size-4 shrink-0 text-ink-faint transition-transform group-hover:translate-x-1 group-hover:text-accent-deep"
-                    aria-hidden
-                  />
-                </Link>
+                </div>
               ))}
             </div>
           </Container>

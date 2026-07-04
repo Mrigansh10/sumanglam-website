@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -22,6 +23,14 @@ import { getGoogleReviews } from "@/server/google-reviews";
 import { getApprovedReviews } from "@/server/reviews";
 
 export const dynamic = "force-dynamic";
+
+// Homepage title targets local search intent ("modular kitchen showroom
+// Jaipur") while the template appends the brand name.
+export const metadata: Metadata = {
+  title: "Premium Modular Kitchen Showroom in Jaipur",
+  description:
+    "Sumanglam is Jaipur's premium showroom for modular kitchens — German kitchens by Nolte, luxury personalized kitchens by Mrida — plus wardrobes, branded hardware, and built-in appliances. Visit us at New Aatish Market.",
+};
 
 // Homepage hero + "Explore Your Journey" card images are admin-managed via the
 // site_settings table (Admin → Homepage). getHomepageImages() applies built-in
