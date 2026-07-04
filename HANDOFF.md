@@ -1,14 +1,16 @@
 # HANDOFF — Sumanglam Digital Showroom
 
-**Last updated:** 2026-07-02
+**Last updated:** 2026-07-05
 **Repo:** https://github.com/Mrigansh10/sumanglam-website
 **Dev server:** `npm run dev` → http://localhost:3000
 
-> ✅ **Working tree clean** — everything below is committed and pushed to `master`.
-> - **`c22fa3f`** — hardware page hero image (walnut-drawer photo on `/hardware-appliances`). Authored as Darsh-Ch.
-> - **`e7ca483`** — Yale Smart Door Locks catalog import (20 products, live) + product-detail spec-render fix. Authored as Darsh-Ch.
-> - **`e077fd6`** — render upscaling pipeline (`enhance: "render"` → `e_gen_restore` + `e_upscale`, wired into all large render slots)
-> - **`52ac94c`** — homepage image admin (new `site_settings` table + **Admin → Homepage** page). Authored as Darsh-Ch.
+> ✅ **Working tree clean** — everything committed and pushed to `master` through **`0f95f57`**.
+> Sessions 8–9 (2026-07-03 → 07-05) shipped: the full **motion/animation system**, the
+> **photo placement pass** (44 renders → 9 published inspirations + homepage hero),
+> **kitchen-first repositioning + local SEO**, **catalog unpublished for launch**,
+> **Nolte-style visual-only inspirations**, and 4 official brand heroes.
+> Commit attribution: **Mrigansh10** from `e7ba294` onward (user instruction on 2026-07-04);
+> earlier session-8 commits authored Darsh-Ch.
 
 ## 🎯 CURRENT DIRECTION (set 2026-07-02) — Release readiness, NOT product depth
 
@@ -157,21 +159,22 @@ npm run dev
 
 ## Pending Tasks (Priority Order — RELEASE FOCUS)
 
-**Theme: photos + beautification + animations → ship.** (Product-catalog depth is
-paused — see Current Direction.)
+**Everything below is WAITING ON CONTENT FROM THE USER (renders/photos/decisions),
+not on code.** The motion system, photo pipeline, and page structure are done.
 
-1. **Photo placement pass** — map the ~50 renders to slots: homepage hero + journey cards (**Admin → Homepage**), category/page heroes (**Admin → Spaces**), inspiration entries, brand heroes. Plus general/hero photography where products aren't rendered. ("Where to put what photos" — the main content pass.)
-2. **Upload brand logos + hero images** — all 15 brands via admin (Nolte, Mrida, key brands first; brand hero also feeds the Kitchens mega-menu)
-3. **Beautify pages + animations** — layout/spacing/typography polish and Framer Motion refinement across every page for a premium, release-ready feel
-4. **Mark featured content** — set `is_featured=true` in Supabase for brands + inspirations to appear on homepage
-5. **Add inspiration content** — create inspirations via admin with renders
-6. **Fix reviews RLS** — disable on `reviews` table in Supabase dashboard
-7. **Populate showroom sections** — add floors/sections via admin (real photos, future)
+1. **More renders incoming** — user is arranging a larger, more varied render batch. When it arrives: cluster → contact sheet → approve → bulk upload (reuse `scratchpad` scripts pattern from Session 8: Cloudinary signed upload w/ slug public-IDs + Supabase REST inserts + **pre-warm the enhance:"render" derivations, URLs must include `/if_end/`**). New sets = new inspirations for the mosaic.
+2. **Wardrobes page hero** — user will pick/provide a wardrobe render for the `/wardrobes` PageHero (set via **Admin → Spaces → wardrobe**). Currently uses the older space hero.
+3. **Collections** — the collections section on `/inspiration` stays as-is for now; fill with collections built from the new render batch later.
+4. **Brand hero assets (8 remaining)** — Blum, Häfele, Liebherr, Godrej, Yale, Spitze, Everyday, Brass Barony still have placeholder heroes. User deciding approach (official imagery was chosen; 4 done: **Bosch, Siemens, Hettich, Dorset** live). Best path: dealer asset packs from brand reps. Decision expected ~2026-07-06/07. ⚠️ Real photos must be uploaded **≥2000px wide** or the `enhance:"render"` guard will let gen_restore repaint them.
+5. **Showroom section photos** — user will provide real showroom photos (Gemini v2 retouch pipeline per memory). Then populate showroom sections via admin.
+6. **OG/social share image** — deliberately deferred by user until the new render batch (don't set one yet).
+7. **Fix reviews RLS** — disable on `reviews` table in Supabase dashboard
 8. **Deploy to Vercel** — import `Mrigansh10/sumanglam-website`, add env vars, set domain
 
-**Paused (do not resume without a new decision):** importing more Yale/vendor
-product categories via `scripts/yale-catalogue/`. The Smart Door Locks import is
-live as a proof of concept; scaling it to the full catalog is explicitly deferred.
+**Paused (do not resume without a new decision):**
+- Importing more Yale/vendor product categories (`scripts/yale-catalogue/`).
+- The entire product catalog is **unpublished** (all 38 products `status=draft`, entry
+  points removed from public pages). Reversible: republish products + restore links.
 
 ---
 
@@ -271,6 +274,20 @@ Documentation audit across all 16 source docs. Fixed discovery flow inconsistenc
 - **Generalization discussion (parked):** user is gathering 2–3 more vendor catalogues; we'll then decide vendor-by-vendor whether a general pipeline / admin "Catalogue Import" UI is worth building. Options weighed: config-driven CLI vs. admin UI vs. phased; and Claude-vision auto-extraction vs. manual transcription. No build started.
 - **STRATEGIC PIVOT (end of session):** decided **not** to pursue detailed per-product catalogs now (would need to massively scale content ops). New focus = **photos + beautification + animations + ship for release.** See Current Direction at top. Yale import stays live but paused.
 - Vendor catalogue PDFs are now **gitignored** (`/*.pdf`) — kept local, out of git history.
+
+### Session 8 — 2026-07-03/04 (Motion system + photo placement + kitchen-first launch prep)
+- **Full motion/animation system shipped** (6 commits, `62677e2`→`9490616`): `SplitHeadline` (masked word reveal; masks padded `0.2em`/`-0.2em` so descenders don't clip — **regression trap**), `Stagger` (single-trigger grid cascades, sitewide), `PageHero` staged entrance (Ken Burns on own layer inside Parallax — CSS transform must never share GSAP's element), `DrawRule` accent dash in every Heading eyebrow, header condense + AnimatePresence mega-menu, footer stagger, `FadeInImage` card load-in, button icon nudge, enter-only page transitions via `template.tsx` (**no frozen-router exit animations; fixed elements must stay in layout.tsx outside the template**).
+- **Cloudinary 4.2MP bug fixed** in `lib/images.ts`: `e_upscale` hard-fails on >4.2MP sources (blanked Nolte imagery); `enhance:"render"` now guarded by `if_w_lt_2000_and_h_lt_2000/.../if_end`.
+- **Photo placement executed**: 44 renders clustered visually into **9 spaces** (7 kitchens, 2 walk-ins) via approved contact-sheet artifact → uploaded as `sumanglam/inspirations/<slug>-<n>` (`-1` = cover) → 9 inspirations published (10 placeholder ones drafted), homepage hero set, ~17 hardcoded placeholder SVGs swapped. **Gotcha:** first request of each gen_restore derivation takes 30s+ → next/image 504s; pre-warm exact URLs (with `/if_end/`) after any upload.
+- **Kitchen-first launch pass** (`e7ba294`): nav order Kitchens-first everywhere, local-SEO titles/descriptions (Jaipur intent), LocalBusiness JSON-LD with real address/geo/hours (address was never a placeholder — old note stale), **all 38 products → draft** + catalog entry points removed (hardware CTA → showroom, tiles unlinked, brand Catalog section conditional).
+- Pre-existing bugs fixed en route: product-page breadcrumb hidden behind floating header; `npm run build` clobbers a running dev server's `.next` (restart dev after builds).
+
+### Session 9 — 2026-07-04/05 (Brand heroes + Nolte reference restyle)
+- **Brand heroes (4/12)**: official imagery sourced + live for **Bosch, Siemens, Hettich, Dorset** (`sumanglam/brands/<slug>-hero`, upscaled to 2048px to dodge the gen_restore guard — do this for ALL real-photo uploads). Remaining 8 blocked on user decision (renders show generic appliance models — user wary; dealer asset packs suggested). Häfele/Blum/Godrej/Liebherr sites are bot-walled; YouTube-thumbnail + og:image routes documented in session scripts.
+- **Nolte reference direction** (`nolte-kuechen.com/en-GB/private-customers` = aesthetic bar): mixed-ratio imagery, 70/30 image-to-text, no uniform grids. Shipped: editorial gallery pacing (`c8ad41b`), then **inspirations became visual-only** (`0f95f57`) — masonry mosaic listing (captioned covers + gallery angles), detail pages removed (redirect; old page in git history), `VisualCard` href optional.
+- Homepage hero → **sage-green render** (user rule: **never the same image twice on one page** — featured covers already appear in the homepage grid). Flat straight-on elevations pulled from published galleries (they betray the render origin).
+- Hardware page filled with brand-roster section; category tiles → gold-dash capability list (nothing unclickable may look like a button); homepage tab title brand-first absolute ("Sumanglam — Premium Modular Kitchens, Jaipur"); wardrobes-page Mrida image → wardrobe render.
+- **Session ended awaiting user content**: bigger render batch (more inspirations + wardrobes hero + collections), brand-asset decision (~07-06/07), showroom photos. See Pending Tasks.
 
 ## Hard Rules (Do Not Violate)
 
