@@ -41,7 +41,7 @@ export default async function ShowroomPage() {
         eyebrow="The Showroom Experience"
         title="Some decisions need to be touched"
         description="Screens can't tell you how a drawer closes or how a finish feels in evening light. Our showroom can."
-        image="/images/placeholders/showroom-1.svg"
+        image="sumanglam/inspirations/ivory-open-plan-kitchen-6"
         size="tall"
       >
         <Button href="/contact" variant="accent">

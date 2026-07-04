@@ -95,7 +95,7 @@ const primaryNav: { label: string; href: string; mega?: MegaPanel }[] = [
         },
       ],
       cards: [
-        { label: "Mrida Wardrobes", sub: "Storage designed like furniture", href: "/wardrobes", image: "/images/placeholders/wardrobe-1.svg" },
+        { label: "Mrida Wardrobes", sub: "Storage designed like furniture", href: "/wardrobes", image: "sumanglam/inspirations/ivory-jali-walk-in-3" },
       ],
     },
   },
@@ -217,7 +217,7 @@ function SplitPanel({ panel, brands }: { panel: Extract<MegaPanel, { kind: "spli
             <Link key={card.href + card.label} href={card.href} className="group w-48 shrink-0">
               <div className="relative aspect-[4/3] overflow-hidden bg-sand">
                 <Image
-                  src={hero ? resolveImage(hero, { width: 480, enhance: "render" }) : card.image}
+                  src={resolveImage(hero ?? card.image, { width: 480, enhance: "render" })}
                   alt={card.label}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"

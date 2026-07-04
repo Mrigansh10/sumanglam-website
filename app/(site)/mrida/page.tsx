@@ -77,14 +77,14 @@ export default async function MridaPage() {
           <Stagger className="mt-10 grid gap-8 md:grid-cols-2">
             <VisualCard
               href="/wardrobes"
-              image="/images/placeholders/wardrobe-1.svg"
+              image="sumanglam/inspirations/ivory-jali-walk-in-2"
               title="Walk-In Wardrobes"
               description="Dedicated dressing spaces with open hanging, glass drawers, and islands."
               imageSizes="(min-width: 768px) 50vw, 100vw"
             />
             <VisualCard
               href="/wardrobes"
-              image="/images/placeholders/wardrobe-2.svg"
+              image="sumanglam/inspirations/bronze-glass-walk-in-2"
               title="Sliding & Storage Walls"
               description="Full-height wardrobes that read as architecture, not furniture."
               imageSizes="(min-width: 768px) 50vw, 100vw"

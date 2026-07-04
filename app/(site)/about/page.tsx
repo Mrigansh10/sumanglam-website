@@ -44,7 +44,7 @@ export default function AboutPage() {
         eyebrow="About Sumanglam"
         title="A showroom built the way homes should be"
         description="Kitchens, wardrobes, hardware, and appliances — curated under one roof, by people who believe the details are the design."
-        image="/images/placeholders/showroom-2.svg"
+        image="sumanglam/inspirations/greige-floating-shelf-kitchen-5"
       />
 
       <Section>
@@ -93,7 +93,7 @@ export default function AboutPage() {
             <Reveal>
               <div className="relative aspect-[4/3] overflow-hidden bg-sand">
                 <Image
-                  src={resolveImage("/images/placeholders/showroom-4.svg", { width: 1200 })}
+                  src={resolveImage("sumanglam/inspirations/taupe-charcoal-evening-kitchen-9", { width: 1200, enhance: "render" })}
                   alt="Inside the Sumanglam showroom"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"

@@ -28,21 +28,21 @@ const wardrobeTypes = [
     title: "Walk-In Wardrobes",
     description:
       "A room dedicated to getting dressed. Floor-to-ceiling storage, island units, and finishes that make the whole space feel considered.",
-    image: "/images/placeholders/wardrobe-1.svg",
+    image: "sumanglam/inspirations/ivory-jali-walk-in-1",
     eyebrow: "Luxury · Spacious",
   },
   {
     title: "Sliding Door Wardrobes",
     description:
       "Space-efficient and seamless. Sliding systems that suit smaller rooms without compromising on storage or finish quality.",
-    image: "/images/placeholders/wardrobe-2.svg",
+    image: "sumanglam/inspirations/bronze-glass-walk-in-1",
     eyebrow: "Space-Saving · Sleek",
   },
   {
     title: "Modular Wardrobes",
     description:
       "Configured exactly to your wall dimensions, ceiling height, and what you need to store — every shelf, drawer, and hanging section planned.",
-    image: "/images/placeholders/wardrobe-3.svg",
+    image: "sumanglam/inspirations/bronze-glass-walk-in-3",
     eyebrow: "Custom · Flexible",
   },
 ];

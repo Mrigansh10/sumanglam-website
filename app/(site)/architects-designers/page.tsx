@@ -54,7 +54,7 @@ export default async function ArchitectsDesignersPage() {
         eyebrow="Architects & Designers"
         title="A showroom that works like a partner"
         description="Bring your projects, your clients, and your specifications. We'll bring brand depth, technical answers, and floor space to present them."
-        image="/images/placeholders/showroom-3.svg"
+        image="sumanglam/inspirations/taupe-charcoal-evening-kitchen-6"
       >
         <Button href="/book-consultation" variant="accent">
           Schedule a Discussion

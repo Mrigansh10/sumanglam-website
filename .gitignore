@@ -38,3 +38,4 @@ next-env.d.ts
 # vendor catalogue source PDFs (large/copyrighted; extracted data lives in
 # scripts/yale-catalogue/data — keep the source PDFs local, not in git)
 /*.pdf
+kitchen and wardrobe 3d renders/
