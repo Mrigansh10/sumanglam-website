@@ -67,8 +67,9 @@ A premium **digital showroom** (NOT ecommerce) for Sumanglam — modular kitchen
 ## Admin Access
 
 - **URL:** `/admin` (redirects to `/admin/login` if unauthenticated)
-- **Email:** `admin@sumanglam.co`
-- **Password:** `sumanglam2024`
+- **Credentials:** `ADMIN_EMAIL` / `ADMIN_PASSWORD` in the local `.env` (never commit them —
+  the old password lived in this file through Session 9 and was rotated on 2026-07-05;
+  treat anything that was ever committed as burned)
 
 ---
 
@@ -170,6 +171,13 @@ not on code.** The motion system, photo pipeline, and page structure are done.
 6. **OG/social share image** — deliberately deferred by user until the new render batch (don't set one yet).
 7. **Fix reviews RLS** — disable on `reviews` table in Supabase dashboard
 8. **Deploy to Vercel** — import `Mrigansh10/sumanglam-website`, add env vars, set domain
+9. **Supabase RLS posture (security follow-up, needs dashboard)** — RLS is off on all
+   tables, so the anon key is the only wall around leads/consultations PII. Durable fix:
+   enable RLS with anon read-only policies on published content + move server writes to a
+   service-role key in `lib/supabase.ts`. Until then the anon key must stay server-only.
+10. **CSP header (security follow-up)** — baseline security headers shipped 2026-07-05;
+   a full Content-Security-Policy still needs testing against Next inline scripts,
+   Framer Motion, GA4, and Cloudinary before adding.
 
 **Paused (do not resume without a new decision):**
 - Importing more Yale/vendor product categories (`scripts/yale-catalogue/`).
@@ -185,7 +193,7 @@ SUPABASE_ANON_KEY=...
 NEXTAUTH_SECRET=...          # generate: openssl rand -base64 32
 NEXTAUTH_URL=https://your-domain.com
 ADMIN_EMAIL=admin@sumanglam.co
-ADMIN_PASSWORD=sumanglam2024
+ADMIN_PASSWORD=...              # strong random value; lives only in .env / Vercel env
 CLOUDINARY_CLOUD_NAME=de9turgsy
 CLOUDINARY_API_KEY=...
 CLOUDINARY_API_SECRET=...
@@ -288,6 +296,23 @@ Documentation audit across all 16 source docs. Fixed discovery flow inconsistenc
 - Homepage hero → **sage-green render** (user rule: **never the same image twice on one page** — featured covers already appear in the homepage grid). Flat straight-on elevations pulled from published galleries (they betray the render origin).
 - Hardware page filled with brand-roster section; category tiles → gold-dash capability list (nothing unclickable may look like a button); homepage tab title brand-first absolute ("Sumanglam — Premium Modular Kitchens, Jaipur"); wardrobes-page Mrida image → wardrobe render.
 - **Session ended awaiting user content**: bigger render batch (more inspirations + wardrobes hero + collections), brand-asset decision (~07-06/07), showroom photos. See Pending Tasks.
+
+### Session 10 — 2026-07-05 (Security hardening via MurphyScan)
+- **Installed the `/murphyscan` audit skill** (`.claude/skills/murphyscan/`, from
+  `speedvibecode/murphyscan` — reviewed file-by-file before install) and ran a full
+  launch-readiness security audit.
+- **Shipped fixes:** timing-safe admin credential compare + **login rate limit**
+  (5/15min/IP) + **24h session expiry** in `auth.ts`; **security headers** (HSTS,
+  nosniff, X-Frame-Options DENY, Referrer-Policy, Permissions-Policy) in
+  `next.config.ts`; **admin password scrubbed from this file and rotated** in `.env`
+  (old one was committed since Session 3 → burned).
+- **Audit found solid:** all 19 admin API handlers auth-gated (verified 1:1
+  handler-to-`auth()` sweep), public writes zod-validated + rate-limited, API errors
+  don't leak internals, `.env` never committed, anon key server-only, Next 15.5.19
+  (past the 15.2.3 middleware-bypass CVE).
+- **Deferred (documented in Pending Tasks + vault):** RLS posture / service-role
+  refactor (needs Supabase dashboard), full CSP, durable rate-limit store,
+  `ignoreBuildErrors` removal, error tracking/uptime monitoring for launch.
 
 ## Hard Rules (Do Not Violate)
 

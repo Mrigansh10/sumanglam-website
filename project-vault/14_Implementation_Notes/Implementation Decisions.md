@@ -158,6 +158,34 @@ anti-pattern; these slots needed first-class admin editing for the render rollou
 
 `app/sitemap.ts` (static routes + published slugs), `app/robots.ts` (disallow `/admin`, `/api`), relative canonical (`alternates: { canonical: "./" }`) resolved per page against `metadataBase`, LocalBusiness JSON-LD in the site layout with placeholder contact details.
 
+### Security Hardening Pass (2026-07-05)
+
+Findings and fixes from a MurphyScan launch-readiness audit (skill installed at
+`.claude/skills/murphyscan/`, run via `/murphyscan`):
+
+* **Admin login hardened** (`auth.ts`): credential comparison is now timing-safe
+  (SHA-256 digests + `crypto.timingSafeEqual`), login attempts are rate-limited
+  (5 per 15 min per IP, reusing `lib/api/rate-limit`), and JWT sessions expire
+  after 24 h (was the 30-day default). Single-admin panel, so short sessions cost
+  nothing.
+* **Security headers** (`next.config.ts` `headers()`): HSTS (2 y, includeSubDomains),
+  `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `Referrer-Policy:
+  strict-origin-when-cross-origin`, minimal `Permissions-Policy`. A full CSP was
+  deliberately deferred — it needs testing against Next inline scripts, Framer
+  Motion, GA4, and Cloudinary before launch, and a broken CSP is worse than none
+  at first ship.
+* **Credential hygiene**: the admin password previously lived in `HANDOFF.md`
+  (committed since Session 3) — scrubbed from the file and **rotated** in `.env`;
+  anything ever committed is treated as burned. Rule: credentials live only in
+  `.env` / Vercel env vars, docs point at the var names.
+* **Known residual risks** (not code-fixable here): RLS is disabled on all tables,
+  so the anon key is the only wall around leads/consultations PII — the key is
+  server-only (verified: no client-component imports, no literals in the repo),
+  but the durable fix is RLS policies + a service-role key for server writes,
+  which needs a Supabase dashboard session. The in-memory rate limiter is
+  per-instance (documented V1 trade-off). `ignoreBuildErrors: true` still skips
+  type gates on deploy.
+
 ## Source Trace
 
 Derived from `project-vault/15_Open_Questions.md`, `project-vault/16_Conflicts.md`, `project-vault/18_Build_Order.md`, source docs, and implementation work on 2026-06-10.
