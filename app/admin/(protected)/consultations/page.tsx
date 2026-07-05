@@ -49,8 +49,8 @@ export default async function AdminConsultationsPage() {
                 {data.items.map((consultation) => (
                   <tr key={consultation.id} className="align-top">
                     <td className="px-5 py-4">
-                      <p className="font-medium">{consultation.lead.name}</p>
-                      <p className="mt-1 text-xs text-ink-faint">{consultation.lead.phone}</p>
+                      <p className="font-medium">{consultation.lead?.name ?? "—"}</p>
+                      <p className="mt-1 text-xs text-ink-faint">{consultation.lead?.phone ?? "—"}</p>
                     </td>
                     <td className="px-5 py-4 text-ink-soft">
                       {consultation.projectType.replaceAll("_", " ").toLowerCase()}

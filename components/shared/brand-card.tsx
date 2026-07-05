@@ -9,7 +9,8 @@ type BrandCardProps = {
   name: string;
   description?: string | null;
   heroImage?: string | null;
-  brandType?: "SOLUTION" | "PRODUCT";
+  // Supabase serves lowercase enum values; legacy callers may pass uppercase.
+  brandType?: string | null;
   parentBrandName?: string | null;
 };
 
@@ -43,7 +44,7 @@ export function BrandCard({
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         <div className="flex items-center gap-2">
           <h3 className="font-display text-xl text-ink">{name}</h3>
-          {brandType === "SOLUTION" ? <Badge variant="accent">Solutions</Badge> : null}
+          {brandType?.toLowerCase() === "solution" ? <Badge variant="accent">Solutions</Badge> : null}
         </div>
         {parentBrandName ? (
           <p className="mt-1 text-xs text-ink-faint">A {parentBrandName} brand</p>

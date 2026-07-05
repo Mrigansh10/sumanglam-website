@@ -35,7 +35,7 @@ export async function getCollectionBySlug(slug: string) {
       .limit(3),
   ]);
 
-  const inspirations = ((memberLinks.data ?? []) as Array<{ inspiration: Record<string, unknown> | null }>)
+  const inspirations = ((memberLinks.data ?? []) as unknown as Array<{ inspiration: Record<string, unknown> | null }>)
     .map((m) => m.inspiration)
     .filter((i): i is Record<string, unknown> => i !== null && i.status === "published")
     .map((i) => camelizeRecord<Inspiration>(i));

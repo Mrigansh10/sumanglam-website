@@ -14,9 +14,11 @@ export type ConsultationInput = {
   name: string;
   phone: string;
   email?: string | null;
-  projectType: ProjectType;
+  // The public form submits uppercase enum values; inserts normalize to the
+  // lowercase DB representation below.
+  projectType: ProjectType | Uppercase<ProjectType>;
   requirements: string;
-  preferredContactMethod?: ContactMethod | null;
+  preferredContactMethod?: ContactMethod | Uppercase<ContactMethod> | null;
   sourcePage?: string | null;
   sourceType?: string | null;
   referringUrl?: string | null;

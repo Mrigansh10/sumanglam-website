@@ -40,22 +40,22 @@ export async function PUT(
 
     await Promise.all([
       brandIds !== undefined
-        ? supabase.from("showroom_brand_mappings").delete().eq("showroom_section_id", id).then(() =>
-            brandIds.length
-              ? supabase.from("showroom_brand_mappings").insert(
-                  brandIds.map((brandId) => ({ showroom_section_id: id, brand_id: brandId }))
-                )
-              : Promise.resolve()
-          )
+        ? supabase.from("showroom_brand_mappings").delete().eq("showroom_section_id", id).then(async () => {
+            if (brandIds.length) {
+              await supabase.from("showroom_brand_mappings").insert(
+                brandIds.map((brandId) => ({ showroom_section_id: id, brand_id: brandId }))
+              );
+            }
+          })
         : Promise.resolve(),
       inspirationIds !== undefined
-        ? supabase.from("showroom_inspiration_mappings").delete().eq("showroom_section_id", id).then(() =>
-            inspirationIds.length
-              ? supabase.from("showroom_inspiration_mappings").insert(
-                  inspirationIds.map((inspirationId) => ({ showroom_section_id: id, inspiration_id: inspirationId }))
-                )
-              : Promise.resolve()
-          )
+        ? supabase.from("showroom_inspiration_mappings").delete().eq("showroom_section_id", id).then(async () => {
+            if (inspirationIds.length) {
+              await supabase.from("showroom_inspiration_mappings").insert(
+                inspirationIds.map((inspirationId) => ({ showroom_section_id: id, inspiration_id: inspirationId }))
+              );
+            }
+          })
         : Promise.resolve(),
     ]);
 

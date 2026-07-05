@@ -20,7 +20,7 @@ type FormState = {
 };
 
 interface InspirationFormProps {
-  spaces: Space[];
+  spaces: Pick<Space, "id" | "title">[];
   brands: Brand[];
   initial?: Partial<FormState> & { id?: string };
   mode: "create" | "edit";

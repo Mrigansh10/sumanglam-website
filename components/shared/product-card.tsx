@@ -9,14 +9,15 @@ type ProductCardProps = {
   brandName?: string | null;
   priceRange?: string | null;
   primaryImage?: string | null;
-  availabilityStatus?: "AVAILABLE" | "LIMITED" | "DISCONTINUED" | "COMING_SOON";
+  // Supabase serves lowercase enum values; legacy callers may pass uppercase.
+  availabilityStatus?: string | null;
 };
 
 const availabilityLabel: Record<string, { label: string; variant: "success" | "warning" | "error" | "default" }> = {
-  AVAILABLE: { label: "Available", variant: "success" },
-  LIMITED: { label: "Limited", variant: "warning" },
-  DISCONTINUED: { label: "Discontinued", variant: "error" },
-  COMING_SOON: { label: "Coming Soon", variant: "default" },
+  available: { label: "Available", variant: "success" },
+  limited: { label: "Limited", variant: "warning" },
+  discontinued: { label: "Discontinued", variant: "error" },
+  coming_soon: { label: "Coming Soon", variant: "default" },
 };
 
 /** Research-oriented product card — informs and invites inquiry, no cart. */
@@ -28,9 +29,10 @@ export function ProductCard({
   primaryImage,
   availabilityStatus,
 }: ProductCardProps) {
+  const availabilityKey = availabilityStatus?.toLowerCase();
   const availability =
-    availabilityStatus && availabilityStatus !== "AVAILABLE"
-      ? availabilityLabel[availabilityStatus]
+    availabilityKey && availabilityKey !== "available"
+      ? availabilityLabel[availabilityKey] ?? null
       : null;
 
   return (

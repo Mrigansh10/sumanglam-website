@@ -90,7 +90,7 @@ export default async function AdminOverviewPage() {
               <div className="divide-y divide-line">
                 {data.recentConsultations.map((consultation) => (
                   <div key={consultation.id} className="py-4 first:pt-0 last:pb-0">
-                    <p className="font-medium">{consultation.lead.name}</p>
+                    <p className="font-medium">{consultation.lead?.name ?? "—"}</p>
                     <p className="mt-1 text-sm text-ink-soft">
                       {consultation.projectType.replaceAll("_", " ").toLowerCase()}
                     </p>

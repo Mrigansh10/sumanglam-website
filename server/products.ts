@@ -1,4 +1,18 @@
 import { supabase, rows, camelizeRecord } from "@/lib/supabase";
+import type { Inspiration, Product, ProductType, ProductSubcategory } from "@/lib/db-types";
+
+type ProductCategoryRef = { id: string; name: string; slug: string };
+
+export type TaxonomyCategory = ProductCategoryRef & {
+  subcategories: ProductSubcategory[];
+};
+
+// Detail-page shape: full Product plus the spec map bridged from the
+// `technical_specs_json` column (see getProductBySlug).
+export type ProductDetail = Product & {
+  technicalSpecs?: Record<string, string> | null;
+  technicalSpecsJson?: Record<string, string> | null;
+};
 
 export type ProductListParams = {
   page?: number;
@@ -81,7 +95,7 @@ export async function listProducts(params: ProductListParams = {}) {
   const { data, count } = await query;
   const total = count ?? 0;
   return {
-    items: rows(data),
+    items: rows<Product>(data),
     pagination: { page, limit, total, totalPages: Math.max(1, Math.ceil(total / limit)) },
   };
 }
@@ -95,7 +109,7 @@ export async function getProductBySlug(slug: string) {
     .limit(1);
 
   if (!raw?.length) return null;
-  const product = camelizeRecord<Record<string, unknown>>(raw[0]);
+  const product = camelizeRecord<ProductDetail>(raw[0]);
   // Supabase column `technical_specs_json` camelizes to `technicalSpecsJson`,
   // but the UI (ported from Prisma) reads `technicalSpecs`. Bridge the names.
   if (product.technicalSpecs === undefined) product.technicalSpecs = product.technicalSpecsJson;
@@ -112,11 +126,11 @@ export async function getProductBySlug(slug: string) {
   ]);
 
   const categories = (catMappings.data ?? [])
-    .map((m) => camelizeRecord(m.category as Record<string, unknown>))
+    .map((m) => camelizeRecord<ProductCategoryRef>(m.category as unknown as Record<string, unknown>))
     .filter(Boolean);
 
   const inspirations = (inspirLinks.data ?? [])
-    .map((m) => camelizeRecord(m.inspiration as Record<string, unknown>))
+    .map((m) => camelizeRecord<Inspiration>(m.inspiration as unknown as Record<string, unknown>))
     .filter(Boolean);
 
   const { data: relatedRaw } = await supabase
@@ -134,7 +148,7 @@ export async function getProductBySlug(slug: string) {
     brand: product.brand,
     categories,
     inspirations,
-    relatedProducts: rows(relatedRaw),
+    relatedProducts: rows<Product>(relatedRaw),
   };
 }
 
@@ -154,24 +168,22 @@ export async function getProductTaxonomy() {
     .select("*")
     .order("name", { ascending: true });
 
-  const subByCat = new Map<string, unknown[]>();
-  for (const sub of rows(subcategories)) {
-    const s = sub as Record<string, unknown>;
-    const list = subByCat.get(s.categoryId as string) ?? [];
+  const subByCat = new Map<string, ProductSubcategory[]>();
+  for (const s of rows<ProductSubcategory>(subcategories)) {
+    const list = subByCat.get(s.categoryId) ?? [];
     list.push(s);
-    subByCat.set(s.categoryId as string, list);
+    subByCat.set(s.categoryId, list);
   }
 
-  const catByType = new Map<string, unknown[]>();
-  for (const cat of rows(categories)) {
-    const c = cat as Record<string, unknown>;
-    const list = catByType.get(c.productTypeId as string) ?? [];
-    list.push({ ...c, subcategories: subByCat.get(c.id as string) ?? [] });
-    catByType.set(c.productTypeId as string, list);
+  const catByType = new Map<string, TaxonomyCategory[]>();
+  for (const c of rows<ProductCategoryRef & { productTypeId: string }>(categories)) {
+    const list = catByType.get(c.productTypeId) ?? [];
+    list.push({ ...c, subcategories: subByCat.get(c.id) ?? [] });
+    catByType.set(c.productTypeId, list);
   }
 
-  return rows<Record<string, unknown>>(types).map((t) => ({
+  return rows<ProductType>(types).map((t) => ({
     ...t,
-    categories: catByType.get(t.id as string) ?? [],
+    categories: catByType.get(t.id) ?? [],
   }));
 }

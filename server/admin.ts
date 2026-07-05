@@ -1,4 +1,5 @@
 import { supabase, rows, camelizeRecord } from "@/lib/supabase";
+import type { Consultation, Lead } from "@/lib/db-types";
 
 // ---------------------------------------------------------------------------
 // String union types (replaces Prisma enums — values match DB lowercase)
@@ -97,8 +98,8 @@ export async function getAdminOverview() {
       leads,
       consultations,
     },
-    recentLeads: rows(recentLeadsRaw),
-    recentConsultations: rows(recentConsultationsRaw),
+    recentLeads: rows<Lead>(recentLeadsRaw),
+    recentConsultations: rows<Consultation>(recentConsultationsRaw),
   };
 }
 
@@ -127,7 +128,7 @@ export async function getAdminLeads(options?: {
   }
 
   const { data, count } = await query;
-  return { items: rows(data), total: count ?? 0, page, limit };
+  return { items: rows<Lead>(data), total: count ?? 0, page, limit };
 }
 
 export async function getAdminLead(id: string) {
@@ -165,7 +166,7 @@ export async function getAdminConsultations(options?: { page?: number; limit?: n
     .order("created_at", { ascending: false })
     .range(from, to);
 
-  return { items: rows(data), total: count ?? 0, page, limit };
+  return { items: rows<Consultation>(data), total: count ?? 0, page, limit };
 }
 
 export async function getAdminConsultation(id: string) {
@@ -182,6 +183,28 @@ export async function getAdminConsultation(id: string) {
 // ---------------------------------------------------------------------------
 
 const contentListLimit = 50;
+
+// Shapes of the trimmed selects below (camelized).
+export type AdminContentRow = {
+  id: string;
+  slug: string;
+  status: ContentStatus;
+  isFeatured: boolean;
+  updatedAt: string;
+};
+export type AdminCollectionRow = {
+  id: string;
+  title: string;
+  slug: string;
+  status: ContentStatus;
+  updatedAt: string;
+};
+export type AdminShowroomRow = {
+  id: string;
+  name: string;
+  floorNumber: number | null;
+  updatedAt: string;
+};
 
 export async function getAdminContentLists() {
   const [
@@ -219,11 +242,11 @@ export async function getAdminContentLists() {
   ]);
 
   return {
-    inspirations: rows(inspirations),
-    brands: rows(brands),
-    products: rows(products),
-    collections: rows(collections),
-    showroomSections: rows(showroomSections),
+    inspirations: rows<AdminContentRow & { title: string }>(inspirations),
+    brands: rows<AdminContentRow & { name: string }>(brands),
+    products: rows<AdminContentRow & { name: string }>(products),
+    collections: rows<AdminCollectionRow>(collections),
+    showroomSections: rows<AdminShowroomRow>(showroomSections),
   };
 }
 

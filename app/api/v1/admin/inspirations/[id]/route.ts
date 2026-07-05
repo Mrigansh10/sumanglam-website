@@ -49,31 +49,31 @@ export async function PUT(
     // Replace junction rows for any relation arrays that were provided
     await Promise.all([
       collectionIds !== undefined
-        ? supabase.from("collection_inspirations").delete().eq("inspiration_id", id).then(() =>
-            collectionIds.length
-              ? supabase.from("collection_inspirations").insert(
-                  collectionIds.map((collectionId) => ({ collection_id: collectionId, inspiration_id: id }))
-                )
-              : Promise.resolve()
-          )
+        ? supabase.from("collection_inspirations").delete().eq("inspiration_id", id).then(async () => {
+            if (collectionIds.length) {
+              await supabase.from("collection_inspirations").insert(
+                collectionIds.map((collectionId) => ({ collection_id: collectionId, inspiration_id: id }))
+              );
+            }
+          })
         : Promise.resolve(),
       brandIds !== undefined
-        ? supabase.from("inspiration_brands").delete().eq("inspiration_id", id).then(() =>
-            brandIds.length
-              ? supabase.from("inspiration_brands").insert(
-                  brandIds.map((brandId) => ({ inspiration_id: id, brand_id: brandId }))
-                )
-              : Promise.resolve()
-          )
+        ? supabase.from("inspiration_brands").delete().eq("inspiration_id", id).then(async () => {
+            if (brandIds.length) {
+              await supabase.from("inspiration_brands").insert(
+                brandIds.map((brandId) => ({ inspiration_id: id, brand_id: brandId }))
+              );
+            }
+          })
         : Promise.resolve(),
       productIds !== undefined
-        ? supabase.from("inspiration_products").delete().eq("inspiration_id", id).then(() =>
-            productIds.length
-              ? supabase.from("inspiration_products").insert(
-                  productIds.map((productId) => ({ inspiration_id: id, product_id: productId }))
-                )
-              : Promise.resolve()
-          )
+        ? supabase.from("inspiration_products").delete().eq("inspiration_id", id).then(async () => {
+            if (productIds.length) {
+              await supabase.from("inspiration_products").insert(
+                productIds.map((productId) => ({ inspiration_id: id, product_id: productId }))
+              );
+            }
+          })
         : Promise.resolve(),
     ]);
 

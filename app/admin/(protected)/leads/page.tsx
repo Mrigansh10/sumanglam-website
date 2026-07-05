@@ -63,7 +63,7 @@ export default async function AdminLeadsPage({
               </thead>
               <tbody className="divide-y divide-line">
                 {data.items.map((lead) => {
-                  const latest = lead.consultations[0];
+                  const latest = lead.consultations?.[0];
                   return (
                     <tr key={lead.id} className="align-top">
                       <td className="px-5 py-4">

@@ -22,11 +22,12 @@ export const dynamic = "force-dynamic";
 
 type Params = Promise<{ slug: string }>;
 
+// Keys are the lowercase Supabase enum representation.
 const availabilityCopy: Record<string, { label: string; variant: "success" | "warning" | "error" | "default" }> = {
-  AVAILABLE: { label: "Available at showroom", variant: "success" },
-  LIMITED: { label: "Limited availability", variant: "warning" },
-  DISCONTINUED: { label: "Discontinued", variant: "error" },
-  COMING_SOON: { label: "Coming soon", variant: "default" },
+  available: { label: "Available at showroom", variant: "success" },
+  limited: { label: "Limited availability", variant: "warning" },
+  discontinued: { label: "Discontinued", variant: "error" },
+  coming_soon: { label: "Coming soon", variant: "default" },
 };
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
@@ -34,7 +35,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const data = await safeQuery(() => getProductBySlug(slug), null);
   if (!data) return { title: "Product" };
   return {
-    title: `${data.product.name} — ${data.brand.name}`,
+    title: data.brand ? `${data.product.name} — ${data.brand.name}` : data.product.name,
     description: data.product.shortDescription ?? undefined,
     openGraph: data.product.primaryImage
       ? { images: [resolveImage(data.product.primaryImage, { width: 1200 })] }
@@ -48,11 +49,15 @@ export default async function ProductDetailPage({ params }: { params: Params }) 
   if (!data) notFound();
 
   const { product, brand, categories, inspirations, relatedProducts } = data;
+  // brand_id / product_type_id are non-null columns, so the joins always
+  // resolve; the optional types only reflect supabase-js's uncertainty.
+  if (!brand || !product.productType) notFound();
+  const productType = product.productType;
   const specs =
     product.technicalSpecs && typeof product.technicalSpecs === "object"
       ? Object.entries(product.technicalSpecs as Record<string, string>)
       : [];
-  const availability = availabilityCopy[product.availabilityStatus];
+  const availability = availabilityCopy[product.availabilityStatus?.toLowerCase()];
 
   return (
     <>
@@ -68,7 +73,7 @@ export default async function ProductDetailPage({ params }: { params: Params }) 
               <>
                 {" / "}
                 <Link
-                  href={`/products?type=${product.productType.slug}&category=${categories[0].slug}`}
+                  href={`/products?type=${productType.slug}&category=${categories[0].slug}`}
                   className="hover:text-ink"
                 >
                   {categories[0].name}
@@ -136,7 +141,7 @@ export default async function ProductDetailPage({ params }: { params: Params }) 
                 {categories.map((category) => (
                   <Link
                     key={category.id}
-                    href={`/products?type=${product.productType.slug}&category=${category.slug}`}
+                    href={`/products?type=${productType.slug}&category=${category.slug}`}
                   >
                     <Badge variant="outline" className="hover:border-accent">
                       {category.name}

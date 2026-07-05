@@ -186,6 +186,29 @@ Findings and fixes from a MurphyScan launch-readiness audit (skill installed at
   per-instance (documented V1 trade-off). `ignoreBuildErrors: true` still skips
   type gates on deploy.
 
+### Security Hardening Pass 2 (2026-07-05)
+
+* **Content-Security-Policy**: full CSP in `next.config.ts`. `'unsafe-inline'` is
+  accepted for script/style because Next hydration and the GA4 init snippet are
+  inline and nonce-based CSP would require adding middleware; external script
+  injection is still blocked. Allowlist: GA (`*.googletagmanager.com`,
+  `*.google-analytics.com`, `*.analytics.google.com`), Google Maps embeds
+  (`frame-src www.google.com`), Cloudinary images. Any new external resource
+  domain must be added to the `contentSecurityPolicy` array or it will be blocked.
+* **Type gate restored**: `ignoreBuildErrors` removed after fixing all suppressed
+  errors. Key patterns: supabase-js types to-one joins as arrays → cast link rows
+  `as unknown as` the runtime object shape; `rows<T>()`/`camelizeRecord<T>()` now
+  called with real `lib/db-types` types at every server query; enum-consuming
+  components (ProductCard availability, BrandCard type badge) normalize to the
+  lowercase Supabase representation via `.toLowerCase()` at the boundary.
+* **Supabase key strategy**: `lib/supabase.ts` prefers `SUPABASE_SERVICE_ROLE_KEY`
+  when present (falls back to anon), throws if imported client-side, and disables
+  session persistence. Production DDL cannot run from auto-mode sessions, so RLS
+  changes ship as reviewed scripts: `scripts/security/fix-reviews-rls.sql`
+  (immediate — restores the reviews feature under RLS) and
+  `scripts/security/rls-lockdown.sql` (post-service-key — RLS on everywhere, anon
+  grants nothing, service role bypasses).
+
 ## Source Trace
 
 Derived from `project-vault/15_Open_Questions.md`, `project-vault/16_Conflicts.md`, `project-vault/18_Build_Order.md`, source docs, and implementation work on 2026-06-10.

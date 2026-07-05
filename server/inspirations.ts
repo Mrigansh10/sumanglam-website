@@ -101,17 +101,20 @@ export async function getInspirationBySlug(slug: string) {
       .limit(3),
   ]);
 
-  const collections = (collLinks.data ?? [])
+  // supabase-js types to-one joins as arrays; the runtime shape is an object.
+  type JoinedRow = Record<string, Record<string, unknown> | null>;
+
+  const collections = ((collLinks.data ?? []) as unknown as JoinedRow[])
     .map((l) => l.collection)
-    .filter((c): c is Record<string, unknown> => c !== null && (c as Record<string, unknown>).status === "published")
+    .filter((c): c is Record<string, unknown> => c !== null && c.status === "published")
     .map((c) => camelizeRecord<Collection>(c));
 
-  const products = (productLinks.data ?? [])
+  const products = ((productLinks.data ?? []) as unknown as JoinedRow[])
     .map((l) => l.product)
     .filter((p): p is Record<string, unknown> => p !== null)
     .map((p) => camelizeRecord<Product>(p));
 
-  const brands = (brandLinks.data ?? [])
+  const brands = ((brandLinks.data ?? []) as unknown as JoinedRow[])
     .map((l) => l.brand)
     .filter((b): b is Record<string, unknown> => b !== null)
     .map((b) => camelizeRecord<Brand>(b));

@@ -1,9 +1,21 @@
 import { createClient } from "@supabase/supabase-js";
 
-const SUPABASE_URL = "https://yikrshucrahamejrsklp.supabase.co";
-const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY!;
+// This module must never reach the browser: with RLS policies still permissive,
+// the key is the only wall around leads/consultations PII.
+if (typeof window !== "undefined") {
+  throw new Error("lib/supabase.ts is server-only and must not be imported into client components.");
+}
 
-export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const SUPABASE_URL = "https://yikrshucrahamejrsklp.supabase.co";
+// Prefer the service-role key once it's added to .env / Vercel env. It bypasses
+// RLS, which lets the anon key be revoked to read-nothing via
+// scripts/security/rls-lockdown.sql (run that ONLY after this key is set).
+const SUPABASE_KEY =
+  process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_ANON_KEY!;
+
+export const supabase = createClient(SUPABASE_URL, SUPABASE_KEY, {
+  auth: { persistSession: false },
+});
 
 // Convert a snake_case key to camelCase
 function toCamel(s: string): string {

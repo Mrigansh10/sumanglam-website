@@ -24,14 +24,14 @@ export async function getShowroomSections() {
   ]);
 
   const brandsBySectionId = new Map<string, Array<{ brand: Brand }>>();
-  for (const m of (brandMappings ?? []) as Array<{ showroom_section_id: string; brand: Record<string, unknown> }>) {
+  for (const m of (brandMappings ?? []) as unknown as Array<{ showroom_section_id: string; brand: Record<string, unknown> }>) {
     const list = brandsBySectionId.get(m.showroom_section_id) ?? [];
     list.push({ brand: camelizeRecord<Brand>(m.brand) });
     brandsBySectionId.set(m.showroom_section_id, list);
   }
 
   const inspirBySectionId = new Map<string, Array<{ inspiration: Inspiration }>>();
-  for (const m of (inspirMappings ?? []) as Array<{ showroom_section_id: string; inspiration: Record<string, unknown> }>) {
+  for (const m of (inspirMappings ?? []) as unknown as Array<{ showroom_section_id: string; inspiration: Record<string, unknown> }>) {
     const list = inspirBySectionId.get(m.showroom_section_id) ?? [];
     list.push({ inspiration: camelizeRecord<Inspiration>(m.inspiration) });
     inspirBySectionId.set(m.showroom_section_id, list);
@@ -65,10 +65,10 @@ export async function getShowroomSectionById(id: string) {
       .eq("showroom_section_id", id),
   ]);
 
-  const brands = ((brandMappings ?? []) as Array<{ brand: Record<string, unknown> }>)
+  const brands = ((brandMappings ?? []) as unknown as Array<{ brand: Record<string, unknown> }>)
     .map((m) => camelizeRecord<Brand>(m.brand));
 
-  const inspirations = ((inspirMappings ?? []) as Array<{ inspiration: Record<string, unknown> }>)
+  const inspirations = ((inspirMappings ?? []) as unknown as Array<{ inspiration: Record<string, unknown> }>)
     .map((m) => camelizeRecord<Inspiration>(m.inspiration));
 
   return { section, brands, inspirations };

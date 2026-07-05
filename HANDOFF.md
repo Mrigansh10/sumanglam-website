@@ -149,12 +149,11 @@ npm run dev
 
 | Issue | Priority | Fix |
 |---|---|---|
-| **Reviews table RLS** — anon key cannot read or write reviews | Medium | Supabase dashboard → Table Editor → `reviews` → RLS → disable, or add anon read policy |
+| **Reviews table RLS** — anon key cannot read or write reviews (RLS on, zero policies — confirmed 2026-07-05) | Medium | **One command (auto-mode can't run prod DDL):** `cat scripts/security/fix-reviews-rls.sql \| npx prisma db execute --stdin --schema prisma/schema.prisma` |
 | **Homepage hero + card images** — still seeded with the old defaults (Nolte URL + SVG placeholders) | High | **Now self-serve:** upload real renders in **Admin → Homepage** (no code edit needed). Not a bug — just pending content |
 | **Stale `next dev` build cache** — after large edits (new files / Prisma schema changes) a long-running dev server can 404 its CSS chunk → page renders fully **unstyled** (giant washed-out blocks, no header). HTML/images still 200. | Low | Restart dev: stop the server, `rm -rf .next`, `npm run dev`, hard-refresh (Cmd+Shift+R). Hit once on 2026-06-29 |
 | **Brand logos/hero images missing** for most brands | High | Admin → `/admin/brands/[id]` → upload/URL import. Brand hero images now also drive the Kitchens mega-menu cards |
-| **TypeScript build errors suppressed** — `ignoreBuildErrors: true` in `next.config.ts` | Low | Update pages using uppercase Prisma enums (e.g. `"PUBLISHED"`) to lowercase (Supabase returns lowercase) |
-| **Supabase REST shape vs old Prisma shape** — REST returns timestamps as ISO **strings** (not `Date`) and enums **lowercase** (not uppercase). Root cause of the content-page `Invalid time value` crash and the brand-save enum error. | Medium | When porting code that assumed Prisma's shape: coerce dates with `new Date(value)` before formatting, and `.toUpperCase()` enums on load if the form/API contract expects uppercase. Fixed in the 4 admin list pages + brands edit; **still un-swept:** public brands page hardcodes `brandType="SOLUTION"`, homepage passes lowercase; `availabilityStatus` enum unchecked. |
+| **Supabase REST shape vs old Prisma shape** — REST returns timestamps as ISO **strings** (not `Date`) and enums **lowercase** (not uppercase). Root cause of the content-page `Invalid time value` crash and the brand-save enum error. | Low | When porting code that assumed Prisma's shape: coerce dates with `new Date(value)` before formatting, and normalize enum case. **Sweep completed 2026-07-05** (`ignoreBuildErrors` removed, type gate now blocks deploys; ProductCard/BrandCard availability+type badges normalized to lowercase DB values). Watch for regressions in NEW code only. |
 
 ---
 
@@ -171,13 +170,16 @@ not on code.** The motion system, photo pipeline, and page structure are done.
 6. **OG/social share image** — deliberately deferred by user until the new render batch (don't set one yet).
 7. **Fix reviews RLS** — disable on `reviews` table in Supabase dashboard
 8. **Deploy to Vercel** — import `Mrigansh10/sumanglam-website`, add env vars, set domain
-9. **Supabase RLS posture (security follow-up, needs dashboard)** — RLS is off on all
-   tables, so the anon key is the only wall around leads/consultations PII. Durable fix:
-   enable RLS with anon read-only policies on published content + move server writes to a
-   service-role key in `lib/supabase.ts`. Until then the anon key must stay server-only.
-10. **CSP header (security follow-up)** — baseline security headers shipped 2026-07-05;
-   a full Content-Security-Policy still needs testing against Next inline scripts,
-   Framer Motion, GA4, and Cloudinary before adding.
+9. **Supabase RLS lockdown (2 user steps left)** — code plumbing is DONE
+   (`lib/supabase.ts` auto-prefers `SUPABASE_SERVICE_ROLE_KEY`). Remaining:
+   (a) copy the service_role key from Supabase dashboard → Settings → API into
+   `.env` + Vercel env, verify site+admin still work; (b) run
+   `scripts/security/rls-lockdown.sql` (instructions in the file header) — after
+   that a leaked anon key exposes nothing. Prerequisite order matters; read the header.
+10. ~~CSP header~~ — DONE 2026-07-05: full CSP shipped + verified (GA4, Maps embeds,
+   Cloudinary allowlisted; every rendered page's external origins audited). If a
+   future feature loads a NEW external script/frame/image domain, add it to
+   `contentSecurityPolicy` in `next.config.ts` or the browser will block it.
 
 **Paused (do not resume without a new decision):**
 - Importing more Yale/vendor product categories (`scripts/yale-catalogue/`).
@@ -194,6 +196,7 @@ NEXTAUTH_SECRET=...          # generate: openssl rand -base64 32
 NEXTAUTH_URL=https://your-domain.com
 ADMIN_EMAIL=admin@sumanglam.co
 ADMIN_PASSWORD=...              # strong random value; lives only in .env / Vercel env
+SUPABASE_SERVICE_ROLE_KEY=...   # dashboard → Settings → API; unlocks scripts/security/rls-lockdown.sql
 CLOUDINARY_CLOUD_NAME=de9turgsy
 CLOUDINARY_API_KEY=...
 CLOUDINARY_API_SECRET=...
@@ -313,6 +316,26 @@ Documentation audit across all 16 source docs. Fixed discovery flow inconsistenc
 - **Deferred (documented in Pending Tasks + vault):** RLS posture / service-role
   refactor (needs Supabase dashboard), full CSP, durable rate-limit store,
   `ignoreBuildErrors` removal, error tracking/uptime monitoring for launch.
+
+### Session 10b — 2026-07-05 (Security round 2: CSP, type gate, RLS prep)
+- **Full CSP shipped** in `next.config.ts` (script/style `'unsafe-inline'` for Next
+  hydration + GA4 snippet; GA + Maps + Cloudinary allowlisted; `frame-ancestors 'none'`;
+  `object-src 'none'`). Verified: prod build served, all 11 public routes 200, external
+  origins in rendered HTML audited against the allowlist. `poweredByHeader` off.
+- **`ignoreBuildErrors` REMOVED** — all ~132 suppressed TS errors fixed (typed
+  `server/admin.ts`/`products.ts`/`inspirations.ts`/`showroom.ts`/`collections.ts`
+  returns, `as unknown as` for supabase-js to-one join arrays, async/await in junction
+  re-link `.then()` chains). Deploys now hard-fail on type errors. En route fixed two
+  REAL enum bugs: ProductCard availability badge and BrandCard "Solutions" badge never
+  matched lowercase DB values.
+- **RLS groundwork:** `lib/supabase.ts` now prefers `SUPABASE_SERVICE_ROLE_KEY`
+  (server-only guard added, `persistSession:false`). Confirmed via SQL probe that
+  `reviews` has RLS on with no policies. **Auto-mode is blocked from prod DDL**, so two
+  runnable scripts were prepared instead: `scripts/security/fix-reviews-rls.sql` (run
+  now — unbreaks reviews, keeps RLS on, inserts can't be pre-approved) and
+  `scripts/security/rls-lockdown.sql` (run ONLY after the service key is in env).
+- Consultation input types now accept the uppercase form enums (runtime already
+  normalized); admin pages null-safe on `lead`/`consultations` joins.
 
 ## Hard Rules (Do Not Violate)
 
