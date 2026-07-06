@@ -2,11 +2,14 @@ import type { NextConfig } from "next";
 
 // 'unsafe-inline' scripts: Next.js hydration and the GA4 init snippet are inline;
 // nonce-based CSP needs per-request middleware — revisit if we ever add one.
+// 'unsafe-eval' is DEV-ONLY: `next dev` bundles via eval; production never gets it.
 // Cloudinary is listed for img-src defensively (most images proxy via /_next/image).
 // frame-src covers the Google Maps embeds on /contact and /showroom.
+const isDev = process.env.NODE_ENV === "development";
+
 const contentSecurityPolicy = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' https://*.googletagmanager.com",
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://*.googletagmanager.com`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https://res.cloudinary.com https://*.googletagmanager.com https://*.google-analytics.com",
   "font-src 'self' data:",
