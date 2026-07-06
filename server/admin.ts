@@ -1,3 +1,4 @@
+import { nowIso } from "@/lib/ids";
 import { supabase, rows, camelizeRecord } from "@/lib/supabase";
 import type { Consultation, Lead } from "@/lib/db-types";
 
@@ -143,7 +144,7 @@ export async function getAdminLead(id: string) {
 export async function updateLeadStatus(id: string, status: LeadStatus) {
   const { data } = await supabase
     .from("leads")
-    .update({ lead_status: status })
+    .update({ lead_status: status, updated_at: nowIso() })
     .eq("id", id)
     .select()
     .single();
@@ -263,7 +264,7 @@ export async function setContentStatus(
   };
   const { data } = await supabase
     .from(tableMap[type])
-    .update({ status })
+    .update({ status, updated_at: nowIso() })
     .eq("id", id)
     .select()
     .single();
@@ -282,7 +283,7 @@ export async function setContentFeatured(
   };
   const { data } = await supabase
     .from(tableMap[type])
-    .update({ is_featured: isFeatured })
+    .update({ is_featured: isFeatured, updated_at: nowIso() })
     .eq("id", id)
     .select()
     .single();

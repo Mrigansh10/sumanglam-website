@@ -1,5 +1,6 @@
 import { auth } from "@/auth";
 import { errors, handleRoute, ok } from "@/lib/api/response";
+import { newId, nowIso } from "@/lib/ids";
 import { supabase, camelizeRecord } from "@/lib/supabase";
 import { createShowroomSectionSchema } from "@/lib/validation/admin-content";
 
@@ -26,6 +27,8 @@ export async function POST(request: Request) {
         floor_number: data.floorNumber,
         images: data.images,
         video_url: data.videoUrl,
+        created_at: nowIso(),
+        updated_at: nowIso(),
       })
       .select()
       .single();

@@ -1,5 +1,6 @@
 import { auth } from "@/auth";
 import { errors, fail, handleRoute, ok } from "@/lib/api/response";
+import { nowIso } from "@/lib/ids";
 import { supabase, camelizeRecord } from "@/lib/supabase";
 import { updateProductSchema } from "@/lib/validation/admin-content";
 
@@ -41,7 +42,7 @@ export async function PUT(
 
     const { data: product, error } = await supabase
       .from("products")
-      .update(update)
+      .update({ ...update, updated_at: nowIso() })
       .eq("id", id)
       .select()
       .single();
@@ -79,7 +80,7 @@ export async function DELETE(
     // Archive instead of hard-delete
     const { data: product } = await supabase
       .from("products")
-      .update({ status: "archived" })
+      .update({ status: "archived", updated_at: nowIso() })
       .eq("id", id)
       .select()
       .single();

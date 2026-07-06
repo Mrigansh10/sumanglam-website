@@ -1,4 +1,5 @@
 import { supabase, camelizeRecord } from "@/lib/supabase";
+import { newId, nowIso } from "@/lib/ids";
 
 // String union types matching DB enum values (lowercase)
 export type ProjectType =
@@ -41,7 +42,7 @@ export async function createConsultation(input: ConsultationInput) {
 
   if (existing?.length) {
     const existingLead = camelizeRecord<Record<string, unknown>>(existing[0]);
-    const { data: updated } = await supabase
+    const { data: updated, error } = await supabase
       .from("leads")
       .update({
         name: input.name,
@@ -49,31 +50,39 @@ export async function createConsultation(input: ConsultationInput) {
         source_page: input.sourcePage ?? existingLead.sourcePage,
         lead_source: input.sourceType ?? existingLead.leadSource,
         referring_url: input.referringUrl ?? existingLead.referringUrl,
+        updated_at: nowIso(),
       })
       .eq("id", existingLead.id as string)
       .select()
       .single();
+    if (error) console.error("[leads] update failed:", error.message);
     lead = updated ? camelizeRecord<Record<string, unknown>>(updated) : existingLead;
   } else {
-    const { data: created } = await supabase
+    // id / timestamps supplied explicitly — Prisma-created columns have no DB
+    // defaults (see lib/ids.ts).
+    const { data: created, error } = await supabase
       .from("leads")
       .insert({
+        id: newId(),
         name: input.name,
         phone: input.phone,
         email: input.email ?? null,
         lead_source: input.sourceType ?? "consultation_form",
         source_page: input.sourcePage ?? null,
         referring_url: input.referringUrl ?? null,
+        created_at: nowIso(),
+        updated_at: nowIso(),
       })
       .select()
       .single();
-    if (!created) throw new Error("Failed to create lead");
+    if (!created) throw new Error(`Failed to create lead: ${error?.message ?? "no row returned"}`);
     lead = camelizeRecord<Record<string, unknown>>(created);
   }
 
-  const { data: consultData } = await supabase
+  const { data: consultData, error: consultError } = await supabase
     .from("consultations")
     .insert({
+      id: newId(),
       lead_id: lead.id as string,
       // Form may submit uppercase values; DB stores lowercase
       project_type: input.projectType.toLowerCase(),
@@ -81,11 +90,14 @@ export async function createConsultation(input: ConsultationInput) {
       preferred_contact_method: input.preferredContactMethod
         ? input.preferredContactMethod.toLowerCase()
         : null,
+      created_at: nowIso(),
+      updated_at: nowIso(),
     })
     .select()
     .single();
 
-  if (!consultData) throw new Error("Failed to create consultation");
+  if (!consultData)
+    throw new Error(`Failed to create consultation: ${consultError?.message ?? "no row returned"}`);
   const consultation = camelizeRecord<Record<string, unknown>>(consultData);
 
   notifyAdmin(lead.name as string, consultation.id as string);

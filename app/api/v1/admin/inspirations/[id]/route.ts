@@ -1,5 +1,6 @@
 import { auth } from "@/auth";
 import { errors, fail, handleRoute, ok } from "@/lib/api/response";
+import { nowIso } from "@/lib/ids";
 import { supabase, camelizeRecord } from "@/lib/supabase";
 import { updateInspirationSchema } from "@/lib/validation/admin-content";
 
@@ -36,7 +37,7 @@ export async function PUT(
 
     const { data: inspiration, error } = await supabase
       .from("inspirations")
-      .update(update)
+      .update({ ...update, updated_at: nowIso() })
       .eq("id", id)
       .select()
       .single();
@@ -96,7 +97,7 @@ export async function DELETE(
     // Archive instead of hard-delete
     const { data: inspiration } = await supabase
       .from("inspirations")
-      .update({ status: "archived" })
+      .update({ status: "archived", updated_at: nowIso() })
       .eq("id", id)
       .select()
       .single();

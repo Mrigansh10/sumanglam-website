@@ -1,5 +1,6 @@
 import { auth } from "@/auth";
 import { errors, fail, handleRoute, ok } from "@/lib/api/response";
+import { nowIso } from "@/lib/ids";
 import { supabase, camelizeRecord } from "@/lib/supabase";
 import { updateBrandSchema } from "@/lib/validation/admin-content";
 
@@ -52,7 +53,7 @@ export async function PUT(
 
     const { data: brand, error } = await supabase
       .from("brands")
-      .update(update)
+      .update({ ...update, updated_at: nowIso() })
       .eq("id", id)
       .select()
       .single();
