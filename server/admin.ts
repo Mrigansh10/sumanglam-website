@@ -120,7 +120,7 @@ export async function getAdminLeads(options?: {
 
   let query = supabase
     .from("leads")
-    .select("*, consultations(id, created_at, status)", { count: "exact" })
+    .select("*, consultations(id, created_at, status, project_type)", { count: "exact" })
     .order("created_at", { ascending: false })
     .range(from, to);
 

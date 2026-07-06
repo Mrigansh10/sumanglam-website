@@ -75,7 +75,9 @@ export default async function AdminLeadsPage({
                         <p>{lead.email ?? "No email"}</p>
                       </td>
                       <td className="px-5 py-4 text-ink-soft">
-                        {latest ? latest.projectType.replaceAll("_", " ").toLowerCase() : "None"}
+                        {latest?.projectType
+                          ? latest.projectType.replaceAll("_", " ").toLowerCase()
+                          : "None"}
                       </td>
                       <td className="px-5 py-4 text-ink-soft">
                         <p>{lead.leadSource ?? "Unknown"}</p>
