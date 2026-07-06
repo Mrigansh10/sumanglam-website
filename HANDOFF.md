@@ -149,7 +149,6 @@ npm run dev
 
 | Issue | Priority | Fix |
 |---|---|---|
-| **Reviews table RLS** — anon key cannot read or write reviews (RLS on, zero policies — confirmed 2026-07-05) | Medium | **One command (auto-mode can't run prod DDL):** `cat scripts/security/fix-reviews-rls.sql \| npx prisma db execute --stdin --schema prisma/schema.prisma` |
 | **Homepage hero + card images** — still seeded with the old defaults (Nolte URL + SVG placeholders) | High | **Now self-serve:** upload real renders in **Admin → Homepage** (no code edit needed). Not a bug — just pending content |
 | **Stale `next dev` build cache** — after large edits (new files / Prisma schema changes) a long-running dev server can 404 its CSS chunk → page renders fully **unstyled** (giant washed-out blocks, no header). HTML/images still 200. | Low | Restart dev: stop the server, `rm -rf .next`, `npm run dev`, hard-refresh (Cmd+Shift+R). Hit once on 2026-06-29 |
 | **Brand logos/hero images missing** for most brands | High | Admin → `/admin/brands/[id]` → upload/URL import. Brand hero images now also drive the Kitchens mega-menu cards |
@@ -168,14 +167,13 @@ not on code.** The motion system, photo pipeline, and page structure are done.
 4. **Brand hero assets (8 remaining)** — Blum, Häfele, Liebherr, Godrej, Yale, Spitze, Everyday, Brass Barony still have placeholder heroes. User deciding approach (official imagery was chosen; 4 done: **Bosch, Siemens, Hettich, Dorset** live). Best path: dealer asset packs from brand reps. Decision expected ~2026-07-06/07. ⚠️ Real photos must be uploaded **≥2000px wide** or the `enhance:"render"` guard will let gen_restore repaint them.
 5. **Showroom section photos** — user will provide real showroom photos (Gemini v2 retouch pipeline per memory). Then populate showroom sections via admin.
 6. **OG/social share image** — deliberately deferred by user until the new render batch (don't set one yet).
-7. **Fix reviews RLS** — disable on `reviews` table in Supabase dashboard
-8. **Deploy to Vercel** — import `Mrigansh10/sumanglam-website`, add env vars, set domain
-9. **Supabase RLS lockdown (2 user steps left)** — code plumbing is DONE
-   (`lib/supabase.ts` auto-prefers `SUPABASE_SERVICE_ROLE_KEY`). Remaining:
-   (a) copy the service_role key from Supabase dashboard → Settings → API into
-   `.env` + Vercel env, verify site+admin still work; (b) run
-   `scripts/security/rls-lockdown.sql` (instructions in the file header) — after
-   that a leaked anon key exposes nothing. Prerequisite order matters; read the header.
+7. **Deploy to Vercel** — import `Mrigansh10/sumanglam-website`, add env vars
+   (incl. `SUPABASE_SERVICE_ROLE_KEY` — the app now requires it, see below), set domain
+8. **Delete the "Test User" review** — an approved test review is live in the DB;
+   remove via Admin → Reviews before launch
+9. ~~Reviews RLS / RLS lockdown~~ — **DONE 2026-07-06**: RLS enabled on all 19 tables,
+   anon key verified inert (reads empty, writes 401), app runs on the service-role key.
+   `scripts/security/fix-reviews-rls.sql` is now obsolete (kept for history).
 10. ~~CSP header~~ — DONE 2026-07-05: full CSP shipped + verified (GA4, Maps embeds,
    Cloudinary allowlisted; every rendered page's external origins audited). If a
    future feature loads a NEW external script/frame/image domain, add it to
@@ -196,7 +194,7 @@ NEXTAUTH_SECRET=...          # generate: openssl rand -base64 32
 NEXTAUTH_URL=https://your-domain.com
 ADMIN_EMAIL=admin@sumanglam.co
 ADMIN_PASSWORD=...              # strong random value; lives only in .env / Vercel env
-SUPABASE_SERVICE_ROLE_KEY=...   # dashboard → Settings → API; unlocks scripts/security/rls-lockdown.sql
+SUPABASE_SERVICE_ROLE_KEY=...   # REQUIRED since the 2026-07-06 RLS lockdown (anon key is inert); dashboard → Settings → API
 CLOUDINARY_CLOUD_NAME=de9turgsy
 CLOUDINARY_API_KEY=...
 CLOUDINARY_API_SECRET=...
@@ -336,6 +334,19 @@ Documentation audit across all 16 source docs. Fixed discovery flow inconsistenc
   `scripts/security/rls-lockdown.sql` (run ONLY after the service key is in env).
 - Consultation input types now accept the uppercase form enums (runtime already
   normalized); admin pages null-safe on `lead`/`consultations` joins.
+
+### Session 10c — 2026-07-06 (RLS lockdown executed)
+- User supplied the **service_role key** → added to `.env` (gitignored; also needed in
+  Vercel env at deploy). App verified running entirely on the service-role path.
+- User ran `scripts/security/rls-lockdown.sql` (auto-mode can't run prod DDL): **RLS
+  now ENABLED on all 19 tables with zero anon policies.** Verified post-lockdown:
+  anon-key reads return empty on every table, anon INSERT → 401; public pages,
+  reviews API (first time working), and authed admin pages all 200.
+- **The anon key is now inert** — leaking it exposes nothing. The service-role key is
+  the crown jewel: server-only, never in the repo (`lib/supabase.ts` throws if
+  imported client-side), rotate it in the dashboard if it ever leaks.
+- Found in passing: an approved **"Test User" review** is live → delete before launch
+  (Pending Task 8).
 
 ## Hard Rules (Do Not Violate)
 

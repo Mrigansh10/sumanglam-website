@@ -208,6 +208,11 @@ Findings and fixes from a MurphyScan launch-readiness audit (skill installed at
   (immediate — restores the reviews feature under RLS) and
   `scripts/security/rls-lockdown.sql` (post-service-key — RLS on everywhere, anon
   grants nothing, service role bypasses).
+* **RLS lockdown executed 2026-07-06** (user-run): RLS enabled on all 19 tables,
+  zero anon policies. Verified anon key inert (empty reads, 401 writes) while the
+  app — public, forms, admin — runs fully on the service-role key.
+  `SUPABASE_SERVICE_ROLE_KEY` is now a REQUIRED env var in every environment;
+  `fix-reviews-rls.sql` was superseded before it was ever needed.
 
 ## Source Trace
 
