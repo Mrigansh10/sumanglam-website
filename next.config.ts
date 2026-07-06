@@ -39,6 +39,13 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
+  async redirects() {
+    return [
+      // TEMPORARY: showroom page offline until real photography arrives
+      // (see app/(site)/showroom/page.tsx for the restore checklist).
+      { source: "/showroom", destination: "/contact", permanent: false },
+    ];
+  },
   images: {
     remotePatterns: [
       {

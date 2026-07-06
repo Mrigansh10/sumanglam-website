@@ -108,7 +108,7 @@ export default function AboutPage() {
               description="Spend twenty minutes on our floors and you&apos;ll know whether we&apos;re your kind of people. We think you&apos;ll stay longer."
               />
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                <Button href="/showroom">Explore the Showroom</Button>
+                <Button href="/contact">Visit Us</Button>
                 <Button href="/book-consultation" variant="outline">
                   Book Consultation
                 </Button>

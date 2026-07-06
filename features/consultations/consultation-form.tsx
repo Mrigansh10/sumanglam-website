@@ -113,7 +113,7 @@ export function ConsultationForm() {
           walk-ins are always welcome.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Button href="/showroom" variant="outline">
+          <Button href="/contact" variant="outline">
             Plan a Showroom Visit
           </Button>
           <Button href="/inspiration" variant="ghost">

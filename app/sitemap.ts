@@ -29,7 +29,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/hardware-appliances",
     "/products",
     "/brands",
-    "/showroom",
     "/architects-designers",
     "/about",
     "/contact",

@@ -48,7 +48,7 @@ export default async function KitchensPage() {
         <Button href="/book-consultation" variant="accent">
           Book Kitchen Consultation
         </Button>
-        <Button href="/showroom" variant="outline-light">
+        <Button href="/contact" variant="outline-light">
           Visit Showroom
         </Button>
       </PageHero>

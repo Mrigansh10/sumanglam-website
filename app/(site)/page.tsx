@@ -64,7 +64,9 @@ const whySumanglam = [
 ];
 
 export default async function HomePage() {
-  const { featuredInspirations, featuredBrands, showroomHighlights } = await safeQuery(
+  // showroomHighlights intentionally unused — the homepage Showroom Experience
+  // section is temporarily removed until real showroom photos arrive.
+  const { featuredInspirations, featuredBrands } = await safeQuery(
     getHomepageData,
     {
       featuredInspirations: [],
@@ -115,7 +117,7 @@ export default async function HomePage() {
             <Button href="/inspiration" size="lg" variant="accent">
               Explore Inspirations
             </Button>
-            <Button href="/showroom" size="lg" variant="outline-light">
+            <Button href="/contact" size="lg" variant="outline-light">
               Visit Showroom
             </Button>
           </div>
@@ -258,50 +260,6 @@ export default async function HomePage() {
               </div>
             ))}
           </Stagger>
-        </Container>
-      </Section>
-
-      {/* 6 — Showroom Experience */}
-      <Section>
-        <Container size="wide">
-          <Reveal>
-            <Heading
-              eyebrow="The Showroom Experience"
-              title="Four floors, one unhurried visit"
-              description="From a welcome at reception to full-scale Nolte and Mrida displays — see everything in person before you decide anything."
-            />
-          </Reveal>
-          <Stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {(showroomHighlights.length > 0 ? showroomHighlights : []).map(
-              (section) => (
-                <Link key={section.id} href="/showroom" className="group block">
-                  <div className="relative aspect-[3/4] overflow-hidden bg-sand">
-                    <Image
-                      src={resolveImage(section.images[0], { width: 800 })}
-                      alt={section.name}
-                      fill
-                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-                    />
-                  </div>
-                  <h3 className="mt-3 font-display text-lg text-ink transition-colors group-hover:text-accent-deep">
-                    {section.name}
-                  </h3>
-                  <p className="mt-1 line-clamp-2 text-sm text-ink-soft">
-                    {section.description}
-                  </p>
-                </Link>
-              ),
-            )}
-          </Stagger>
-          <Reveal>
-            <div className="mt-10">
-              <Button href="/showroom" variant="outline">
-                Plan Your Visit
-                <ArrowRight aria-hidden />
-              </Button>
-            </div>
-          </Reveal>
         </Container>
       </Section>
 

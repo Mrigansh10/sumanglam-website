@@ -50,7 +50,7 @@ export function SolutionBrandPage({
         <Button href="/book-consultation" variant="accent">
           Book Consultation
         </Button>
-        <Button href="/showroom" variant="outline-light">
+        <Button href="/contact" variant="outline-light">
           Visit Showroom
         </Button>
       </PageHero>
@@ -115,7 +115,7 @@ export function SolutionBrandPage({
               <EmptyState
                 title="Inspirations coming soon"
                 description={`We're photographing ${brand.name} spaces for the site. See them in person at the showroom meanwhile.`}
-                action={{ label: "Visit Showroom", href: "/showroom" }}
+                action={{ label: "Visit Us", href: "/contact" }}
               />
             </div>
           )}

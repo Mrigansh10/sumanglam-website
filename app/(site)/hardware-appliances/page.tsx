@@ -46,7 +46,7 @@ export default async function HardwareAppliancesPage() {
         description="Browse by category, meet the brands behind each one, and start a conversation about the right fit — research first, never a checkout."
         image="sumanglam/hardware/hardware-hero-drawer"
       >
-        <Button href="/showroom" variant="accent">
+        <Button href="/contact" variant="accent">
           Visit Showroom
         </Button>
         <WhatsAppButton sourceType="general" variant="outline-light" />

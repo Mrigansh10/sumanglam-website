@@ -37,7 +37,6 @@ export const navigation = {
     { label: "Inspiration", href: "/inspiration" },
     { label: "Hardware", href: "/hardware-appliances" },
     { label: "Brands", href: "/brands" },
-    { label: "Showroom", href: "/showroom" },
     { label: "Architects & Designers", href: "/architects-designers" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
@@ -48,7 +47,6 @@ export const navigation = {
       { label: "Inspiration", href: "/inspiration" },
       { label: "Hardware", href: "/hardware-appliances" },
       { label: "Brands", href: "/brands" },
-      { label: "Showroom Experience", href: "/showroom" },
     ],
     solutions: [
       { label: "Nolte Kitchens", href: "/nolte" },

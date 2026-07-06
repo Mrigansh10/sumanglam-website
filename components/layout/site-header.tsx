@@ -134,7 +134,6 @@ const primaryNav: { label: string; href: string; mega?: MegaPanel }[] = [
     href: "/brands",
     mega: { kind: "brands" },
   },
-  { label: "Showroom", href: "/showroom" },
 ];
 
 const mobileNav: NavLink[] = [
@@ -143,7 +142,6 @@ const mobileNav: NavLink[] = [
   { label: "Wardrobes", href: "/wardrobes" },
   { label: "Hardware", href: "/hardware-appliances" },
   { label: "Brands", href: "/brands" },
-  { label: "Showroom", href: "/showroom" },
   { label: "Architects & Designers", href: "/architects-designers" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -492,7 +490,7 @@ export function SiteHeader({ brands = [] }: { brands?: HeaderBrand[] }) {
             ))}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button href="/book-consultation" size="lg">Book Consultation</Button>
-              <Button href="/showroom" variant="outline" size="lg">Visit Showroom</Button>
+              <Button href="/contact" variant="outline" size="lg">Visit Us</Button>
             </div>
             <p className="mt-8 text-sm text-ink-soft">
               {siteConfig.contact.hours} · {siteConfig.contact.phone}
