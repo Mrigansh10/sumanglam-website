@@ -10,6 +10,11 @@ export const siteConfig = {
   description:
     "Premium modular kitchen showroom in Jaipur — German kitchens by Nolte, personalized luxury kitchens by Mrida, plus wardrobes, branded hardware, and built-in appliances. Visit the showroom at New Aatish Market.",
   url: clientEnv.NEXT_PUBLIC_SITE_URL,
+  // TEMPORARY OG image (1200×630 crop of the homepage sage-green hero render,
+  // pre-warmed on Cloudinary). Replace with a curated asset when the new render
+  // batch arrives — swap the URL here, nothing else references it.
+  ogImage:
+    "https://res.cloudinary.com/de9turgsy/image/upload/if_w_lt_2000_and_h_lt_2000/e_gen_restore/e_upscale/if_end/f_jpg,q_auto:good,w_1200,h_630,c_fill,g_auto/sumanglam/inspirations/sage-green-classic-kitchen-1",
   contact: {
     phone: clientEnv.NEXT_PUBLIC_CONTACT_PHONE || "+91 94140 78298",
     phoneSecondary: "+91 96940 99093",
