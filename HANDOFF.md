@@ -191,6 +191,13 @@ not on code.** The motion system, photo pipeline, and page structure are done.
    future feature loads a NEW external script/frame/image domain, add it to
    `contentSecurityPolicy` in `next.config.ts` or the browser will block it.
 
+11. **Off-site SEO (user-run, ongoing)** — on-site is DONE as of 2026-07-07 (entity
+   schema, honest sitemap, 308s for removed detail URLs, intent titles, GBP linked).
+   Remaining levers are all off-site: social profile bios → sumanglam.co (then give
+   Claude the handles for `sameAs`), GBP posts/photos cadence, local citations
+   (JustDial/Sulekha/Houzz India) with the exact same NAP as the JSON-LD, and asking
+   brand reps (Nolte/Häfele dealer-locator pages) to list the sumanglam.co URL.
+
 **Paused (do not resume without a new decision):**
 - Importing more Yale/vendor product categories (`scripts/yale-catalogue/`).
 - The entire product catalog is **unpublished** (all 38 products `status=draft`, entry
