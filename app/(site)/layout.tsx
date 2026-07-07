@@ -7,9 +7,10 @@ import { supabase, rows } from "@/lib/supabase";
 import type { HeaderBrand } from "@/components/layout/site-header";
 
 // LocalBusiness structured data — drives the "near me" / local-pack surface.
+// The @id anchor lets the WebSite node below reference this as publisher.
 const localBusinessJsonLd = {
-  "@context": "https://schema.org",
   "@type": "HomeGoodsStore",
+  "@id": `${siteConfig.url}/#business`,
   name: siteConfig.name,
   description: siteConfig.description,
   url: siteConfig.url,
@@ -45,6 +46,25 @@ const localBusinessJsonLd = {
   ],
 };
 
+// WebSite node: tells Google the canonical site name for the "Sumanglam"
+// brand query and search-result site-name display. sameAs (social profiles)
+// should be added here once the accounts are confirmed.
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    localBusinessJsonLd,
+    {
+      "@type": "WebSite",
+      "@id": `${siteConfig.url}/#website`,
+      url: siteConfig.url,
+      name: siteConfig.name,
+      alternateName: ["Sumanglam Jaipur", "Sumanglam Kitchens"],
+      publisher: { "@id": `${siteConfig.url}/#business` },
+      inLanguage: "en",
+    },
+  ],
+};
+
 export default async function SiteLayout({ children }: { children: React.ReactNode }) {
   const { data: rawBrands } = await supabase
     .from("brands")
@@ -58,7 +78,7 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
     <SmoothScroll>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <SiteHeader brands={brands} />
       <main className="flex-1">{children}</main>

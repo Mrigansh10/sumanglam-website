@@ -164,7 +164,19 @@ not on code.** The motion system, photo pipeline, and page structure are done.
 1. **More renders incoming** — user is arranging a larger, more varied render batch. When it arrives: cluster → contact sheet → approve → bulk upload (reuse `scratchpad` scripts pattern from Session 8: Cloudinary signed upload w/ slug public-IDs + Supabase REST inserts + **pre-warm the enhance:"render" derivations, URLs must include `/if_end/`**). New sets = new inspirations for the mosaic.
 2. **Wardrobes page hero** — user will pick/provide a wardrobe render for the `/wardrobes` PageHero (set via **Admin → Spaces → wardrobe**). Currently uses the older space hero.
 3. **Collections** — the collections section on `/inspiration` stays as-is for now; fill with collections built from the new render batch later.
-4. **Brand hero assets (8 remaining)** — Blum, Häfele, Liebherr, Godrej, Yale, Spitze, Everyday, Brass Barony still have placeholder heroes. User deciding approach (official imagery was chosen; 4 done: **Bosch, Siemens, Hettich, Dorset** live). Best path: dealer asset packs from brand reps. Decision expected ~2026-07-06/07. ⚠️ Real photos must be uploaded **≥2000px wide** or the `enhance:"render"` guard will let gen_restore repaint them.
+4. **Brand hero assets (3 remaining: Godrej, Spitze, Brass Barony)** — 12/15 now live.
+   2026-07-07: sourced + shipped official heroes for **Blum** (runner-system cabinet shot,
+   blum.com product DB — size in URL path `/images/{w}/{h}/…`), **Häfele** (Matrix Box P
+   drawer lifestyle, hafele.com US — India site is bot-walled to non-browser UAs but works
+   with a Chrome UA string), **Yale** (courtyard yellow-door lifestyle, ASSA ABLOY Scene7 —
+   `gw-assets.assaabloy.com/is/image/assaabloy/<name>?wid=2560`, asset names have URL-encoded
+   spaces + crop suffixes like `%201:16x9`), **Liebherr** (integrated fridge wall,
+   `www-assets.liebherr.com` — drop the `_wNNN` suffix for the original), **Everyday**
+   (family kitchen slider, everyday-india.com). The 3 stragglers publish only packshots/
+   title cards online — need **dealer asset packs from brand reps** (Spitze & Everyday are
+   sister brands under Maruti Interior Products, one rep may cover both; Brass Barony has
+   no web presence at all). ⚠️ Real photos must be uploaded **≥2000px wide** or the
+   `enhance:"render"` guard will let gen_restore repaint them (all 5 upscaled before upload).
 5. **Showroom section photos** — user will provide real showroom photos (Gemini v2 retouch pipeline per memory). Then populate showroom sections via admin. **⚠️ The showroom surface is TEMPORARILY OFFLINE (2026-07-06)** — placeholder imagery looked wrong at launch: `/showroom` 307-redirects to `/contact` (next.config.ts `redirects()`), homepage "Showroom Experience" section removed, nav/footer entries removed, CTAs point to `/contact`. Restore checklist lives in `app/(site)/showroom/page.tsx`; full page is in git history. Consultation flow was never coupled to it.
 6. **OG/social share image** — deliberately deferred by user until the new render batch (don't set one yet).
 7. **Deploy to Vercel** — import `Mrigansh10/sumanglam-website`, add env vars
