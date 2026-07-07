@@ -18,7 +18,7 @@ import { resolveImage } from "@/lib/images";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Wardrobes",
+  title: "Wardrobes & Walk-in Closets in Jaipur",
   description:
     "Wardrobes and storage systems by Mrida — walk-in suites, sliding wardrobes, and modular storage designed for Indian homes.",
 };

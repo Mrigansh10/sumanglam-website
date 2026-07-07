@@ -18,7 +18,7 @@ import { safeQuery } from "@/server/safe";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Hardware",
+  title: "Premium Kitchen & Furniture Hardware in Jaipur",
   description:
     "Discover premium furniture hardware by category — hinges, locks, sliding systems, handles, and kitchen accessories from Häfele, Hettich, Blum, and more.",
 };

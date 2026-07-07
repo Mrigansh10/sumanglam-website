@@ -44,6 +44,10 @@ const nextConfig: NextConfig = {
       // TEMPORARY: showroom page offline until real photography arrives
       // (see app/(site)/showroom/page.tsx for the restore checklist).
       { source: "/showroom", destination: "/contact", permanent: false },
+      // PERMANENT: inspiration detail pages were removed in the visual-only
+      // restyle (Session 9). Real 308s replace the page-level soft redirect
+      // so crawlers consolidate onto /inspiration.
+      { source: "/inspiration/:slug", destination: "/inspiration", permanent: true },
     ];
   },
   images: {

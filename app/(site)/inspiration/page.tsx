@@ -20,7 +20,7 @@ import { cn } from "@/lib/utils";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Inspiration",
+  title: "Kitchen & Wardrobe Design Inspiration",
   description:
     "Browse kitchen, wardrobe, hardware, and appliance inspirations — complete spaces designed to spark your own.",
 };

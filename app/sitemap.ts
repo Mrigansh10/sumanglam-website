@@ -19,6 +19,10 @@ async function fetchSlugs(table: string) {
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = siteConfig.url.replace(/\/$/, "");
 
+  // NOTE: /products and /showroom are intentionally absent (catalog unpublished
+  // for launch; showroom offline until photography). Inspiration DETAIL urls are
+  // absent because the pages were removed in the visual-only restyle — they 308
+  // to /inspiration via next.config redirects.
   const staticRoutes = [
     "",
     "/inspiration",
@@ -27,7 +31,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/mrida",
     "/wardrobes",
     "/hardware-appliances",
-    "/products",
     "/brands",
     "/architects-designers",
     "/about",
@@ -40,21 +43,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: path === "" ? 1 : 0.7,
   }));
 
-  const [inspirations, collections, brands, products] = await Promise.all([
-    fetchSlugs("inspirations"),
+  const [collections, brands] = await Promise.all([
     fetchSlugs("collections"),
     fetchSlugs("brands"),
-    fetchSlugs("products"),
   ]);
 
   return [
     ...staticRoutes,
-    ...inspirations.map((item) => ({
-      url: `${base}/inspiration/${item.slug}`,
-      lastModified: item.updatedAt,
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    })),
     ...collections.map((item) => ({
       url: `${base}/collections/${item.slug}`,
       lastModified: item.updatedAt,
@@ -69,11 +64,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         changeFrequency: "monthly" as const,
         priority: 0.5,
       })),
-    ...products.map((item) => ({
-      url: `${base}/products/${item.slug}`,
-      lastModified: item.updatedAt,
-      changeFrequency: "monthly" as const,
-      priority: 0.4,
-    })),
   ];
 }

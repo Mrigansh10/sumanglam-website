@@ -28,6 +28,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "./" },
   openGraph: {
     type: "website",
+    locale: "en_IN",
     siteName: siteConfig.name,
     title: `${siteConfig.name} — ${siteConfig.tagline}`,
     description: siteConfig.description,
