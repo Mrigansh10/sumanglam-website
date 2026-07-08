@@ -432,6 +432,14 @@ Documentation audit across all 16 source docs. Fixed discovery flow inconsistenc
   5432 connection worked). Verified: anon read now `[]`, service-role/Prisma path intact.
   Added the line to `scripts/security/rls-lockdown.sql` so a re-run covers it. Advisor should
   now show **0 errors** (refresh/rerun-linter to clear the cached finding).
+- **Google Search favicon fix**: results showed the generic globe — the site shipped
+  an **SVG-only** favicon and `/favicon.ico` 404'd, which Google's favicon fetcher
+  won't reliably ingest (it probes `/favicon.ico` and wants raster at 48px multiples).
+  Generated a multi-size raster **`app/favicon.ico`** (16/32/48px, rasterized from
+  `app/icon.svg` via sharp) so Next serves `/favicon.ico`; SVG kept for browsers.
+  Build script in the 07-08 scratchpad. After redeploy, request re-crawl in Search
+  Console — Google refreshes Search favicons on its own slow cadence (new domain =
+  can take days/weeks regardless).
 
 ## Hard Rules (Do Not Violate)
 
