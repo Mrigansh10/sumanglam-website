@@ -33,6 +33,11 @@ ALTER TABLE public.showroom_inspiration_mappings ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.showroom_sections ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.site_settings ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.spaces ENABLE ROW LEVEL SECURITY;
+-- Prisma's own migration-history table is also exposed to PostgREST. It holds
+-- no PII (just migration names/checksums/timestamps) but the Security Advisor
+-- flags it as rls_disabled_in_public. Owner + service-role bypass RLS, so
+-- enabling it here is safe and clears the last advisor error (added 2026-07-08).
+ALTER TABLE public._prisma_migrations ENABLE ROW LEVEL SECURITY;
 
 -- The reviews policies from fix-reviews-rls.sql become obsolete once the
 -- server uses the service-role key — remove them so anon truly has nothing.

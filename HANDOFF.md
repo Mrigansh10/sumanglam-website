@@ -419,6 +419,20 @@ Documentation audit across all 16 source docs. Fixed discovery flow inconsistenc
   TLS 1.2, http→https, no stale AAAA; diagnosis = carrier DNS cache from the
   parking-page era, self-healing. No defect.
 
+### Session 13 — 2026-07-08 (Supabase Security Advisor: email false-alarm + `_prisma_migrations` RLS)
+- **Supabase "Action required" email** ("Table publicly accessible", `rls_disabled_in_public`,
+  dated 06 Jul) was a **stale snapshot** — its scan predated the 07-06 lockdown DDL. Verified
+  against the live DB: anon reads return `[]` and anon INSERT → `42501` 401 on all 19 app
+  tables (leads/consultations/reviews included). No PII was ever exposed post-lockdown.
+- **One genuine live gap** surfaced by the dashboard Security Advisor: `public._prisma_migrations`
+  (Prisma's migration-history table) had RLS off and was anon-readable (migration names/
+  timestamps/checksums — no PII/business data). It wasn't in the original 19-table lockdown.
+- **Fixed**: `ALTER TABLE public._prisma_migrations ENABLE ROW LEVEL SECURITY;` run via
+  `npx prisma db execute` (the Prisma wire-port block did NOT bite this session — direct
+  5432 connection worked). Verified: anon read now `[]`, service-role/Prisma path intact.
+  Added the line to `scripts/security/rls-lockdown.sql` so a re-run covers it. Advisor should
+  now show **0 errors** (refresh/rerun-linter to clear the cached finding).
+
 ## Hard Rules (Do Not Violate)
 
 - No ecommerce, checkout, user accounts, wishlists, quotation engine
