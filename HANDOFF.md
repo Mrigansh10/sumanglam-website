@@ -1,16 +1,20 @@
 # HANDOFF — Sumanglam Digital Showroom
 
-**Last updated:** 2026-07-05
+**Last updated:** 2026-07-08
 **Repo:** https://github.com/Mrigansh10/sumanglam-website
 **Dev server:** `npm run dev` → http://localhost:3000
 
-> ✅ **Working tree clean** — everything committed and pushed to `master` through **`0f95f57`**.
-> Sessions 8–9 (2026-07-03 → 07-05) shipped: the full **motion/animation system**, the
-> **photo placement pass** (44 renders → 9 published inspirations + homepage hero),
-> **kitchen-first repositioning + local SEO**, **catalog unpublished for launch**,
-> **Nolte-style visual-only inspirations**, and 4 official brand heroes.
-> Commit attribution: **Mrigansh10** from `e7ba294` onward (user instruction on 2026-07-04);
-> earlier session-8 commits authored Darsh-Ch.
+> 🚀 **THE SITE IS LIVE: https://sumanglam.co** (launched 2026-07-06).
+> Vercel project `sumanglam/sumanglam-website`, auto-deploys from `master`;
+> domain at GoDaddy (apex A → `216.198.79.1`, `www` CNAME → apex, both + the
+> vercel.app URL 308 to the apex). Env vars live in Vercel (incl. the now-REQUIRED
+> `SUPABASE_SERVICE_ROLE_KEY`; prod `AUTH_SECRET` differs from local). Sitemap
+> submitted to Search Console; site linked from the Google Business Profile.
+> ✅ Working tree clean — pushed through **`b76f502`**. Sessions 10–12
+> (07-05 → 07-07) shipped: full security hardening + RLS lockdown, the launch
+> itself, consultation/review write fixes, 5 more brand heroes (12/15 live),
+> favicon (traced "S" placeholder), and the on-site SEO pass.
+> Commit attribution: **Mrigansh10** from `e7ba294` onward.
 
 ## 🎯 CURRENT DIRECTION (set 2026-07-02) — Release readiness, NOT product depth
 
@@ -366,6 +370,54 @@ Documentation audit across all 16 source docs. Fixed discovery flow inconsistenc
   imported client-side), rotate it in the dashboard if it ever leaks.
 - Found in passing: an approved **"Test User" review** is live → delete before launch
   (Pending Task 8).
+
+### Session 11 — 2026-07-06 (LAUNCH DAY + production write-path fixes)
+- **Deployed to Vercel and attached sumanglam.co** (user drove the dashboard; Claude
+  prepped the env block from `.env` + fresh prod `AUTH_SECRET`, then verified: all
+  routes, headers, admin login, sitemap emitting sumanglam.co URLs). GoDaddy DNS:
+  apex A `216.198.79.1`, `www` CNAME → apex; www + vercel.app 308 to apex. Old
+  GoDaddy-email CNAMEs (`secureserver.net`) left in place until Google Workspace MX
+  setup replaces them. Launch driver: Google Workspace flagged the bare domain as
+  suspicious — a live site + Search Console verification is the fix.
+- **Temporary OG/social image** (`885e46d`): 1200×630 `f_jpg` crop of the sage-green
+  hero, pre-warmed; swap the URL in `lib/site.ts` when the render batch arrives.
+- **CSP dev fix** (`561a50a`): `next dev` bundles via eval → blank pages locally;
+  `'unsafe-eval'` is now appended to script-src in dev only.
+- **Showroom taken offline** (`49dd6fd`) — user request, placeholder photos looked
+  wrong: `/showroom` 307→`/contact` (next.config), homepage section + nav/footer
+  entries removed, CTAs → `/contact`. Restore checklist in `app/(site)/showroom/page.tsx`.
+- **Consultation booking was broken IN PRODUCTION** ("something went wrong") — never
+  worked since the Prisma→REST port: Prisma-created tables have **no DB defaults**
+  for `id`/`updated_at` (client-side `@default(cuid())`/`@updatedAt`), so REST
+  inserts violated NOT NULL. Fixed everywhere (`4e744a4`): `lib/ids.ts`
+  (`newId()`/`nowIso()`), leads/consultations/reviews inserts, all 5 admin create
+  routes, `updated_at` stamps on every update path; errors now surfaced, review
+  submission no longer fails silently. Verified end-to-end on prod, test rows cleaned.
+- **Admin leads page 500** (`8192c3e`): the list join didn't select `project_type`
+  but the page rendered it — unreachable until the first consultation ever saved.
+  Lesson: joined selects must fetch every field the component reads.
+
+### Session 12 — 2026-07-07 (Brand heroes, SEO pass, favicon)
+- **5 brand heroes sourced from official assets and shipped live** (12/15 done):
+  Blum, Häfele, Yale, Liebherr, Everyday — source routes + the 3 stragglers
+  (Godrej/Spitze/Brass Barony → dealer asset packs) documented in Pending Task 4.
+  Pipeline: download → Pillow LANCZOS upscale to ≥2048 (dodges gen_restore) →
+  Cloudinary `sumanglam/brands/<slug>-hero` → REST PATCH `hero_image` → pre-warm.
+- **SEO on-site pass COMPLETE**: WebSite entity schema (`@graph` with the
+  HomeGoodsStore node; drives the "Sumanglam" site-name association; `sameAs`
+  pending social handles) (`b47c979`); sitemap cleaned of lies — inspiration
+  detail URLs (now real 308s via next.config), `/products` removed (`9cee39f`);
+  intent titles for wardrobes/hardware/inspiration; `og:locale` en_IN.
+  Off-site checklist = Pending Task 11 (user-run).
+- **Favicon shipped** (`8452004`): the tiny soft "S" from `sumanglam_logo.jpeg`
+  (repo root, untracked) was upscaled→smoothed→**potrace-vectorized** → white mark
+  on wordmark-terracotta `#b96a57` tile (`app/icon.svg` + `app/apple-icon.png`).
+  PLACEHOLDER by user's call — replace the traced path when the original vector
+  logo is found. Trace pipeline lives in the 07-07 session scratchpad (venv:
+  pillow/numpy/potracer/matplotlib).
+- **DNS triage**: "site not opening on some phones" — verified authoritative zone,
+  TLS 1.2, http→https, no stale AAAA; diagnosis = carrier DNS cache from the
+  parking-page era, self-healing. No defect.
 
 ## Hard Rules (Do Not Violate)
 
