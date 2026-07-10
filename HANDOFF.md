@@ -1,6 +1,6 @@
 # HANDOFF — Sumanglam Digital Showroom
 
-**Last updated:** 2026-07-08
+**Last updated:** 2026-07-09
 **Repo:** https://github.com/Mrigansh10/sumanglam-website
 **Dev server:** `npm run dev` → http://localhost:3000
 
@@ -10,10 +10,12 @@
 > vercel.app URL 308 to the apex). Env vars live in Vercel (incl. the now-REQUIRED
 > `SUPABASE_SERVICE_ROLE_KEY`; prod `AUTH_SECRET` differs from local). Sitemap
 > submitted to Search Console; site linked from the Google Business Profile.
-> ✅ Working tree clean — pushed through **`b76f502`**. Sessions 10–12
-> (07-05 → 07-07) shipped: full security hardening + RLS lockdown, the launch
+> ✅ Working tree clean — pushed through **`69ec5a2`**. Sessions 10–13
+> (07-05 → 07-09) shipped: full security hardening + RLS lockdown, the launch
 > itself, consultation/review write fixes, 5 more brand heroes (12/15 live),
-> favicon (traced "S" placeholder), and the on-site SEO pass.
+> favicon (traced "S" placeholder, now with a raster `.ico` for Google), and the
+> on-site SEO pass. Session 13 also rotated the admin login (email + password) and
+> closed the last Security Advisor RLS gap.
 > Commit attribution: **Mrigansh10** from `e7ba294` onward.
 
 ## 🎯 CURRENT DIRECTION (set 2026-07-02) — Release readiness, NOT product depth
@@ -73,7 +75,13 @@ A premium **digital showroom** (NOT ecommerce) for Sumanglam — modular kitchen
 - **URL:** `/admin` (redirects to `/admin/login` if unauthenticated)
 - **Credentials:** `ADMIN_EMAIL` / `ADMIN_PASSWORD` in the local `.env` (never commit them —
   the old password lived in this file through Session 9 and was rotated on 2026-07-05;
-  treat anything that was ever committed as burned)
+  treat anything that was ever committed as burned). **2026-07-09 (Session 13):** email
+  changed `admin@sumanglam.co` → **`mrigansh@sumanglam.co`** and password rotated again;
+  updated in local `.env` AND Vercel env (user drove the dashboard), redeployed, and login
+  verified working on prod. Auth is env-var only (no DB record) — `auth.ts` compares against
+  `ADMIN_EMAIL`/`ADMIN_PASSWORD`, so both places must match and Vercel needs a **redeploy**
+  for changes to take effect. ⚠️ Vercel does NOT strip quotes like dotenv does — paste raw
+  values, no surrounding quotes. Login is rate-limited 5/15min/IP (`auth.ts:38`).
 
 ---
 
@@ -419,7 +427,7 @@ Documentation audit across all 16 source docs. Fixed discovery flow inconsistenc
   TLS 1.2, http→https, no stale AAAA; diagnosis = carrier DNS cache from the
   parking-page era, self-healing. No defect.
 
-### Session 13 — 2026-07-08 (Supabase Security Advisor: email false-alarm + `_prisma_migrations` RLS)
+### Session 13 — 2026-07-08/09 (Advisor RLS gap, favicon raster, admin credential rotation, GBP advice)
 - **Supabase "Action required" email** ("Table publicly accessible", `rls_disabled_in_public`,
   dated 06 Jul) was a **stale snapshot** — its scan predated the 07-06 lockdown DDL. Verified
   against the live DB: anon reads return `[]` and anon INSERT → `42501` 401 on all 19 app
@@ -432,14 +440,31 @@ Documentation audit across all 16 source docs. Fixed discovery flow inconsistenc
   5432 connection worked). Verified: anon read now `[]`, service-role/Prisma path intact.
   Added the line to `scripts/security/rls-lockdown.sql` so a re-run covers it. Advisor should
   now show **0 errors** (refresh/rerun-linter to clear the cached finding).
-- **Google Search favicon fix**: results showed the generic globe — the site shipped
-  an **SVG-only** favicon and `/favicon.ico` 404'd, which Google's favicon fetcher
-  won't reliably ingest (it probes `/favicon.ico` and wants raster at 48px multiples).
-  Generated a multi-size raster **`app/favicon.ico`** (16/32/48px, rasterized from
-  `app/icon.svg` via sharp) so Next serves `/favicon.ico`; SVG kept for browsers.
-  Build script in the 07-08 scratchpad. After redeploy, request re-crawl in Search
-  Console — Google refreshes Search favicons on its own slow cadence (new domain =
-  can take days/weeks regardless).
+- **Google Search favicon fix (`69ec5a2`, DEPLOYED + verified live)**: results showed the
+  generic globe — the site shipped an **SVG-only** favicon and `/favicon.ico` 404'd, which
+  Google's favicon fetcher won't reliably ingest (it probes `/favicon.ico` and wants raster
+  at 48px multiples). Generated a multi-size raster **`app/favicon.ico`** (16/32/48px,
+  rasterized from `app/icon.svg` via `sharp` — PNG-in-ICO container built by hand; build
+  script in the 07-08 scratchpad) so Next serves `/favicon.ico`; SVG kept for browsers.
+  Post-deploy re-verified: `/favicon.ico` 200, `robots.txt` allows it, the Google Favicon
+  crawler UA + Googlebot both fetch 200 — **our end is airtight**. Remaining wait is purely
+  Google's Search-favicon refresh cadence (new domain = days-to-weeks, cannot be forced);
+  the only nudge is Search Console → URL Inspection → **Request Indexing**. If it's still the
+  globe after ~2–3 weeks, re-check but don't assume a defect.
+- **Admin credentials rotated (`auth.ts` is env-var only, NO DB record)**: email
+  `admin@sumanglam.co` → **`mrigansh@sumanglam.co`** and password rotated; updated local
+  `.env` + Vercel env, redeployed, and **login verified working on prod** (tested the live
+  NextAuth CSRF→credentials flow from a different IP so as not to trip the user's rate limit).
+  Debug learnings when "can't log in after changing Vercel env": (1) Vercel env changes need a
+  **redeploy**; (2) vars must be scoped to **Production**; (3) **Vercel does NOT strip quotes**
+  — paste raw values; (4) login is rate-limited **5/15min/IP** (`auth.ts:38`) so repeated fails
+  reject even correct creds — wait 15 min; (5) browser autofill re-inserting the old email/pw.
+- **Google Business Profile advice (no code)**: cover photo should be a real, wide 16:9
+  full-kitchen showroom shot, no text/watermark, ≥1080×608, a size that's a multiple of 48px.
+  User's genuine phone photos of the renovated Nolte floor were **rejected by GBP** — most
+  likely reverse-image match to Nolte's official imagery or Google's flaky authenticity
+  filter; advised uploading **untouched originals** (NOT run through the Gemini retouch
+  pipeline) **from the Maps app signed in as the owner**, location on, retry after a day.
 
 ## Hard Rules (Do Not Violate)
 
