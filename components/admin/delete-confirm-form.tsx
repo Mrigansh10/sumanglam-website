@@ -34,7 +34,20 @@ export function DeleteConfirmForm({
   confirmLabel = "Delete",
 }: DeleteConfirmFormProps) {
   const [open, setOpen] = useState(false);
+  const [pending, setPending] = useState(false);
   const confirmRef = useRef<HTMLButtonElement>(null);
+
+  // Run the server action to completion, THEN close the dialog. Closing first
+  // would unmount the form and cancel the in-flight submission.
+  async function handleAction(formData: FormData) {
+    setPending(true);
+    try {
+      await action(formData);
+    } finally {
+      setPending(false);
+      setOpen(false);
+    }
+  }
 
   useEffect(() => {
     if (!open) return;
@@ -74,11 +87,12 @@ export function DeleteConfirmForm({
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="rounded-md border border-line px-4 py-2 text-xs font-medium text-ink-soft hover:border-ink"
+                disabled={pending}
+                className="rounded-md border border-line px-4 py-2 text-xs font-medium text-ink-soft hover:border-ink disabled:opacity-50"
               >
                 Cancel
               </button>
-              <form action={action}>
+              <form action={handleAction}>
                 {fields.map((field) => (
                   <input
                     key={field.name}
@@ -90,10 +104,10 @@ export function DeleteConfirmForm({
                 <button
                   ref={confirmRef}
                   type="submit"
-                  onClick={() => setOpen(false)}
-                  className="rounded-md bg-red-600 px-4 py-2 text-xs font-medium text-white hover:bg-red-700"
+                  disabled={pending}
+                  className="rounded-md bg-red-600 px-4 py-2 text-xs font-medium text-white hover:bg-red-700 disabled:opacity-50"
                 >
-                  {confirmLabel}
+                  {pending ? "Deleting…" : confirmLabel}
                 </button>
               </form>
             </div>
