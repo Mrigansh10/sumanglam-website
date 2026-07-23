@@ -7,7 +7,8 @@ import {
   leadStatusLabels,
   leadStatusOptions,
 } from "@/server/admin";
-import { updateLeadStatusAction } from "../actions";
+import { DeleteConfirmForm } from "@/components/admin/delete-confirm-form";
+import { deleteLeadAction, updateLeadStatusAction } from "../actions";
 
 export const metadata: Metadata = {
   title: "Admin Leads",
@@ -43,7 +44,8 @@ export default async function AdminLeadsPage({
         <h1 className="font-display text-3xl">Leads</h1>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink-soft">
           Review consultation and inquiry leads. Lead source is preserved where
-          the public flow captured it.
+          the public flow captured it. Deleting a lead also removes its linked
+          consultation requests.
         </p>
       </div>
 
@@ -59,6 +61,7 @@ export default async function AdminLeadsPage({
                   <th className="px-5 py-4 font-medium">Source</th>
                   <th className="px-5 py-4 font-medium">Status</th>
                   <th className="px-5 py-4 font-medium">Created</th>
+                  <th className="px-5 py-4 font-medium">Actions</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-line">
@@ -109,6 +112,14 @@ export default async function AdminLeadsPage({
                         </form>
                       </td>
                       <td className="px-5 py-4 text-ink-soft">{formatDate(lead.createdAt)}</td>
+                      <td className="px-5 py-4">
+                        <DeleteConfirmForm
+                          action={deleteLeadAction}
+                          fields={[{ name: "leadId", value: lead.id }]}
+                          title="Delete this lead?"
+                          description={`This permanently removes ${lead.name} and any linked consultation requests. This cannot be undone.`}
+                        />
+                      </td>
                     </tr>
                   );
                 })}

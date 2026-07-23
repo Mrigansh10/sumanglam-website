@@ -2,6 +2,7 @@ import { auth } from "@/auth";
 import { errors, handleRoute, ok } from "@/lib/api/response";
 import {
   type LeadStatus,
+  deleteLead,
   getAdminLead,
   leadStatusOptions,
   updateLeadStatus,
@@ -41,5 +42,20 @@ export async function PUT(
     const { id } = await params;
     const lead = await updateLeadStatus(id, status);
     return ok({ lead });
+  });
+}
+
+export async function DELETE(
+  _request: Request,
+  { params }: { params: Promise<{ id: string }> },
+) {
+  return handleRoute(async () => {
+    const session = await auth();
+    if (!session?.user) return errors.unauthorized();
+
+    const { id } = await params;
+    // Cascades to the lead's consultations at the database level.
+    await deleteLead(id);
+    return ok({ deleted: true });
   });
 }

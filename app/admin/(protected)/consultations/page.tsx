@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Card, CardContent } from "@/components/ui/card";
 import { getAdminConsultations } from "@/server/admin";
+import { DeleteConfirmForm } from "@/components/admin/delete-confirm-form";
+import { deleteConsultationAction } from "../actions";
 
 export const metadata: Metadata = {
   title: "Admin Consultations",
@@ -43,6 +45,7 @@ export default async function AdminConsultationsPage() {
                   <th className="px-5 py-4 font-medium">Preferred contact</th>
                   <th className="px-5 py-4 font-medium">Status</th>
                   <th className="px-5 py-4 font-medium">Created</th>
+                  <th className="px-5 py-4 font-medium">Actions</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-line">
@@ -66,6 +69,16 @@ export default async function AdminConsultationsPage() {
                     </td>
                     <td className="px-5 py-4 text-ink-soft">
                       {formatDate(consultation.createdAt)}
+                    </td>
+                    <td className="px-5 py-4">
+                      <DeleteConfirmForm
+                        action={deleteConsultationAction}
+                        fields={[
+                          { name: "consultationId", value: consultation.id },
+                        ]}
+                        title="Delete this consultation?"
+                        description={`This permanently removes the consultation request from ${consultation.lead?.name ?? "this lead"}. The lead record itself is kept. This cannot be undone.`}
+                      />
                     </td>
                   </tr>
                 ))}

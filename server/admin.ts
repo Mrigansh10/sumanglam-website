@@ -151,6 +151,12 @@ export async function updateLeadStatus(id: string, status: LeadStatus) {
   return data ? camelizeRecord(data) : null;
 }
 
+// Deleting a lead cascades to its consultations (consultations_lead_id_fkey
+// is ON DELETE CASCADE in the database).
+export async function deleteLead(id: string) {
+  await supabase.from("leads").delete().eq("id", id);
+}
+
 // ---------------------------------------------------------------------------
 // Consultations
 // ---------------------------------------------------------------------------
@@ -177,6 +183,10 @@ export async function getAdminConsultation(id: string) {
     .eq("id", id)
     .limit(1);
   return data?.length ? camelizeRecord(data[0]) : null;
+}
+
+export async function deleteConsultation(id: string) {
+  await supabase.from("consultations").delete().eq("id", id);
 }
 
 // ---------------------------------------------------------------------------

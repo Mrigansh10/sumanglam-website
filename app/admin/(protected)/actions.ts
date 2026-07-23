@@ -5,6 +5,8 @@ import { redirect } from "next/navigation";
 import { auth, signOut } from "@/auth";
 import {
   contentStatusOptions,
+  deleteConsultation,
+  deleteLead,
   featuredContentTypes,
   leadStatusOptions,
   setContentFeatured,
@@ -38,6 +40,30 @@ export async function updateLeadStatusAction(formData: FormData) {
   await updateLeadStatus(leadId, status as import("@/server/admin").LeadStatus);
   revalidatePath("/admin");
   revalidatePath("/admin/leads");
+}
+
+export async function deleteLeadAction(formData: FormData) {
+  await requireAdmin();
+
+  const leadId = String(formData.get("leadId") ?? "");
+  if (!leadId) throw new Error("Missing lead id.");
+
+  // Cascades to the lead's consultations at the database level.
+  await deleteLead(leadId);
+  revalidatePath("/admin");
+  revalidatePath("/admin/leads");
+  revalidatePath("/admin/consultations");
+}
+
+export async function deleteConsultationAction(formData: FormData) {
+  await requireAdmin();
+
+  const consultationId = String(formData.get("consultationId") ?? "");
+  if (!consultationId) throw new Error("Missing consultation id.");
+
+  await deleteConsultation(consultationId);
+  revalidatePath("/admin");
+  revalidatePath("/admin/consultations");
 }
 
 export async function setContentStatusAction(formData: FormData) {
