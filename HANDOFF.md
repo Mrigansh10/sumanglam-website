@@ -1,6 +1,6 @@
 # HANDOFF — Sumanglam Digital Showroom
 
-**Last updated:** 2026-07-09
+**Last updated:** 2026-08-12
 **Repo:** https://github.com/Mrigansh10/sumanglam-website
 **Dev server:** `npm run dev` → http://localhost:3000
 
@@ -10,12 +10,17 @@
 > vercel.app URL 308 to the apex). Env vars live in Vercel (incl. the now-REQUIRED
 > `SUPABASE_SERVICE_ROLE_KEY`; prod `AUTH_SECRET` differs from local). Sitemap
 > submitted to Search Console; site linked from the Google Business Profile.
-> ✅ Working tree clean — pushed through **`69ec5a2`**. Sessions 10–13
+> ✅ Working tree clean — pushed through **`2554f0e`**. Sessions 10–13
 > (07-05 → 07-09) shipped: full security hardening + RLS lockdown, the launch
 > itself, consultation/review write fixes, 5 more brand heroes (12/15 live),
 > favicon (traced "S" placeholder, now with a raster `.ico` for Google), and the
 > on-site SEO pass. Session 13 also rotated the admin login (email + password) and
-> closed the last Security Advisor RLS gap.
+> closed the last Security Advisor RLS gap. Session 14 (07-23) added admin delete
+> for leads/consultations. Sessions 15–16 (08-05 → 08-12) were docs + tooling only —
+> **no app code has changed since `2554f0e` (2026-07-23)**; the only remaining
+> working-tree changes are untracked files (`PRODUCT.md`, `.agents/`,
+> `.claude/skills/higgsfield-*`, `skills-lock.json`, `sumanglam_logo.jpeg`,
+> `1000267393.png`).
 > Commit attribution: **Mrigansh10** from `e7ba294` onward.
 
 ## 🎯 CURRENT DIRECTION (set 2026-07-02) — Release readiness, NOT product depth
@@ -92,6 +97,7 @@ A premium **digital showroom** (NOT ecommerce) for Sumanglam — modular kitchen
 | `lib/supabase.ts` | Supabase client + `rows<T>()`, `camelizeRecord<T>()`, `firstRow<T>()` helpers |
 | `lib/db-types.ts` | TypeScript interfaces for all DB models |
 | `lib/images.ts` | `resolveImage(value, { width, height, enhance })` — Cloudinary URL builder. Bare public IDs (admin uploads) get `f_auto,q_auto:good` auto-polish; full URLs / `/`-paths pass through untouched. **`enhance` modes:** `true`/`"improve"` = light `e_improve`; **`"render"` = `e_gen_restore` + `e_upscale`** (restores + 4× super-resolves the low-res 3D renders, then `w_` downsamples). Wired into the large render slots only — NOT logos, product catalog, showroom/proof, or admin preview |
+| `components/admin/delete-confirm-form.tsx` | Reusable admin delete button + in-page confirm dialog (server action + hidden fields). Awaits the action before closing — closing first unmounts the form and cancels the submit (see Session 14) |
 | `components/admin/image-upload.tsx` | Admin uploader. Downscales/compresses large photos in-browser (canvas → JPEG, ≤3000px, <9 MB) before upload so they clear Cloudinary's **10 MB** free-plan limit. Stores bare public IDs |
 | `components/shared/page-hero.tsx` | Shared page header. Image hero renders at `opacity-75` under a top gradient; source requested at `width: 2560` for Retina sharpness |
 | `app/admin/(protected)/spaces/` | Admin editor for Spaces (category pages — Kitchens, Wardrobes…). List + per-space edit (title, intro copy, hero image upload to `sumanglam/spaces`) |
@@ -147,6 +153,7 @@ npm run dev
 
 **Admin**
 - Login, overview, brands list+edit, **spaces list+edit (hero image + intro copy)**, inspirations list+create+edit, content toggles, leads, reviews moderation
+- **Delete on leads + consultations** (confirm dialog; lead delete cascades to its consultations) — Session 14
 - Image upload (dual-mode: file drag-drop + URL import via Cloudinary). Stores **bare public IDs**, not full URLs, so they pick up auto-polish via `resolveImage()`
 - All admin API routes now use Supabase (rewritten from Prisma on 2026-06-26)
 - Hero images: set per-category in **Admin → Spaces → Edit**. Landscape source recommended; Cloudinary handles responsive sizing. Portrait sources look wrong in the wide hero — outpaint to ~16:9 before uploading
@@ -193,8 +200,10 @@ not on code.** The motion system, photo pipeline, and page structure are done.
 6. **OG/social share image** — deliberately deferred by user until the new render batch (don't set one yet).
 7. **Deploy to Vercel** — import `Mrigansh10/sumanglam-website`, add env vars
    (incl. `SUPABASE_SERVICE_ROLE_KEY` — the app now requires it, see below), set domain
-8. **Delete the "Test User" review** — an approved test review is live in the DB;
-   remove via Admin → Reviews before launch
+8. ~~Delete the "Test User" review~~ — **DONE / verified gone 2026-08-12**: the
+   `reviews` table is now **empty (0 rows)**, checked as `postgres` (`rolbypassrls`,
+   so this is not an RLS artifact — the same query saw all 15 brands). Note `leads`
+   is also at 0. Nothing to remove; the site currently renders **no reviews at all**.
 9. ~~Reviews RLS / RLS lockdown~~ — **DONE 2026-07-06**: RLS enabled on all 19 tables,
    anon key verified inert (reads empty, writes 401), app runs on the service-role key.
    `scripts/security/fix-reviews-rls.sql` is now obsolete (kept for history).
@@ -209,6 +218,10 @@ not on code.** The motion system, photo pipeline, and page structure are done.
    Claude the handles for `sameAs`), GBP posts/photos cadence, local citations
    (JustDial/Sulekha/Houzz India) with the exact same NAP as the JSON-LD, and asking
    brand reps (Nolte/Häfele dealer-locator pages) to list the sumanglam.co URL.
+   **2026-08-07:** LinkedIn company-page copy is written and waiting on the user
+   (full text in the Session 15 log). When the page goes live: collect the LinkedIn /
+   Instagram / Facebook URLs and add them to the `sameAs` array on the WebSite +
+   HomeGoodsStore nodes in `app/(site)/layout.tsx`.
 
 **Paused (do not resume without a new decision):**
 - Importing more Yale/vendor product categories (`scripts/yale-catalogue/`).
@@ -465,6 +478,112 @@ Documentation audit across all 16 source docs. Fixed discovery flow inconsistenc
   likely reverse-image match to Nolte's official imagery or Google's flaky authenticity
   filter; advised uploading **untouched originals** (NOT run through the Gemini retouch
   pipeline) **from the Maps app signed in as the owner**, location on, retry after a day.
+
+### Session 14 — 2026-07-23 (Admin delete for leads & consultations)
+- **Shipped delete in the admin inbox** (`b3d2315`): a new **Actions** column on
+  `/admin/leads` and `/admin/consultations` with a Delete button per row, each gated by
+  an in-page confirmation dialog. New `components/admin/delete-confirm-form.tsx`
+  (`"use client"`, reusable: takes a server action + hidden fields + title/description,
+  Escape-to-close, backdrop click, focuses Confirm on open) — deliberately **not**
+  `window.confirm()`, which can't be styled and blocks the event loop.
+- **Two paths, both auth-gated:** server actions `deleteLeadAction` /
+  `deleteConsultationAction` in `app/admin/(protected)/actions.ts` (`requireAdmin()`
+  then `revalidatePath` on `/admin`, `/admin/leads`, `/admin/consultations`), plus
+  `DELETE` handlers on `app/api/v1/admin/leads/[id]` and
+  `.../consultations/[id]` (session check → `errors.unauthorized()`), over
+  `deleteLead()` / `deleteConsultation()` in `server/admin.ts`.
+- **Cascade semantics:** deleting a **lead** also removes its consultations
+  (`consultations_lead_id_fkey` is `ON DELETE CASCADE` in the DB — no app-side
+  cleanup); deleting a **consultation** leaves the lead record intact. The dialog copy
+  states this explicitly, and the Leads page intro says it too.
+- **Bug found + fixed same session (`2554f0e`) — REGRESSION TRAP:** the confirm button
+  submitted the form *and* called `setOpen(false)` on the same click. Because the form
+  lives inside `{open ? … : null}`, closing unmounted it and cancelled the submission
+  before React dispatched it → **delete silently did nothing**. Fix: wrap the action in
+  `handleAction` that `await`s it and only then closes, plus a `pending` state that
+  disables both buttons and shows "Deleting…". **Lesson: never unmount a server-action
+  form in the same click that submits it — await first, close after.**
+
+### Session 15 — 2026-08-05 → 08-10 (Docs, LinkedIn copy, tooling — no app code)
+**Nothing in `app/`, `components/`, `lib/`, or `server/` changed this session. Site
+untouched and still live.**
+
+- **`PRODUCT.md` written** (repo root, **untracked**) by an Impeccable/design init on
+  08-05 — the product source of truth: platform, users, purpose, positioning, operating
+  context (real NAP), constraints, brand commitments, evidence-on-hand, and 5 product
+  principles. Built **from this handoff + the vault + memory, not an interview** (the
+  user explicitly rejected an init interview because the handoff already had the
+  answers). **Read `PRODUCT.md` before asking product-context questions.** Its companion
+  `DESIGN.md` does **not** exist yet — the Impeccable flow is one step in.
+- **Higgsfield skills installed** (08-05): 9 skills under `.claude/skills/higgsfield-*`
+  + `.agents/skills/` + `skills-lock.json`, all untracked.
+- **Session 14 logged retroactively** (it shipped on 07-23 but was never written up) —
+  see the Session 14 entry above, including the unmount-cancels-submit regression trap.
+- **LinkedIn company-page copy written** (08-07) — feeds Pending Task 11. Facts only:
+  no years-in-business, project counts, or invented history (the About-page origin story
+  is still a placeholder and there are deliberately **no metrics** — do not invent any
+  for social copy either). Two claims were **deliberately left out pending user
+  confirmation**: (1) the words *authorized dealer* / *exclusive* for Nolte — only use
+  wording the actual agreement permits; (2) whether Sumanglam handles **installation /
+  end-to-end execution**. Approved text (1,331 chars, LinkedIn About limit is 2,000):
+
+  > Sumanglam is a premium modular kitchen and interiors showroom in Jaipur — one place to make the decisions a home is made of.
+  >
+  > We bring together German kitchens by Nolte, personalized kitchens, wardrobes and interiors by our in-house brand Mrida, premium hardware, and built-in appliances — under one roof, on a floor you can walk through, open and touch before you decide.
+  >
+  > WHAT WE DO
+  > • Modular kitchens — Nolte (Germany) and Mrida, designed around how your family actually cooks and lives
+  > • Wardrobes and interiors by Mrida
+  > • Premium hardware — Häfele, Hettich, Blum, Yale, Godrej, Dorset
+  > • Built-in appliances — Bosch, Siemens, Liebherr, Blaupunkt
+  >
+  > HOW WE WORK
+  > Every project starts with a conversation, not a catalogue. We understand your space, your routines and your budget first, then design around them — and we only work with brands we genuinely stand behind. Ideas before inventory: finished spaces, not shelves of boxes.
+  >
+  > FOR ARCHITECTS, DESIGNERS & BUILDERS
+  > We collaborate on specification, brand selection and site coordination. Get in touch to discuss a project.
+  >
+  > VISIT THE SHOWROOM
+  > S-13, New Aatish Market, Devi Nagar, Jaipur, Rajasthan 302019
+  > Mon–Sat, 10:30 AM – 8:00 PM (closed Sundays)
+  > +91 94140 78298 · inquiries@sumanglam.co
+  >
+  > Explore kitchens, wardrobes and inspiration at sumanglam.co
+  >
+  > Designed Around Your Home.
+
+  Tagline field (120-char max, exactly 120): "Premium modular kitchens, wardrobes,
+  hardware & appliances in Jaipur — Nolte, Mrida and more. Designed Around Your Home."
+  Also supplied: industry (Furniture & Home Furnishings / Retail Furniture), location,
+  website `https://sumanglam.co`, and an 18-item Specialties list for LinkedIn search.
+- **Ideogram MCP server added** (08-10): `claude mcp add ideogram --transport http -s user
+  https://mcp.ideogram.ai/mcp` → **user scope** (all projects), status **"Needs
+  authentication"** until the user completes OAuth via `/mcp`. Note: a server added
+  mid-session doesn't appear in `/mcp` until Claude Code restarts. Sumanglam now has
+  three image routes — Ideogram MCP, the higgsfield skills, and the existing Cloudinary
+  `enhance:"render"` delivery pipeline. **Anything generated still has to clear the
+  Cloudinary rules: upload ≥2000px or the `enhance:"render"` guard lets `e_gen_restore`
+  repaint it, and sources >4.2MP hard-fail `e_upscale`.**
+
+### Session 16 — 2026-08-12 (Ideogram OAuth, review-table check, handoff commit)
+**Again no app code — nothing in `app/`, `components/`, `lib/`, or `server/` changed.
+Site untouched and still live on `2554f0e`.**
+
+- **Ideogram MCP OAuth completed** — the server added on 08-10 now reports
+  *"Authentication successful. Connected to ideogram."* All three image routes are
+  live: Ideogram MCP, the higgsfield skills, and the Cloudinary `enhance:"render"`
+  delivery pipeline. The Cloudinary size rules above still bind anything generated.
+- **Pending Task 8 closed by inspection, not by deleting anything.** Queried the DB
+  as `postgres` (`rolbypassrls = true`, and the same query returned all 15 brands, so
+  a `[]` is a real empty table and not the RLS lockdown filtering the result): the
+  **`reviews` table holds 0 rows** and so does **`leads`**. The "Test User" review was
+  already removed at some earlier point. ⚠️ **Consequence worth knowing:** the public
+  site currently has **no reviews to render at all** — if the homepage/reviews surface
+  looks bare, that is the reason, not a bug.
+- **Session 15's handoff write-up committed** (it had been sitting uncommitted in the
+  working tree since 08-10) along with the above. Untracked files deliberately left
+  untracked — `PRODUCT.md`, `.agents/`, the higgsfield skills, `skills-lock.json`, and
+  the two root images (`sumanglam_logo.jpeg`, `1000267393.png`) are all still outside git.
 
 ## Hard Rules (Do Not Violate)
 
