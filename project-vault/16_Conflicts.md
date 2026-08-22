@@ -1,5 +1,7 @@
 # Conflicts
 
+> **ℹ️ Several of these are now resolved** by what shipped. See [[Spec Vs Built]].
+
 ## Conflict 1: User-approved animation stack vs original approved stack
 
 * Conflicting requirement A: `11-rules.md` says not to introduce technologies not listed in `10-technical-architecture.md`; `12-dontdo.md` forbids unapproved dependencies.

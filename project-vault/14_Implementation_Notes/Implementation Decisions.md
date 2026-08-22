@@ -1,5 +1,7 @@
 # Implementation Decisions
 
+> **ℹ️ Continued elsewhere.** Post-launch decisions of record live in [[Decisions Index]]; current reality in [[As Built Overview]].
+
 ## Purpose
 
 Tracks non-blocking implementation choices made while building V1 so future agents do not rediscover or reverse them casually.
@@ -213,6 +215,13 @@ Findings and fixes from a MurphyScan launch-readiness audit (skill installed at
   app — public, forms, admin — runs fully on the service-role key.
   `SUPABASE_SERVICE_ROLE_KEY` is now a REQUIRED env var in every environment;
   `fix-reviews-rls.sql` was superseded before it was ever needed.
+
+## Linked Notes
+
+
+* [[Color System]]
+* [[Typography]]
+* [[Decisions Index]]
 
 ## Source Trace
 

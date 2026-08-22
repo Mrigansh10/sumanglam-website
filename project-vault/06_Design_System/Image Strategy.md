@@ -1,5 +1,7 @@
 # Image Strategy
 
+> **ℹ️ Implemented.** 3D renders are the primary medium ([[Decision - Renders As Primary Medium]]) and delivery rules are in [[Image Delivery Pipeline]]. Current asset gaps: [[Content And Asset State]].
+
 ## Purpose
 
 Images are the primary storytelling tool for the platform.

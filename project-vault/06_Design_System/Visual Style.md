@@ -64,6 +64,7 @@ Avoid:
 
 ## Linked Notes
 
+* [[Color System]] — the palette tokens
 * [[Homepage]]
 * [[Image Strategy]]
 * [[Forbidden Patterns]]

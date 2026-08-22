@@ -1,5 +1,7 @@
 # Authentication
 
+> **⚠️ Note.** Admin auth is **env-var only — there is no user record in the database**. See [[Security Posture]] and [[Trap - Vercel Env Quotes And Redeploy]].
+
 ## Scope
 
 Admin only in V1.

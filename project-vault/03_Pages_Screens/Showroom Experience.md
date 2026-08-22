@@ -1,5 +1,7 @@
 # Showroom Experience
 
+> **⛔ Currently offline.** `/showroom` 307-redirects to `/contact` pending real photography. The restore checklist is in `app/(site)/showroom/page.tsx`. See [[Decision - Showroom Temporarily Offline]].
+
 ## Purpose
 
 Encourage physical showroom visits by presenting the showroom as an experience, not a retail store.

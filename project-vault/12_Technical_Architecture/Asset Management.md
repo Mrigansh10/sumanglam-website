@@ -1,5 +1,7 @@
 # Asset Management
 
+> **ℹ️ Implemented.** The shipped image pipeline and its hard rules are in [[Image Delivery Pipeline]].
+
 ## Provider
 
 Cloudinary.

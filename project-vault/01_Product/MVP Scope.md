@@ -51,6 +51,8 @@ Phase 4 expands B2B, wishlist, quotation, and advanced designer flows.
 
 ## Linked Notes
 
+* [[Future User]] — deliberately out of V1 scope
+* [[Future Wishlist]] — deliberately out of V1 scope
 * [[18_Build_Order]]
 * [[17_Forbidden_Things]]
 * [[15_Open_Questions]]

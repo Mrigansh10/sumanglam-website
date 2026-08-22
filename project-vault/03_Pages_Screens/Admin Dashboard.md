@@ -1,5 +1,7 @@
 # Admin Dashboard
 
+> **ℹ️ See the as-built version.** The shipped admin — including Spaces, Homepage image slots, and delete for leads/consultations — is documented in [[Admin Surface]].
+
 ## Purpose
 
 Provide authenticated admin tools for content management, lead visibility, and consultation management.

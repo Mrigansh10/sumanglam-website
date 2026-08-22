@@ -1,5 +1,7 @@
 # Performance SEO Security
 
+> **ℹ️ Implemented.** See [[Security Posture]] for the shipped headers/CSP/RLS and [[SEO And Metadata]] for the completed on-site SEO pass.
+
 ## Performance Targets
 
 * Homepage load: under 2 seconds.

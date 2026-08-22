@@ -1,5 +1,7 @@
 # Inspiration
 
+> **⚠️ Superseded in structure.** Inspirations are now a **visual-only masonry mosaic with no detail pages** — `/inspiration/[slug]` 308s to the listing. See [[Decision - Inspirations Are Visual Only]].
+
 ## Purpose
 
 Show aspirational spaces and help users browse visual ideas before evaluating brands or products.

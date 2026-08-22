@@ -1,5 +1,7 @@
 # Database ORM
 
+> **⚠️ Superseded.** Prisma is used for **schema and migrations only** — never for runtime queries. See [[Decision - Supabase REST Over Prisma]] and [[Data Access Layer]].
+
 ## Database
 
 PostgreSQL.

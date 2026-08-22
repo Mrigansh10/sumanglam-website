@@ -1,5 +1,7 @@
 # Interaction Patterns
 
+> **ℹ️ Implemented and frozen.** The shipped motion primitives and their constraints are in [[Motion System]].
+
 ## Interaction Philosophy
 
 Interactions should feel premium, not playful.

@@ -1,5 +1,7 @@
 # Security Auth Rules
 
+> **ℹ️ Implemented and hardened.** Current state — RLS lockdown, CSP, rate limits, session policy — is in [[Security Posture]].
+
 ## API Security
 
 * Validate all inputs.

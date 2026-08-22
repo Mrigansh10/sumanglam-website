@@ -1,5 +1,7 @@
 # API Overview
 
+> **ℹ️ See the shipped surface.** Every live endpoint is listed in [[Route Map]].
+
 ## Purpose
 
 The API supports inspiration discovery, brand exploration, product discovery, consultation workflows, lead management, and admin content management.
@@ -40,6 +42,9 @@ Use consistent success and error shapes. See [[API - Error Format]].
 
 ## Linked Notes
 
+* [[Backend - Analytics]]
+* [[Backend - Cloudinary]]
+* [[Backend - Auth Admin]]
 * [[Backend Stack]]
 * [[Security Auth Rules]]
 * [[Database Overview]]

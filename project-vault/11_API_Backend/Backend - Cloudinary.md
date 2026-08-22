@@ -1,5 +1,7 @@
 # Backend - Cloudinary
 
+> **ℹ️ Implemented.** See [[Image Delivery Pipeline]] for `resolveImage()` and the size rules.
+
 ## Purpose
 
 Cloudinary is the documented asset management provider for high-resolution inspiration galleries, product images, brand assets, and showroom images.

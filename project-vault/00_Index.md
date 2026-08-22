@@ -1,5 +1,37 @@
 # Sumanglam Project Vault
 
+> ## ⚡ READ THIS FIRST
+>
+> **The site is LIVE at https://sumanglam.co** (launched 2026-07-06, auto-deploying from `master`).
+>
+> This vault has **two layers**:
+>
+> * **Intent** — folders `01_`–`18_`, written June 2026 from the original source documents.
+>   They describe what was *specified*.
+> * **Reality** — folders `19_`–`22_`, maintained from the shipped codebase. They describe what
+>   is *actually running*.
+>
+> **Where the two disagree, reality wins.** Check [[Spec Vs Built]] before trusting a spec note.
+>
+> | I need to… | Go to |
+> |---|---|
+> | Understand the current state | [[As Built Overview]] |
+> | Find where code lives | [[Codebase Map]] |
+> | Know what a URL renders | [[Route Map]] |
+> | Read or write data | [[Data Access Layer]] |
+> | Work with images | [[Image Delivery Pipeline]] |
+> | Touch animation | [[Motion System]] |
+> | Touch auth, headers, RLS | [[Security Posture]] |
+> | Deploy or debug production | [[Production Deployment]] |
+> | Work in `/admin` | [[Admin Surface]] |
+> | Know what content is missing | [[Content And Asset State]] |
+> | **Avoid a known landmine** | [[Regression Traps Index]] ← **read before editing** |
+> | Understand why something is the way it is | [[Decisions Index]] |
+> | Trace when something happened | [[Session Log]] |
+>
+> The narrative session-by-session log and the live pending-task list live in **`HANDOFF.md`**
+> at the repo root. Product positioning lives in **`PRODUCT.md`**.
+
 ## Product Summary
 
 Sumanglam is a premium digital showroom and interior discovery platform for modular kitchens, wardrobes, premium hardware, appliances, and interior solutions. The website should inspire visitors, build trust, showcase expertise, and convert qualified visitors into showroom visits, WhatsApp conversations, and consultation requests. It is not an ecommerce marketplace or a generic hardware catalog.
@@ -40,6 +72,8 @@ The site should make users feel luxury, trust, warmth, modernity, customization,
 ## Main User Flows
 
 * [[Explore Inspiration Journey]]
+* [[Architect Journey]]
+* [[Hardware Journey]]
 * [[Brand Discovery Journey]]
 * [[Product Discovery Journey]]
 * [[Consultation Booking]]
@@ -133,6 +167,54 @@ Do not build ecommerce checkout, user accounts, wishlists, quotation engine, arc
 * [[16_Conflicts]]
 * [[source-map]]
 
+## As-Built Layer
+
+* [[As Built Overview]] — current state of every subsystem
+* [[Codebase Map]] — where everything lives
+* [[Route Map]] — every URL, its file, its data, its status
+* [[Data Access Layer]] — Supabase REST, not Prisma
+* [[Image Delivery Pipeline]] — `resolveImage()` and the Cloudinary rules
+* [[Motion System]] — shipped and frozen
+* [[Security Posture]] — RLS, CSP, auth, rate limits
+* [[Production Deployment]] — Vercel, DNS, env
+* [[Admin Surface]] — the content operations dashboard
+* [[Content And Asset State]] — **the actual bottleneck**
+* [[SEO And Metadata]] — on-site done, off-site pending
+* [[Spec Vs Built]] — the divergence table
+* [[Regression Traps Index]] — known landmines
+* [[Session Log]] — condensed history
+
+## Decisions Of Record
+
+* [[Decision - Supabase REST Over Prisma]]
+* [[Decision - Release Focus Over Catalog Depth]]
+* [[Decision - Kitchen First Navigation]]
+* [[Decision - Inspirations Are Visual Only]]
+* [[Decision - Product Catalog Unpublished]]
+* [[Decision - Showroom Temporarily Offline]]
+* [[Decision - RLS Lockdown And Service Role]]
+* [[Decision - Renders As Primary Medium]]
+* [[Decision - Nolte As Aesthetic Reference]]
+
+## Graph Legend
+
+The graph view is colour-coded by layer:
+
+| Colour | Layer |
+|---|---|
+| 🟦 Teal | `19_As_Built` — what actually runs |
+| 🟧 Amber | `20_Decisions` — why it's like this |
+| 🟥 Red | `21_Regression_Traps` — known landmines |
+| 🟪 Purple | `22_History` — when it happened |
+| 🟩 Green | `10_Database` |
+| 🔵 Blue | `03_Pages_Screens` + `04_User_Flows` |
+| 🟤 Terracotta | Rules and forbidden things |
+
+Everything else is uncoloured spec. Unresolved links are hidden, so every visible node is a
+real note — the vault is fully connected with **no orphans**.
+
 ## Source Trace
 
 Derived from `01-prd.md`, `02-information_architecture.md`, `03-ui-ux-specification.md`, `04-design-language.md`, `05-domain-model.md`, `06-content-model.md`, `07-screen-event-flows.md`, `08-database-design.md`, `09-api-specification.md`, `10-techincal-architecture.md`, `11-rules.md`, `12-dontdo.md`, `13-master-context.md`, `14-project-bootstrap.md`, `15-content-taxonomy.md`, `16-doc-review.md`, and user instructions in this chat on 2026-06-10.
+
+The as-built layer (`19_`–`22_`) was derived on 2026-08-22 from the live codebase, `HANDOFF.md` Sessions 1–16, `PRODUCT.md`, and `git log`.

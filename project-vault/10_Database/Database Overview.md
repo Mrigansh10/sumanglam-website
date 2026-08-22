@@ -1,5 +1,7 @@
 # Database Overview
 
+> **⚠️ Superseded on access method.** Prisma owns the schema; **every runtime query goes over Supabase REST**. The live DB also includes [[Database - reviews]] and `_prisma_migrations`, and has **RLS enabled on every table**. See [[Data Access Layer]] and [[Security Posture]].
+
 ## Purpose
 
 The database supports inspiration-first discovery, product exploration, brand storytelling, consultation workflows, future wishlist support, and future catalog expansion.

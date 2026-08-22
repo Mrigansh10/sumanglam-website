@@ -1,5 +1,7 @@
 # Explore Inspiration Journey
 
+> **⚠️ Changed** — the journey now ends at the mosaic; there are no inspiration detail pages. See [[Decision - Inspirations Are Visual Only]].
+
 ## Trigger
 
 User clicks Explore Inspirations from the homepage or opens Inspiration navigation.

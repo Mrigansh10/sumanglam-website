@@ -1,5 +1,7 @@
 # Hardware And Appliances
 
+> **⚠️ Scope changed.** `/hardware-appliances` is now **Hardware-only** — appliances moved to `/kitchens` and the nav label is "Hardware". This is deliberate, not a bug. See [[Decision - Kitchen First Navigation]].
+
 ## Purpose
 
 Provide structured product discovery for hardware and appliances while preserving inspiration-first and showroom-led positioning.

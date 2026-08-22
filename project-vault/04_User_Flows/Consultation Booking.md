@@ -1,5 +1,7 @@
 # Consultation Booking
 
+> **⚠️ History worth knowing.** This flow was **broken in production and had never worked** until 2026-07-06. See [[Trap - No DB Defaults On Insert]].
+
 ## Trigger
 
 User clicks Book Consultation from any page.

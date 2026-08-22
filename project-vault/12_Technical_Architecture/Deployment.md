@@ -1,5 +1,7 @@
 # Deployment
 
+> **✅ Done.** The site is live at **https://sumanglam.co** since 2026-07-06. Actual hosting, DNS and env details are in [[Production Deployment]].
+
 ## Frontend
 
 Vercel.

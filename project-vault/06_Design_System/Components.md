@@ -1,5 +1,7 @@
 # Components
 
+> **ℹ️ See the real inventory.** Shipped components are listed in [[Codebase Map]]; motion primitives in [[Motion System]].
+
 ## Required Foundation Components
 
 From project bootstrap:

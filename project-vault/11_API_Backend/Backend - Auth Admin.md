@@ -1,5 +1,7 @@
 # Backend - Auth Admin
 
+> **ℹ️ Implemented.** See [[Security Posture]] and [[Admin Surface]].
+
 ## Purpose
 
 Protect admin functionality and admin APIs.

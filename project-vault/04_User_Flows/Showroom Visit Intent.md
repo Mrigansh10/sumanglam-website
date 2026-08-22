@@ -1,5 +1,7 @@
 # Showroom Visit Intent
 
+> **⚠️ Partly rerouted** — showroom CTAs currently point at `/contact`. See [[Decision - Showroom Temporarily Offline]].
+
 ## Trigger
 
 User opens [[Showroom Experience]] or clicks Visit Showroom / Plan Visit from another page.

@@ -1,5 +1,7 @@
 # Technical Architecture Overview
 
+> **⚠️ Partly superseded.** For what actually runs, see [[As Built Overview]], [[Codebase Map]] and [[Data Access Layer]].
+
 ## Purpose
 
 Defines frontend structure, backend structure, database integration, deployment strategy, and infrastructure decisions.

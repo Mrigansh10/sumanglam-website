@@ -1,5 +1,7 @@
 # Product Detail
 
+> **⛔ Currently unpublished.** All 38 products are `draft` and every entry point was removed. The route still exists but renders empty. See [[Decision - Product Catalog Unpublished]].
+
 ## Purpose
 
 Provide enough product information for research and high-intent inquiry without turning the site into ecommerce.

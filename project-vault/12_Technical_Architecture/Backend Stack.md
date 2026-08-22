@@ -1,5 +1,7 @@
 # Backend Stack
 
+> **⚠️ Partly superseded.** Runtime data access is Supabase REST, not Prisma. See [[Data Access Layer]].
+
 ## Framework
 
 Next.js Route Handlers.

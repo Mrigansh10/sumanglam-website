@@ -1,5 +1,7 @@
 # Folder Structure
 
+> **ℹ️ See the real tree.** The shipped structure — including `features/`, `server/` and `components/motion/` — is mapped in [[Codebase Map]].
+
 ## Documented Structure
 
 `/app`

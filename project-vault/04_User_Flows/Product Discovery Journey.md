@@ -1,5 +1,7 @@
 # Product Discovery Journey
 
+> **⛔ Currently dormant** — the product catalog is unpublished. See [[Decision - Product Catalog Unpublished]].
+
 ## Trigger
 
 User opens a product listing or product-related category from Hardware & Appliances, brand pages, or inspiration detail.

@@ -1,6 +1,6 @@
 # HANDOFF — Sumanglam Digital Showroom
 
-**Last updated:** 2026-08-12
+**Last updated:** 2026-08-22
 **Repo:** https://github.com/Mrigansh10/sumanglam-website
 **Dev server:** `npm run dev` → http://localhost:3000
 
@@ -584,6 +584,43 @@ Site untouched and still live on `2554f0e`.**
   working tree since 08-10) along with the above. Untracked files deliberately left
   untracked — `PRODUCT.md`, `.agents/`, the higgsfield skills, `skills-lock.json`, and
   the two root images (`sumanglam_logo.jpeg`, `1000267393.png`) are all still outside git.
+
+### Session 17 — 2026-08-22 (Vault as-built layer — no app code)
+**Again no app code — nothing in `app/`, `components/`, `lib/`, or `server/` changed. Site
+untouched and still live on `2554f0e`.**
+
+- **Rebuilt `project-vault/` into a two-layer context graph.** The vault had not been touched
+  since `0c8baa6` (2026-07-06) and described only what was *specified* in June — it had no
+  record of the launch, the RLS lockdown, the motion system, the REST data layer, or any of the
+  pivots. Added a **reality layer** so future sessions can query the vault instead of
+  re-scanning the codebase.
+- **New folders (39 notes):**
+  - `19_As_Built/` (12) — As Built Overview, **Codebase Map**, **Route Map**, Data Access Layer,
+    Image Delivery Pipeline, Motion System, Security Posture, Production Deployment, Admin
+    Surface, Content And Asset State, SEO And Metadata, **Spec Vs Built**.
+  - `20_Decisions/` (10) — decision records for Supabase-over-Prisma, the release-focus pivot,
+    kitchen-first nav, visual-only inspirations, the unpublished catalog, showroom offline, the
+    RLS lockdown, renders-as-primary-medium, and the Nolte aesthetic reference, plus an index
+    that lists **"things that look like bugs but are decisions."**
+  - `21_Regression_Traps/` (16) — one note per landmine (no-DB-defaults inserts, REST shape,
+    join selects, the 4.2MP `e_upscale` limit, gen_restore repainting photos, cold derivation
+    504s, unmount-cancels-submit, descender clipping, fixed-inside-template, transform
+    conflicts, CSS transition desync, dev cache, Vercel env quotes, CSP origins, stale Supabase
+    advisor emails) + an index keyed by **symptom**.
+  - `22_History/` (1) — condensed Session 1–16 timeline with commit landmarks, linking out to
+    the decisions and traps each session produced.
+- **Added the missing `10_Database/Database - reviews.md`** — the table was implemented but
+  never documented.
+- **Cross-wired the two layers:** 35 stale spec notes got an "as-built" banner under their
+  title pointing at what actually shipped (e.g. Showroom Experience → the offline decision,
+  Database Overview → the REST reality). `00_Index.md` now opens with a **READ THIS FIRST**
+  router table.
+- **Graph is fully connected:** 178 notes, 1,536 links, **0 unresolved links, 0 orphans**
+  (wired in the 7 previously unreferenced notes, incl. `Future User`/`Future Wishlist`).
+  `.obsidian/graph.json` now colour-codes by layer and hides unresolved links.
+- **Read order updated in `AGENTS.md` and `Claude Code Query Guide.md`** so agents hit
+  As Built Overview → Regression Traps Index → Codebase Map before touching code.
+- Everything is **uncommitted** in the working tree.
 
 ## Hard Rules (Do Not Violate)
 

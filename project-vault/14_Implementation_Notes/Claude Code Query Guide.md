@@ -1,6 +1,54 @@
 # Claude Code Query Guide
 
-## Before Implementing Any Feature
+> **This vault is the context layer. Query it before scanning the codebase.**
+> Folders `19_`–`22_` describe what actually runs; `01_`–`18_` describe what was specified.
+> Where they disagree, [[Spec Vs Built]] decides.
+
+## Read Order For Any Task
+
+1. [[As Built Overview]] — the current state of every subsystem.
+2. [[Regression Traps Index]] — **skim the section for the area you're touching.** Most of these
+   fail silently.
+3. [[Codebase Map]] — locate the files instead of grepping for them.
+4. [[Global Rules]] and [[17_Forbidden_Things]] — the standing constraints.
+5. The relevant as-built note ([[Route Map]], [[Data Access Layer]], [[Image Delivery Pipeline]],
+   [[Motion System]], [[Security Posture]], [[Admin Surface]]).
+6. The relevant spec note in `01_`–`18_` for intent and edge cases.
+7. [[Decisions Index]] if something looks wrong — it may be deliberate.
+
+`HANDOFF.md` at the repo root holds the live pending-task list and the full session narrative.
+`PRODUCT.md` holds product positioning — **read it before asking product-context questions.**
+
+## Fast Answers
+
+| Question | Note |
+|---|---|
+| What does this URL render? | [[Route Map]] |
+| Where does this code live? | [[Codebase Map]] |
+| How do I query the DB? | [[Data Access Layer]] |
+| Why is this page redirecting? | [[Decisions Index]] |
+| What will break if I touch this? | [[Regression Traps Index]] |
+| What content is still missing? | [[Content And Asset State]] |
+| Is this spec note still true? | [[Spec Vs Built]] |
+
+## Non-Negotiables Before Writing Code
+
+* **Never** import `lib/db.ts` (Prisma) into a page, route or component — [[Data Access Layer]].
+* **Never** import `lib/supabase.ts` into a client component.
+* **Every REST insert** supplies `newId()` and `nowIso()` — [[Trap - No DB Defaults On Insert]].
+* **Every joined select** names every field the component renders.
+* **Don't add libraries.** The motion system is complete — [[Motion System]].
+* New external origins need a CSP entry — [[Trap - CSP Blocks New External Origins]].
+* All buttons `rounded-full`. Mobile-first. Inspiration before products.
+
+## After Implementing
+
+* Update the affected as-built note (`19_`–`22_`), not just the spec note.
+* Record a new decision in `20_Decisions/` if you changed how something works.
+* Add a trap note if something failed silently and cost you time.
+* Update `HANDOFF.md` with a Session Log entry.
+
+## Original Read Order (still valid for spec detail)
 
 1. Read `project-vault/00_Index.md`.
 2. Read `project-vault/13_Rules_And_Constraints/Global Rules.md`.

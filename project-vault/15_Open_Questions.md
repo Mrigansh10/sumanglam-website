@@ -1,5 +1,7 @@
 # Open Questions
 
+> **ℹ️ Several of these are now answered** by what shipped. See the resolved-questions table in [[Spec Vs Built]].
+
 ## Product
 
 * Question: Should V1 include exactly 20 curated product pages, or a broader 100-300 product sample?

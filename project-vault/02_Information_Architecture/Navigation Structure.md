@@ -1,5 +1,7 @@
 # Navigation Structure
 
+> **⚠️ Partly superseded.** Nav is now **Kitchens-first**, `/hardware-appliances` is Hardware-only, and showroom/products are gone from nav. See [[Decision - Kitchen First Navigation]] and [[Route Map]].
+
 ## Main Navigation
 
 * [[Homepage|Home]]
@@ -54,6 +56,7 @@ Wardrobes appear as a site-map branch in `02-information_architecture.md`, but g
 
 ## Linked Notes
 
+* [[Navigation Taxonomy]]
 * [[Site Map]]
 * [[CTA Hierarchy]]
 * [[16_Conflicts]]

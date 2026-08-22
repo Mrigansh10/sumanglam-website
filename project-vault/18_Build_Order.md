@@ -1,5 +1,7 @@
 # Build Order
 
+> **✅ Complete.** All 13 steps shipped; the site launched 2026-07-06. See [[Session Log]] and [[As Built Overview]].
+
 Build vertically. Do not build every page skeleton first. Complete one meaningful feature path at a time.
 
 ## 1. Repo And Project Setup

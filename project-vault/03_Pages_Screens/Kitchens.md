@@ -1,5 +1,7 @@
 # Kitchens
 
+> **⚠️ Scope changed.** `/kitchens` now **also hosts the Appliances section**. See [[Decision - Kitchen First Navigation]].
+
 ## Purpose
 
 Present kitchen-focused solutions, including Nolte, Mrida, kitchen inspirations, design philosophy, and consultation paths.

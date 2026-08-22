@@ -1,5 +1,7 @@
 # Homepage
 
+> **⚠️ Partly superseded.** The hero and journey-card images are now **database-driven** via `site_settings` ([[Admin Surface]]), the Showroom Experience section was removed ([[Decision - Showroom Temporarily Offline]]), and the reviews surface currently renders nothing ([[Database - reviews]]). See [[Route Map]].
+
 ## Purpose
 
 Create a strong first impression, introduce Sumanglam, build trust, inspire exploration, and move visitors toward inspirations, showroom visits, consultation, or WhatsApp inquiry.

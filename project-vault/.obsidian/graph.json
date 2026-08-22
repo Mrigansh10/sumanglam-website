@@ -1,22 +1,72 @@
 {
-  "collapse-filter": true,
+  "collapse-filter": false,
   "search": "",
   "showTags": false,
   "showAttachments": false,
-  "hideUnresolved": false,
+  "hideUnresolved": true,
   "showOrphans": true,
-  "collapse-color-groups": true,
-  "colorGroups": [],
-  "collapse-display": true,
-  "showArrow": false,
-  "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1,
-  "lineSizeMultiplier": 1,
-  "collapse-forces": true,
-  "centerStrength": 0.518713248970312,
-  "repelStrength": 10,
-  "linkStrength": 1,
-  "linkDistance": 250,
-  "scale": 0.5359795996225766,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:19_As_Built",
+      "color": {
+        "a": 1,
+        "rgb": 3718576
+      }
+    },
+    {
+      "query": "path:20_Decisions",
+      "color": {
+        "a": 1,
+        "rgb": 14722136
+      }
+    },
+    {
+      "query": "path:21_Regression_Traps",
+      "color": {
+        "a": 1,
+        "rgb": 14441290
+      }
+    },
+    {
+      "query": "path:22_History",
+      "color": {
+        "a": 1,
+        "rgb": 9072575
+      }
+    },
+    {
+      "query": "path:10_Database",
+      "color": {
+        "a": 1,
+        "rgb": 7323507
+      }
+    },
+    {
+      "query": "path:03_Pages_Screens OR path:04_User_Flows",
+      "color": {
+        "a": 1,
+        "rgb": 5999324
+      }
+    },
+    {
+      "query": "path:13_Rules_And_Constraints OR \"17_Forbidden_Things\"",
+      "color": {
+        "a": 1,
+        "rgb": 12151383
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": true,
+  "textFadeMultiplier": -0.8,
+  "nodeSizeMultiplier": 1.1,
+  "lineSizeMultiplier": 0.9,
+  "collapse-forces": false,
+  "centerStrength": 0.5,
+  "repelStrength": 11,
+  "linkStrength": 0.8,
+  "linkDistance": 210,
+  "scale": 0.45,
   "close": false
 }

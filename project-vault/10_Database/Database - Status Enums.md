@@ -1,5 +1,7 @@
 # Database - Status Enums
 
+> **⚠️ Shape warning.** Supabase REST returns these enums **lowercase**, not in the uppercase Prisma form. See [[Trap - REST Shape Dates And Enums]].
+
 ## Lead Status Values
 
 Allowed values:

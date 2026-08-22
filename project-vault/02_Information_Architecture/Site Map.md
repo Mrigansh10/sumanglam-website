@@ -1,5 +1,7 @@
 # Site Map
 
+> **⚠️ Partly superseded.** `/showroom`, `/products` and `/inspiration/[slug]` now redirect, and the category split changed. See [[Route Map]] and [[Spec Vs Built]].
+
 ## Primary Routes
 
 * `/` - [[Homepage]]

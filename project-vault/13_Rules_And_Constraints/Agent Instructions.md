@@ -1,5 +1,7 @@
 # Agent Instructions
 
+> **ℹ️ Updated read order.** Start at [[As Built Overview]] and [[Regression Traps Index]] before touching code. See [[Claude Code Query Guide]].
+
 ## Before Any Implementation
 
 1. Read [[00_Index]].
