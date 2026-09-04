@@ -42,3 +42,6 @@ kitchen and wardrobe 3d renders/
 
 # persisted Google sign-in for the review scraper (never commit)
 .playwright-google-profile/
+
+# impeccable decision-page server state (ephemeral)
+.impeccable/questions/
