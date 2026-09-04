@@ -1,7 +1,7 @@
 ---
 layer: history
 status: index
-updated: 2026-08-22
+updated: 2026-09-04
 ---
 
 # Session Log
@@ -64,3 +64,22 @@ The pattern since launch is that **the codebase is done and the bottleneck is co
 ## Source Trace
 
 Condensed from `HANDOFF.md` Session Log (2026-08-12) and `git log`.
+
+## Session 18 — 2026-09-04
+
+**Commit:** `993da44` — first app-code change since `2554f0e` (2026-07-23).
+
+Opened as V2 kickoff / complete design redo; two production problems surfaced first.
+
+* **Fabricated reviews found live.** `data/google-reviews.json` had shipped with 10 invented
+  testimonials and an invented "4.6 ★ · 156 reviews" aggregate, badged Google, live since
+  launch. `lastScraped: null` proved the scraper never ran. Produced
+  [[Trap - Seed Data Shipped As Real Content]]. **Still live — needs an interactive scrape.**
+* **NAP corrected to match the Google Business Profile** — address, pincode `302019` →
+  `302020`, and the JSON-LD geo longitude (the old value was the Maps viewport centre, ~250m
+  off). Added the GBP office number; `phoneSecondary` had never been rendered anywhere.
+* **Review scraper rewritten** — persistent sign-in profile, full-list capture, and it now
+  refuses to write on a zero capture.
+* **Design audit of production** — the homepage is five consecutive uniform card grids;
+  mobile is 24,164px tall. Tokens are good. The ceiling is imagery, not layout.
+

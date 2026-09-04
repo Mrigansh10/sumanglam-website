@@ -1,6 +1,6 @@
 # HANDOFF — Sumanglam Digital Showroom
 
-**Last updated:** 2026-08-22
+**Last updated:** 2026-09-04
 **Repo:** https://github.com/Mrigansh10/sumanglam-website
 **Dev server:** `npm run dev` → http://localhost:3000
 
@@ -16,11 +16,14 @@
 > favicon (traced "S" placeholder, now with a raster `.ico` for Google), and the
 > on-site SEO pass. Session 13 also rotated the admin login (email + password) and
 > closed the last Security Advisor RLS gap. Session 14 (07-23) added admin delete
-> for leads/consultations. Sessions 15–16 (08-05 → 08-12) were docs + tooling only —
-> **no app code has changed since `2554f0e` (2026-07-23)**; the only remaining
-> working-tree changes are untracked files (`PRODUCT.md`, `.agents/`,
-> `.claude/skills/higgsfield-*`, `skills-lock.json`, `sumanglam_logo.jpeg`,
-> `1000267393.png`).
+> for leads/consultations. Sessions 15–17 (08-05 → 08-22) were docs + tooling only.
+> **Session 18 (09-04) shipped app code again — `993da44`**: the NAP now matches
+> the Google Business Profile (address, pincode, geo longitude) and the review
+> scraper was rewritten. Untracked files remain outside git (`PRODUCT.md`,
+> `.agents/`, `.claude/skills/higgsfield-*`, `skills-lock.json`,
+> `sumanglam_logo.jpeg`, `1000267393.png`, `web design inspirations/`).
+> ⚠️ **The homepage still renders fabricated reviews** until someone runs
+> `npm run scrape:reviews` interactively — see Session 18.
 > Commit attribution: **Mrigansh10** from `e7ba294` onward.
 
 ## 🎯 CURRENT DIRECTION (set 2026-07-02) — Release readiness, NOT product depth
@@ -621,6 +624,55 @@ untouched and still live on `2554f0e`.**
 - **Read order updated in `AGENTS.md` and `Claude Code Query Guide.md`** so agents hit
   As Built Overview → Regression Traps Index → Codebase Map before touching code.
 - Everything is **uncommitted** in the working tree.
+
+### Session 18 — 2026-09-04 (V2 kickoff: fabricated reviews found, NAP corrected)
+
+Session opened as "get up to speed for V2" and a **complete design redo**. Two
+production problems surfaced before any design work started.
+
+**1. The homepage has been showing fabricated reviews since launch.**
+`data/google-reviews.json` shipped with 10 invented testimonials and an invented
+"4.6 ★ · 156 reviews on Google" aggregate, badged Google, live for ~2 months.
+`lastScraped: null` proved the scraper had never run. Session 16 concluded the site
+rendered "no reviews at all" because the `reviews` *table* is empty — but the block
+reads the static JSON, not the table. `PRODUCT.md` had also asserted these reviews
+were genuine. Full write-up: [[Trap - Seed Data Shipped As Real Content]].
+**Not yet fixed — needs an interactive scrape.** User declined removing the section;
+they want real reviews in it.
+
+**2. The NAP never matched the Google Business Profile.** Read off the live GBP panel:
+
+| | GBP (authoritative) | site (was) |
+|---|---|---|
+| Address | S 13, New Aatish Market, opp. Metro Pillar No. 48, … Mansarovar | S-13, New Aatish Market, Devi Nagar |
+| Pincode | 302020 | 302019 |
+| Phone | 096729 98294 | +91 94140 78298 |
+
+User confirmed GBP is correct. Shipped in `993da44`: address, JSON-LD
+`streetAddress`/`postalCode`, and the geo **longitude** (`75.7584208` → `75.7609957`
+— the old value was the map viewport centre from the Maps URL, ~250m off the shop).
+Added the GBP number as a third office line; the contact page now renders all three.
+Note `phoneSecondary` had existed in `siteConfig` since launch but was rendered
+**nowhere**. Verified live on prod: address, pincode and JSON-LD all correct.
+
+**Review scraper rewritten.** Google serves signed-out browsers a "limited view" with
+the review list absent from the DOM — headless scraping is impossible, confirmed
+against consent cookies, a Chrome UA, and the direct `!1b1` reviews URL. It now uses a
+persistent Chrome profile (gitignored) so sign-in survives runs, loads the full list
+instead of the first 10, expands truncated reviews, uses layered selectors, and
+**writes nothing when it captures zero reviews**.
+
+**Design-redo findings (no code yet).** Screenshotted prod at 1440px and 390px: the
+homepage is five consecutive uniform card grids after the hero — ~15 near-identical
+cards, flat type hierarchy, and a **24,164px-tall mobile page**. It contradicts its own
+Nolte reference (mixed ratios, editorial asymmetry) and the vault's own "avoid uniform
+grids" rule. Tokens (ivory/charcoal/bronze, Fraunces + Inter) are good and worth
+keeping. **The real ceiling is imagery** — 9 published inspirations, low-res, visually
+similar. Blocked pending the user's design references.
+
+**Open decisions for the redo:** whether the "complete and frozen" motion system is
+unfrozen, whether new libraries are allowed, whether `rounded-full` survives, and
+whether Nolte stays the aesthetic bar.
 
 ## Hard Rules (Do Not Violate)
 

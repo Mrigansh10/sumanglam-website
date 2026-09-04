@@ -1,7 +1,7 @@
 ---
 layer: as-built
 status: in-progress
-updated: 2026-08-22
+updated: 2026-09-04
 ---
 
 # Content And Asset State
@@ -78,6 +78,22 @@ Brass Barony, Spitze, Everyday.
 | Favicon | **Placeholder** — a potrace-vectorized "S" from `sumanglam_logo.jpeg` on terracotta `#b96a57`. Replace when the original vector logo is found. Ships as `app/icon.svg` + `app/apple-icon.png` + a hand-built multi-size raster `app/favicon.ico` (16/32/48) that Google Search needs |
 | About-page origin story | Still placeholder copy |
 | Social profile URLs | For the `sameAs` array — [[SEO And Metadata]] |
+
+## Reviews — Two Sources, Not One
+
+The homepage reviews block reads **two** sources and they are constantly confused:
+
+* `data/google-reviews.json` — a **static file** read by `server/google-reviews.ts`. This is
+  what the aggregate rating and the review ticker render from.
+* The `reviews` **table** — site-submitted reviews, moderated in admin. **0 rows.**
+
+An empty `reviews` table therefore does **not** mean the section renders nothing. Between
+launch and 2026-09-04 the static file held fabricated seed reviews that were live the whole
+time — see [[Trap - Seed Data Shipped As Real Content]].
+
+**Real aggregate, verified from the GBP panel 2026-09-04: 4.6 ★.** The total review count
+could not be read (Google's signed-out "limited view"), so any `userRatingsTotal` must come
+from an authenticated scrape, never an estimate.
 
 ## Copy Guardrails
 

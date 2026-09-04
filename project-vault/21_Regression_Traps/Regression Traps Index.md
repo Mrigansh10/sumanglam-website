@@ -1,7 +1,7 @@
 ---
 layer: trap
 status: index
-updated: 2026-08-22
+updated: 2026-09-04
 ---
 
 # Regression Traps Index
@@ -42,6 +42,12 @@ updated: 2026-08-22
 | [[Trap - Vercel Env Quotes And Redeploy]] | Can't log in to admin after an env change |
 | [[Trap - CSP Blocks New External Origins]] | New embed/script/image silently doesn't load |
 | [[Trap - Stale Supabase Advisor Emails]] | Alarming "Action required" email about an already-fixed issue |
+
+## Content
+
+| Trap | Symptom |
+|---|---|
+| [[Trap - Seed Data Shipped As Real Content]] | Placeholder content renders correctly and is never questioned |
 
 ## Tooling
 
