@@ -24,6 +24,12 @@
 > `sumanglam_logo.jpeg`, `1000267393.png`, `web design inspirations/`).
 > ✅ The fabricated homepage reviews were **replaced with the real Google set**
 > in `38c7bfb` (4.6 ★ / 84 reviews, 8 curated of 38 captured).
+>
+> 🎨 **V2 is a complete design redo, in progress.** Kitchens + Wardrobes carry the
+> purpose; Hardware stays a main section. **Only the colour palette survives** —
+> Fraunces/Inter, `rounded-full`, and the "frozen" motion system are all released.
+> **The direction is NOT locked** — the user wants every option visualized before
+> choosing. Do not write DESIGN.md or start building. See Session 18 → *Design phase*.
 > Commit attribution: **Mrigansh10** from `e7ba294` onward.
 
 ## 🎯 CURRENT DIRECTION (set 2026-07-02) — Release readiness, NOT product depth
@@ -687,6 +693,78 @@ similar. Blocked pending the user's design references.
 **Open decisions for the redo:** whether the "complete and frozen" motion system is
 unfrozen, whether new libraries are allowed, whether `rounded-full` survives, and
 whether Nolte stays the aesthetic bar.
+
+#### Design phase (same session) — V2 redo started, direction NOT locked
+
+User's V2 direction: **Kitchens and Wardrobes carry the purpose and the aesthetic; Hardware
+stays a main nav section** (explicitly *not* demoted — the emphasis changes, the structure
+does not). The site's job is the design-led kitchens/wardrobes business; the walk-in hardware
+trade doesn't need a website.
+
+Ran the `impeccable` skill (the flow `PRODUCT.md` belongs to; `DESIGN.md` still unwritten).
+`context.mjs` classified this as **redesign / replace the incumbent visual world**.
+
+**Answers given in the structured round (these bind future sessions):**
+* **Only the colour palette survives** — warm ivory `#faf8f5`, charcoal `#221d17`, bronze
+  `#9a7945`, sand `#e5dfd4`. **Fraunces + Inter, `rounded-full` pill buttons, and the Framer
+  Motion system are all RELEASED.** PRODUCT.md's "all buttons rounded-full, non-negotiable"
+  and the Motion System's "frozen" status no longer bind the redo.
+* **Thesis: "Designed around YOUR home"** — personal, made-to-measure, Mrida-led. Not the
+  Nolte-authority angle and not the one-roof angle.
+* **Visual world: derive fresh, aim past Nolte.** Nolte is **no longer the aesthetic bar**.
+  User's reasoning: Nolte may commission their own Jaipur site, so the direction must not lean
+  on Nolte's identity — **Mrida is the differentiator that stays ours.**
+
+**Direction rounds (concept-seed rolls, both recorded):**
+* Round 1, seed `2541ca42` → assigned **The Jali** (Jaipur pierced stone screens). Five
+  sketches generated, in `.impeccable/sketches/`. **User re-rolled with a steer:** likes the
+  jali's *logic* but it read "heavily skewed towards traditional Indian design"; their orders
+  are modern modular, so they asked for it "in a bit broader sense".
+* Round 2, seed `59f6e538` → assigned **The Sorted Drawer** (the compositor's type case):
+  a field of compartments where **each cell is sized to exactly what it holds** — the jali's
+  cell logic stripped of heritage ornament. It is literally a drawer insert, so it is true to
+  the Blum/Hettich organisers actually sold. Challengers dealt: The Archive Wall (sneaker box
+  stacks), The Calibrated Rail (instrument emission-line plates), The Tabla (lotería).
+  Retired by the re-roll: The Jali, Assembly Instructions, Guide Map, Coiled Earth, plus
+  16mm film, teletext, and a fluorescent tech spread.
+
+**⚠️ THE DIRECTION IS NOT LOCKED.** The Sorted Drawer was picked in a **text-only** round
+(no sketches — see quotas below). The user explicitly said: *"Don't lock in the design
+profile, I still need to visualize all the options before choosing one."* So:
+* Do **not** write `DESIGN.md`, do **not** write the direction contract, do **not** start
+  building.
+* **Next session starts by visualizing the options** so the choice is made on images, not
+  prose. Round-1 sketches already exist in `.impeccable/sketches/`; Round 2's four
+  (Sorted Drawer, Archive Wall, Calibrated Rail, Tabla) plus canon still need rendering.
+
+**Image generation is exhausted on every route** (this is why round 2 was text-only):
+* **Ideogram MCP** — hit `MCP_DAILY_LIMIT` after 5 images. Free/Basic tier, small daily cap,
+  bulk generation needs Pro, max ~2 concurrent. Reset time unknown; check the account page.
+* **higgsfield CLI** — authenticated but **free plan, 0 credits**.
+* **`generate-image.mjs`** — needs `OPENAI_API_KEY`, not set.
+* Fallback if quotas stay dry: build the comps as **real coded HTML** at the target
+  breakpoints and screenshot them. For a website that is arguably better than generated
+  pictures, but it biases toward what is easy to code — push past comfortable if used.
+
+**Craft-floor rules now binding on the redo** (from the skill, these kill current patterns):
+* **Eyebrows/kickers above headings are banned outright** — the current site uses them on
+  every section.
+* No section numbers (01/02/03) — the current "why us" block uses them.
+* No same-size icon+heading+text cards as page structure — the current site's core problem.
+* Display face must be sourced to match the world; `next/font/google` self-hosts, so it
+  satisfies this. Note Fraunces and Inter are both on the skill's over-used-defaults list.
+* Theme the browser surfaces (selection, caret, scrollbar, focus ring).
+* Body measure 65–75ch, display max 6rem, tracking floor −0.04em.
+
+**Production design audit (from screenshots, still true):** five consecutive uniform card
+grids after the hero, ~15 near-identical cards, flat type hierarchy, and a **24,164px-tall
+mobile homepage**. The header pill also overlaps the hero headline at scroll-top, and the
+"Leave a review" form sits on the homepage asking for reviews from people who have not bought.
+
+**Also noted:** `PRODUCT.md` is now stale in two places — it still says a "Test User" review
+needs removing (the table has been empty since before 08-12) and still names nolte-kuechen.com
+as the aesthetic bar. Left alone deliberately: the skill forbids repairing doc drift as a side
+effect of a design task.
 
 ## Hard Rules (Do Not Violate)
 

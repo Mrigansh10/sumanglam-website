@@ -86,3 +86,13 @@ Opened as V2 kickoff / complete design redo; two production problems surfaced fi
 * **Reviews fixed the same session** (`38c7bfb`) — real profile scraped, 4.6 ★ / 84 reviews,
   8 curated of 38 published verbatim. Surfaced two positioning facts: the genuine reviews read
   as a *hardware store*, and three 1-star reviews are public on Google.
+* **V2 design redo opened (direction NOT locked).** Kitchens + Wardrobes carry the purpose,
+  Hardware stays a main nav section. Ran the `impeccable` redesign flow: **only the colour
+  palette survives** — Fraunces/Inter, `rounded-full`, and the frozen motion system are all
+  released, and **Nolte is no longer the aesthetic bar** (they may build their own Jaipur
+  site, so Mrida is the differentiator that stays ours). Thesis: *designed around YOUR home*.
+  Two rolls: `2541ca42` → The Jali (re-rolled: too traditional-Indian for a modern modular
+  product), `59f6e538` → The Sorted Drawer (a type case; each cell sized to what it holds —
+  the jali's logic without the ornament). **Chosen in a text-only round and explicitly not
+  locked**: every image-generation route is out of quota, and the user wants to see all
+  options visualized first. No `DESIGN.md`, no direction contract, no build.
