@@ -4,8 +4,10 @@
  * Run:  npm run scrape:reviews
  *
  * Google serves a "limited view" of Maps to signed-out browsers — the review
- * list is simply absent from the DOM — so this cannot run headless/unattended.
- * It opens a real Chrome window and waits for you to sign in.
+ * list is simply absent from the DOM — so this cannot run headless. It opens a
+ * real Chrome window, then waits for the reviews to appear. Sign in in that
+ * window; the script detects the list itself and needs no keypress, so it works
+ * backgrounded or piped.
  *
  * The browser profile is persisted in .playwright-google-profile/, so the
  * sign-in survives between runs and you normally only do it once.
@@ -22,7 +24,6 @@
 import { chromium, type BrowserContext, type Page } from "playwright";
 import { writeFileSync, existsSync, mkdirSync } from "fs";
 import { join } from "path";
-import * as readline from "readline";
 
 const MAPS_URL =
   "https://www.google.com/maps/place/%E2%9C%85Sumanglam+-+Hardware+%7CKitchen+%7CWardrobe/@26.8792033,75.7584208,17z/data=!3m1!4b1!4m6!3m5!1s0x396db457e77f7c4f:0xe14b0ebfccecb10a!8m2!3d26.8792033!4d75.7609957!16s%2Fg%2F11bw3dsg3n?hl=en";
@@ -49,14 +50,52 @@ type Output = {
   lastScraped: string;
 };
 
-function waitForEnter(prompt: string): Promise<void> {
-  return new Promise((resolve) => {
-    const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
-    rl.question(prompt, () => {
-      rl.close();
-      resolve();
-    });
-  });
+/**
+ * Wait until the review list is actually on screen.
+ *
+ * This used to prompt for an ENTER keypress, which silently defeated the whole
+ * script the moment stdin wasn't a TTY (backgrounded, piped, or run by an
+ * agent): readline saw EOF and the run ended before scraping anything. Polling
+ * the DOM needs no stdin at all — sign in in the browser window and the script
+ * notices by itself.
+ */
+async function waitForReviews(page: Page, maxMinutes = 8): Promise<boolean> {
+  const deadline = Date.now() + maxMinutes * 60_000;
+  let announced = false;
+
+  while (Date.now() < deadline) {
+    // The Reviews tab may just need clicking once the user is signed in.
+    try {
+      const tab = page
+        .locator('button[role="tab"], button')
+        .filter({ hasText: /^\s*Reviews\s*$/i })
+        .first();
+      if ((await tab.count()) > 0) await tab.click({ timeout: 1500 });
+    } catch {
+      /* not there yet, or already open */
+    }
+
+    const cards = await page.locator("[data-review-id]").count();
+    if (cards > 0) {
+      console.log(`\n  Reviews are visible (${cards} loaded so far). Continuing…`);
+      return true;
+    }
+
+    const limited = await page
+      .evaluate(() => document.body.innerText.includes("limited view"))
+      .catch(() => false);
+
+    if (!announced) {
+      console.log(
+        limited
+          ? "  Waiting for you to sign in… (still the signed-out limited view)"
+          : "  Waiting for the review list…",
+      );
+      announced = true;
+    }
+    await page.waitForTimeout(3000);
+  }
+  return false;
 }
 
 /** Read the aggregate rating and total review count from the place panel. */
@@ -116,31 +155,55 @@ async function expandAll(page: Page): Promise<void> {
 }
 
 async function extract(page: Page): Promise<ReviewEntry[]> {
+  // NOTE: no named inner functions inside page.evaluate(). tsx/esbuild compiles
+  // `const pick = (...) => {}` into a __name(...) call for stack-trace names,
+  // and that helper doesn't exist in the browser context — it throws
+  // "__name is not defined" at runtime. Keep this body free of named helpers.
   return page.evaluate(() => {
-    const pick = (card: Element, sels: string[]): string => {
-      for (const s of sels) {
-        const t = (card.querySelector(s) as HTMLElement | null)?.innerText?.trim();
-        if (t) return t;
-      }
-      return "";
-    };
-
     const out: ReviewEntry[] = [];
     const seen = new Set<string>();
 
+    const nameSel = [".d4r55", "[class*='title'] span", "button[aria-label] div"];
+    const textSel = [".wiI7pd", "[class*='text']", "span[jsan]"];
+    const dateSel = [".rsqaWe", "[class*='date']"];
+
     for (const card of Array.from(document.querySelectorAll("[data-review-id]"))) {
-      const authorName = pick(card, [".d4r55", "[class*='title'] span", "button[aria-label] div"]);
-      const text = pick(card, [".wiI7pd", "[class*='text']", "span[jsan]"]);
-      const relativeTime = pick(card, [".rsqaWe", "[class*='date']"]);
+      let authorName = "";
+      for (const sel of nameSel) {
+        const v = (card.querySelector(sel) as HTMLElement | null)?.innerText?.trim();
+        if (v) {
+          authorName = v;
+          break;
+        }
+      }
+
+      let text = "";
+      for (const sel of textSel) {
+        const v = (card.querySelector(sel) as HTMLElement | null)?.innerText?.trim();
+        if (v) {
+          text = v;
+          break;
+        }
+      }
+
+      let relativeTime = "";
+      for (const sel of dateSel) {
+        const v = (card.querySelector(sel) as HTMLElement | null)?.innerText?.trim();
+        if (v) {
+          relativeTime = v;
+          break;
+        }
+      }
 
       const label =
         card.querySelector("[aria-label*='star']")?.getAttribute("aria-label") ??
         card.querySelector("[aria-label*='out of 5']")?.getAttribute("aria-label") ??
         "";
-      const rating = parseFloat((label.match(/(\d+(?:\.\d+)?)/) ?? [])[1] ?? "0");
+      const m = label.match(/(\d+(?:\.\d+)?)/);
+      const rating = m ? parseFloat(m[1]) : 0;
 
       if (!authorName || !text) continue;
-      const key = `${authorName}|${text.slice(0, 48)}`;
+      const key = authorName + "|" + text.slice(0, 48);
       if (seen.has(key)) continue;
       seen.add(key);
 
@@ -189,10 +252,20 @@ async function run(): Promise<void> {
   console.log("  2. Return to the Sumanglam place page.");
   console.log("  3. Click the 'Reviews' tab so the review list is on screen.");
   console.log("  4. Optional: set Sort to 'Newest' for a fair, current sample.");
+  console.log("     (If a Reviews tab is present, the script clicks it for you.)");
   console.log("");
-  console.log("  Then press ENTER here. (Your login is saved for next time.)");
-  console.log("─".repeat(66));
-  await waitForEnter("\n  → ENTER once the reviews are visible: ");
+  console.log("  Leave this running — it detects the reviews by itself and");
+  console.log("  continues. No keypress needed. (Your login is saved for next time.)");
+  console.log("─".repeat(66) + "\n");
+
+  const ready = await waitForReviews(page);
+  if (!ready) {
+    console.error("\n✗ Timed out waiting for the review list — NOTHING was written.");
+    console.error("  Sign in, open the Reviews tab, and run it again.");
+    await ctx.close();
+    process.exitCode = 1;
+    return;
+  }
 
   const { rating, total } = await readAggregate(page);
   console.log(`\nAggregate: ${rating || "?"}★ from ${total || "?"} reviews`);
