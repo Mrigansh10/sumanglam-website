@@ -91,9 +91,22 @@ An empty `reviews` table therefore does **not** mean the section renders nothing
 launch and 2026-09-04 the static file held fabricated seed reviews that were live the whole
 time — see [[Trap - Seed Data Shipped As Real Content]].
 
-**Real aggregate, verified from the GBP panel 2026-09-04: 4.6 ★.** The total review count
-could not be read (Google's signed-out "limited view"), so any `userRatingsTotal` must come
-from an authenticated scrape, never an estimate.
+**Real aggregate, scraped 2026-09-04: 4.6 ★ from 84 reviews** (38 have text). Eight are
+published; the full capture is kept in `data/google-reviews.raw.json` so the selection can be
+revised without re-scraping. Re-run with `npm run scrape:reviews` — it needs a visible Chrome
+window to sign in, but no keypress.
+
+**What the real reviews say about positioning.** The genuine corpus reads overwhelmingly as a
+**hardware store** — "Best hardware", "Hardware house", "Big Hettich dealer", "wholesale and
+retail both", "bought ply, mica and hardware for a site". That is the opposite of the premium
+kitchen-showroom positioning in [[Product Summary]], and [[Forbidden Patterns]] explicitly
+bars feeling like a hardware store. Customers describe the business the way the site is trying
+not to. Worth treating as evidence, not noise.
+
+**Three 1-star reviews are live on Google** and will be found by anyone who looks: after-sales
+service on a ₹5 lakh modular kitchen (3 years ago), an unguided showroom visit (4 years ago),
+and an MRP-overcharging complaint (4 years ago). Not displayed on the site — but they are
+public, and the after-sales one is the kind of thing a prospect reads before calling.
 
 ## Copy Guardrails
 

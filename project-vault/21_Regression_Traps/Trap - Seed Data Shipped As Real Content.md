@@ -1,6 +1,6 @@
 ---
 layer: trap
-status: active
+status: resolved
 updated: 2026-09-04
 ---
 
@@ -34,6 +34,23 @@ Three separate things hid it:
 
 Found by screenshotting production and noticing reviews rendering while the database said
 zero rows.
+
+## Resolved
+
+**2026-09-04, `38c7bfb`.** Scraped the real profile: **4.6 from 84 reviews**, 38 with text.
+Eight curated reviews now render, verbatim. The fabricated "156" is gone — note the 4.6 was
+accidentally correct, which is exactly what made the rest look plausible.
+
+Two scraper bugs had to be fixed before it could run at all, both of which had made the
+"just run the script" fix look easy and quietly fail:
+
+* The **interactive ENTER prompt** defeated the script whenever `stdin` wasn't a TTY —
+  backgrounded, piped, or agent-run, `readline` hit EOF and the run ended before scraping.
+  Replaced with DOM polling; no keypress needed.
+* **`page.evaluate()` cannot contain named inner functions** under tsx. esbuild rewrites
+  `const pick = () => {}` into a `__name(...)` call for stack-trace names, and that helper
+  doesn't exist in the browser context — the run died with `__name is not defined` *after*
+  loading all 500 review cards.
 
 ## Why It Matters
 

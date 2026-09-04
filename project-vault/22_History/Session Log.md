@@ -83,3 +83,6 @@ Opened as V2 kickoff / complete design redo; two production problems surfaced fi
 * **Design audit of production** — the homepage is five consecutive uniform card grids;
   mobile is 24,164px tall. Tokens are good. The ceiling is imagery, not layout.
 
+* **Reviews fixed the same session** (`38c7bfb`) — real profile scraped, 4.6 ★ / 84 reviews,
+  8 curated of 38 published verbatim. Surfaced two positioning facts: the genuine reviews read
+  as a *hardware store*, and three 1-star reviews are public on Google.

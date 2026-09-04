@@ -22,8 +22,8 @@
 > scraper was rewritten. Untracked files remain outside git (`PRODUCT.md`,
 > `.agents/`, `.claude/skills/higgsfield-*`, `skills-lock.json`,
 > `sumanglam_logo.jpeg`, `1000267393.png`, `web design inspirations/`).
-> ⚠️ **The homepage still renders fabricated reviews** until someone runs
-> `npm run scrape:reviews` interactively — see Session 18.
+> ✅ The fabricated homepage reviews were **replaced with the real Google set**
+> in `38c7bfb` (4.6 ★ / 84 reviews, 8 curated of 38 captured).
 > Commit attribution: **Mrigansh10** from `e7ba294` onward.
 
 ## 🎯 CURRENT DIRECTION (set 2026-07-02) — Release readiness, NOT product depth
@@ -637,8 +637,22 @@ production problems surfaced before any design work started.
 rendered "no reviews at all" because the `reviews` *table* is empty — but the block
 reads the static JSON, not the table. `PRODUCT.md` had also asserted these reviews
 were genuine. Full write-up: [[Trap - Seed Data Shipped As Real Content]].
-**Not yet fixed — needs an interactive scrape.** User declined removing the section;
-they want real reviews in it.
+**Fixed in `38c7bfb`** — real profile scraped: **4.6 ★ from 84 reviews**, 38 with
+text, 8 curated and published verbatim. The invented "156" is gone; the 4.6 was
+accidentally correct, which is what made the rest look plausible. Full capture kept
+in `data/google-reviews.raw.json` for re-curation without re-scraping.
+
+Two scraper bugs had to be fixed first, both silent: the **ENTER prompt** killed the
+run whenever stdin wasn't a TTY (readline saw EOF), and **`page.evaluate()` can't hold
+named inner functions** under tsx — esbuild rewrites them to `__name(...)`, which
+doesn't exist in the page, so it died *after* loading all 500 cards.
+
+⚠️ **Two things the real reviews revealed.** (1) The genuine corpus reads as a
+**hardware store** — "Best hardware", "Big Hettich dealer", "wholesale and retail",
+"ply, mica" — which is precisely the positioning [[Forbidden Patterns]] bars and the
+opposite of the premium kitchen-showroom framing. Customers describe the business the
+way the site is trying not to. (2) **Three 1-star reviews are public on Google**,
+including after-sales service on a ₹5 lakh modular kitchen.
 
 **2. The NAP never matched the Google Business Profile.** Read off the live GBP panel:
 
