@@ -18,16 +18,16 @@ const localBusinessJsonLd = {
   email: siteConfig.contact.email,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "S-13, New Aatish Market, Devi Nagar",
+    streetAddress: "S-13, New Aatish Market, opp. Metro Pillar No. 48, Mansarovar",
     addressLocality: "Jaipur",
     addressRegion: "Rajasthan",
-    postalCode: "302019",
+    postalCode: "302020",
     addressCountry: "IN",
   },
   geo: {
     "@type": "GeoCoordinates",
     latitude: 26.8792033,
-    longitude: 75.7584208,
+    longitude: 75.7609957,
   },
   hasMap: siteConfig.contact.mapsUrl,
   openingHoursSpecification: {

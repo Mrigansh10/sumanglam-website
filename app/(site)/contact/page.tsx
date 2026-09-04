@@ -35,13 +35,20 @@ export default function ContactPage() {
                     <dt className="text-xs font-medium uppercase tracking-luxe text-ink-faint">
                       Phone
                     </dt>
-                    <dd className="mt-1">
-                      <a
-                        href={`tel:${siteConfig.contact.phone.replace(/\s/g, "")}`}
-                        className="text-ink hover:text-accent-deep"
-                      >
-                        {siteConfig.contact.phone}
-                      </a>
+                    <dd className="mt-1 flex flex-col gap-0.5">
+                      {[
+                        siteConfig.contact.phone,
+                        siteConfig.contact.phoneSecondary,
+                        siteConfig.contact.phoneTertiary,
+                      ].map((number) => (
+                        <a
+                          key={number}
+                          href={`tel:${number.replace(/\s/g, "")}`}
+                          className="text-ink hover:text-accent-deep"
+                        >
+                          {number}
+                        </a>
+                      ))}
                     </dd>
                   </div>
                 </div>

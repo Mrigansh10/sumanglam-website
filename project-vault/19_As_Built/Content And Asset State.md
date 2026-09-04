@@ -96,7 +96,7 @@ waiting on the user to create the page. Full text is in `HANDOFF.md` Session 15.
 ## Real NAP (must match everywhere)
 
 ```
-S-13, New Aatish Market, Devi Nagar, Jaipur, Rajasthan 302019
+S-13, New Aatish Market, opp. Metro Pillar No. 48, Mansarovar, Jaipur, Rajasthan 302020
 Mon–Sat, 10:30 AM – 8:00 PM (closed Sundays)
 +91 94140 78298 · inquiries@sumanglam.co
 ```

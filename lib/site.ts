@@ -18,9 +18,13 @@ export const siteConfig = {
   contact: {
     phone: clientEnv.NEXT_PUBLIC_CONTACT_PHONE || "+91 94140 78298",
     phoneSecondary: "+91 96940 99093",
+    // Listed on the Google Business Profile; kept here so the site and GBP
+    // agree on at least one number (NAP consistency).
+    phoneTertiary: "+91 96729 98294",
     email: clientEnv.NEXT_PUBLIC_CONTACT_EMAIL || "inquiries@sumanglam.co",
     whatsappNumber: clientEnv.NEXT_PUBLIC_WHATSAPP_NUMBER || "919694099093",
-    address: "S-13, New Aatish Market, Devi Nagar, Jaipur, Rajasthan 302019",
+    address:
+      "S-13, New Aatish Market, opp. Metro Pillar No. 48, Mansarovar, Jaipur, Rajasthan 302020",
     addressShort: "S-13, New Aatish Market, Jaipur",
     mapsUrl: "https://maps.app.goo.gl/mkgkSVioTnZftXRU6",
     googleReviewUrl: "https://share.google/G7s64ZUGEhSvjXlG0",
