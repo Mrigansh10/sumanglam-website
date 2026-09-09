@@ -45,3 +45,8 @@ kitchen and wardrobe 3d renders/
 
 # impeccable decision-page server state (ephemeral)
 .impeccable/questions/
+
+# inspiration inbox — screenshots are dropped here, then ingested into
+# project-vault/23_Inspiration_Library/ (see its Capture Workflow note).
+# Transient staging; the library itself IS tracked.
+/web design inspirations/

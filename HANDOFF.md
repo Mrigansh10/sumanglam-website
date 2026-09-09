@@ -1,6 +1,6 @@
 # HANDOFF — Sumanglam Digital Showroom
 
-**Last updated:** 2026-09-04
+**Last updated:** 2026-09-05
 **Repo:** https://github.com/Mrigansh10/sumanglam-website
 **Dev server:** `npm run dev` → http://localhost:3000
 
@@ -29,7 +29,10 @@
 > purpose; Hardware stays a main section. **Only the colour palette survives** —
 > Fraunces/Inter, `rounded-full`, and the "frozen" motion system are all released.
 > **The direction is NOT locked** — the user wants every option visualized before
-> choosing. Do not write DESIGN.md or start building. See Session 18 → *Design phase*.
+> choosing, so **do not lock a direction, write a design system, or start building.**
+> The design phase now has its own root document — **`DESIGN.md`**, read it before any
+> design work — plus a visual-reference layer in the vault at
+> `project-vault/23_Inspiration_Library/`. See Sessions 18 and 19.
 > Commit attribution: **Mrigansh10** from `e7ba294` onward.
 
 ## 🎯 CURRENT DIRECTION (set 2026-07-02) — Release readiness, NOT product depth
@@ -765,6 +768,62 @@ mobile homepage**. The header pill also overlaps the hero headline at scroll-top
 needs removing (the table has been empty since before 08-12) and still names nolte-kuechen.com
 as the aesthetic bar. Left alone deliberately: the skill forbids repairing doc drift as a side
 effect of a design task.
+
+### Session 19 — 2026-09-05 (Inspiration Library + DESIGN.md; direction still not locked)
+
+Session opened to continue Session 18's V2 work — the plan was to render Round 2's four directions
+as sketches. **The user redirected before any of that ran:** slow down, and instead of
+machine-generated concepts, the input becomes **real references picked by hand**. They will browse
+the internet and screenshot sites; this session built the structure that receives them.
+
+**Built: `project-vault/23_Inspiration_Library/`** — 16 notes, a new vault layer.
+* `Inspiration Library Index.md` — the MOC entry point.
+* `Capture Workflow.md` — the inbox is `web design inspirations/` at the repo root; drop anything,
+  no naming discipline. Saying **"ingest"** reads, renames, files, tags and boards the batch.
+* `Sources To Browse.md` — the curated hunting list, ordered by hit-rate for this project, not by
+  fame. Land-book and Godly first; Reform / Plum Living / **Vitsœ** as the closest peers; Buster +
+  Punch for hardware; The Modern House and The Local Project for the thesis; Mobbin because mobile
+  is our worst surface.
+* `Tag Vocabulary.md` — a **closed** five-facet list (`#part/ #world/ #field/ #verdict/ #maps/`).
+  Nested tags, so one capture surfaces on every board it belongs to instead of being filed once and
+  lost.
+* `Boards/` — eight by page anatomy (hero, grid, type, imagery, nav, motion, gallery, conversion)
+  plus three by judgement: **Visual Worlds** (the board the direction gets chosen from),
+  **Steal This**, **Avoid**. Each carries a curated list plus a live core ```query block — no
+  Dataview needed, and none is installed.
+* `Refs/` + `attachments/` — one note per capture, two tiers: light by default, **deep on request**.
+
+**Written: `DESIGN.md` at the repo root** (new; user asked for it explicitly). Deliberately a
+**record of the design phase, not a design system** — no tokens, no type scale, no components,
+because writing those now would lock the direction from prose. It carries the NOT-LOCKED banner,
+the thesis, the surviving palette, everything released (Fraunces/Inter, `rounded-full`, the motion
+system, Nolte as the bar), the production audit, the craft floor, both concept rounds with all
+candidates and their status, the choice pipeline, and the generation-capacity table. Its **Known
+documentation drift** section flags — without repairing — that `PRODUCT.md` and `AGENTS.md` still
+carry V1 constraints V2 has released, and that the Nolte decision note is superseded and unmarked.
+
+**Ingested Ref 001** end to end to prove the pipeline. The inbox's only file turned out to be a
+Dribbble-style **pet adoption app concept** ("PawAdopt"), saved 2026-08-12 — entirely off-brief.
+Filed honestly as `#verdict/avoid` with a note saying so, rather than force-fitted. Delete on a
+word.
+
+**Trap confirmed:** macOS screenshot filenames contain a **narrow no-break space (U+202F)** before
+`AM`/`PM`. It broke a file read in this session. Every ingest renames to an ASCII-safe slug — this
+is the reason ingest is a step rather than dragging files into the vault.
+
+**Also fixed:** `project-vault/.obsidian/graph.json` had been wiped by Obsidian in the working tree
+— all seven colour groups gone, `hideUnresolved` off, contradicting the legend documented in
+`00_Index.md`. Restored from `HEAD` and extended with a magenta group for the new layer.
+
+Wired in: `00_Index.md` (table row, a Library section, graph legend), `AGENTS.md` (a **Design work**
+section pointing at `DESIGN.md` before any design task), `.gitignore` (the inbox is transient; the
+library itself is tracked). Verified: 16 notes, **zero unresolved links, zero orphans** — the
+vault's standing bar.
+
+**Still true, unchanged:** the direction is **NOT locked**, no `DESIGN.md` design system, nothing
+built. Round 2 remains a text-only round. Image generation was still dry at the start of this
+session (Ideogram daily cap, higgsfield 0 credits, no `OPENAI_API_KEY`); it was not re-probed after
+the redirect. **Next: the user browses and screenshots; then "ingest".**
 
 ## Hard Rules (Do Not Violate)
 

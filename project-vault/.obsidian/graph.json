@@ -55,6 +55,13 @@
         "a": 1,
         "rgb": 12151383
       }
+    },
+    {
+      "query": "path:23_Inspiration_Library",
+      "color": {
+        "a": 1,
+        "rgb": 15227560
+      }
     }
   ],
   "collapse-display": false,

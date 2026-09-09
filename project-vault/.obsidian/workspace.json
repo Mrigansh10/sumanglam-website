@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "4e3a9b7f51257038",
+        "id": "1ed11ff29b1a0b01",
         "type": "tabs",
         "children": [
           {
-            "id": "fc7b1793ed9e7a25",
+            "id": "c8f120915b138b94",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -37,7 +37,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -176,8 +178,13 @@
       "bases:Create new base": false
     }
   },
-  "active": "fc7b1793ed9e7a25",
+  "active": "c8f120915b138b94",
   "lastOpenFiles": [
+    "03_Pages_Screens/Brands.md",
+    "source-map.md",
+    "20_Decisions/Decision - Product Catalog Unpublished.md",
+    "03_Pages_Screens/Product Detail.md",
+    "20_Decisions/Decision - Kitchen First Navigation.md",
     "20_Decisions/Decisions Index.md",
     "10_Database/Database - reviews.md",
     "22_History/Session Log.md",
@@ -199,11 +206,6 @@
     "21_Regression_Traps/Trap - REST Shape Dates And Enums.md",
     "20_Decisions/Decision - Nolte As Aesthetic Reference.md",
     "20_Decisions/Decision - Renders As Primary Medium.md",
-    "20_Decisions/Decision - RLS Lockdown And Service Role.md",
-    "20_Decisions/Decision - Kitchen First Navigation.md",
-    "20_Decisions/Decision - Product Catalog Unpublished.md",
-    "20_Decisions/Decision - Showroom Temporarily Offline.md",
-    "20_Decisions/Decision - Inspirations Are Visual Only.md",
     "22_History",
     "21_Regression_Traps",
     "20_Decisions",

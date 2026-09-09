@@ -28,6 +28,7 @@
 > | **Avoid a known landmine** | [[Regression Traps Index]] ← **read before editing** |
 > | Understand why something is the way it is | [[Decisions Index]] |
 > | Trace when something happened | [[Session Log]] |
+> | **Find a visual reference** | [[Inspiration Library Index]] |
 >
 > The narrative session-by-session log and the live pending-task list live in **`HANDOFF.md`**
 > at the repo root. Product positioning lives in **`PRODUCT.md`**.
@@ -184,6 +185,21 @@ Do not build ecommerce checkout, user accounts, wishlists, quotation engine, arc
 * [[Regression Traps Index]] — known landmines
 * [[Session Log]] — condensed history
 
+## Inspiration Library
+
+Visual references for the **V2 design redo**, hand-picked from across the internet, clubbed on five
+facets. The direction is **not locked** — this layer exists so it gets chosen from images.
+
+* [[Inspiration Library Index]] — start here
+* [[Capture Workflow]] — how screenshots get in
+* [[Sources To Browse]] — where to hunt
+* [[Tag Vocabulary]] — the closed facet list
+* [[Board - Visual Worlds]] — the board the direction gets chosen from
+* [[Board - Steal This]] · [[Board - Avoid]]
+
+The design-phase record itself — thesis, what survives, what's released, candidate directions —
+lives in **`DESIGN.md`** at the repo root.
+
 ## Decisions Of Record
 
 * [[Decision - Supabase REST Over Prisma]]
@@ -209,6 +225,7 @@ The graph view is colour-coded by layer:
 | 🟩 Green | `10_Database` |
 | 🔵 Blue | `03_Pages_Screens` + `04_User_Flows` |
 | 🟤 Terracotta | Rules and forbidden things |
+| 🩷 Magenta | `23_Inspiration_Library` — visual references for the V2 redo |
 
 Everything else is uncoloured spec. Unresolved links are hidden, so every visible node is a
 real note — the vault is fully connected with **no orphans**.

@@ -96,3 +96,33 @@ Opened as V2 kickoff / complete design redo; two production problems surfaced fi
   the jali's logic without the ornament). **Chosen in a text-only round and explicitly not
   locked**: every image-generation route is out of quota, and the user wants to see all
   options visualized first. No `DESIGN.md`, no direction contract, no build.
+
+## Session 19 — 2026-09-05
+
+**Docs and vault only.** No app code.
+
+The session opened intending to render Round 2's four directions as sketches. **The user redirected:
+slow down, and replace machine-generated concepts with real references picked by hand** — they
+browse the internet and screenshot sites; the session built the structure that receives them.
+
+* **New vault layer: `23_Inspiration_Library/`** (16 notes, no orphans, no unresolved links).
+  [[Inspiration Library Index]] is the entry point; [[Capture Workflow]] defines the inbox
+  (`web design inspirations/`) and the **"ingest"** verb; [[Sources To Browse]] is the curated
+  hunting list; [[Tag Vocabulary]] is a **closed** five-facet tag set so one capture reaches every
+  board it belongs to. Eleven boards: eight by page anatomy, plus [[Board - Visual Worlds]] (where
+  the direction gets chosen), [[Board - Steal This]], [[Board - Avoid]]. Live core ```query blocks
+  — no Dataview installed, and none needed. Notes are two-tier: light by default, deep on request.
+* **`DESIGN.md` written at the repo root** — a **record of the design phase, not a design system**.
+  Tokens, type scale and components are deliberately absent until a direction is locked and built.
+  It flags, without repairing, that `PRODUCT.md` and `AGENTS.md` still carry V1 constraints V2 has
+  released, and that [[Decision - Nolte As Aesthetic Reference]] is superseded and unmarked.
+* **Ref 001 ingested** end to end to prove the pipeline. The inbox's only file was an off-brief
+  Dribbble-style pet-app concept; filed honestly as `#verdict/avoid` rather than force-fitted.
+* **Trap confirmed:** macOS screenshot filenames carry a **narrow no-break space (U+202F)** before
+  AM/PM and break literal-path reads. Ingest renames every file to an ASCII-safe slug.
+* **`.obsidian/graph.json` repaired** — Obsidian had wiped all seven colour groups and
+  `hideUnresolved` in the working tree, contradicting the legend in [[00_Index]]. Restored from
+  `HEAD`, extended with a magenta group for the new layer.
+
+**Unchanged:** the direction is still **NOT locked**, Round 2 is still a text-only round, nothing
+is built. Next step is the user's first real batch of screenshots, then "ingest".

@@ -29,8 +29,20 @@ divergence table.
    deliberate
 10. `project-vault/15_Open_Questions.md` and `16_Conflicts.md`
 
-Also at the repo root: **`HANDOFF.md`** (live pending tasks + full session narrative) and
-**`PRODUCT.md`** (product positioning — read it before asking product-context questions).
+Also at the repo root: **`HANDOFF.md`** (live pending tasks + full session narrative),
+**`PRODUCT.md`** (product positioning — read it before asking product-context questions), and
+**`DESIGN.md`** (the V2 design phase — read it before any design work).
+
+## Design work
+
+The site is being visually redone (**V2**). **`DESIGN.md`** at the repo root is the design-phase
+record: the thesis, what survives from V1, what has been released, and the candidate directions.
+**The direction is NOT locked** — do not write a design system, do not start building a new visual
+world, and do not treat any named direction as chosen.
+
+Visual references live in `project-vault/23_Inspiration_Library/` — start at
+`Inspiration Library Index.md`. Note that `DESIGN.md` supersedes several V1 constraints still
+written in this file and in `PRODUCT.md`; see its **Known documentation drift** section.
 
 ## Hard constraints
 
