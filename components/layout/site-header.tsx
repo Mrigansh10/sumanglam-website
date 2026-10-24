@@ -6,10 +6,11 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { ArrowButton, ArrowLink } from "@/components/home/arrow-button";
 import { siteConfig } from "@/lib/site";
 import { resolveImage } from "@/lib/images";
 import { cn } from "@/lib/utils";
+import { inHomeHero } from "@/components/home/home-hero-zone";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -151,25 +152,25 @@ const mobileNav: NavLink[] = [
 
 function ColumnsPanel({ panel }: { panel: Extract<MegaPanel, { kind: "columns" }> }) {
   return (
-    <div className="p-8 pb-10">
+    <div className="px-[22px] pb-10 pt-8">
       <Link href={panel.titleHref} className="group inline-flex items-baseline gap-2">
-        <span className="font-display text-4xl font-medium tracking-tight text-ink transition-colors group-hover:text-accent-deep">
+        <span className="text-4xl font-semibold tracking-[-0.04em] text-fg transition-colors group-hover:text-accent-fg">
           {panel.title}
         </span>
-        <span className="text-2xl text-ink-faint transition-colors group-hover:text-accent-deep">→</span>
+        <span className="text-2xl text-fg/40 transition-colors group-hover:text-accent-fg">→</span>
       </Link>
       <div className="mt-6 flex gap-14">
         {panel.sections.map((section, i) => (
           <div key={i} className="min-w-36">
             {section.heading && (
-              <p className="mb-3 text-xs font-medium uppercase tracking-luxe text-ink-faint">
+              <p className="mb-3 text-[13px] text-fg/50">
                 {section.heading}
               </p>
             )}
             <ul className="space-y-2.5">
               {section.links.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-sm text-ink-soft transition-colors hover:text-ink">
+                  <Link href={link.href} className="text-sm text-fg/65 transition-colors hover:text-fg">
                     {link.label}
                   </Link>
                 </li>
@@ -187,12 +188,12 @@ function SplitPanel({ panel, brands }: { panel: Extract<MegaPanel, { kind: "spli
     brands.filter((b) => b.heroImage).map((b) => [b.slug, b.heroImage as string]),
   );
   return (
-    <div className="p-8 pb-10">
+    <div className="px-[22px] pb-10 pt-8">
       <Link href={panel.titleHref} className="group inline-flex items-baseline gap-2">
-        <span className="font-display text-4xl font-medium tracking-tight text-ink transition-colors group-hover:text-accent-deep">
+        <span className="text-4xl font-semibold tracking-[-0.04em] text-fg transition-colors group-hover:text-accent-fg">
           {panel.title}
         </span>
-        <span className="text-2xl text-ink-faint transition-colors group-hover:text-accent-deep">→</span>
+        <span className="text-2xl text-fg/40 transition-colors group-hover:text-accent-fg">→</span>
       </Link>
       <div className="mt-6 flex gap-10">
         <div className="min-w-44 shrink-0">
@@ -200,7 +201,7 @@ function SplitPanel({ panel, brands }: { panel: Extract<MegaPanel, { kind: "spli
             <ul key={i} className="space-y-2.5">
               {section.links.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-sm text-ink-soft transition-colors hover:text-ink">
+                  <Link href={link.href} className="text-sm text-fg/65 transition-colors hover:text-fg">
                     {link.label}
                   </Link>
                 </li>
@@ -213,7 +214,7 @@ function SplitPanel({ panel, brands }: { panel: Extract<MegaPanel, { kind: "spli
             const hero = card.slug ? heroBySlug[card.slug] : undefined;
             return (
             <Link key={card.href + card.label} href={card.href} className="group w-48 shrink-0">
-              <div className="relative aspect-[4/3] overflow-hidden bg-sand">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-card">
                 <Image
                   src={resolveImage(hero ?? card.image, { width: 480, enhance: "render" })}
                   alt={card.label}
@@ -221,8 +222,8 @@ function SplitPanel({ panel, brands }: { panel: Extract<MegaPanel, { kind: "spli
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                 />
               </div>
-              <p className="mt-2 text-sm font-medium text-ink group-hover:text-accent-deep">{card.label}</p>
-              <p className="text-xs text-ink-faint">{card.sub}</p>
+              <p className="mt-2 text-sm font-medium text-fg group-hover:text-accent-fg">{card.label}</p>
+              <p className="text-xs text-fg/50">{card.sub}</p>
             </Link>
             );
           })}
@@ -248,12 +249,12 @@ function BrandsPanel({ brands }: { brands: HeaderBrand[] }) {
   const bySlug = Object.fromEntries(brands.map((b) => [b.slug, b]));
 
   return (
-    <div className="p-8 pb-10">
+    <div className="px-[22px] pb-10 pt-8">
       <Link href="/brands" className="group inline-flex items-baseline gap-2">
-        <span className="font-display text-4xl font-medium tracking-tight text-ink transition-colors group-hover:text-accent-deep">
+        <span className="text-4xl font-semibold tracking-[-0.04em] text-fg transition-colors group-hover:text-accent-fg">
           Brands
         </span>
-        <span className="text-2xl text-ink-faint transition-colors group-hover:text-accent-deep">→</span>
+        <span className="text-2xl text-fg/40 transition-colors group-hover:text-accent-fg">→</span>
       </Link>
       <div className="mt-6 flex gap-12">
 
@@ -262,7 +263,7 @@ function BrandsPanel({ brands }: { brands: HeaderBrand[] }) {
         if (!catBrands.length) return null;
         return (
           <div key={cat.label} className="min-w-32">
-            <p className="mb-4 text-xs font-medium uppercase tracking-luxe text-ink-faint">{cat.label}</p>
+            <p className="mb-4 text-[13px] text-fg/50">{cat.label}</p>
             <div className="flex flex-col gap-3">
               {catBrands.map((brand) => {
                 const hasLogo = brand.logo && !brand.logo.startsWith("/");
@@ -278,7 +279,7 @@ function BrandsPanel({ brands }: { brands: HeaderBrand[] }) {
                     </div>
                   </Link>
                 ) : (
-                  <Link key={brand.slug} href={brandHref(brand.slug)} className="text-sm text-ink-soft transition-colors hover:text-ink">
+                  <Link key={brand.slug} href={brandHref(brand.slug)} className="text-sm text-fg/65 transition-colors hover:text-fg">
                     {brand.name}
                   </Link>
                 );
@@ -294,12 +295,15 @@ function BrandsPanel({ brands }: { brands: HeaderBrand[] }) {
 
 // ── Main header ───────────────────────────────────────────────────────────────
 
+/** Dispatched on `window` to open the mobile menu from outside the header. */
+export const OPEN_SITE_MENU_EVENT = "sumanglam:open-menu";
+
 export function SiteHeader({ brands = [] }: { brands?: HeaderBrand[] }) {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [hidden, setHidden] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const [hidden, setHidden] = useState(pathname === "/");
+  const [scrolled, setScrolled] = useState(false);
 
   const overHeaderRef = useRef(false);
   const overPanelRef = useRef(false);
@@ -317,7 +321,10 @@ export function SiteHeader({ brands = [] }: { brands?: HeaderBrand[] }) {
       const currentY = window.scrollY;
       const delta = currentY - lastScrollY.current;
       setScrolled(currentY > 24);
-      if (currentY < OFFSET) {
+      if (inHomeHero(pathname)) {
+        setHidden(true);
+        setActiveMenu(null);
+      } else if (currentY < OFFSET) {
         setHidden(false);
       } else if (delta > TOLERANCE) {
         setHidden(true);
@@ -327,8 +334,18 @@ export function SiteHeader({ brands = [] }: { brands?: HeaderBrand[] }) {
       }
       lastScrollY.current = currentY;
     }
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, [pathname]);
+
+  useEffect(() => {
+    function openMenu() {
+      setMobileOpen(true);
+      setHidden(false);
+    }
+    window.addEventListener(OPEN_SITE_MENU_EVENT, openMenu);
+    return () => window.removeEventListener(OPEN_SITE_MENU_EVENT, openMenu);
   }, []);
 
   useEffect(() => {
@@ -365,31 +382,31 @@ export function SiteHeader({ brands = [] }: { brands?: HeaderBrand[] }) {
 
   return (
     <>
-      {/* ── Floating glass header ── */}
+      {/* ── Header (V2: full-width ivory bar, aligned with the homepage hero nav) ── */}
       <motion.div
-        className="fixed left-12 right-12 top-3 z-50"
-        animate={{ y: hidden ? "-120%" : "0%", opacity: hidden ? 0 : 1 }}
+        className="fixed inset-x-0 top-0 z-50 font-tight"
+        animate={{ y: hidden && !mobileOpen ? "-120%" : "0%", opacity: hidden && !mobileOpen ? 0 : 1 }}
         transition={
-          hidden
+          hidden && !mobileOpen
             ? { duration: 0.85, ease: [0.65, 0, 0.35, 1] }
             : { duration: 0.4, ease: [0, 0, 0.2, 1] }
         }
       >
         <header
-          className="rounded-[2rem] border border-white/30 bg-gradient-to-b from-white/60 to-background/85 backdrop-blur-[32px] shadow-[inset_0_1.5px_0_rgba(255,255,255,0.9),inset_0_-1px_0_rgba(0,0,0,0.04),0_8px_32px_rgba(0,0,0,0.12)]"
+          className="border-b border-card bg-page shadow-[0_8px_24px_rgba(34,29,23,0.06)]"
           onMouseEnter={() => { overHeaderRef.current = true; cancelClose(); }}
           onMouseLeave={() => { overHeaderRef.current = false; scheduleClose(); }}
         >
           <div
             className={cn(
-              "flex items-center justify-between gap-6 px-6 transition-[height] duration-300 ease-out sm:px-8",
+              "flex items-center justify-between gap-6 px-[22px] transition-[height] duration-300 ease-out",
               scrolled ? "h-14" : "h-16",
             )}
           >
             {/* Logo */}
             <Link
               href="/"
-              className="shrink-0 font-display text-xl font-medium tracking-tight text-ink"
+              className="shrink-0 text-[17px] font-semibold tracking-[-0.02em] text-fg"
               aria-label={`${siteConfig.name} — home`}
             >
               {siteConfig.name}
@@ -412,12 +429,12 @@ export function SiteHeader({ brands = [] }: { brands?: HeaderBrand[] }) {
                       href={item.href}
                       className={cn(
                         "relative px-3 py-2 text-sm font-medium transition-colors",
-                        isActive || isOpen ? "text-ink" : "text-ink-soft hover:text-ink",
+                        isActive || isOpen ? "text-fg" : "text-fg/65 hover:text-fg",
                       )}
                     >
                       {item.label}
                       {(isActive || isOpen) && (
-                        <span className="absolute inset-x-3 bottom-0 h-px bg-ink" />
+                        <span className="absolute inset-x-3 bottom-0 h-px bg-accent" />
                       )}
                     </Link>
                   </div>
@@ -427,18 +444,16 @@ export function SiteHeader({ brands = [] }: { brands?: HeaderBrand[] }) {
 
             {/* Right actions */}
             <div className="flex items-center gap-2.5">
-              <Button href="/book-consultation" size="sm" className="hidden sm:flex shadow-[inset_0_1.5px_0_rgba(255,255,255,0.18),inset_0_-1px_0_rgba(0,0,0,0.15)] border border-white/10">
-                Book Consultation
-              </Button>
-              <Button href="/book-consultation" size="sm" className="sm:hidden shadow-[inset_0_1.5px_0_rgba(255,255,255,0.18),inset_0_-1px_0_rgba(0,0,0,0.15)] border border-white/10">
-                Book
-              </Button>
+              <ArrowButton href={pathname === "/" ? "#visit" : "/contact"}>
+                <span className="sm:hidden">Visit us</span>
+                <span className="hidden sm:inline">Visit the showroom</span>
+              </ArrowButton>
               <button
                 type="button"
                 onClick={() => { setMobileOpen((v) => !v); setHidden(false); }}
                 aria-expanded={mobileOpen}
                 aria-label={mobileOpen ? "Close menu" : "Open menu"}
-                className="flex size-9 items-center justify-center rounded-xl text-ink transition-colors hover:bg-clay lg:hidden"
+                className="flex size-[38px] items-center justify-center rounded-lg text-fg transition-colors hover:bg-card lg:hidden"
               >
                 {mobileOpen ? <X className="size-5" /> : <Menu className="size-5" />}
               </button>
@@ -450,7 +465,7 @@ export function SiteHeader({ brands = [] }: { brands?: HeaderBrand[] }) {
         <AnimatePresence>
           {activePanel && (
             <motion.div
-              className="absolute inset-x-0 top-full pt-2"
+              className="absolute inset-x-0 top-full"
               initial={{ opacity: 0, y: -8, scale: 0.99 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -6, scale: 0.99 }}
@@ -458,7 +473,7 @@ export function SiteHeader({ brands = [] }: { brands?: HeaderBrand[] }) {
               onMouseEnter={() => { overPanelRef.current = true; cancelClose(); }}
               onMouseLeave={() => { overPanelRef.current = false; scheduleClose(); }}
             >
-              <div className="rounded-[2rem] border border-white/30 bg-gradient-to-b from-white/70 to-background/96 shadow-[inset_0_1.5px_0_rgba(255,255,255,0.9),0_24px_64px_rgba(0,0,0,0.18)] backdrop-blur-[32px]">
+              <div className="border-b border-card bg-page shadow-[0_24px_48px_rgba(34,29,23,0.10)]">
                 {activePanel.kind === "columns" && <ColumnsPanel panel={activePanel} />}
                 {activePanel.kind === "split" && <SplitPanel panel={activePanel} brands={brands} />}
                 {activePanel.kind === "brands" && <BrandsPanel brands={brands} />}
@@ -470,7 +485,7 @@ export function SiteHeader({ brands = [] }: { brands?: HeaderBrand[] }) {
 
       {/* ── Mobile overlay ── */}
       {mobileOpen && (
-        <div className="fixed inset-x-0 bottom-0 top-0 z-[45] overflow-y-auto bg-background pt-24">
+        <div className="fixed inset-x-0 bottom-0 top-0 z-[45] overflow-y-auto bg-page pt-24 font-tight">
           <nav
             aria-label="Full menu"
             className="mx-auto flex w-full max-w-7xl flex-col gap-1 px-5 py-8 sm:px-8"
@@ -480,19 +495,19 @@ export function SiteHeader({ brands = [] }: { brands?: HeaderBrand[] }) {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "border-b border-line/60 py-4 font-display text-2xl text-ink transition-colors hover:text-accent-deep sm:text-3xl",
-                  pathname.startsWith(item.href) && item.href !== "/" && "text-accent-deep",
+                  "border-b border-fg/10 py-4 text-[30px] font-semibold leading-none tracking-[-0.04em] text-fg transition-colors hover:text-accent-fg sm:text-4xl",
+                  pathname.startsWith(item.href) && item.href !== "/" && "text-accent-fg",
                 )}
                 style={{ animationDelay: `${index * 40}ms` }}
               >
                 {item.label}
               </Link>
             ))}
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button href="/book-consultation" size="lg">Book Consultation</Button>
-              <Button href="/contact" variant="outline" size="lg">Visit Us</Button>
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+              <ArrowButton href="/book-consultation" size="lg">Book a consultation</ArrowButton>
+              <ArrowLink href="/contact">Visit the showroom</ArrowLink>
             </div>
-            <p className="mt-8 text-sm text-ink-soft">
+            <p className="mt-8 text-sm text-fg/60">
               {siteConfig.contact.hours} · {siteConfig.contact.phone}
             </p>
           </nav>

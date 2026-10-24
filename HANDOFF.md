@@ -1,6 +1,6 @@
 # HANDOFF — Sumanglam Digital Showroom
 
-**Last updated:** 2026-09-05
+**Last updated:** 2026-10-23
 **Repo:** https://github.com/Mrigansh10/sumanglam-website
 **Dev server:** `npm run dev` → http://localhost:3000
 
@@ -28,8 +28,10 @@
 > 🎨 **V2 is a complete design redo, in progress.** Kitchens + Wardrobes carry the
 > purpose; Hardware stays a main section. **Only the colour palette survives** —
 > Fraunces/Inter, `rounded-full`, and the "frozen" motion system are all released.
-> **The direction is NOT locked** — the user wants every option visualized before
-> choosing, so **do not lock a direction, write a design system, or start building.**
+> **The homepage direction IS now chosen and built (Session 20, 2026-10-23) on branch
+> `v2-homepage` — not merged, not live.** It was chosen from coded prototypes, per the
+> "visualize first" rule. The rest of the site is still V1; don't restyle other pages
+> without the user.
 > The design phase now has its own root document — **`DESIGN.md`**, read it before any
 > design work — plus a visual-reference layer in the vault at
 > `project-vault/23_Inspiration_Library/`. See Sessions 18 and 19.
@@ -824,6 +826,98 @@ vault's standing bar.
 built. Round 2 remains a text-only round. Image generation was still dry at the start of this
 session (Ideogram daily cap, higgsfield 0 credits, no `OPENAI_API_KEY`); it was not re-probed after
 the redirect. **Next: the user browses and screenshots; then "ingest".**
+
+### Session 20 — 2026-10-23 (V2 homepage chosen from prototypes and built on `v2-homepage`)
+
+**Not merged, not deployed, not committed.** The live site and the admin image slots are untouched.
+
+**How it was chosen.** The user supplied six reference sites in `web design inspirations/`
+(Klyvra, Mindease, Verdant, Lull, CalmCore, Rallyo); they are the target *design system*
+(light ground, one accent, huge tight sans type, rounded image cards, squared buttons with a
+bronze arrow block). A professional photographer's shoot of the Nolte display kitchens is in
+`NOLTE_Jp_Photos/` (K1–K6, ~6000px, untracked). Every decision below came from coded
+prototypes screenshotted at 1440 and 390 (scratchpad only):
+* A scroll-scrubbed photo sequence was built and **rejected** ("too long, doesn't sit right").
+  No scroll-linked hero motion. Hero = **one photo (K4-3)** with a one-time load entrance.
+* "Every kitchen here is real" statement **cut**; "Open any drawer" section moves to the
+  **Kitchens page**; "Made to the wall" detail strip off the homepage.
+* **Hardware and Wardrobes get equal weight with Kitchens** (hardware = most customers by
+  count, incl. carpenters' clients). Picked layout: three rows under the hero —
+  word | description | photo ("B2 three columns") — after rounds on six panel layouts.
+
+**Built (all on `v2-homepage`):**
+* `app/(site)/page.tsx` — rewritten: hero → business rows → kitchen ideas rail → wardrobes →
+  hardware → visit card. Reviews, brands grid and "Why Sumanglam" are gone from the homepage.
+* `components/home/*` — `home-hero`, `hero-menu-button`, `business-rows`, `ideas-rail`,
+  `wardrobes-feature`, `hardware-feature` (+ `hardware-whatsapp-button`), `visit-card`,
+  `arrow-button`, `home-hero-zone`.
+* **Inter Tight** added as `--font-tight` (`app/layout.tsx`, `globals.css`), used only by the
+  homepage. Hero keyframes `home-settle/rise/drop/lift` in `globals.css`.
+* `server/homepage.ts` — `getHomepageShowcase()`: published kitchen inspirations + hardware
+  brand logos (explicit slug list). The rail drops any idea already used as a row image.
+* `site-header.tsx` + `floating-whatsapp.tsx` hide while the homepage hero is on screen (the
+  hero has its own nav); `OPEN_SITE_MENU_EVENT` lets the hero's phone menu button open the
+  header's mobile menu.
+* WhatsApp: click handler extracted to `useWhatsAppInquiry()`; new `"hardware"` source type.
+* **Old site footer removed from the homepage only** (`HideOnHome` wrapper in `app/(site)/layout.tsx`);
+  `components/home/home-footer.tsx` is the one-line replacement. Every other page keeps `SiteFooter`
+  until it is redone.
+* **Site header restyled to V2, site-wide** (`components/layout/site-header.tsx`): solid ivory bar
+  (no glass), Inter Tight, squared corners, bronze active underline, "Visit the showroom" arrow
+  button (→ `#visit` on the homepage, `/contact` elsewhere) instead of "Book Consultation"; mega
+  panels and the phone menu restyled to match. Every other page's body is still V1, so the
+  header is now V2 on top of V1 pages.
+* Follow-up the same day: the **hero is now full-bleed** (no rounded frame or margin) and the
+  **header is a full-width strip pinned to the top** (`inset-x-0 top-0`, bottom border, no
+  rounding); mega panels run full width under it with content aligned to the 22px nav inset.
+* Hardware section reworded for **the whole home, not just kitchens** ("Hardware, for the whole
+  home." / door closers, tower bolts, every door, window and cabinet). The Häfele drawer photo was
+  swapped for the Yale ByYou Mortise lock-on-a-door shot. No hinge/tower-bolt/door-closer photos
+  exist in Cloudinary yet; real counter photography would replace both stand-ins.
+* **Dark mode (automatic, follows the device's `prefers-color-scheme`) for V2 only.** The user
+  chose "new design only": each V1 page gets dark mode when it is redone. New theme tokens in
+  `app/globals.css`: `page`, `fg`, `card`, `accent-fg` (light values in `@theme`, dark values in a
+  media block: page `#17130f`, fg `#f1ece4`, card `#26201a`, accent-fg `#c4a06a`). V2 components
+  use only these (`bg-page`, `text-fg`, `bg-card`, `text-accent-fg`); **text on photos stays on
+  the fixed `text-background` ivory**. A page opts its ground into dark mode by rendering an
+  element with `data-v2-page` (the homepage hero has it). The header, menus and WhatsApp bubble go
+  dark everywhere in dark mode, so for now V1 pages show a dark header over a light body.
+  **Every new V2 page must use the theme tokens and carry `data-v2-page`.**
+* **Showroom-front photo in the visit card** (`sumanglam/home/showroom-front`, 1957×2400). Source is
+  a 672×770 forwarded phone photo (`showroom front.jpg` at the repo root, untracked; no larger
+  original exists). Pipeline: local perspective fix (75% of the keystone), crop off the neighbour
+  building, **masked** sky swap done locally, light contrast/colour, then Cloudinary `e_upscale`
+  4×. Cloudinary's `e_gen_replace` sky swap was tried first and **rejected**: it rewrote the canopy
+  and the sign text (see the new trap note). Tree, signals and signage left as they are. It's a
+  stand-in until a reshoot (clear morning, level phone, from across the road).
+  **Then rejected by the user ("I don't think this'd work").** The visit card and the slim footer
+  were **replaced by one closing section**, `components/home/closing-section.tsx` (`visit-card.tsx`
+  and `home-footer.tsx` deleted). It's a full-width inverse block (`bg-fg text-page`: charcoal in
+  light mode, ivory in dark) with "See it in person." and Get directions / Book a consultation,
+  four facts in a row, then page links and ©, where the page ends. (A hero-sized "Sumanglam"
+  wordmark bookend was tried and removed at the user's request.) No photo. It is the homepage `<footer>` and still `#visit`. The WhatsApp bubble also
+  hides once it is in view (`inHomeClosing` in `home-hero-zone.ts`). The shopfront assets stay in
+  Cloudinary, unused.
+* `server/site-settings.ts` — local-only preview: `HOMEPAGE_PREVIEW_V2_IMAGES=1 npm run dev`
+  shows the launch images without touching the live slots. Ignored in production. Delete it
+  once the slots are switched.
+* Cloudinary: uploaded `sumanglam/home/showroom-k4-island` (hero), `showroom-k4-window`
+  (visit card, placeholder) and `showroom-k5-storage-wall` (wardrobes), 3200px each.
+
+**At launch, set the Admin → Homepage slots to:** hero `sumanglam/home/showroom-k4-island`,
+kitchens `sumanglam/inspirations/grey-walnut-island-kitchen-1`, wardrobes
+`sumanglam/inspirations/bronze-glass-walk-in-1`, hardware `sumanglam/brands/hettich-hero`.
+The user asked to switch them ASAP, timing still to be decided.
+
+**Verified:** typecheck clean; lint clean on changed files (one old warning in
+`fade-in-image.tsx`, untouched); `next build` passes; screenshots at 1440/390/360; header and
+WhatsApp bubble hide over the hero and come back after it; the phone menu button opens the menu.
+A duplicate-`key` dev warning (OuterLayoutRouter) exists site-wide, not new.
+
+**Open:** showroom-front photo for the visit card (user sending; likely needs editing); own
+hardware photography (Blum/Häfele/Hettich are brand stand-ins); wardrobe photos (user
+deciding: AI-retouched site photos?); header "a bit bolder"; the other pages are still V1;
+`PRODUCT.md`/`AGENTS.md` still say `rounded-full` and "motion frozen".
 
 ## Hard Rules (Do Not Violate)
 

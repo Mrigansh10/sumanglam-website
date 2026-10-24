@@ -16,6 +16,7 @@ export type WhatsAppContext = {
     | "showroom"
     | "kitchens"
     | "wardrobes"
+    | "hardware"
     | "contact"
     | "consultation"
     | "architects"
@@ -43,6 +44,8 @@ export function buildWhatsAppMessage(context: WhatsAppContext): string {
       return `Hello Sumanglam, I'm planning a kitchen project and would like to discuss options.`;
     case "wardrobes":
       return `Hello Sumanglam, I'm interested in Mrida wardrobes and storage solutions. Could we discuss my requirements?`;
+    case "hardware":
+      return `Hello Sumanglam, I'm looking for hardware and fittings. Could you help me check what's available?`;
     case "consultation":
       return `Hello Sumanglam, I'd like to book a design consultation.`;
     case "architects":

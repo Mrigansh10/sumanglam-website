@@ -1,5 +1,6 @@
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { HideOnHome } from "@/components/layout/hide-on-home";
 import { SmoothScroll } from "@/components/motion/smooth-scroll";
 import { FloatingWhatsApp } from "@/features/whatsapp/floating-whatsapp";
 import { siteConfig } from "@/lib/site";
@@ -82,7 +83,9 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
       />
       <SiteHeader brands={brands} />
       <main className="flex-1">{children}</main>
-      <SiteFooter />
+      <HideOnHome>
+        <SiteFooter />
+      </HideOnHome>
       <FloatingWhatsApp />
     </SmoothScroll>
   );

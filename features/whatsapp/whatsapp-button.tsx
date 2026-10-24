@@ -22,22 +22,18 @@ type WhatsAppButtonProps = {
 };
 
 /**
- * WhatsApp inquiry CTA. Tracks the click with full source context, then opens
- * WhatsApp with a context-aware message. Falls back to the contact page when
- * no WhatsApp number is configured yet.
+ * Click handler shared by every WhatsApp CTA: tracks the click with full
+ * source context, then opens WhatsApp with a context-aware message. Falls
+ * back to the contact page when no WhatsApp number is configured yet.
  */
-export function WhatsAppButton({
+export function useWhatsAppInquiry({
   sourceType,
   sourceId,
   subject,
-  label = "WhatsApp Inquiry",
-  variant = "outline",
-  size = "md",
-  className,
-}: WhatsAppButtonProps) {
+}: Pick<WhatsAppContext, "sourceType" | "sourceId" | "subject">) {
   const pathname = usePathname();
 
-  function handleClick() {
+  return function handleClick() {
     const context: WhatsAppContext = {
       sourceType,
       sourceId,
@@ -63,7 +59,20 @@ export function WhatsAppButton({
       // WhatsApp number not configured yet — route to contact instead.
       window.location.href = "/contact";
     }
-  }
+  };
+}
+
+/** WhatsApp inquiry CTA. */
+export function WhatsAppButton({
+  sourceType,
+  sourceId,
+  subject,
+  label = "WhatsApp Inquiry",
+  variant = "outline",
+  size = "md",
+  className,
+}: WhatsAppButtonProps) {
+  const handleClick = useWhatsAppInquiry({ sourceType, sourceId, subject });
 
   return (
     <Button

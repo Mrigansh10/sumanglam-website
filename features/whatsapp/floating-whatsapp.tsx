@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { MessageCircle } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
@@ -8,6 +9,8 @@ import {
   buildWhatsAppUrl,
   type WhatsAppContext,
 } from "@/features/whatsapp/whatsapp";
+import { inHomeClosing, inHomeHero } from "@/components/home/home-hero-zone";
+import { cn } from "@/lib/utils";
 
 /** Maps the current route to a WhatsApp source type for context-aware messages. */
 function sourceTypeForPath(pathname: string): WhatsAppContext["sourceType"] {
@@ -32,6 +35,16 @@ function sourceTypeForPath(pathname: string): WhatsAppContext["sourceType"] {
  */
 export function FloatingWhatsApp() {
   const pathname = usePathname();
+  // Kept off the homepage hero and closing section, where it would sit on top of their content.
+  const [overHero, setOverHero] = useState(pathname === "/");
+
+  useEffect(() => {
+    const update = () => setOverHero(inHomeHero(pathname) || inHomeClosing(pathname));
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
+  }, [pathname]);
+
   if (pathname.startsWith("/admin")) return null;
 
   function handleClick() {
@@ -59,7 +72,12 @@ export function FloatingWhatsApp() {
       type="button"
       onClick={handleClick}
       aria-label="Chat with us on WhatsApp"
-      className="fixed bottom-5 right-5 z-40 flex size-13 items-center justify-center rounded-full bg-ink text-background shadow-lg transition-transform hover:scale-105 hover:bg-accent-deep md:bottom-7 md:right-7"
+      aria-hidden={overHero || undefined}
+      tabIndex={overHero ? -1 : undefined}
+      className={cn(
+        "fixed bottom-5 right-5 z-40 flex size-13 items-center justify-center rounded-full bg-fg text-page shadow-lg transition-[transform,opacity] duration-300 hover:scale-105 hover:bg-accent-deep md:bottom-7 md:right-7",
+        overHero && "pointer-events-none scale-90 opacity-0",
+      )}
     >
       <MessageCircle className="size-6" aria-hidden />
     </button>

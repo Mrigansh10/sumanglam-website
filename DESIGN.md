@@ -1,6 +1,14 @@
 # DESIGN.md — Sumanglam V2
 
-**Status: design phase, in progress. Last updated 2026-09-05.**
+**Status: homepage direction chosen and built on branch `v2-homepage` (2026-10-23); the rest of
+the site is still V1. Last updated 2026-10-23.**
+
+> **Update 2026-10-23.** The homepage direction was chosen from rendered, coded prototypes,
+> which is what the banner below required. It follows the user's six reference sites: light
+> ground, bronze as the one accent, Inter Tight set huge and tight, rounded image cards, squared
+> buttons with a bronze arrow block. The Round 1/2 concept directions (Jali, Sorted Drawer, …)
+> are **superseded**. This is still not a full design system: tokens get written up once more
+> pages are built. See HANDOFF Session 20.
 
 > # ⚠️ THE DIRECTION IS NOT LOCKED
 >

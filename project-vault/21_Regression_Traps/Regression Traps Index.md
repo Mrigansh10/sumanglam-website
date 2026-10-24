@@ -24,6 +24,7 @@ updated: 2026-09-04
 | [[Trap - Cloudinary Upscale 4.2MP Limit]] | Blank `<img>` on large sources |
 | [[Trap - Gen Restore Repaints Real Photos]] | Photo loads but details/logos/text are subtly wrong |
 | [[Trap - Gen Restore Cold Derivation Timeout]] | 504 on first view after an upload |
+| [[Trap - Gen Replace Rewrites Buildings And Signage]] | Sky swap looks fine but the building/sign text was repainted |
 
 ## Motion And React
 
