@@ -1,6 +1,6 @@
 # HANDOFF — Sumanglam Digital Showroom
 
-**Last updated:** 2026-10-23
+**Last updated:** 2026-10-24
 **Repo:** https://github.com/Mrigansh10/sumanglam-website
 **Dev server:** `npm run dev` → http://localhost:3000
 
@@ -28,8 +28,7 @@
 > 🎨 **V2 is a complete design redo, in progress.** Kitchens + Wardrobes carry the
 > purpose; Hardware stays a main section. **Only the colour palette survives** —
 > Fraunces/Inter, `rounded-full`, and the "frozen" motion system are all released.
-> **The homepage direction IS now chosen and built (Session 20, 2026-10-23) on branch
-> `v2-homepage` — not merged, not live.** It was chosen from coded prototypes, per the
+> **The V2 homepage is LIVE (Session 20, launched 2026-10-24, `09adb06`).** It was chosen from coded prototypes, per the
 > "visualize first" rule. The rest of the site is still V1; don't restyle other pages
 > without the user.
 > The design phase now has its own root document — **`DESIGN.md`**, read it before any
@@ -827,9 +826,12 @@ built. Round 2 remains a text-only round. Image generation was still dry at the 
 session (Ideogram daily cap, higgsfield 0 credits, no `OPENAI_API_KEY`); it was not re-probed after
 the redirect. **Next: the user browses and screenshots; then "ingest".**
 
-### Session 20 — 2026-10-23 (V2 homepage chosen from prototypes and built on `v2-homepage`)
+### Session 20 — 2026-10-23 → 10-24 (V2 homepage chosen, built, and LAUNCHED)
 
-**Not merged, not deployed, not committed.** The live site and the admin image slots are untouched.
+**Live since 2026-10-24: commit `09adb06`, fast-forwarded to `master` (Vercel deploy ~90s, verified
+on sumanglam.co with no broken images or console errors in light and dark mode).** The four Admin →
+Homepage slots were switched at launch (below). The local preview override was deleted before the
+commit. The prod build was verified in a throwaway worktree so the user's dev server wasn't disturbed.
 
 **How it was chosen.** The user supplied six reference sites in `web design inspirations/`
 (Klyvra, Mindease, Verdant, Lull, CalmCore, Rallyo); they are the target *design system*
@@ -898,16 +900,14 @@ prototypes screenshotted at 1440 and 390 (scratchpad only):
   wordmark bookend was tried and removed at the user's request.) No photo. It is the homepage `<footer>` and still `#visit`. The WhatsApp bubble also
   hides once it is in view (`inHomeClosing` in `home-hero-zone.ts`). The shopfront assets stay in
   Cloudinary, unused.
-* `server/site-settings.ts` — local-only preview: `HOMEPAGE_PREVIEW_V2_IMAGES=1 npm run dev`
-  shows the launch images without touching the live slots. Ignored in production. Delete it
-  once the slots are switched.
+* `server/site-settings.ts` — a temporary local preview override existed during the build; deleted
+  at launch (no net change to this file).
 * Cloudinary: uploaded `sumanglam/home/showroom-k4-island` (hero), `showroom-k4-window`
   (visit card, placeholder) and `showroom-k5-storage-wall` (wardrobes), 3200px each.
 
-**At launch, set the Admin → Homepage slots to:** hero `sumanglam/home/showroom-k4-island`,
+**Admin → Homepage slots now (set at launch):** hero `sumanglam/home/showroom-k4-island`,
 kitchens `sumanglam/inspirations/grey-walnut-island-kitchen-1`, wardrobes
 `sumanglam/inspirations/bronze-glass-walk-in-1`, hardware `sumanglam/brands/hettich-hero`.
-The user asked to switch them ASAP, timing still to be decided.
 
 **Verified:** typecheck clean; lint clean on changed files (one old warning in
 `fade-in-image.tsx`, untouched); `next build` passes; screenshots at 1440/390/360; header and
