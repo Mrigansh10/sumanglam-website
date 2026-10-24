@@ -1,24 +1,11 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Fraunces, Inter, Inter_Tight } from "next/font/google";
+import { Inter_Tight } from "next/font/google";
 import { clientEnv } from "@/lib/env";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-fraunces",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-// V2 face. Scoped to the redesigned homepage for now (font-tight); the rest of
-// the site keeps Fraunces/Inter until each page is redone.
+// V2 face for the whole site (font-display / font-sans / font-tight all map to it).
 const interTight = Inter_Tight({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
@@ -57,7 +44,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable} ${interTight.variable}`}>
+    <html lang="en" className={interTight.variable}>
       <body className="flex min-h-screen flex-col">
         {children}
         {ga4Id ? (

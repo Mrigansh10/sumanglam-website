@@ -1,8 +1,8 @@
 import * as React from "react";
-import { DrawRule } from "@/components/motion/draw-rule";
 import { cn } from "@/lib/utils";
 
 type HeadingProps = {
+  /** Accepted for existing callers but not rendered: V2 drops labels above headings. */
   eyebrow?: string;
   title: string;
   description?: string;
@@ -12,9 +12,8 @@ type HeadingProps = {
   className?: string;
 };
 
-/** Section heading with optional eyebrow and short supporting copy. */
+/** Section heading with short supporting copy. */
 export function Heading({
-  eyebrow,
   title,
   description,
   align = "left",
@@ -30,24 +29,12 @@ export function Heading({
         className,
       )}
     >
-      {eyebrow ? (
-        <p
-          className={cn(
-            "mb-3 flex items-center gap-3 text-xs font-medium uppercase tracking-luxe",
-            align === "center" && "justify-center",
-            tone === "light" ? "text-accent-soft" : "text-accent-deep",
-          )}
-        >
-          <DrawRule className={tone === "light" ? "bg-accent-soft" : "bg-accent"} />
-          {eyebrow}
-        </p>
-      ) : null}
       <Tag
         className={cn(
-          "font-display font-medium tracking-tight text-balance",
-          Tag === "h1" && "text-4xl sm:text-5xl lg:text-6xl",
-          Tag === "h2" && "text-3xl sm:text-4xl",
-          Tag === "h3" && "text-xl sm:text-2xl",
+          "font-display font-medium text-balance",
+          Tag === "h1" && "text-[clamp(40px,6vw,88px)] leading-[0.98]",
+          Tag === "h2" && "text-[clamp(34px,4.6vw,64px)] leading-none",
+          Tag === "h3" && "text-2xl sm:text-3xl",
         )}
       >
         {title}
@@ -55,8 +42,8 @@ export function Heading({
       {description ? (
         <p
           className={cn(
-            "mt-4 text-base leading-relaxed sm:text-lg",
-            tone === "light" ? "text-background/70" : "text-ink-soft",
+            "mt-5 text-base leading-relaxed sm:text-[17px]",
+            tone === "light" ? "text-ivory/70" : "text-ink-soft",
           )}
         >
           {description}

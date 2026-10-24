@@ -9,7 +9,7 @@ import {
   buildWhatsAppUrl,
   type WhatsAppContext,
 } from "@/features/whatsapp/whatsapp";
-import { inHomeClosing, inHomeHero } from "@/components/home/home-hero-zone";
+import { inClosing, inHomeHero } from "@/components/home/home-hero-zone";
 import { cn } from "@/lib/utils";
 
 /** Maps the current route to a WhatsApp source type for context-aware messages. */
@@ -35,11 +35,11 @@ function sourceTypeForPath(pathname: string): WhatsAppContext["sourceType"] {
  */
 export function FloatingWhatsApp() {
   const pathname = usePathname();
-  // Kept off the homepage hero and closing section, where it would sit on top of their content.
+  // Kept off the homepage hero and the closing footer, where it would sit on top of their content.
   const [overHero, setOverHero] = useState(pathname === "/");
 
   useEffect(() => {
-    const update = () => setOverHero(inHomeHero(pathname) || inHomeClosing(pathname));
+    const update = () => setOverHero(inHomeHero(pathname) || inClosing());
     update();
     window.addEventListener("scroll", update, { passive: true });
     return () => window.removeEventListener("scroll", update);

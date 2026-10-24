@@ -5,7 +5,6 @@ import { BusinessRows } from "@/components/home/business-rows";
 import { IdeasRail } from "@/components/home/ideas-rail";
 import { WardrobesFeature } from "@/components/home/wardrobes-feature";
 import { HardwareFeature } from "@/components/home/hardware-feature";
-import { ClosingSection } from "@/components/home/closing-section";
 import { getHomepageShowcase } from "@/server/homepage";
 import { getHomepageImages } from "@/server/site-settings";
 import { safeQuery } from "@/server/safe";
@@ -44,7 +43,6 @@ export default async function HomePage() {
       {ideas.length > 0 ? <IdeasRail ideas={ideas} /> : null}
       <WardrobesFeature />
       <HardwareFeature logos={hardwareLogos} />
-      <ClosingSection />
     </>
   );
 }

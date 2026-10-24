@@ -32,7 +32,7 @@ export default function ContactPage() {
                 <div className="flex items-start gap-4">
                   <Phone className="mt-1 size-5 shrink-0 text-accent-deep" aria-hidden />
                   <div>
-                    <dt className="text-xs font-medium uppercase tracking-luxe text-ink-faint">
+                    <dt className="text-[13px] text-ink-faint">
                       Phone
                     </dt>
                     <dd className="mt-1 flex flex-col gap-0.5">
@@ -55,7 +55,7 @@ export default function ContactPage() {
                 <div className="flex items-start gap-4">
                   <Mail className="mt-1 size-5 shrink-0 text-accent-deep" aria-hidden />
                   <div>
-                    <dt className="text-xs font-medium uppercase tracking-luxe text-ink-faint">
+                    <dt className="text-[13px] text-ink-faint">
                       Email
                     </dt>
                     <dd className="mt-1">
@@ -71,7 +71,7 @@ export default function ContactPage() {
                 <div className="flex items-start gap-4">
                   <MapPin className="mt-1 size-5 shrink-0 text-accent-deep" aria-hidden />
                   <div>
-                    <dt className="text-xs font-medium uppercase tracking-luxe text-ink-faint">
+                    <dt className="text-[13px] text-ink-faint">
                       Showroom
                     </dt>
                     <dd className="mt-1 text-ink">{siteConfig.contact.address}</dd>
@@ -80,7 +80,7 @@ export default function ContactPage() {
                 <div className="flex items-start gap-4">
                   <Clock className="mt-1 size-5 shrink-0 text-accent-deep" aria-hidden />
                   <div>
-                    <dt className="text-xs font-medium uppercase tracking-luxe text-ink-faint">
+                    <dt className="text-[13px] text-ink-faint">
                       Hours
                     </dt>
                     <dd className="mt-1 text-ink">{siteConfig.contact.hours}</dd>

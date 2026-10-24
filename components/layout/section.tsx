@@ -15,7 +15,8 @@ export function Section({ className, tone = "default", spacing = "default", ...p
         spacing === "compact" && "py-10 sm:py-14",
         spacing === "spacious" && "py-20 sm:py-32",
         tone === "clay" && "bg-clay",
-        tone === "ink" && "bg-ink text-background",
+        // Fixed charcoal in both modes: these bands carry ivory-outline buttons.
+        tone === "ink" && "bg-charcoal text-ivory",
         className,
       )}
       {...props}

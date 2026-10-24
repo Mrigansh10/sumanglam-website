@@ -6,6 +6,7 @@ import { resolveImage } from "@/lib/images";
 import { cn } from "@/lib/utils";
 
 type PageHeroProps = {
+  /** Accepted for existing callers but not rendered: V2 drops labels above headings. */
   eyebrow?: string;
   title: string;
   description?: string;
@@ -18,12 +19,11 @@ type PageHeroProps = {
 /**
  * Shared page header — image-first when imagery exists, calm tonal otherwise.
  * Staged entrance: the image settles (slow Ken Burns under the parallax), the
- * headline reveals word by word, and eyebrow → description → CTAs fade up in
- * sequence. All motion is progressive enhancement; reduced motion shows the
- * hero at rest.
+ * headline reveals word by word, and description → CTAs fade up in sequence.
+ * All motion is progressive enhancement; reduced motion shows the hero at rest.
+ * Text on the photo uses the fixed ivory/charcoal so dark mode can't flip it.
  */
 export function PageHero({
-  eyebrow,
   title,
   description,
   image,
@@ -34,27 +34,17 @@ export function PageHero({
 
   const heading = (
     <>
-      {eyebrow ? (
-        <p
-          className={cn(
-            "mb-3 text-xs font-medium uppercase tracking-luxe animate-fade-up",
-            light ? "text-accent-soft" : "text-accent-deep",
-          )}
-        >
-          {eyebrow}
-        </p>
-      ) : null}
       <SplitHeadline
         delay={0.15}
-        className="max-w-2xl font-display text-4xl font-medium tracking-tight text-balance sm:text-5xl lg:text-6xl"
+        className="max-w-4xl font-display text-[clamp(44px,7vw,104px)] font-medium leading-[0.95] text-balance"
       >
         {title}
       </SplitHeadline>
       {description ? (
         <p
           className={cn(
-            "mt-4 max-w-2xl text-base leading-relaxed sm:text-lg animate-fade-up [animation-delay:240ms]",
-            light ? "text-background/70" : "text-ink-soft",
+            "mt-5 max-w-2xl text-base leading-relaxed sm:text-lg animate-fade-up [animation-delay:240ms]",
+            light ? "text-ivory/75" : "text-ink-soft",
           )}
         >
           {description}
@@ -72,7 +62,7 @@ export function PageHero({
     return (
       <div
         className={cn(
-          "relative flex items-end overflow-hidden bg-ink",
+          "relative flex items-end overflow-hidden bg-charcoal",
           size === "tall" ? "min-h-[70svh]" : "min-h-[50svh]",
         )}
       >
@@ -90,8 +80,8 @@ export function PageHero({
             />
           </div>
         </Parallax>
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-transparent animate-fade-in" />
-        <Container size="wide" className="relative z-10 pb-12 pt-32 text-background sm:pb-16">
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/30 to-transparent animate-fade-in" />
+        <Container size="wide" className="relative z-10 pb-12 pt-32 text-ivory sm:pb-16">
           {heading}
         </Container>
       </div>

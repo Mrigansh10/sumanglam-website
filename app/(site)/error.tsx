@@ -17,7 +17,7 @@ export default function SiteError({
 
   return (
     <Container size="narrow" className="py-32 text-center">
-      <p className="text-xs font-medium uppercase tracking-luxe text-accent-deep">
+      <p className="text-sm font-medium text-accent-deep">
         Something went wrong
       </p>
       <h1 className="mt-3 font-display text-3xl text-ink sm:text-4xl">

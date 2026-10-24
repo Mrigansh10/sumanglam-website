@@ -112,7 +112,7 @@ function ReviewTicker({ reviews }: { reviews: GoogleReview[] }) {
                 {r.relativeTime && (
                   <span className="text-xs text-ink-soft/60">{r.relativeTime}</span>
                 )}
-                <span className="rounded-full bg-sand px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-ink-soft">
+                <span className="rounded-md bg-sand px-2 py-0.5 text-[11px] font-medium text-ink-soft">
                   Google
                 </span>
               </div>
@@ -187,7 +187,7 @@ export function ReviewsSection({ googleData, siteReviews }: Props) {
                   </p>
                   <div className="flex items-center justify-between gap-2">
                     <p className="text-sm font-medium text-ink">{review.authorName}</p>
-                    <span className="rounded-full bg-accent-soft/20 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-accent-deep">
+                    <span className="rounded-md bg-accent-soft/20 px-2 py-0.5 text-[11px] font-medium text-accent-deep">
                       Verified
                     </span>
                   </div>

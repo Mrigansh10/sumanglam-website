@@ -26,7 +26,7 @@ export function BrandCard({
   return (
     <Link
       href={href}
-      className="group flex flex-col border border-line bg-surface transition-[transform,border-color,box-shadow] duration-500 ease-out will-change-transform hover:-translate-y-1 hover:border-accent-soft hover:shadow-[0_18px_40px_-24px_rgba(34,29,23,0.35)]"
+      className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-[transform,border-color,box-shadow] duration-500 ease-out will-change-transform hover:-translate-y-1 hover:border-accent-soft hover:shadow-[0_18px_40px_-24px_rgba(34,29,23,0.35)]"
     >
       <div className="relative aspect-[16/9] overflow-hidden bg-sand">
         <FadeInImage
@@ -38,7 +38,7 @@ export function BrandCard({
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/25 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal/25 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         />
       </div>
       <div className="flex flex-1 flex-col p-5 sm:p-6">

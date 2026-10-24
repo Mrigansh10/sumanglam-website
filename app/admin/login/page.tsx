@@ -17,7 +17,7 @@ export default async function AdminLoginPage() {
   if (session?.user) redirect("/admin");
 
   return (
-    <main className="min-h-screen bg-background px-5 py-12 sm:px-8">
+    <main data-admin className="min-h-screen bg-background px-5 py-12 sm:px-8">
       <div className="mx-auto flex min-h-[calc(100vh-6rem)] max-w-md items-center">
         <Card className="w-full">
           <CardHeader>

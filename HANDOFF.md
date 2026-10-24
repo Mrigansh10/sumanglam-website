@@ -919,6 +919,36 @@ hardware photography (Blum/Häfele/Hettich are brand stand-ins); wardrobe photos
 deciding: AI-retouched site photos?); header "a bit bolder"; the other pages are still V1;
 `PRODUCT.md`/`AGENTS.md` still say `rounded-full` and "motion frozen".
 
+### Session 21 — 2026-10-24 (V2 Phase 1: shared foundation across every page, branch `v2-site-foundation`)
+
+Goal: make every V1 page match the live homepage **without changing page layouts**, by restyling
+the shared building blocks. Phase 2 (page-by-page layout redesigns, prototyped first) comes next:
+Kitchens (gets "Open any drawer") → Hardware → Wardrobes → Contact/Book → Inspiration, Nolte,
+Mrida, Brands → About, Architects, products.
+
+* **Colours / dark mode site-wide.** Every V1 token (`background`, `surface`, `clay`, `sand`, `ink`,
+  `ink-soft`, `ink-faint`, `line`, `accent-deep`) now flips under `prefers-color-scheme: dark`
+  (`app/globals.css`), alongside the V2 names. New **fixed** tokens `ivory`/`charcoal` never flip:
+  use them for anything on a photo (PageHero text/overlay, card hover overlays, `outline-light`
+  buttons) and for `Section tone="ink"` bands, which are now fixed charcoal in both modes. The
+  `data-v2-page` opt-in is gone. **The admin opts out** (`data-admin` on the protected layout and
+  the login page; selector `:root:not(:has([data-admin]))`).
+* **Font:** Inter Tight site-wide. `--font-display`/`--font-sans`/`--font-tight` all map to it;
+  Fraunces and Inter are no longer loaded. `.font-display` gets -0.035em tracking.
+* **Shared components:** `Button` squared (`rounded-lg`), hovers to bronze; `Heading` and
+  `PageHero` no longer render eyebrows (prop kept, ignored) and use the V2 type scale; VisualCard /
+  ProductCard images `rounded-2xl`, their eyebrow/brand labels moved under the title as plain
+  meta text; BrandCard and Card rounded; Badge sentence-case; inputs/select/textarea `rounded-lg`.
+  Inline all-caps labels on pages converted to small sentence-case text.
+* **Footer:** `ClosingSection` is now the footer on every page (rendered by `app/(site)/layout.tsx`,
+  fuller link list `footerNav`); `site-footer.tsx` and `hide-on-home.tsx` deleted. WhatsApp bubble
+  hides when it is in view on any page (`inClosing`).
+* **Logos need white behind them** in dark mode: homepage logo tiles use `bg-white`; the Brands
+  mega panel wraps each logo in a white tile.
+* Verified: all 14 site pages load in light and dark (no page errors), page heroes, charcoal bands,
+  admin stays light, homepage ends with the single shared footer; typecheck clean; lint clean apart
+  from pre-existing warnings in untouched files.
+
 ## Hard Rules (Do Not Violate)
 
 - No ecommerce, checkout, user accounts, wishlists, quotation engine

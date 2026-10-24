@@ -17,8 +17,6 @@ import { homeNav } from "@/components/home/home-nav";
 export function HomeHero({ image }: { image: string }) {
   return (
     <section
-      // Marks this route as a V2 page so the page ground follows dark mode (globals.css).
-      data-v2-page
       className="relative h-[100svh] font-tight"
       // Wordmark sized so "Sumanglam" spans the screen: width minus its side
       // insets, divided by the word's width in ems.

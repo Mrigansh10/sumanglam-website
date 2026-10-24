@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { homeNav } from "@/components/home/home-nav";
+import { footerNav } from "@/components/home/home-nav";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 /**
- * Closing block of the homepage, doubling as its footer: visit details, the two
- * ways to act, and the page links. Inverse colours (charcoal in light mode,
- * ivory in dark) so it reads as the end. Target of the hero's "Visit the showroom".
+ * The site footer, on every page: visit details, the two ways to act, and the
+ * page links. Inverse colours (charcoal in light mode, ivory in dark) so it
+ * reads as the end. Target of the "Visit the showroom" buttons (#visit).
  */
 export function ClosingSection() {
   const { contact } = siteConfig;
@@ -69,8 +69,8 @@ export function ClosingSection() {
         </dl>
 
         <div className="mt-16 flex flex-wrap justify-between gap-x-8 gap-y-4 border-t border-page/15 pt-6 text-[13px] text-page/55">
-          <nav aria-label="Footer" className="flex flex-wrap gap-5">
-            {homeNav.map((item) => (
+          <nav aria-label="Footer" className="flex flex-wrap gap-x-5 gap-y-2">
+            {footerNav.map((item) => (
               <Link key={item.href} href={item.href} className="transition-colors hover:text-page">
                 {item.label}
               </Link>

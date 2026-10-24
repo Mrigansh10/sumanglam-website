@@ -37,7 +37,7 @@ export function VisualCard({
     <>
       <div
         className={cn(
-          "relative overflow-hidden bg-sand",
+          "relative overflow-hidden rounded-2xl bg-sand",
           ratio === "landscape" && "aspect-[3/2]",
           ratio === "portrait" && "aspect-[3/4]",
           ratio === "square" && "aspect-square",
@@ -52,15 +52,10 @@ export function VisualCard({
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/30 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal/30 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         />
       </div>
       <div className={cn("pt-4", emphasis && "pt-5")}>
-        {eyebrow ? (
-          <p className="mb-1 text-xs font-medium uppercase tracking-luxe text-accent-deep">
-            {eyebrow}
-          </p>
-        ) : null}
         <h3
           className={cn(
             "font-display text-ink transition-colors group-hover:text-accent-deep",
@@ -69,6 +64,8 @@ export function VisualCard({
         >
           {title}
         </h3>
+        {/* The old "eyebrow" label now sits under the title as plain meta text. */}
+        {eyebrow ? <p className="mt-1 text-sm text-ink-faint">{eyebrow}</p> : null}
         {description ? (
           <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-ink-soft">
             {description}

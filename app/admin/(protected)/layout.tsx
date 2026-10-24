@@ -23,7 +23,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   if (!session?.user) redirect("/admin/login");
 
   return (
-    <div className="min-h-screen bg-background text-ink">
+    // data-admin keeps the admin panel out of the site's dark mode (globals.css).
+    <div data-admin className="min-h-screen bg-background text-ink">
       <header className="border-b border-line bg-surface">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 px-5 py-5 sm:px-8 lg:flex-row lg:items-center lg:justify-between">
           <div>

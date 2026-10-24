@@ -66,7 +66,8 @@ export function HardwareFeature({ logos }: { logos: HomepageBrandLogo[] }) {
             {logos.map((brand) => (
               <li
                 key={brand.slug}
-                className="grid h-14 place-items-center rounded-[10px] border border-card bg-surface px-2.5 py-2"
+                // Always white: several logos are dark or carry their own white box.
+                className="grid h-14 place-items-center rounded-[10px] border border-card bg-white px-2.5 py-2"
               >
                 {brand.logo && !brand.logo.startsWith("/") ? (
                   <span className="relative block h-[34px] w-full">

@@ -8,12 +8,11 @@ export function inHomeHero(pathname: string) {
 }
 
 /**
- * True once the homepage's closing section (#visit) fills the lower part of the
- * screen: it carries every contact option, and the WhatsApp bubble would sit on
- * its footer links.
+ * True once the closing section (#visit, the footer on every page) fills the
+ * lower part of the screen: it carries every contact option, and the WhatsApp
+ * bubble would sit on its footer links.
  */
-export function inHomeClosing(pathname: string) {
-  if (pathname !== "/") return false;
+export function inClosing() {
   const closing = document.getElementById("visit");
   return !!closing && closing.getBoundingClientRect().top < window.innerHeight * 0.5;
 }

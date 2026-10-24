@@ -40,7 +40,7 @@ export function ProductCard({
       href={href}
       className="group block transition-transform duration-500 ease-out will-change-transform hover:-translate-y-1"
     >
-      <div className="relative aspect-square overflow-hidden bg-sand">
+      <div className="relative aspect-square overflow-hidden rounded-2xl bg-sand">
         <FadeInImage
           src={resolveImage(primaryImage, { width: 800 })}
           alt={name}
@@ -50,7 +50,7 @@ export function ProductCard({
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/25 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal/25 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         />
         {availability ? (
           <div className="absolute left-3 top-3">
@@ -59,14 +59,10 @@ export function ProductCard({
         ) : null}
       </div>
       <div className="pt-3.5">
-        {brandName ? (
-          <p className="text-xs font-medium uppercase tracking-luxe text-ink-faint">
-            {brandName}
-          </p>
-        ) : null}
-        <h3 className="mt-1 line-clamp-2 text-sm font-medium text-ink transition-colors group-hover:text-accent-deep sm:text-base">
+        <h3 className="line-clamp-2 text-sm font-medium text-ink transition-colors group-hover:text-accent-deep sm:text-base">
           {name}
         </h3>
+        {brandName ? <p className="mt-0.5 text-sm text-ink-faint">{brandName}</p> : null}
         {priceRange ? <p className="mt-1 text-sm text-ink-soft">{priceRange}</p> : null}
       </div>
     </Link>

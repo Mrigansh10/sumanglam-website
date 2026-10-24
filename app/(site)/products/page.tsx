@@ -69,7 +69,7 @@ export default async function ProductsPage({ searchParams }: { searchParams: Sea
   const filterGroups = (
     <>
       <div>
-        <h2 className="text-xs font-medium uppercase tracking-luxe text-ink-faint">
+        <h2 className="text-[13px] text-ink-faint">
           Type
         </h2>
         <ul className="mt-3 space-y-1.5 text-sm">
@@ -102,7 +102,7 @@ export default async function ProductsPage({ searchParams }: { searchParams: Sea
 
       {activeType ? (
         <div>
-          <h2 className="text-xs font-medium uppercase tracking-luxe text-ink-faint">
+          <h2 className="text-[13px] text-ink-faint">
             Category
           </h2>
           <ul className="mt-3 space-y-1.5 text-sm">
@@ -129,7 +129,7 @@ export default async function ProductsPage({ searchParams }: { searchParams: Sea
       ) : null}
 
       <div>
-        <h2 className="text-xs font-medium uppercase tracking-luxe text-ink-faint">
+        <h2 className="text-[13px] text-ink-faint">
           Brand
         </h2>
         <ul className="mt-3 space-y-1.5 text-sm">

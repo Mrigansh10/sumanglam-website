@@ -118,7 +118,7 @@ export default async function ProductDetailPage({ params }: { params: Params }) 
             <div>
               <Link
                 href={`/brands/${brand.slug}`}
-                className="inline-block text-xs font-medium uppercase tracking-luxe text-accent-deep hover:underline animate-fade-up"
+                className="inline-block text-sm font-medium text-accent-deep hover:underline animate-fade-up"
               >
                 {brand.name}
               </Link>
@@ -182,7 +182,7 @@ export default async function ProductDetailPage({ params }: { params: Params }) 
               {/* Technical specifications */}
               {specs.length > 0 ? (
                 <div className="mt-10 animate-fade-up [animation-delay:540ms]">
-                  <h2 className="text-xs font-medium uppercase tracking-luxe text-ink-faint">
+                  <h2 className="text-[13px] text-ink-faint">
                     Technical Specifications
                   </h2>
                   <dl className="mt-4 divide-y divide-line border-y border-line">

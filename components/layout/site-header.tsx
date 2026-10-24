@@ -269,14 +269,18 @@ function BrandsPanel({ brands }: { brands: HeaderBrand[] }) {
                 const hasLogo = brand.logo && !brand.logo.startsWith("/");
                 return hasLogo ? (
                   <Link key={brand.slug} href={brandHref(brand.slug)} className="group transition-transform duration-200 hover:-translate-y-0.5">
-                    <div className="relative h-8 w-28">
-                      <Image
-                        src={resolveImage(brand.logo, { width: 400 })}
-                        alt={brand.name}
-                        fill
-                        className="object-contain object-left transition-[filter] duration-200 group-hover:brightness-110"
-                      />
-                    </div>
+                    {/* White tile so dark logos stay readable on the panel in dark mode. */}
+                    <span className="block rounded-md bg-white px-2.5 py-1.5">
+                      <span className="relative block h-7 w-28">
+                        <Image
+                          src={resolveImage(brand.logo, { width: 400 })}
+                          alt={brand.name}
+                          fill
+                          sizes="112px"
+                          className="object-contain object-left transition-[filter] duration-200 group-hover:brightness-110"
+                        />
+                      </span>
+                    </span>
                   </Link>
                 ) : (
                   <Link key={brand.slug} href={brandHref(brand.slug)} className="text-sm text-fg/65 transition-colors hover:text-fg">

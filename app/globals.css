@@ -24,16 +24,21 @@
   --color-error: #99503e;
   --color-warning: #a8823f;
 
-  /* V2 theme-aware tokens: light values here, dark values in the
-     prefers-color-scheme block below. Only V2 components use these; V1 pages
-     keep the fixed tokens above until each is redone. */
+  /* Every token above follows dark mode (values in the prefers-color-scheme
+     block below). The V2 names below do too; they read better in new code. */
   --color-page: #faf8f5;
   --color-fg: #221d17;
   --color-card: #e5dfd4;
   --color-accent-fg: #9a7945;
 
-  --font-display: var(--font-fraunces), Georgia, serif;
-  --font-sans: var(--font-inter), system-ui, sans-serif;
+  /* Fixed colours that never flip: text and overlays sitting on photos. */
+  --color-ivory: #faf8f5;
+  --color-charcoal: #221d17;
+
+  /* V2: Inter Tight everywhere. The display/sans/tight names are kept so
+     existing classes keep working. */
+  --font-display: var(--font-inter-tight), system-ui, sans-serif;
+  --font-sans: var(--font-inter-tight), system-ui, sans-serif;
   --font-tight: var(--font-inter-tight), system-ui, sans-serif;
 
   --tracking-luxe: 0.18em;
@@ -102,26 +107,33 @@ html {
   scroll-behavior: smooth;
 }
 
-/* V2 dark mode — follows the device setting. Built from the same palette:
-   charcoal ground, ivory text, a deeper sand for cards, bronze lifted a step
-   so it holds contrast on the dark ground. */
+/* Headlines set in Inter Tight want tighter tracking than the serif did. */
+.font-display {
+  letter-spacing: -0.035em;
+}
+
+/* Dark mode — follows the device setting, site-wide. Same palette, flipped:
+   charcoal ground, ivory text, deeper sands for surfaces, bronze lifted a
+   step so it holds contrast. The admin panel opts out (data-admin) and
+   stays light. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not(:has([data-admin])) {
+    color-scheme: dark;
+    --color-background: #17130f;
+    --color-surface: #1f1a15;
+    --color-clay: #201b16;
+    --color-sand: #2c251e;
+    --color-ink: #f1ece4;
+    --color-ink-soft: #b9ae9f;
+    --color-ink-faint: #8b8073;
+    --color-line: #352d25;
+    --color-accent-deep: #c4a06a;
+    --color-accent-soft: #c9b391;
+
     --color-page: #17130f;
     --color-fg: #f1ece4;
     --color-card: #26201a;
     --color-accent-fg: #c4a06a;
-  }
-
-  /* Pages built in V2 (marked with data-v2-page) take the dark ground too;
-     V1 pages stay light. */
-  html:has([data-v2-page]) {
-    color-scheme: dark;
-    background-color: var(--color-page);
-  }
-  body:has([data-v2-page]) {
-    background-color: var(--color-page);
-    color: var(--color-fg);
   }
 }
 

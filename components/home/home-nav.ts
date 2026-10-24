@@ -6,3 +6,14 @@ export const homeNav = [
   { label: "Inspiration", href: "/inspiration" },
   { label: "Contact", href: "/contact" },
 ];
+
+/** Fuller link list for the site-wide closing section (the footer). */
+export const footerNav = [
+  ...homeNav.slice(0, 4),
+  { label: "Brands", href: "/brands" },
+  { label: "Nolte", href: "/nolte" },
+  { label: "Mrida", href: "/mrida" },
+  { label: "Architects & Designers", href: "/architects-designers" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+];
