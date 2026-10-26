@@ -1,6 +1,6 @@
 # HANDOFF — Sumanglam Digital Showroom
 
-**Last updated:** 2026-10-24
+**Last updated:** 2026-10-26
 **Repo:** https://github.com/Mrigansh10/sumanglam-website
 **Dev server:** `npm run dev` → http://localhost:3000
 
@@ -29,8 +29,9 @@
 > purpose; Hardware stays a main section. **Only the colour palette survives** —
 > Fraunces/Inter, `rounded-full`, and the "frozen" motion system are all released.
 > **The V2 homepage is LIVE (Session 20, launched 2026-10-24, `09adb06`).** It was chosen from coded prototypes, per the
-> "visualize first" rule. The rest of the site is still V1; don't restyle other pages
-> without the user.
+> "visualize first" rule. **Phase 1 (shared V2 foundation + site-wide dark mode) went LIVE 2026-10-26** (Session 22).
+> Every page now has the V2 look via shared components; per-page layouts (Phase 2) are next,
+> prototyped first, starting with Kitchens. Don't redesign pages without the user.
 > The design phase now has its own root document — **`DESIGN.md`**, read it before any
 > design work — plus a visual-reference layer in the vault at
 > `project-vault/23_Inspiration_Library/`. See Sessions 18 and 19.
@@ -958,3 +959,10 @@ Mrida, Brands → About, Architects, products.
 - No glassmorphism, neon, dark-tech themes, aggressive popups, heavy motion
 - API response envelopes: `{ success: true, data }` / `{ success: false, error: { code, message } }`
 - All buttons `rounded-full` — site-wide, non-negotiable
+
+### Session 22 — 2026-10-26 (Nolte credit in the hero; Phase 1 LIVE)
+- **Homepage hero Nolte credit** (`946e792`): the user picked, from two mocked options, a monochrome ivory Nolte logo + divider + "On display at Sumanglam" ("On display here" on phones), bottom-right level with the tagline, linking to `/nolte`. It is the ONLY Nolte mention on the homepage.
+- Hero text, nav and phone menu button switched from `text-background`/`bg-background` (which flips in dark mode) to fixed `ivory` — anything on a photo must use `ivory`/`charcoal`.
+- `v2-site-foundation` (Phase 1 + the above) fast-forwarded to `master` and pushed → live on sumanglam.co.
+- **Next:** Phase 2 per-page redesigns, prototyped first: Kitchens (gets "Open any drawer"), Hardware, Wardrobes, Contact/Book, Inspiration, Nolte, Mrida, Brands, About, Architects, products.
+
