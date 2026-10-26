@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FadeInImage } from "@/components/motion/fade-in-image";
 import { ArrowLink } from "@/components/home/arrow-button";
-import { HardwareWhatsAppButton } from "@/components/home/hardware-whatsapp-button";
+import { WhatsAppArrowButton } from "@/components/home/whatsapp-arrow-button";
 import { resolveImage } from "@/lib/images";
 import { cn } from "@/lib/utils";
 import type { HomepageBrandLogo } from "@/server/homepage";
@@ -87,7 +87,7 @@ export function HardwareFeature({ logos }: { logos: HomepageBrandLogo[] }) {
           </ul>
         ) : null}
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3.5">
-          <HardwareWhatsAppButton />
+          <WhatsAppArrowButton sourceType="hardware" />
           <ArrowLink href="/hardware-appliances">Explore hardware</ArrowLink>
         </div>
       </div>
