@@ -6,6 +6,9 @@ import { ArrowButton } from "@/components/home/arrow-button";
 import { HeroMenuButton } from "@/components/home/hero-menu-button";
 import { homeNav } from "@/components/home/home-nav";
 
+/** Nolte wordmark, recoloured to ivory in CSS for the photo credit below. */
+const NOLTE_LOGO =
+  "https://res.cloudinary.com/de9turgsy/image/upload/f_png,h_120/sumanglam/brands/logos/ej467ntfkiuryq0yluz7";
 
 /**
  * V2 homepage hero: one full-bleed photo, the nav on top of it, and the
@@ -39,7 +42,7 @@ export function HomeHero({ image }: { image: string }) {
 
         <nav
           aria-label="Primary"
-          className="absolute inset-x-[22px] top-[18px] z-10 flex animate-home-drop items-center justify-between text-background"
+          className="absolute inset-x-[22px] top-[18px] z-10 flex animate-home-drop items-center justify-between text-ivory"
         >
           <Link href="/" className="text-[17px] font-semibold tracking-[-0.02em]">
             {siteConfig.name}
@@ -60,11 +63,28 @@ export function HomeHero({ image }: { image: string }) {
           </div>
         </nav>
 
-        <p className="absolute inset-x-[22px] bottom-[calc(var(--mark)*0.98+26px)] z-10 max-w-[20ch] animate-home-lift text-[clamp(18px,1.7vw,24px)] font-medium leading-[1.15] tracking-[-0.02em] text-balance text-background">
+        <p className="absolute inset-x-[22px] bottom-[calc(var(--mark)*0.98+26px)] z-10 max-w-[20ch] animate-home-lift text-[clamp(18px,1.7vw,24px)] font-medium leading-[1.15] tracking-[-0.02em] text-balance text-ivory">
           Designed around your home.
         </p>
 
-        <h1 className="absolute inset-x-[18px] bottom-0 z-10 overflow-hidden whitespace-nowrap pb-[0.16em] text-[length:var(--mark)] font-semibold leading-[0.82] tracking-[-0.045em] text-background">
+        {/* Quiet credit for the kitchen in the photo, level with the tagline. */}
+        <Link
+          href="/nolte"
+          className="absolute right-[22px] bottom-[calc(var(--mark)*0.98+26px)] z-10 flex animate-home-lift items-center gap-2.5 text-xs font-medium tracking-[-0.01em] text-ivory/80 transition-colors hover:text-ivory sm:text-sm"
+        >
+          <Image
+            src={NOLTE_LOGO}
+            alt="Nolte Küchen"
+            width={53}
+            height={24}
+            className="h-[18px] w-auto opacity-85 brightness-0 invert sm:h-6"
+          />
+          <span aria-hidden className="h-3.5 w-px bg-ivory/40 sm:h-[18px]" />
+          <span className="sm:hidden">On display here</span>
+          <span className="hidden sm:inline">On display at Sumanglam</span>
+        </Link>
+
+        <h1 className="absolute inset-x-[18px] bottom-0 z-10 overflow-hidden whitespace-nowrap pb-[0.16em] text-[length:var(--mark)] font-semibold leading-[0.82] tracking-[-0.045em] text-ivory">
           <span className="inline-block animate-home-rise">{siteConfig.name}</span>
         </h1>
       </div>

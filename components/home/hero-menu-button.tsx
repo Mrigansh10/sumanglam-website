@@ -14,7 +14,7 @@ export function HeroMenuButton() {
       type="button"
       aria-label="Open menu"
       onClick={() => window.dispatchEvent(new Event(OPEN_SITE_MENU_EVENT))}
-      className="grid size-[38px] place-items-center rounded-lg bg-background/15 text-background backdrop-blur-sm transition-colors hover:bg-background/25 lg:hidden"
+      className="grid size-[38px] place-items-center rounded-lg bg-ivory/15 text-ivory backdrop-blur-sm transition-colors hover:bg-ivory/25 lg:hidden"
     >
       <Menu className="size-5" aria-hidden />
     </button>
