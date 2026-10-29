@@ -1,6 +1,6 @@
 # HANDOFF — Sumanglam Digital Showroom
 
-**Last updated:** 2026-10-26
+**Last updated:** 2026-10-29
 **Repo:** https://github.com/Mrigansh10/sumanglam-website
 **Dev server:** `npm run dev` → http://localhost:3000
 
@@ -966,4 +966,24 @@ Mrida, Brands → About, Architects, products.
 - `v2-site-foundation` (Phase 1 + the above) fast-forwarded to `master` and pushed → live on sumanglam.co.
 - **Phase 2 — Kitchens page redesigned and LIVE.** Approved from a coded prototype: header B (huge "Kitchens" word on the page + intro + Book button, wide rounded render below; letter-spacing -0.035em so the i/t don't touch), Two ways (Nolte card = showroom K2-2, Mrida card = Mrida brand hero), Open any drawer (dark band: K1-10, K4-12, K2-9), Kitchen ideas (6 renders, staggered 12-col grid, order pinned in `IDEA_ORDER`, header render filtered out), Appliances built in (K4-2 + appliance categories + brand line), Browse by style (collection text rows), "A kitchen is planned twice" closing + Book / WhatsApp. Showroom photos live in Cloudinary `sumanglam/kitchens/*` (3200px, no gen edits). Kitchen space hero (Admin → Spaces) set to `sumanglam/inspirations/grey-walnut-island-kitchen-1` (was `sumanglam/spaces/pizelmcbyqtsbhksocpj`). `HardwareWhatsAppButton` became the shared `WhatsAppArrowButton` (sourceType/tone/size).
 - **Next:** Phase 2 continues, prototyped first: Hardware, Wardrobes, Contact/Book, Inspiration, Nolte, Mrida, Brands, About, Architects, products.
+
+### Session 23 — 2026-10-29 (Nolte page LIVE, `6f0ad13`)
+- **Nolte page redesigned and LIVE.** The user approved the coded prototype as-is. `app/(site)/nolte/page.tsx` is now static (no DB). It no longer uses `SolutionBrandPage`. Sections:
+  - header: the "Nolte" word, intro, Book button, and showroom photo K4-5;
+  - "Five kitchens on our floor": one block per kitchen with a range/colour label, a big photo and two detail shots, alternating sides on desktop;
+  - "Built to be opened": the charcoal band with four inside shots;
+  - "Plan your Nolte kitchen": Book and WhatsApp.
+- **Range names, confirmed by the user:**
+
+  | Kitchen | Range | Colour |
+  |---|---|---|
+  | Lugano Lack (K4) | Nolte Kitchens | Black |
+  | NeoLodge (K2) | Nolte Neo | Black |
+  | Velluto (K1) | Nolte Kitchens | Lava |
+  | Lux (K6, files named K5-*) | Nolte Kitchens | White, gloss |
+  | Clean finish (K3) | Express Kitchens | Black green |
+
+- Photos are in Cloudinary under `sumanglam/nolte/*` at 3200px, with no generative edits. The storage wall (K5) is left off because Nolte is kitchens only.
+- `WhatsAppArrowButton` gained an optional `subject` prop.
+- **Next:** Mrida, then Appliances. Both are prototyped first, and the Appliances plan is still unapproved. See the `phase2-brand-pages-in-progress` memory.
 
