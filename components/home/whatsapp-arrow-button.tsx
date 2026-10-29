@@ -8,14 +8,16 @@ import { cn } from "@/lib/utils";
 /** "Ask on WhatsApp" in the V2 button style, tracked like every WhatsApp CTA. */
 export function WhatsAppArrowButton({
   sourceType,
+  subject,
   tone = "dark",
   size = "md",
 }: {
   sourceType: WhatsAppContext["sourceType"];
+  subject?: string;
   tone?: "dark" | "outline";
   size?: "md" | "lg";
 }) {
-  const handleClick = useWhatsAppInquiry({ sourceType });
+  const handleClick = useWhatsAppInquiry({ sourceType, subject });
   return (
     <button type="button" onClick={handleClick} className={c.root}>
       <span
