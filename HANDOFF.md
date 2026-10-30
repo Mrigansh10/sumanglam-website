@@ -1,6 +1,6 @@
 # HANDOFF — Sumanglam Digital Showroom
 
-**Last updated:** 2026-10-29
+**Last updated:** 2026-10-30
 **Repo:** https://github.com/Mrigansh10/sumanglam-website
 **Dev server:** `npm run dev` → http://localhost:3000
 
@@ -985,5 +985,18 @@ Mrida, Brands → About, Architects, products.
 
 - Photos are in Cloudinary under `sumanglam/nolte/*` at 3200px, with no generative edits. The storage wall (K5) is left off because Nolte is kitchens only.
 - `WhatsAppArrowButton` gained an optional `subject` prop.
-- **Next:** Mrida, then Appliances. Both are prototyped first, and the Appliances plan is still unapproved. See the `phase2-brand-pages-in-progress` memory.
+- **Next:** Mrida, then Appliances (superseded by Session 24).
+
+### Session 24 — 2026-10-30 (Mrida page LIVE, `8bf899f`)
+- **Installation is CONFIRMED.** The user said "we do the complete installations", so copy can now say "Installed by our team". In-house production is still unconfirmed, so don't say "made".
+- **Mrida page redesigned and LIVE.** It was approved from a coded prototype with header option a. `app/(site)/mrida/page.tsx` is static and no longer uses `SolutionBrandPage`. Sections:
+  - header: the "Mrida" word, with render `taupe-charcoal-evening-kitchen-1`;
+  - "Designed for the home you have.": four numbered points (measured to your walls, planned around your routine, fitted with brands we carry, installed by our team);
+  - "Kitchens by Mrida.": all 7 kitchen renders in a 12-column grid (8/4, 4/4/4, 6/6), with the angles hardcoded so none repeats the header;
+  - "Wardrobes, only by Mrida.": a charcoal band with bronze-glass and ivory-jali, each as one big render plus 2 angles, sides alternating;
+  - "And the rest of the home.": text rows for TV units, vanities, study corners and storage walls (there are no interior renders yet);
+  - "Start with your floor plan.": Book and WhatsApp.
+- The user approved the copy as shown ("good enough"). It was never answered whether Pooja units belong in the interiors list or whether the two classic kitchens should stay.
+- A `next build` once failed inside `next/font` while fetching Google Fonts. It was a network hiccup and passed on retry.
+- **Next:** the Appliances page. Its plan is in the `phase2-brand-pages-in-progress` memory and is still unapproved, so prototype it first.
 
