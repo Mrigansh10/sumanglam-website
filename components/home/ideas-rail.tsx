@@ -10,8 +10,7 @@ import type { HomepageIdea } from "@/server/homepage";
 
 /**
  * Kitchen inspirations as a horizontal rail: wide and narrow cards alternate.
- * It moves only on the arrows or a swipe — never by itself. `data-lenis-prevent`
- * keeps the site's smooth scroll from swallowing horizontal trackpad gestures.
+ * It moves only on the arrows or a swipe — never by itself.
  */
 export function IdeasRail({ ideas }: { ideas: HomepageIdea[] }) {
   const railRef = useRef<HTMLDivElement>(null);
@@ -55,7 +54,6 @@ export function IdeasRail({ ideas }: { ideas: HomepageIdea[] }) {
 
       <div
         ref={railRef}
-        data-lenis-prevent
         className="flex snap-x snap-mandatory scroll-px-[22px] gap-4 overflow-x-auto px-[22px] pb-2 [scrollbar-width:none] lg:scroll-px-10 lg:items-start lg:gap-5 lg:px-10 [&::-webkit-scrollbar]:hidden"
       >
         {ideas.map((idea, index) => {

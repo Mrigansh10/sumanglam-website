@@ -1,6 +1,5 @@
 import { SiteHeader } from "@/components/layout/site-header";
 import { ClosingSection } from "@/components/home/closing-section";
-import { SmoothScroll } from "@/components/motion/smooth-scroll";
 import { FloatingWhatsApp } from "@/features/whatsapp/floating-whatsapp";
 import { siteConfig } from "@/lib/site";
 import { supabase, rows } from "@/lib/supabase";
@@ -75,7 +74,7 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
   const brands = rows<HeaderBrand>(rawBrands);
 
   return (
-    <SmoothScroll>
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -84,6 +83,6 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
       <main className="flex-1">{children}</main>
       <ClosingSection />
       <FloatingWhatsApp />
-    </SmoothScroll>
+    </>
   );
 }
