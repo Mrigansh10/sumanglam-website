@@ -22,7 +22,6 @@ All are `"use client"` and all respect `useReducedMotion()`.
 | `DrawRule` | The gold accent dash that draws in under every `Heading` eyebrow | Part of the design system, not decoration |
 | `FadeInImage` | Card image load-in | Wraps `next/image` |
 | `HeroAmbient` | Ambient hero motion layer | |
-| `SmoothScroll` | Lenis wrapper | |
 
 ## Page Transitions
 
@@ -66,10 +65,10 @@ element with GSAP's.
 
 ## The Approved Stack
 
-`framer-motion` (primary), plus `gsap` (with ScrollTrigger), `lenis`, and `three` — all
+`framer-motion` (primary), plus `gsap` (with ScrollTrigger) and `three` — all
 user-approved additions beyond the original architecture docs. See
 [[User Approved Stack Extension - Three GSAP Lenis]]. In practice the shipped motion system is
-overwhelmingly Framer Motion; GSAP/Lenis/Three are present but lightly used.
+overwhelmingly Framer Motion; GSAP/Three are present but lightly used. Lenis was removed on 2026-11-05 because the scroll felt heavy; the site uses native scrolling.
 
 ## Constraints That Still Bind
 

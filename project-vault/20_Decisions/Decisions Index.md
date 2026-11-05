@@ -24,6 +24,7 @@ updated: 2026-08-22
 | [[Decision - Release Focus Over Catalog Depth]] | 2026-07-02 | Only with a new stakeholder decision |
 | [[Decision - Product Catalog Unpublished]] | 2026-07-04 | Yes — republish and restore links |
 | [[Decision - Showroom Temporarily Offline]] | 2026-07-06 | **Yes, and intended to be** — needs real photos |
+| [[Decision - Native Scroll Over Lenis]] | 2026-07-06 | **Yes, and intended to be** — needs real photos |
 
 ## Experience
 
@@ -38,6 +39,7 @@ updated: 2026-08-22
 
 * `/hardware-appliances` contains **no appliances** — [[Decision - Kitchen First Navigation]]
 * `/showroom` redirects to `/contact` — [[Decision - Showroom Temporarily Offline]]
+* `/showroom` redirects to `/contact` — [[Decision - Native Scroll Over Lenis]]
 * `/inspiration/[slug]` redirects to the listing — [[Decision - Inspirations Are Visual Only]]
 * `/products` is empty — [[Decision - Product Catalog Unpublished]]
 * The site shows **no reviews at all** — the table is genuinely empty, see [[Database - reviews]]

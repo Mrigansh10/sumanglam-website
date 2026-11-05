@@ -126,3 +126,10 @@ browse the internet and screenshot sites; the session built the structure that r
 
 **Unchanged:** the direction is still **NOT locked**, Round 2 is still a text-only round, nothing
 is built. Next step is the user's first real batch of screenshots, then "ingest".
+
+## Session 25 — 2026-11-05
+
+* **Native scroll went live.** Lenis was removed because the user felt the scroll was heavy. See
+  [[Decision - Native Scroll Over Lenis]].
+* **Low FPS on the user's laptop looks like the machine, not the site.** A scripted scroll held
+  about 60fps with and without Lenis, on a 60Hz, 8GB M1 Air that was nearly out of memory.

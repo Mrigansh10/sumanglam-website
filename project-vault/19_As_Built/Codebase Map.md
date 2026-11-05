@@ -84,7 +84,7 @@ Every public page reads through these. **Never query Supabase directly from a pa
 | Folder | Contents |
 |---|---|
 | `components/layout/` | `site-header.tsx` (floating glass pill nav + mega-menu + scroll-hide), `site-footer.tsx`, `container.tsx`, `section.tsx`, `heading.tsx` |
-| `components/motion/` | `split-headline.tsx`, `stagger.tsx`, `reveal.tsx`, `parallax.tsx`, `draw-rule.tsx`, `fade-in-image.tsx`, `hero-ambient.tsx`, `smooth-scroll.tsx`. See [[Motion System]] |
+| `components/motion/` | `split-headline.tsx`, `stagger.tsx`, `reveal.tsx`, `parallax.tsx`, `draw-rule.tsx`, `fade-in-image.tsx`, `hero-ambient.tsx`. See [[Motion System]] |
 | `components/shared/` | `page-hero.tsx`, `visual-card.tsx`, `brand-card.tsx`, `product-card.tsx`, `reviews-section.tsx`, `review-form.tsx`, `star-rating.tsx`, `empty-state.tsx`, `page-view-tracker.tsx` |
 | `components/ui/` | shadcn-style primitives: `button`, `badge`, `card`, `input`, `label`, `select`, `textarea`, `skeleton` |
 | `components/admin/` | `image-upload.tsx` (in-browser downscale before Cloudinary), `inspiration-form.tsx`, `delete-confirm-form.tsx` (see [[Trap - Unmounting A Server Action Form]]) |
@@ -121,7 +121,7 @@ Every public page reads through these. **Never query Supabase directly from a pa
 
 `next` 15.5, `react` 19, `typescript` 5.9, `tailwindcss` 4.1, `@supabase/supabase-js`,
 `@prisma/client` + `prisma`, `next-auth` 5 beta, `cloudinary`, `zod` 3, `framer-motion` 12,
-`gsap` 3, `lenis` 1.3, `three` 0.180, `lucide-react`, `class-variance-authority`, `clsx`,
+`gsap` 3, `three` 0.180, `lucide-react`, `class-variance-authority`, `clsx`,
 `tailwind-merge`. Dev: `playwright`, `tsx`, `eslint`.
 
 > **Do not add libraries.** The motion work is complete and deliberately built on what is

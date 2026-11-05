@@ -1,6 +1,6 @@
 # HANDOFF — Sumanglam Digital Showroom
 
-**Last updated:** 2026-10-30
+**Last updated:** 2026-11-05
 **Repo:** https://github.com/Mrigansh10/sumanglam-website
 **Dev server:** `npm run dev` → http://localhost:3000
 
@@ -1000,3 +1000,9 @@ Mrida, Brands → About, Architects, products.
 - A `next build` once failed inside `next/font` while fetching Google Fonts. It was a network hiccup and passed on retry.
 - **Next:** the Appliances page. Its plan is in the `phase2-brand-pages-in-progress` memory and is still unapproved, so prototype it first.
 
+### Session 25 — 2026-11-05 (normal scroll LIVE)
+- **Lenis smooth scroll removed; the site now uses the browser's normal scroll.** The user felt the smoothed scroll was heavy and chose normal after comparing. Deleted `components/motion/smooth-scroll.tsx`, the `lenis` dependency and `data-lenis-prevent` on `ideas-rail.tsx`. Scroll-triggered animations stay on GSAP ScrollTrigger.
+- **Low FPS on the user's laptop looks like the machine, not the site.** A scripted scroll held about 60fps with and without Lenis, on a 60Hz M1 Air (8GB) that was nearly out of memory and swap and also drives a 4K monitor. Not confirmed by the suggested restart test.
+- **To check:** the largest Kitchens image served at 742px wide in a slot about 1100px wide, so it may look soft on Retina screens.
+- **Still uncommitted, on purpose:** the `AGENTS.md` grant rule and the `scripts/security/rls-lockdown.sql` revokes.
+- **Next:** the Appliances page. Its plan is still unapproved, so prototype it first.
