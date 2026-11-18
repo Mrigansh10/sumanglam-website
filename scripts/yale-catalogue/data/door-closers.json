@@ -1,0 +1,155 @@
+{
+ "category": "door-closers",
+ "siteCategory": "door-controls",
+ "brand": "yale",
+ "source": "Yale Price List 2026 (w.e.f 24 April 2026)",
+ "products": [
+  {
+   "name": "Yale DCR 502-IS Door Closer",
+   "sku": "DCR-502-IS",
+   "shortDescription": "Surface-mounted door closer with standard arm, size 2, for doors 750–850 mm wide up to 45 kg.",
+   "technicalSpecs": {
+    "Type": "Surface mounted",
+    "Size": "2",
+    "Door width": "750 – 850 mm",
+    "Door weight": "Up to 45 kg",
+    "Arm": "Standard",
+    "Finish": "Silver",
+    "Warranty": "3 years"
+   },
+   "priceRange": null,
+   "image": "366e1-dcr502"
+  },
+  {
+   "name": "Yale DCR 503-90 Door Closer",
+   "sku": "DCR-503-90",
+   "shortDescription": "Surface-mounted door closer with standard arm, size 3, for doors 850–950 mm wide up to 60 kg.",
+   "technicalSpecs": {
+    "Type": "Surface mounted",
+    "Size": "3",
+    "Door width": "850 – 950 mm",
+    "Door weight": "Up to 60 kg",
+    "Arm": "Standard",
+    "Finish": "Silver",
+    "Warranty": "3 years"
+   },
+   "priceRange": null,
+   "image": "25b16-dcr503"
+  },
+  {
+   "name": "Yale DCR 504-90 Door Closer",
+   "sku": "DCR-504-90",
+   "shortDescription": "Surface-mounted door closer with standard arm, size 4, for doors 950–1100 mm wide up to 80 kg.",
+   "technicalSpecs": {
+    "Type": "Surface mounted",
+    "Size": "4",
+    "Door width": "950 – 1100 mm",
+    "Door weight": "Up to 80 kg",
+    "Arm": "Standard",
+    "Finish": "Silver",
+    "Warranty": "3 years"
+   },
+   "priceRange": null,
+   "image": "dcr-504-90.png"
+  },
+  {
+   "name": "Yale YDC-2022 HO Door Closer",
+   "sku": "YDC-2022-HO",
+   "shortDescription": "Surface-mounted door closer with hold-open arm, size 2/3/4, for doors 750–1100 mm wide up to 80 kg.",
+   "technicalSpecs": {
+    "Type": "Surface mounted",
+    "Size": "2 / 3 / 4",
+    "Door width": "750 – 1100 mm",
+    "Door weight": "Up to 80 kg",
+    "Arm": "Hold open",
+    "Finish": "Silver",
+    "Warranty": "3 years"
+   },
+   "priceRange": null,
+   "image": "b874b-img1658"
+  },
+  {
+   "name": "Yale DCR 3003 SH-90 Door Closer",
+   "sku": "DCR-3003-SH-90",
+   "shortDescription": "Surface-mounted door closer with slide arm and hold-open, size 3, for doors 850–950 mm wide up to 65 kg.",
+   "technicalSpecs": {
+    "Type": "Surface mounted",
+    "Size": "3",
+    "Door width": "850 – 950 mm",
+    "Door weight": "Up to 65 kg",
+    "Arm": "Slide arm, hold open",
+    "Finish": "Silver",
+    "Warranty": "5 years"
+   },
+   "priceRange": null,
+   "image": "3d5b3-img1687"
+  },
+  {
+   "name": "Yale 300 Door Closer – Standard Arm",
+   "sku": "Yale-300-Standard",
+   "shortDescription": "300 series rack and pinion surface-mounted closer with standard arm, size 2/3/4, in silver or black.",
+   "technicalSpecs": {
+    "Type": "Surface mounted, rack and pinion",
+    "Size": "2 / 3 / 4",
+    "Door width": "750 – 1100 mm",
+    "Door weight": "Up to 80 kg",
+    "Arm": "Standard",
+    "Product codes": "30-0300-0001-00-60-11 (Silver), 30-0300-0001-00-55-11 (Black)",
+    "Warranty": "5 years",
+    "Variants": "Silver, Black"
+   },
+   "priceRange": null,
+   "image": "yale300new1"
+  },
+  {
+   "name": "Yale 300 Door Closer – Hold Open Arm",
+   "sku": "Yale-300-Hold-Open",
+   "shortDescription": "300 series rack and pinion surface-mounted closer with hold-open arm, size 2/3/4, in silver or black.",
+   "technicalSpecs": {
+    "Type": "Surface mounted, rack and pinion",
+    "Size": "2 / 3 / 4",
+    "Door width": "750 – 1100 mm",
+    "Door weight": "Up to 80 kg",
+    "Arm": "Hold open",
+    "Product codes": "30-0300-0004-00-60-11 (Silver), 30-0300-0004-00-55-11 (Black)",
+    "Warranty": "5 years",
+    "Variants": "Silver, Black"
+   },
+   "priceRange": null,
+   "image": "yale-300-hold-open.png"
+  },
+  {
+   "name": "Yale DCR-6003 H Concealed Door Closer",
+   "sku": "DCR-6003-H",
+   "shortDescription": "Concealed rack and pinion door closer with hold-open device, size 3, for doors 850–950 mm wide up to 65 kg.",
+   "technicalSpecs": {
+    "Type": "Concealed, rack and pinion",
+    "Size": "3",
+    "Door width": "850 – 950 mm",
+    "Door weight": "Up to 65 kg",
+    "Hold open": "Yes",
+    "Finish": "Silver",
+    "Warranty": "5 years"
+   },
+   "priceRange": null,
+   "image": "37192-dcr6003h"
+  },
+  {
+   "name": "Yale 8324U Concealed Door Closer",
+   "sku": "Yale-8324U",
+   "shortDescription": "CAM-action concealed door closer with hold-open device, size 2–4, for doors 750–1100 mm wide up to 100 kg.",
+   "technicalSpecs": {
+    "Type": "Concealed, CAM action",
+    "Size": "2 – 4",
+    "Door width": "750 – 1100 mm",
+    "Door weight": "Up to 100 kg",
+    "Hold open": "Yes",
+    "Product codes": "30-8324-0004-60-11 (Silver), 30-8324-0004-55-11 (Black)",
+    "Warranty": "5 years",
+    "Variants": "Silver, Black"
+   },
+   "priceRange": null,
+   "image": "yale-8324-silver"
+  }
+ ]
+}

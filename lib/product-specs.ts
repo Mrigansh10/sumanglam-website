@@ -80,6 +80,18 @@ export const CATEGORY_FACETS: Record<
     options: [
       { value: "Fingerprint", keywords: ["biometric", "fingerprint"] },
       { value: "PIN", keywords: ["pin code", "pincode"] },
+      { value: "Key", keywords: ["mechanical key"] },
+    ],
+  },
+  "locks-and-security": {
+    label: "Type",
+    options: [
+      { value: "Mortise locks", keywords: ["mortise"] },
+      { value: "Rim locks", keywords: ["rim lock"] },
+      { value: "Cylinders", keywords: ["euro profile"] },
+      { value: "Locksets", keywords: ["lockset"] },
+      { value: "Electric", keywords: ["electric"] },
+      { value: "Padlocks", keywords: ["padlock"] },
     ],
   },
   safes: {
@@ -91,6 +103,22 @@ export const CATEGORY_FACETS: Record<
       { value: "App", keywords: ["yale home app"] },
     ],
   },
+  handles: {
+    label: "Finish",
+    options: [
+      { value: "Satin steel", keywords: ["satin steel"] },
+      { value: "Antique brass", keywords: ["antique brass"] },
+      { value: "Black matt", keywords: ["black matt"] },
+      { value: "Rose gold", keywords: ["rose gold"] },
+    ],
+  },
+  "door-controls": {
+    label: "Type",
+    options: [
+      { value: "Surface mounted", keywords: ["surface"] },
+      { value: "Concealed", keywords: ["concealed"] },
+    ],
+  },
 };
 
 export function facetValues(
@@ -100,7 +128,7 @@ export function facetValues(
 ): string[] {
   const facet = categorySlug ? CATEGORY_FACETS[categorySlug] : undefined;
   if (!facet) return [];
-  const haystack = `${facts.features.join(" ")} ${description ?? ""}`.toLowerCase();
+  const haystack = `${facts.features.join(" ")} ${facts.variants.join(" ")} ${description ?? ""}`.toLowerCase();
   return facet.options
     .filter((option) => option.keywords.some((keyword) => new RegExp(`\\b${keyword}`).test(haystack)))
     .map((option) => option.value);

@@ -92,39 +92,40 @@ export default async function HardwarePage() {
               Each category lists what we carry, with the product code and the specs that matter.
             </p>
           </div>
-          <div className="grid gap-3.5">
+          {/* Two columns of tiles keeps a long category list browsable */}
+          <div className="grid gap-3.5 md:grid-cols-2">
             {categories.map((category) => (
               <Link
                 key={category.id}
                 href={`/hardware/${category.slug}`}
-                className="group grid overflow-hidden rounded-[20px] bg-card/55 lg:grid-cols-[1fr_1.5fr]"
+                className="group grid content-between overflow-hidden rounded-[20px] bg-card/55"
               >
-                <div className="grid content-end gap-2.5 p-7 lg:p-10">
+                <div className="grid gap-2 p-6 lg:p-8">
                   <span className="text-sm text-fg/60">
                     {category.count} {category.count === 1 ? "product" : "products"}
                   </span>
-                  <h3 className="text-[clamp(32px,3.6vw,56px)] font-semibold leading-none tracking-[-0.04em]">
+                  <h3 className="flex items-center justify-between gap-4 text-[clamp(28px,2.8vw,42px)] font-semibold leading-none tracking-[-0.04em]">
                     {sentenceCase(category.name)}
-                  </h3>
-                  {CATEGORY_COPY[category.slug] ? (
-                    <p className="max-w-[36ch] text-fg/60">{CATEGORY_COPY[category.slug]}</p>
-                  ) : null}
-                  <span className="mt-2.5 inline-flex items-center gap-2 justify-self-start border-b border-fg/30 pb-[3px] text-[15px] font-medium">
-                    See all
-                    <span aria-hidden className="text-accent-fg transition-transform duration-300 group-hover:translate-x-1">
+                    <span
+                      aria-hidden
+                      className="text-[0.6em] text-accent-fg transition-transform duration-300 group-hover:translate-x-1.5"
+                    >
                       →
                     </span>
-                  </span>
+                  </h3>
+                  {CATEGORY_COPY[category.slug] ? (
+                    <p className="max-w-[44ch] text-fg/60">{CATEGORY_COPY[category.slug]}</p>
+                  ) : null}
                 </div>
-                <div className="grid grid-cols-3 gap-2.5 px-[18px] pb-[18px] lg:gap-3.5 lg:p-[22px]">
+                <div className="grid grid-cols-3 gap-2.5 px-[18px] pb-[18px] lg:gap-3 lg:px-6 lg:pb-6">
                   {category.previews.map((image) => (
-                    <div key={image} className="relative aspect-[3/4] rounded-xl bg-page">
+                    <div key={image} className="relative aspect-[4/5] rounded-xl bg-page">
                       <div className="absolute inset-[10%]">
                         <FadeInImage
                           src={resolveImage(image, { width: 600 })}
                           alt=""
                           fill
-                          sizes="(min-width: 1024px) 16vw, 28vw"
+                          sizes="(min-width: 768px) 14vw, 28vw"
                           className="object-contain transition-transform duration-[900ms] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-105"
                         />
                       </div>

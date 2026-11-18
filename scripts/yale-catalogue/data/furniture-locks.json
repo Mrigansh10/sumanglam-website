@@ -1,0 +1,46 @@
+{
+ "category": "furniture-locks",
+ "siteCategory": "wardrobe-locks",
+ "brand": "yale",
+ "source": "Yale Price List 2026 (w.e.f 24 April 2026)",
+ "products": [
+  {
+   "name": "Yale Drawer Lock",
+   "sku": "DRW-B",
+   "shortDescription": "Drawer lock with dimple key, for 20–30 mm wood panels; common-key (CK) versions available.",
+   "technicalSpecs": {
+    "Key Features": "Mechanical key",
+    "Panel thickness": "20 – 30 mm",
+    "Product codes": "DRW-B-20MM-DK-(XX), DRW-B-25MM-DK-(XX), DRW-B-30MM-DK-(XX), add -CK for common key",
+    "Finish codes (XX)": "SS, AB, BM, RG",
+    "Variants": "Satin Steel, Antique Brass, Black Matt, Rose Gold"
+   },
+   "priceRange": "₹460",
+   "image": "Drawer Lock"
+  },
+  {
+   "name": "Yale Wardrobe Lock",
+   "sku": "WRD-B",
+   "shortDescription": "Wardrobe lock with dimple key, for 25–35 mm wood panels; common-key (CK) versions available.",
+   "technicalSpecs": {
+    "Key Features": "Mechanical key",
+    "Panel thickness": "25 – 35 mm",
+    "Product codes": "WRD-B-25MM-DK-(XX), WRD-B-30MM-DK-(XX), WRD-B-35MM-DK-(XX), add -CK for common key",
+    "Finish codes (XX)": "SS, AB, BM, RG",
+    "Variants": "Satin Steel, Antique Brass, Black Matt, Rose Gold"
+   },
+   "priceRange": "₹640",
+   "image": "wardrobe lock-1"
+  },
+  {
+   "name": "Yale Y-UNCL Universal Cupboard Lock",
+   "sku": "Y-UNCL",
+   "shortDescription": "Universal cupboard lock for furniture.",
+   "technicalSpecs": {
+    "Key Features": "Mechanical key"
+   },
+   "priceRange": "₹600",
+   "image": "Y-UNCL"
+  }
+ ]
+}

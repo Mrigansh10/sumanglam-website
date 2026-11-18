@@ -1,0 +1,655 @@
+{
+ "category": "handles",
+ "siteCategory": "handles",
+ "brand": "yale",
+ "source": "Yale Price List 2026 (w.e.f 24 April 2026)",
+ "products": [
+  {
+   "name": "Yale YPBL-801",
+   "sku": "YPBL-801",
+   "shortDescription": "Solid brass lever handle on a rose, with matching escutcheon.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Material": "Solid brass",
+    "Product codes": "YPBL-801-SS (Satin Steel), YPBL-801-AB (Antique Brass)",
+    "Variants": "Satin Steel, Antique Brass"
+   },
+   "priceRange": null,
+   "image": "6d5c6-2"
+  },
+  {
+   "name": "Yale YPBL-802",
+   "sku": "YPBL-802",
+   "shortDescription": "Solid brass lever handle on a rose, with matching escutcheon.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Material": "Solid brass",
+    "Product codes": "YPBL-802-SS (Satin Steel), YPBL-802-AB (Antique Brass)",
+    "Variants": "Satin Steel, Antique Brass"
+   },
+   "priceRange": null,
+   "image": "75ab4-2"
+  },
+  {
+   "name": "Yale YPBL-804",
+   "sku": "YPBL-804",
+   "shortDescription": "Solid brass lever handle on a rose, with matching escutcheon.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Material": "Solid brass",
+    "Product codes": "YPBL-804-SS (Satin Steel), YPBL-804-AB (Antique Brass)",
+    "Variants": "Satin Steel, Antique Brass"
+   },
+   "priceRange": null,
+   "image": "ed295-2"
+  },
+  {
+   "name": "Yale YPBL-808",
+   "sku": "YPBL-808",
+   "shortDescription": "Solid brass lever handle on a rose, with matching escutcheon.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Material": "Solid brass",
+    "Product codes": "YPBL-808-SS (Satin Steel), YPBL-808-AB (Antique Brass)",
+    "Variants": "Satin Steel, Antique Brass"
+   },
+   "priceRange": null,
+   "image": "0f8c9-2"
+  },
+  {
+   "name": "Yale YPBL-809",
+   "sku": "YPBL-809",
+   "shortDescription": "Solid brass lever handle on a rose, with matching escutcheon.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Material": "Solid brass",
+    "Product codes": "YPBL-809-SS (Satin Steel), YPBL-809-AB (Antique Brass)",
+    "Variants": "Satin Steel, Antique Brass"
+   },
+   "priceRange": null,
+   "image": "eacb8-2"
+  },
+  {
+   "name": "Yale YPBL-810",
+   "sku": "YPBL-810",
+   "shortDescription": "Solid brass lever handle on a rose, with matching escutcheon.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Material": "Solid brass",
+    "Product codes": "YPBL-810-SS (Satin Steel), YPBL-810-AB (Antique Brass)",
+    "Variants": "Satin Steel, Antique Brass"
+   },
+   "priceRange": null,
+   "image": "5566f-2"
+  },
+  {
+   "name": "Yale YPVL-901",
+   "sku": "YPVL-901",
+   "shortDescription": "Premium solid brass lever handle with a PVD finish, on a rose with matching escutcheon.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Material": "Solid brass, PVD finish",
+    "Product codes": "YPVL-901-BM (Black Matt), YPVL-901-RG (Rose Gold)",
+    "Variants": "Black Matt, Rose Gold"
+   },
+   "priceRange": null,
+   "image": "d4b27-2"
+  },
+  {
+   "name": "Yale YPVL-902",
+   "sku": "YPVL-902",
+   "shortDescription": "Premium solid brass lever handle with a PVD finish, on a rose with matching escutcheon.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Material": "Solid brass, PVD finish",
+    "Product codes": "YPVL-902-BM (Black Matt), YPVL-902-RG (Rose Gold)",
+    "Variants": "Black Matt, Rose Gold"
+   },
+   "priceRange": null,
+   "image": "16760-1"
+  },
+  {
+   "name": "Yale YPVL-904",
+   "sku": "YPVL-904",
+   "shortDescription": "Premium solid brass lever handle with a PVD finish, on a rose with matching escutcheon.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Material": "Solid brass, PVD finish",
+    "Product codes": "YPVL-904-BM (Black Matt), YPVL-904-RG (Rose Gold)",
+    "Variants": "Black Matt, Rose Gold"
+   },
+   "priceRange": null,
+   "image": "89ef9-1"
+  },
+  {
+   "name": "Yale YPVL-909",
+   "sku": "YPVL-909",
+   "shortDescription": "Premium solid brass lever handle with a PVD finish, on a rose with matching escutcheon.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Material": "Solid brass, PVD finish",
+    "Product codes": "YPVL-909-BM (Black Matt), YPVL-909-RG (Rose Gold)",
+    "Variants": "Black Matt, Rose Gold"
+   },
+   "priceRange": null,
+   "image": "46615-2"
+  },
+  {
+   "name": "Yale YPVL-910",
+   "sku": "YPVL-910",
+   "shortDescription": "Premium solid brass lever handle with a PVD finish, on a rose with matching escutcheon.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Material": "Solid brass, PVD finish",
+    "Product codes": "YPVL-910-BM (Black Matt), YPVL-910-RG (Rose Gold)",
+    "Variants": "Black Matt, Rose Gold"
+   },
+   "priceRange": null,
+   "image": "a178d-1"
+  },
+  {
+   "name": "Yale YMSL-1001",
+   "sku": "YMSL-1001",
+   "shortDescription": "Marvel series premium lever handle on a rose, with matching escutcheons.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Product codes": "YMSL-1001-SS (Satin Steel), YMSL-1001-AB (Antique Brass), YMSL-1001-BM (Black Matt), YMSL-1001-RG (Rose Gold)",
+    "Variants": "Satin Steel, Antique Brass, Black Matt, Rose Gold"
+   },
+   "priceRange": null,
+   "image": "8c6ac-4"
+  },
+  {
+   "name": "Yale YMSL-1002",
+   "sku": "YMSL-1002",
+   "shortDescription": "Marvel series premium lever handle on a rose, with matching escutcheons.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Product codes": "YMSL-1002-SS (Satin Steel), YMSL-1002-AB (Antique Brass), YMSL-1002-BM (Black Matt), YMSL-1002-RG (Rose Gold)",
+    "Variants": "Satin Steel, Antique Brass, Black Matt, Rose Gold"
+   },
+   "priceRange": null,
+   "image": "4c724-4"
+  },
+  {
+   "name": "Yale YMSL-1004",
+   "sku": "YMSL-1004",
+   "shortDescription": "Marvel series premium lever handle on a rose, with matching escutcheons.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Product codes": "YMSL-1004-SS (Satin Steel), YMSL-1004-AB (Antique Brass), YMSL-1004-BM (Black Matt), YMSL-1004-RG (Rose Gold)",
+    "Variants": "Satin Steel, Antique Brass, Black Matt, Rose Gold"
+   },
+   "priceRange": null,
+   "image": "263be-4"
+  },
+  {
+   "name": "Yale YMSL-1005",
+   "sku": "YMSL-1005",
+   "shortDescription": "Marvel series premium lever handle on a rose, with matching escutcheons.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Product codes": "YMSL-1005-SS (Satin Steel), YMSL-1005-AB (Antique Brass), YMSL-1005-BM (Black Matt), YMSL-1005-RG (Rose Gold)",
+    "Variants": "Satin Steel, Antique Brass, Black Matt, Rose Gold"
+   },
+   "priceRange": null,
+   "image": "47b71-4"
+  },
+  {
+   "name": "Yale YMEL-701",
+   "sku": "YMEL-701",
+   "shortDescription": "Eternal series mortise lever handle on a rose.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Product codes": "YMEL-701-SS (Satin Steel Matt), YMEL-701-AB (Antique Brass Matt), YMEL-701-BM (Black Matt), YMEL-701-RG (Rose Gold Matt)",
+    "Variants": "Satin Steel Matt, Antique Brass Matt, Black Matt, Rose Gold Matt"
+   },
+   "priceRange": null,
+   "image": "5-19"
+  },
+  {
+   "name": "Yale YMEL-702",
+   "sku": "YMEL-702",
+   "shortDescription": "Eternal series mortise lever handle on a rose.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Product codes": "YMEL-702-SS (Satin Steel Matt), YMEL-702-AB (Antique Brass Matt), YMEL-702-BM (Black Matt), YMEL-702-RG (Rose Gold Matt)",
+    "Variants": "Satin Steel Matt, Antique Brass Matt, Black Matt, Rose Gold Matt"
+   },
+   "priceRange": null,
+   "image": "6-17"
+  },
+  {
+   "name": "Yale YMEL-703",
+   "sku": "YMEL-703",
+   "shortDescription": "Eternal series mortise lever handle on a rose.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Product codes": "YMEL-703-SS (Satin Steel Matt), YMEL-703-AB (Antique Brass Matt), YMEL-703-BM (Black Matt), YMEL-703-RG (Rose Gold Matt)",
+    "Variants": "Satin Steel Matt, Antique Brass Matt, Black Matt, Rose Gold Matt"
+   },
+   "priceRange": null,
+   "image": "13-1"
+  },
+  {
+   "name": "Yale YMEL-704",
+   "sku": "YMEL-704",
+   "shortDescription": "Eternal series mortise lever handle on a rose.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Product codes": "YMEL-704-SS (Satin Steel Matt), YMEL-704-AB (Antique Brass Matt), YMEL-704-BM (Black Matt), YMEL-704-RG (Rose Gold Matt)",
+    "Variants": "Satin Steel Matt, Antique Brass Matt, Black Matt, Rose Gold Matt"
+   },
+   "priceRange": null,
+   "image": "18"
+  },
+  {
+   "name": "Yale YMEL-705",
+   "sku": "YMEL-705",
+   "shortDescription": "Eternal series mortise lever handle on a rose.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Product codes": "YMEL-705-SS (Satin Steel Matt), YMEL-705-AB (Antique Brass Matt), YMEL-705-BM (Black Matt), YMEL-705-RG (Rose Gold Matt)",
+    "Variants": "Satin Steel Matt, Antique Brass Matt, Black Matt, Rose Gold Matt"
+   },
+   "priceRange": null,
+   "image": "23"
+  },
+  {
+   "name": "Yale YMEL-706",
+   "sku": "YMEL-706",
+   "shortDescription": "Eternal series mortise lever handle on a rose.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Product codes": "YMEL-706-SS (Satin Steel Matt), YMEL-706-AB (Antique Brass Matt), YMEL-706-BM (Black Matt), YMEL-706-RG (Rose Gold Matt)",
+    "Variants": "Satin Steel Matt, Antique Brass Matt, Black Matt, Rose Gold Matt"
+   },
+   "priceRange": null,
+   "image": "28-3"
+  },
+  {
+   "name": "Yale YMEL-708",
+   "sku": "YMEL-708",
+   "shortDescription": "Eternal series mortise lever handle on a rose.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Product codes": "YMEL-708-SS (Satin Steel Matt), YMEL-708-AB (Antique Brass Matt), YMEL-708-BM (Black Matt), YMEL-708-RG (Rose Gold Matt)",
+    "Variants": "Satin Steel Matt, Antique Brass Matt, Black Matt, Rose Gold Matt"
+   },
+   "priceRange": null,
+   "image": "ymel-708.png"
+  },
+  {
+   "name": "Yale YMEL-901",
+   "sku": "YMEL-901",
+   "shortDescription": "Eternal series mortise lever handle on a rose.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Product codes": "YMEL-901-SS (Satin Steel Matt), YMEL-901-AB (Antique Brass Matt), YMEL-901-BM (Black Matt), YMEL-901-RGM (Rose Gold Matt)",
+    "Variants": "Satin Steel Matt, Antique Brass Matt, Black Matt, Rose Gold Matt"
+   },
+   "priceRange": null,
+   "image": "ymel-901.png"
+  },
+  {
+   "name": "Yale YMEL-902",
+   "sku": "YMEL-902",
+   "shortDescription": "Eternal series mortise lever handle on a rose.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Product codes": "YMEL-902-SS (Satin Steel Matt), YMEL-902-AB (Antique Brass Matt), YMEL-902-BM (Black Matt), YMEL-902-RGM (Rose Gold Matt)",
+    "Variants": "Satin Steel Matt, Antique Brass Matt, Black Matt, Rose Gold Matt"
+   },
+   "priceRange": null,
+   "image": "ymel-902.png"
+  },
+  {
+   "name": "Yale YMEL-903",
+   "sku": "YMEL-903",
+   "shortDescription": "Eternal series mortise lever handle on a rose.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Product codes": "YMEL-903-SS (Satin Steel Matt), YMEL-903-AB (Antique Brass Matt), YMEL-903-BM (Black Matt), YMEL-903-RGM (Rose Gold Matt)",
+    "Variants": "Satin Steel Matt, Antique Brass Matt, Black Matt, Rose Gold Matt"
+   },
+   "priceRange": null,
+   "image": "ymel-903.png"
+  },
+  {
+   "name": "Yale YMEL-904",
+   "sku": "YMEL-904",
+   "shortDescription": "Eternal series mortise lever handle on a rose.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Product codes": "YMEL-904-SS (Satin Steel Matt), YMEL-904-AB (Antique Brass Matt), YMEL-904-BM (Black Matt), YMEL-904-RGM (Rose Gold Matt)",
+    "Variants": "Satin Steel Matt, Antique Brass Matt, Black Matt, Rose Gold Matt"
+   },
+   "priceRange": null,
+   "image": "ymel-904.png"
+  },
+  {
+   "name": "Yale YMEL-905",
+   "sku": "YMEL-905",
+   "shortDescription": "Eternal series mortise lever handle on a rose.",
+   "technicalSpecs": {
+    "Key Features": "Up to 5 years warranty, Suitable for left & right handed doors",
+    "Product codes": "YMEL-905-SS (Satin Steel Matt), YMEL-905-AB (Antique Brass Matt), YMEL-905-BM (Black Matt), YMEL-905-RGM (Rose Gold Matt)",
+    "Variants": "Satin Steel Matt, Antique Brass Matt, Black Matt, Rose Gold Matt"
+   },
+   "priceRange": null,
+   "image": "ymel-905.png"
+  },
+  {
+   "name": "Yale YTL-010",
+   "sku": "YTL-010",
+   "shortDescription": "SS304 stainless steel tubular lever handle with escutcheon, in satin steel.",
+   "technicalSpecs": {
+    "Key Features": "Suitable for left & right handed doors",
+    "Material": "SS304 stainless steel, tubular (hollow)",
+    "Finish": "Satin Steel"
+   },
+   "priceRange": null,
+   "image": "08d0e-ytl010"
+  },
+  {
+   "name": "Yale YTL-050",
+   "sku": "YTL-050",
+   "shortDescription": "SS304 stainless steel tubular lever handle with escutcheon, in satin steel.",
+   "technicalSpecs": {
+    "Key Features": "Suitable for left & right handed doors",
+    "Material": "SS304 stainless steel, tubular (hollow)",
+    "Finish": "Satin Steel"
+   },
+   "priceRange": null,
+   "image": "21eb9-ytl050"
+  },
+  {
+   "name": "Yale YTL-060",
+   "sku": "YTL-060",
+   "shortDescription": "SS304 stainless steel tubular lever handle with escutcheon, in satin steel.",
+   "technicalSpecs": {
+    "Key Features": "Suitable for left & right handed doors",
+    "Material": "SS304 stainless steel, tubular (hollow)",
+    "Finish": "Satin Steel"
+   },
+   "priceRange": null,
+   "image": "0d3b1-ytl060"
+  },
+  {
+   "name": "Yale Essential YE-1101",
+   "sku": "YE-1101",
+   "shortDescription": "Essential series mortise lever handle comboset, on backplate or rose, sold with the cylinder and lockbody to suit.",
+   "technicalSpecs": {
+    "Key Features": "Up to 2 years warranty, Suitable for left & right handed doors",
+    "Finish codes": "AB (Antique Brass), SS (Satin Steel), BM (Black Matt), added at the end of the code",
+    "YE-1101-10P-TT": "Lever handle on 10\" backplate, thumbturn cylinder and lockbody",
+    "YE-1101-10P-DC": "Lever handle on 10\" backplate, double cylinder and lockbody",
+    "YE-1101-8P-TT": "Lever handle on 8\" backplate, thumbturn cylinder and lockbody",
+    "YE-1101-8P-DC": "Lever handle on 8\" backplate, double cylinder and lockbody",
+    "YE-1101-8P-BK": "Lever handle on 8\" backplate, privacy cylinder and lockbody",
+    "YE-1101-5P-BL": "Lever handle on 5\" backplate with baby latch",
+    "YE-1101-OR-TT": "Lever handle on rose & escutcheons, thumbturn cylinder and lockbody",
+    "YE-1101-OR-DC": "Lever handle on rose & escutcheons, double cylinder and lockbody",
+    "YE-1101-OR-BK": "Lever handle on rose & escutcheons, privacy cylinder and lockbody",
+    "YE-1101-OR-BL": "Lever handle on rose with baby latch",
+    "YE-1101-8P-6L": "Lever handle on 8\" plate, six-lever mortise body",
+    "Variants": "Antique Brass, Satin Steel, Black Matt"
+   },
+   "priceRange": null,
+   "image": "1-62"
+  },
+  {
+   "name": "Yale Essential YE-1102",
+   "sku": "YE-1102",
+   "shortDescription": "Essential series mortise lever handle comboset, on backplate or rose, sold with the cylinder and lockbody to suit.",
+   "technicalSpecs": {
+    "Key Features": "Up to 2 years warranty, Suitable for left & right handed doors",
+    "Finish codes": "AB (Antique Brass), SS (Satin Steel), BM (Black Matt), added at the end of the code",
+    "YE-1102-10P-TT": "Lever handle on 10\" backplate, thumbturn cylinder and lockbody",
+    "YE-1102-10P-DC": "Lever handle on 10\" backplate, double cylinder and lockbody",
+    "YE-1102-8P-TT": "Lever handle on 8\" backplate, thumbturn cylinder and lockbody",
+    "YE-1102-8P-DC": "Lever handle on 8\" backplate, double cylinder and lockbody",
+    "YE-1102-8P-BK": "Lever handle on 8\" backplate, privacy cylinder and lockbody",
+    "YE-1102-5P-BL": "Lever handle on 5\" backplate with baby latch",
+    "YE-1102-OR-TT": "Lever handle on rose & escutcheons, thumbturn cylinder and lockbody",
+    "YE-1102-OR-DC": "Lever handle on rose & escutcheons, double cylinder and lockbody",
+    "YE-1102-OR-BK": "Lever handle on rose & escutcheons, privacy cylinder and lockbody",
+    "YE-1102-OR-BL": "Lever handle on rose with baby latch",
+    "YE-1102-8P-6L": "Lever handle on 8\" plate, six-lever mortise body",
+    "Variants": "Antique Brass, Satin Steel, Black Matt"
+   },
+   "priceRange": null,
+   "image": "1-66"
+  },
+  {
+   "name": "Yale Essential YE-1103",
+   "sku": "YE-1103",
+   "shortDescription": "Essential series mortise lever handle comboset, on backplate or rose, sold with the cylinder and lockbody to suit.",
+   "technicalSpecs": {
+    "Key Features": "Up to 2 years warranty, Suitable for left & right handed doors",
+    "Finish codes": "AB (Antique Brass), SS (Satin Steel), BM (Black Matt), added at the end of the code",
+    "YE-1103-10P-TT": "Lever handle on 10\" backplate, thumbturn cylinder and lockbody",
+    "YE-1103-10P-DC": "Lever handle on 10\" backplate, double cylinder and lockbody",
+    "YE-1103-8P-TT": "Lever handle on 8\" backplate, thumbturn cylinder and lockbody",
+    "YE-1103-8P-DC": "Lever handle on 8\" backplate, double cylinder and lockbody",
+    "YE-1103-8P-BK": "Lever handle on 8\" backplate, privacy cylinder and lockbody",
+    "YE-1103-5P-BL": "Lever handle on 5\" backplate with baby latch",
+    "YE-1103-OR-TT": "Lever handle on rose & escutcheons, thumbturn cylinder and lockbody",
+    "YE-1103-OR-DC": "Lever handle on rose & escutcheons, double cylinder and lockbody",
+    "YE-1103-OR-BK": "Lever handle on rose & escutcheons, privacy cylinder and lockbody",
+    "YE-1103-OR-BL": "Lever handle on rose with baby latch",
+    "YE-1103-8P-6L": "Lever handle on 8\" plate, six-lever mortise body",
+    "Variants": "Antique Brass, Satin Steel, Black Matt"
+   },
+   "priceRange": null,
+   "image": "1-70"
+  },
+  {
+   "name": "Yale Essential YE-1104",
+   "sku": "YE-1104",
+   "shortDescription": "Essential series mortise lever handle comboset, on backplate or rose, sold with the cylinder and lockbody to suit.",
+   "technicalSpecs": {
+    "Key Features": "Up to 2 years warranty, Suitable for left & right handed doors",
+    "Finish codes": "AB (Antique Brass), SS (Satin Steel), BM (Black Matt), added at the end of the code",
+    "YE-1104-10P-TT": "Lever handle on 10\" backplate, thumbturn cylinder and lockbody",
+    "YE-1104-10P-DC": "Lever handle on 10\" backplate, double cylinder and lockbody",
+    "YE-1104-8P-TT": "Lever handle on 8\" backplate, thumbturn cylinder and lockbody",
+    "YE-1104-8P-DC": "Lever handle on 8\" backplate, double cylinder and lockbody",
+    "YE-1104-8P-BK": "Lever handle on 8\" backplate, privacy cylinder and lockbody",
+    "YE-1104-5P-BL": "Lever handle on 5\" backplate with baby latch",
+    "YE-1104-OR-TT": "Lever handle on rose & escutcheons, thumbturn cylinder and lockbody",
+    "YE-1104-OR-DC": "Lever handle on rose & escutcheons, double cylinder and lockbody",
+    "YE-1104-OR-BK": "Lever handle on rose & escutcheons, privacy cylinder and lockbody",
+    "YE-1104-OR-BL": "Lever handle on rose with baby latch",
+    "YE-1104-8P-6L": "Lever handle on 8\" plate, six-lever mortise body",
+    "Variants": "Antique Brass, Satin Steel, Black Matt"
+   },
+   "priceRange": null,
+   "image": "1-78"
+  },
+  {
+   "name": "Yale Essential YE-1105",
+   "sku": "YE-1105",
+   "shortDescription": "Essential series mortise lever handle comboset, on backplate or rose, sold with the cylinder and lockbody to suit.",
+   "technicalSpecs": {
+    "Key Features": "Up to 2 years warranty, Suitable for left & right handed doors",
+    "Finish codes": "AB (Antique Brass), SS (Satin Steel), BM (Black Matt), added at the end of the code",
+    "YE-1105-10P-TT": "Lever handle on 10\" backplate, thumbturn cylinder and lockbody",
+    "YE-1105-10P-DC": "Lever handle on 10\" backplate, double cylinder and lockbody",
+    "YE-1105-8P-TT": "Lever handle on 8\" backplate, thumbturn cylinder and lockbody",
+    "YE-1105-8P-DC": "Lever handle on 8\" backplate, double cylinder and lockbody",
+    "YE-1105-8P-BK": "Lever handle on 8\" backplate, privacy cylinder and lockbody",
+    "YE-1105-5P-BL": "Lever handle on 5\" backplate with baby latch",
+    "YE-1105-OR-TT": "Lever handle on rose & escutcheons, thumbturn cylinder and lockbody",
+    "YE-1105-OR-DC": "Lever handle on rose & escutcheons, double cylinder and lockbody",
+    "YE-1105-OR-BK": "Lever handle on rose & escutcheons, privacy cylinder and lockbody",
+    "YE-1105-OR-BL": "Lever handle on rose with baby latch",
+    "YE-1105-8P-6L": "Lever handle on 8\" plate, six-lever mortise body",
+    "Variants": "Antique Brass, Satin Steel, Black Matt"
+   },
+   "priceRange": null,
+   "image": "1-74"
+  },
+  {
+   "name": "Yale Essential YE-1107",
+   "sku": "YE-1107",
+   "shortDescription": "Essential series mortise lever handle comboset, on backplate or rose, sold with the cylinder and lockbody to suit.",
+   "technicalSpecs": {
+    "Key Features": "Up to 2 years warranty, Suitable for left & right handed doors",
+    "Finish codes": "AB (Antique Brass), SS (Satin Steel), BM (Black Matt), added at the end of the code",
+    "YE-1107-10P-TT": "Lever handle on 10\" backplate, thumbturn cylinder and lockbody",
+    "YE-1107-10P-DC": "Lever handle on 10\" backplate, double cylinder and lockbody",
+    "YE-1107-8P-TT": "Lever handle on 8\" backplate, thumbturn cylinder and lockbody",
+    "YE-1107-8P-DC": "Lever handle on 8\" backplate, double cylinder and lockbody",
+    "YE-1107-8P-BK": "Lever handle on 8\" backplate, privacy cylinder and lockbody",
+    "YE-1107-5P-BL": "Lever handle on 5\" backplate with baby latch",
+    "YE-1107-OR-TT": "Lever handle on rose & escutcheons, thumbturn cylinder and lockbody",
+    "YE-1107-OR-DC": "Lever handle on rose & escutcheons, double cylinder and lockbody",
+    "YE-1107-OR-BK": "Lever handle on rose & escutcheons, privacy cylinder and lockbody",
+    "YE-1107-OR-BL": "Lever handle on rose with baby latch",
+    "YE-1107-8P-6L": "Lever handle on 8\" plate, six-lever mortise body",
+    "Variants": "Antique Brass, Satin Steel, Black Matt"
+   },
+   "priceRange": null,
+   "image": "1-94"
+  },
+  {
+   "name": "Yale Essential YE-1108",
+   "sku": "YE-1108",
+   "shortDescription": "Essential series mortise lever handle comboset, on backplate or rose, sold with the cylinder and lockbody to suit.",
+   "technicalSpecs": {
+    "Key Features": "Up to 2 years warranty, Suitable for left & right handed doors",
+    "Finish codes": "AB (Antique Brass), SS (Satin Steel), BM (Black Matt), added at the end of the code",
+    "YE-1108-10P-TT": "Lever handle on 10\" backplate, thumbturn cylinder and lockbody",
+    "YE-1108-10P-DC": "Lever handle on 10\" backplate, double cylinder and lockbody",
+    "YE-1108-8P-TT": "Lever handle on 8\" backplate, thumbturn cylinder and lockbody",
+    "YE-1108-8P-DC": "Lever handle on 8\" backplate, double cylinder and lockbody",
+    "YE-1108-8P-BK": "Lever handle on 8\" backplate, privacy cylinder and lockbody",
+    "YE-1108-5P-BL": "Lever handle on 5\" backplate with baby latch",
+    "YE-1108-OR-TT": "Lever handle on rose & escutcheons, thumbturn cylinder and lockbody",
+    "YE-1108-OR-DC": "Lever handle on rose & escutcheons, double cylinder and lockbody",
+    "YE-1108-OR-BK": "Lever handle on rose & escutcheons, privacy cylinder and lockbody",
+    "YE-1108-OR-BL": "Lever handle on rose with baby latch",
+    "YE-1108-8P-6L": "Lever handle on 8\" plate, six-lever mortise body",
+    "Variants": "Antique Brass, Satin Steel, Black Matt"
+   },
+   "priceRange": null,
+   "image": "2-94"
+  },
+  {
+   "name": "Yale Essential YE-1109",
+   "sku": "YE-1109",
+   "shortDescription": "Essential series mortise lever handle comboset, on backplate or rose, sold with the cylinder and lockbody to suit.",
+   "technicalSpecs": {
+    "Key Features": "Up to 2 years warranty, Suitable for left & right handed doors",
+    "Finish codes": "AB (Antique Brass), SS (Satin Steel), BM (Black Matt), added at the end of the code",
+    "YE-1109-10P-TT": "Lever handle on 10\" backplate, thumbturn cylinder and lockbody",
+    "YE-1109-10P-DC": "Lever handle on 10\" backplate, double cylinder and lockbody",
+    "YE-1109-8P-TT": "Lever handle on 8\" backplate, thumbturn cylinder and lockbody",
+    "YE-1109-8P-DC": "Lever handle on 8\" backplate, double cylinder and lockbody",
+    "YE-1109-8P-BK": "Lever handle on 8\" backplate, privacy cylinder and lockbody",
+    "YE-1109-5P-BL": "Lever handle on 5\" backplate with baby latch",
+    "YE-1109-OR-TT": "Lever handle on rose & escutcheons, thumbturn cylinder and lockbody",
+    "YE-1109-OR-DC": "Lever handle on rose & escutcheons, double cylinder and lockbody",
+    "YE-1109-OR-BK": "Lever handle on rose & escutcheons, privacy cylinder and lockbody",
+    "YE-1109-OR-BL": "Lever handle on rose with baby latch",
+    "YE-1109-8P-6L": "Lever handle on 8\" plate, six-lever mortise body",
+    "Variants": "Antique Brass, Satin Steel, Black Matt"
+   },
+   "priceRange": null,
+   "image": "YE-1109_Page_06"
+  },
+  {
+   "name": "Yale Essential YE-1110",
+   "sku": "YE-1110",
+   "shortDescription": "Essential series mortise lever handle comboset, on backplate or rose, sold with the cylinder and lockbody to suit.",
+   "technicalSpecs": {
+    "Key Features": "Up to 2 years warranty, Suitable for left & right handed doors",
+    "Finish codes": "AB (Antique Brass), SS (Satin Steel), BM (Black Matt), added at the end of the code",
+    "YE-1110-10P-TT": "Lever handle on 10\" backplate, thumbturn cylinder and lockbody",
+    "YE-1110-10P-DC": "Lever handle on 10\" backplate, double cylinder and lockbody",
+    "YE-1110-8P-TT": "Lever handle on 8\" backplate, thumbturn cylinder and lockbody",
+    "YE-1110-8P-DC": "Lever handle on 8\" backplate, double cylinder and lockbody",
+    "YE-1110-8P-BK": "Lever handle on 8\" backplate, privacy cylinder and lockbody",
+    "YE-1110-5P-BL": "Lever handle on 5\" backplate with baby latch",
+    "YE-1110-OR-TT": "Lever handle on rose & escutcheons, thumbturn cylinder and lockbody",
+    "YE-1110-OR-DC": "Lever handle on rose & escutcheons, double cylinder and lockbody",
+    "YE-1110-OR-BK": "Lever handle on rose & escutcheons, privacy cylinder and lockbody",
+    "YE-1110-OR-BL": "Lever handle on rose with baby latch",
+    "YE-1110-8P-6L": "Lever handle on 8\" plate, six-lever mortise body",
+    "Variants": "Antique Brass, Satin Steel, Black Matt"
+   },
+   "priceRange": null,
+   "image": "ye-1110.png"
+  },
+  {
+   "name": "Yale Essential YE-1201",
+   "sku": "YE-1201",
+   "shortDescription": "Essential series mortise lever handle comboset, on backplate or rose, sold with the cylinder and lockbody to suit.",
+   "technicalSpecs": {
+    "Key Features": "Up to 2 years warranty, Suitable for left & right handed doors",
+    "Finish codes": "AB (Antique Brass), SS (Satin Steel), BM (Black Matt), added at the end of the code",
+    "YE-1201-10P-TT": "Lever handle on 10\" backplate, thumbturn cylinder and lockbody",
+    "YE-1201-10P-DC": "Lever handle on 10\" backplate, double cylinder and lockbody",
+    "YE-1201-8P-TT": "Lever handle on 8\" backplate, thumbturn cylinder and lockbody",
+    "YE-1201-8P-DC": "Lever handle on 8\" backplate, double cylinder and lockbody",
+    "YE-1201-8P-BK": "Lever handle on 8\" backplate, privacy cylinder and lockbody",
+    "YE-1201-5P-BL": "Lever handle on 5\" backplate with baby latch",
+    "YE-1201-OR-TT": "Lever handle on rose & escutcheons, thumbturn cylinder and lockbody",
+    "YE-1201-OR-DC": "Lever handle on rose & escutcheons, double cylinder and lockbody",
+    "YE-1201-OR-BK": "Lever handle on rose & escutcheons, privacy cylinder and lockbody",
+    "YE-1201-OR-BL": "Lever handle on rose with baby latch",
+    "YE-1201-8P-6L": "Lever handle on 8\" plate, six-lever mortise body",
+    "Variants": "Antique Brass, Satin Steel, Black Matt"
+   },
+   "priceRange": null,
+   "image": "ye-1201.png"
+  },
+  {
+   "name": "Yale Essential YE-1202",
+   "sku": "YE-1202",
+   "shortDescription": "Essential series mortise lever handle comboset, on backplate or rose, sold with the cylinder and lockbody to suit.",
+   "technicalSpecs": {
+    "Key Features": "Up to 2 years warranty, Suitable for left & right handed doors",
+    "Finish codes": "AB (Antique Brass), SS (Satin Steel), BM (Black Matt), added at the end of the code",
+    "YE-1202-10P-TT": "Lever handle on 10\" backplate, thumbturn cylinder and lockbody",
+    "YE-1202-10P-DC": "Lever handle on 10\" backplate, double cylinder and lockbody",
+    "YE-1202-8P-TT": "Lever handle on 8\" backplate, thumbturn cylinder and lockbody",
+    "YE-1202-8P-DC": "Lever handle on 8\" backplate, double cylinder and lockbody",
+    "YE-1202-8P-BK": "Lever handle on 8\" backplate, privacy cylinder and lockbody",
+    "YE-1202-5P-BL": "Lever handle on 5\" backplate with baby latch",
+    "YE-1202-OR-TT": "Lever handle on rose & escutcheons, thumbturn cylinder and lockbody",
+    "YE-1202-OR-DC": "Lever handle on rose & escutcheons, double cylinder and lockbody",
+    "YE-1202-OR-BK": "Lever handle on rose & escutcheons, privacy cylinder and lockbody",
+    "YE-1202-OR-BL": "Lever handle on rose with baby latch",
+    "YE-1202-8P-6L": "Lever handle on 8\" plate, six-lever mortise body",
+    "Variants": "Antique Brass, Satin Steel, Black Matt"
+   },
+   "priceRange": null,
+   "image": "ye-1202.png"
+  },
+  {
+   "name": "Yale Essential YE-1203",
+   "sku": "YE-1203",
+   "shortDescription": "Essential series mortise lever handle comboset, on backplate or rose, sold with the cylinder and lockbody to suit.",
+   "technicalSpecs": {
+    "Key Features": "Up to 2 years warranty, Suitable for left & right handed doors",
+    "Finish codes": "AB (Antique Brass), SS (Satin Steel), BM (Black Matt), added at the end of the code",
+    "YE-1203-10P-TT": "Lever handle on 10\" backplate, thumbturn cylinder and lockbody",
+    "YE-1203-10P-DC": "Lever handle on 10\" backplate, double cylinder and lockbody",
+    "YE-1203-8P-TT": "Lever handle on 8\" backplate, thumbturn cylinder and lockbody",
+    "YE-1203-8P-DC": "Lever handle on 8\" backplate, double cylinder and lockbody",
+    "YE-1203-8P-BK": "Lever handle on 8\" backplate, privacy cylinder and lockbody",
+    "YE-1203-5P-BL": "Lever handle on 5\" backplate with baby latch",
+    "YE-1203-OR-TT": "Lever handle on rose & escutcheons, thumbturn cylinder and lockbody",
+    "YE-1203-OR-DC": "Lever handle on rose & escutcheons, double cylinder and lockbody",
+    "YE-1203-OR-BK": "Lever handle on rose & escutcheons, privacy cylinder and lockbody",
+    "YE-1203-OR-BL": "Lever handle on rose with baby latch",
+    "YE-1203-8P-6L": "Lever handle on 8\" plate, six-lever mortise body",
+    "Variants": "Antique Brass, Satin Steel, Black Matt"
+   },
+   "priceRange": null,
+   "image": "ye-1203.png"
+  }
+ ]
+}

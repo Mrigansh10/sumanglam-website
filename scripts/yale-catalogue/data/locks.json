@@ -1,0 +1,549 @@
+{
+ "category": "locks",
+ "siteCategory": "locks-and-security",
+ "brand": "yale",
+ "source": "Yale Price List 2026 (w.e.f 24 April 2026)",
+ "products": [
+  {
+   "name": "Yale Secura YSMC-8545 Mortise Lock Set",
+   "sku": "YSMC-8545",
+   "shortDescription": "Secura mortise lock set: 85 mm C2C lockbody with 45 mm backset, latch and deadbolt, with a 60 or 70 mm dimple-key cylinder.",
+   "technicalSpecs": {
+    "Type": "Mortise lockbody with cylinder",
+    "C2C / backset": "85 mm / 45 mm",
+    "Bolts": "Latch & deadbolt",
+    "YSMC-8545/60MMTTDK-(XX)": "60 mm thumbturn cylinder, dimple key",
+    "YSMC-8545/60MMDCDK-(XX)": "60 mm double cylinder, dimple key",
+    "YSMC-8545/60MMBK-(XX)": "60 mm privacy (bathroom) cylinder",
+    "YSMC-8545/70MMTTDK-(XX)": "70 mm thumbturn cylinder, dimple key",
+    "YSMC-8545/70MMDCDK-(XX)": "70 mm double cylinder, dimple key",
+    "YSMC-8545/70MMBK-(XX)": "70 mm privacy (bathroom) cylinder",
+    "Finish codes (XX)": "SS Satin Steel, AB Antique Brass, BM Black Matt, RG Rose Gold",
+    "Variants": "Satin Steel, Antique Brass, Black Matt, Rose Gold"
+   },
+   "priceRange": null,
+   "image": "ysmc-8545.png"
+  },
+  {
+   "name": "Yale YSM 9250 Magnetic Mortise Lock",
+   "sku": "YSM-9250",
+   "shortDescription": "Magnetic mortise lock, 92 mm C2C with 50 mm backset, in satin steel.",
+   "technicalSpecs": {
+    "Type": "Magnetic mortise lock",
+    "C2C / backset": "92 mm / 50 mm",
+    "Finish": "Satin Steel"
+   },
+   "priceRange": "₹3,540",
+   "image": "7dc8f-img1815"
+  },
+  {
+   "name": "Yale YSM 8550 Magnetic Mortise Lock",
+   "sku": "YSM-8550",
+   "shortDescription": "Magnetic mortise lock, 85 mm C2C with 50 mm backset, latch and bolt, in satin steel.",
+   "technicalSpecs": {
+    "Type": "Magnetic mortise lock",
+    "C2C / backset": "85 mm / 50 mm",
+    "Bolts": "Latch & bolt",
+    "Finish": "Satin Steel"
+   },
+   "priceRange": "₹2,320",
+   "image": "7dc8f-img1815"
+  },
+  {
+   "name": "Yale 4S-7085 Mortise Lockbody",
+   "sku": "4S-7085",
+   "shortDescription": "Four-stroke mortise lockbody, 85 mm C2C with 70 mm backset.",
+   "technicalSpecs": {
+    "Type": "Mortise lockbody",
+    "C2C / backset": "85 mm / 70 mm",
+    "Stroke": "4 stroke",
+    "Product codes": "4S-7085-SS (Satin Steel), 4S-7085-AB (Antique Brass)",
+    "Variants": "Satin Steel, Antique Brass"
+   },
+   "priceRange": "₹2,280",
+   "image": "4S7085"
+  },
+  {
+   "name": "Yale RP E3B Mortise Lockbody",
+   "sku": "RP-E3B",
+   "shortDescription": "Three-bolt entrance mortise lockbody, 85 mm C2C, with 45 or 60 mm backset, in satin stainless steel.",
+   "technicalSpecs": {
+    "Type": "Mortise lockbody, 3 bolt, entrance",
+    "C2C": "85 mm",
+    "Product codes": "RP E3B 45 (45 mm backset), RP E3B 60 (60 mm backset)",
+    "Finish": "Satin Stainless Steel",
+    "Variants": "45 mm backset, 60 mm backset"
+   },
+   "priceRange": "₹3,300",
+   "image": "RPE3B45"
+  },
+  {
+   "name": "Yale EN85 Mortise Lockbody",
+   "sku": "EN85",
+   "shortDescription": "EN standard mortise lockbody, 85 mm C2C, with 45 or 60 mm backset, painted.",
+   "technicalSpecs": {
+    "Type": "Mortise lockbody, EN standard",
+    "C2C": "85 mm",
+    "Product codes": "EN85/45 (45 mm backset), EN85/60 (60 mm backset)",
+    "Finish": "Painted",
+    "Variants": "45 mm backset, 60 mm backset"
+   },
+   "priceRange": "₹1,740",
+   "image": "EN85451"
+  },
+  {
+   "name": "Yale 18 P1.50 Latch Mortise Lockbody",
+   "sku": "18-P1.50-SS04",
+   "shortDescription": "Latch-only mortise lockbody with 50 mm backset.",
+   "technicalSpecs": {
+    "Type": "Mortise lockbody, latch only",
+    "Backset": "50 mm",
+    "Product codes": "18 P1.50 SS04-S (Satin Stainless Steel), 18 P1.50 SS04-AB (Antique Brass)",
+    "Variants": "Satin Steel, Antique Brass"
+   },
+   "priceRange": "₹1,060",
+   "image": "18P150"
+  },
+  {
+   "name": "Yale 18 P3.50 Mortise Lockbody",
+   "sku": "18-P3.50",
+   "shortDescription": "Mortise lockbody, 50 mm C2C and 50 mm backset, with latch and deadbolt.",
+   "technicalSpecs": {
+    "Type": "Mortise lockbody",
+    "C2C / backset": "50 mm / 50 mm",
+    "Bolts": "Latch & deadbolt",
+    "Product codes": "18 P3.50-S (Satin Steel), 18 P3.50-AB (Antique Brass)",
+    "Variants": "Satin Steel, Antique Brass"
+   },
+   "priceRange": "₹1,300",
+   "image": "18P350S"
+  },
+  {
+   "name": "Yale 18 P4.50-ESC Mortise Deadbolt",
+   "sku": "18-P4.50-ESC",
+   "shortDescription": "Mortise deadbolt with escutcheons, 50 mm backset.",
+   "technicalSpecs": {
+    "Type": "Mortise deadbolt with escutcheons",
+    "Backset": "50 mm",
+    "Finish codes": "SS, AB, BM, PRG (Rose Gold PVD)",
+    "Variants": "Satin Steel, Antique Brass, Black Matt, Rose Gold"
+   },
+   "priceRange": "₹1,200",
+   "image": "18P450ESC"
+  },
+  {
+   "name": "Yale 18 P1.50 Mortise Babylatch",
+   "sku": "18-P1.50",
+   "shortDescription": "Economy mortise babylatch with 50 mm backset.",
+   "technicalSpecs": {
+    "Type": "Mortise babylatch",
+    "Backset": "50 mm",
+    "Finish codes": "SS, AB, BM, RG",
+    "Variants": "Satin Steel, Antique Brass, Black Matt, Rose Gold"
+   },
+   "priceRange": "₹580",
+   "image": "18P150"
+  },
+  {
+   "name": "Yale Roller Mortise Lock",
+   "sku": "25-RL",
+   "shortDescription": "Economy roller mortise lock, 85 mm C2C, with 60 or 45 mm backset.",
+   "technicalSpecs": {
+    "Type": "Roller mortise lock",
+    "C2C": "85 mm",
+    "Product codes": "25-6085-RL (XX) (60 mm backset), 25-4585-RL (XX) (45 mm backset)",
+    "Finish codes (XX)": "SS, AB, BM, RG",
+    "Variants": "Satin Steel, Antique Brass, Black Matt, Rose Gold"
+   },
+   "priceRange": "₹1,580",
+   "image": "1e04d-img1765"
+  },
+  {
+   "name": "Yale 24-85 BRSS04 Brass Mortise Lockbody",
+   "sku": "24-85-BRSS04",
+   "shortDescription": "Brass mortise lockbody, 85 mm C2C, with latch and deadbolt, in 45 or 60 mm backset.",
+   "technicalSpecs": {
+    "Type": "Mortise lockbody, brass",
+    "C2C": "85 mm",
+    "Bolts": "Latch & deadbolt",
+    "Product codes": "24-8545 BRSS04-S / AB-S / PBM / PRG (45 mm backset), 24-8560 BRSS04-S / AB-S / PBM / PRG (60 mm backset)",
+    "Variants": "Satin Steel, Antique Brass, Black Matt PVD, Rose Gold PVD"
+   },
+   "priceRange": "₹1,740",
+   "image": "1e04d-img1765"
+  },
+  {
+   "name": "Yale 22-85 ECO Mortise Lockbody",
+   "sku": "22-85-ECO",
+   "shortDescription": "Economy mortise lockbody, 85 mm C2C, with latch and deadbolt, in 45 or 60 mm backset.",
+   "technicalSpecs": {
+    "Type": "Mortise lockbody, economy",
+    "C2C": "85 mm",
+    "Bolts": "Latch & deadbolt",
+    "Product codes": "22-8545-(S / AB-S / BM-S / RG-S / RGM-S / ANTH-S) (45 mm backset), 22-8560-(S / AB-S / BM-S / RG-S / RGM-S / ANTH-S) (60 mm backset)",
+    "Variants": "Satin Steel, Antique Brass, Black Matt, Rose Gold, Rose Gold Matt, Anthracite"
+   },
+   "priceRange": "₹1,180",
+   "image": "c895a-img1853"
+  },
+  {
+   "name": "Yale Kratos Rim Lock",
+   "sku": "KRATOS",
+   "shortDescription": "Kratos tribolt rim lock with 4 dimple keys: latch and two deadbolts, or three deadbolts, with thumbturn or double cylinder.",
+   "technicalSpecs": {
+    "Type": "Rim lock, tribolt",
+    "KRT-LB-TT (XX)": "2 deadbolts + 1 latch bolt, thumbturn",
+    "KRT-3B-TT (XX)": "3 deadbolts, thumbturn",
+    "KRT-3B-DC (XX)": "3 deadbolts, double cylinder",
+    "Keys": "4 dimple keys",
+    "Finish codes (XX)": "SSM/BN, ABM/BN, BM/BN, BM/RG, RGM/RG",
+    "Variants": "Satin Steel Matt & Black Nickel, Antique Brass Matt & Black Nickel, Black Matt & Black Nickel, Black Matt & Rose Gold, Rose Gold Matt & Rose Gold"
+   },
+   "priceRange": "₹4,640",
+   "image": "1-270"
+  },
+  {
+   "name": "Yale Cinco CBD Rim Lock",
+   "sku": "CBD-500",
+   "shortDescription": "Cinco rim lock with five deadbolts, single cylinder with thumbturn or double cylinder, 4 dimple keys.",
+   "technicalSpecs": {
+    "Type": "Rim lock, 5 deadbolts",
+    "CBD-500(XX)-TT": "Thumbturn with key",
+    "CBD-500(XX)-DC": "Double cylinder",
+    "Keys": "4 dimple keys",
+    "Finish codes (XX)": "SIL Silver, AB Antique Brass, BLK+RG Black & Rose Gold, RGL Rose Gold",
+    "Variants": "Silver, Antique Brass, Black & Rose Gold, Rose Gold"
+   },
+   "priceRange": "₹9,080",
+   "image": "34886-cbd-500sil-tt"
+  },
+  {
+   "name": "Yale Cinco CBR Rim Lock",
+   "sku": "CBR-500",
+   "shortDescription": "Cinco rim lock with four deadbolts, single cylinder and thumbturn, 4 dimple keys.",
+   "technicalSpecs": {
+    "Type": "Rim lock, 4 deadbolts",
+    "CBR-500(XX)-TT": "Thumbturn with key",
+    "Keys": "4 dimple keys",
+    "Finish codes (XX)": "SIL, AB, BLK+RG, RGL",
+    "Variants": "Silver, Antique Brass, Black & Rose Gold, Rose Gold"
+   },
+   "priceRange": "₹8,620",
+   "image": "fe304-cbr-500sil"
+  },
+  {
+   "name": "Yale Cinco Vertibolt Guard Rim Lock",
+   "sku": "CVB-500",
+   "shortDescription": "Cinco vertibolt guard rim lock, single cylinder with thumbturn or double cylinder, 4 dimple keys.",
+   "technicalSpecs": {
+    "Type": "Rim lock, vertical bolt",
+    "CVB-500(XX)-TT": "Thumbturn with key",
+    "CVB-500(XX)-DC": "Double cylinder",
+    "Keys": "4 dimple keys",
+    "Finish codes (XX)": "SIL, AB, BM, BLK+RG, RGL",
+    "Variants": "Silver, Antique Brass, Black Matt, Black & Rose Gold, Rose Gold"
+   },
+   "priceRange": "₹6,000",
+   "image": "1-33"
+  },
+  {
+   "name": "Yale R600 Rim Lock",
+   "sku": "R600",
+   "shortDescription": "Rim lock with latch and deadbolt, thumbturn, 4 dimple keys.",
+   "technicalSpecs": {
+    "Type": "Rim lock, latch & deadbolt",
+    "R600 TT DK (XX)": "Thumbturn, dimple key",
+    "Keys": "4 dimple keys",
+    "Finish codes (XX)": "SIL, AB, BLK+AB, BLK+RG",
+    "Variants": "Silver, Antique Brass, Black & Antique Brass, Black & Rose Gold"
+   },
+   "priceRange": "₹3,120",
+   "image": "b5ac2-r600-tt-dk"
+  },
+  {
+   "name": "Yale VB 100 Vertical Bolt Rim Lock",
+   "sku": "VB-100",
+   "shortDescription": "Vertical bolt rim lock, one-side key with knob or both-side key, with dimple keys; keyed-alike VBKA versions available.",
+   "technicalSpecs": {
+    "Type": "Rim lock, vertical bolt",
+    "VB 100 TTDK (XX)": "One-side key, one-side knob",
+    "VB 100 DCDK (XX)": "Both-side key",
+    "VBKA 100 TTDK (XX)": "One-side key, keyed alike",
+    "VBKA 100 DCDK (XX)": "Both-side key, keyed alike",
+    "Finish codes (XX)": "SIL Silver, AB Antique Brass",
+    "Variants": "Silver, Antique Brass"
+   },
+   "priceRange": "₹4,080",
+   "image": "1-60"
+  },
+  {
+   "name": "Yale YE Series Rim Lock",
+   "sku": "YE-Rim",
+   "shortDescription": "Rim lock with latch and deadbolts, thumbturn, in ivory.",
+   "technicalSpecs": {
+    "Type": "Rim lock",
+    "YE-MDL-3B-DC-DK-IN": "2 deadbolts + 1 latch bolt",
+    "YE-MDL-3B-TT-DK-IN": "3 deadbolts",
+    "YE-MDL-LB-TT-DK-IN": "3 deadbolts",
+    "YE-NL-LB-TT-DK-IN": "1 deadbolt + 1 latch",
+    "Finish": "Ivory"
+   },
+   "priceRange": "₹2,080",
+   "image": "YE-MDL-3B-TT-DK-IN-2"
+  },
+  {
+   "name": "Yale R300 Tribolt Rim Lock",
+   "sku": "R300-3B",
+   "shortDescription": "R300 tribolt rim lock with thumbturn, 3 regular keys.",
+   "technicalSpecs": {
+    "Type": "Rim lock, tribolt",
+    "Product codes": "R300 3B TT, R300 3B-TT AB (Antique Brass)",
+    "Keys": "3 regular keys"
+   },
+   "priceRange": "₹2,460",
+   "image": "r300-tribolt.png"
+  },
+  {
+   "name": "Yale R300 Deadbolt Rim Lock",
+   "sku": "R300-DB",
+   "shortDescription": "R300 deadbolt rim lock with thumbturn, 3 regular keys.",
+   "technicalSpecs": {
+    "Type": "Rim lock, deadbolt",
+    "Product codes": "R300 DB TT, R300 DB TT AB (Antique Brass)",
+    "Keys": "3 regular keys"
+   },
+   "priceRange": "₹1,840",
+   "image": "r300-deadbolt.png"
+  },
+  {
+   "name": "Yale RL1000A Latch Bolt Rim Lock",
+   "sku": "RL1000A-LB",
+   "shortDescription": "RL1000A tribolt rim lock with latch, thumbturn, 4 dimple keys.",
+   "technicalSpecs": {
+    "Type": "Rim lock, tribolt with latch",
+    "RL1000A LB TT (XX)": "Thumbturn",
+    "Keys": "4 dimple keys",
+    "Finish codes (XX)": "P Painted, AB Antique Brass, BLK+RG Black & Rose Gold",
+    "Variants": "Painted, Antique Brass, Black & Rose Gold"
+   },
+   "priceRange": "₹3,780",
+   "image": "RL1000A LB-1"
+  },
+  {
+   "name": "Yale RL1000A Tribolt Rim Lock",
+   "sku": "RL1000A-3B",
+   "shortDescription": "RL1000A tribolt rim lock in antique brass, thumbturn or double cylinder, 4 dimple keys.",
+   "technicalSpecs": {
+    "Type": "Rim lock, tribolt",
+    "Product codes": "RL1000A 3B TT-AB (thumbturn), RL1000A 3B DC-AB (double cylinder)",
+    "Keys": "4 dimple keys",
+    "Finish": "Antique Brass"
+   },
+   "priceRange": "₹4,020",
+   "image": "rl1000a-tribolt.png"
+  },
+  {
+   "name": "Yale YEL-200 Electric Rim Lock",
+   "sku": "YEL-200",
+   "shortDescription": "Electric rim lock with roller latch, reversible bolt and night and free modes.",
+   "technicalSpecs": {
+    "Type": "Electric rim lock",
+    "Features": "Roller latch, reversible bolt, night & free mode",
+    "Product codes": "YEL-200 MB (Matt Black), YEL-200 SN (Satin Nickel)",
+    "Variants": "Matt Black, Satin Nickel"
+   },
+   "priceRange": "₹4,150",
+   "image": "YEL 200 MB"
+  },
+  {
+   "name": "Yale YEL-200 Transformer",
+   "sku": "YEL-200TNSFR",
+   "shortDescription": "Transformer for the Yale YEL series electric rim lock.",
+   "technicalSpecs": {
+    "Type": "Electric rim lock accessory",
+    "Works with": "YEL series electric rim locks"
+   },
+   "priceRange": "₹1,765",
+   "image": "yel-200tnsfr.png"
+  },
+  {
+   "name": "Yale Fail Secure Electric Strike",
+   "sku": "E7AE-64035R11-51",
+   "shortDescription": "Fail-secure electric strike with stainless steel faceplate, hold-open function and mechanical e-lever.",
+   "technicalSpecs": {
+    "Type": "Electric strike",
+    "Product code": "E7AE-64035R11 51",
+    "Faceplate": "Stainless steel"
+   },
+   "priceRange": "₹2,915",
+   "image": "e7ae-strike.png"
+  },
+  {
+   "name": "Yale CA 5120 Cylindrical Lockset",
+   "sku": "CA-5120",
+   "shortDescription": "Cylindrical knob lockset with 60/70 mm backset, for entrance or bathroom doors.",
+   "technicalSpecs": {
+    "Type": "Cylindrical lockset",
+    "Backset": "60 / 70 mm",
+    "CA5127 (US32D / US5 / US19) 60/70BS": "Entrance",
+    "CA5122 (US32D / US5 / US19) 60/70BS": "Bathroom",
+    "Finish codes": "US32D Satin Stainless Steel, US5 Antique Brass, US19 Black Matt",
+    "Variants": "Satin Stainless Steel, Antique Brass, Black Matt"
+   },
+   "priceRange": "₹1,440",
+   "image": "b8b83-5127series"
+  },
+  {
+   "name": "Yale CN 5120 Cylindrical Lockset",
+   "sku": "CN-5120",
+   "shortDescription": "Cylindrical knob lockset with 60/70 mm backset, in satin stainless steel, for entrance or bathroom doors, with a 65 mm rose option.",
+   "technicalSpecs": {
+    "Type": "Cylindrical lockset",
+    "Backset": "60 / 70 mm",
+    "CN5127 US32D 60/70BS": "Entrance",
+    "CN5122 US32D 60/70BS": "Bathroom",
+    "CN5127 BN/US32D 60/70BS": "Entrance, 65 mm rose",
+    "CN5122 BN/US32D 60/70BS": "Bathroom, 65 mm rose",
+    "Finish": "Satin Stainless Steel"
+   },
+   "priceRange": "₹1,420",
+   "image": "4c7af-5122series"
+  },
+  {
+   "name": "Yale L6510 Lever Lockset",
+   "sku": "L6510",
+   "shortDescription": "Lever lockset for entrance or bathroom doors, in satin nickel or antique brass.",
+   "technicalSpecs": {
+    "Type": "Lever lockset",
+    "L 6517 (US15 / US5)": "Entrance",
+    "L 6512 (US15 / US5)": "Bathroom",
+    "Finish codes": "US15 Satin Nickel, US5 Antique Brass",
+    "Variants": "Satin Nickel, Antique Brass"
+   },
+   "priceRange": "₹3,200",
+   "image": "6cbff-l6517entranceseries"
+  },
+  {
+   "name": "Yale Euro Profile Double Cylinder",
+   "sku": "Euro-DC-DK",
+   "shortDescription": "Brass euro profile double cylinder with 5 computerised dimple keys, 60 to 90 mm.",
+   "technicalSpecs": {
+    "Type": "Euro profile cylinder, double",
+    "Material": "Brass body, knob and keys",
+    "Keys": "5 dimple keys",
+    "Sizes": "60, 70, 80, 90 mm",
+    "Product codes": "60/70/80/90 MM (XX)(YY) DK-S",
+    "Finish codes (YY)": "SN Satin Nickel, AB Antique Brass, PBM Black Matt PVD, PRG Rose Gold PVD",
+    "Variants": "Satin Nickel, Antique Brass, Black Matt PVD, Rose Gold PVD"
+   },
+   "priceRange": "₹1,400",
+   "image": "093e8-doublecylinders"
+  },
+  {
+   "name": "Yale Euro Profile Thumbturn Cylinder",
+   "sku": "Euro-TT-DK",
+   "shortDescription": "Brass euro profile cylinder with thumbturn and key, dimple keys, 60 to 100 mm.",
+   "technicalSpecs": {
+    "Type": "Euro profile cylinder, thumbturn with key",
+    "Sizes": "60, 70, 80, 90, 100 mm",
+    "Product codes": "60–100 MM TT (YY) DK-S",
+    "Finish codes (YY)": "SN, AB, PBM, PRG",
+    "Variants": "Satin Nickel, Antique Brass, Black Matt PVD, Rose Gold PVD"
+   },
+   "priceRange": "₹1,660",
+   "image": "5c813-thumbturnwithkey"
+  },
+  {
+   "name": "Yale Euro Profile Bathroom Cylinder",
+   "sku": "Euro-BK",
+   "shortDescription": "Euro profile privacy (bathroom) cylinder, 60 to 80 mm.",
+   "technicalSpecs": {
+    "Type": "Euro profile cylinder, bathroom",
+    "Sizes": "60, 70, 80 mm",
+    "Product codes": "60/70/80 MM (YY) BK-S",
+    "Finish codes (YY)": "SN, AB, PBM, PRG",
+    "Variants": "Satin Nickel, Antique Brass, Black Matt PVD, Rose Gold PVD"
+   },
+   "priceRange": "₹1,120",
+   "image": "3e37c-bathroomcylinders"
+  },
+  {
+   "name": "Yale Euro Profile Half Cylinder",
+   "sku": "Euro-Half",
+   "shortDescription": "Euro profile half (single) cylinder, with key or thumbturn, 40 to 50 mm.",
+   "technicalSpecs": {
+    "Type": "Euro profile cylinder, half",
+    "Sizes": "40, 45, 50 mm",
+    "Product codes": "40/45/50 MM HALF (YY)-S, 40/45/50 MM TT HALF-S (YY)",
+    "Finish codes (YY)": "SN, AB, BM, RG (40 mm); SN only for 45 and 50 mm",
+    "Variants": "Satin Nickel, Antique Brass, Black Matt, Rose Gold"
+   },
+   "priceRange": "₹1,080",
+   "image": "314d3-halfcylinderswithkey"
+  },
+  {
+   "name": "Yale Essential Double Cylinder",
+   "sku": "Essential-DC",
+   "shortDescription": "Essential series euro profile double cylinder with regular keys, 60 to 80 mm.",
+   "technicalSpecs": {
+    "Type": "Euro profile cylinder, double",
+    "Keys": "Regular keys",
+    "Sizes": "60, 70, 80 mm",
+    "Product codes": "60/70/80MM-(YY)-DC-Z",
+    "Finish codes (YY)": "SN, AB, BM, RG, RGM",
+    "Variants": "Satin Nickel, Antique Brass, Black Matt, Rose Gold"
+   },
+   "priceRange": "₹960",
+   "image": "essential-double-cylinder.png"
+  },
+  {
+   "name": "Yale Essential Thumbturn Cylinder",
+   "sku": "Essential-TT",
+   "shortDescription": "Essential series euro profile cylinder with thumbturn and key, 60 to 80 mm.",
+   "technicalSpecs": {
+    "Type": "Euro profile cylinder, thumbturn with key",
+    "Sizes": "60, 70, 80 mm",
+    "Product codes": "60/70/80MM-(YY)-TT-Z",
+    "Finish codes (YY)": "SN, AB, BM, RG, RGM",
+    "Variants": "Satin Nickel, Antique Brass, Black Matt, Rose Gold"
+   },
+   "priceRange": "₹980",
+   "image": "essential-thumbturn-cylinder.png"
+  },
+  {
+   "name": "Yale Essential Bathroom Cylinder",
+   "sku": "Essential-BK",
+   "shortDescription": "Essential series euro profile bathroom cylinder, 60 to 80 mm.",
+   "technicalSpecs": {
+    "Type": "Euro profile cylinder, bathroom",
+    "Sizes": "60, 70, 80 mm",
+    "Product codes": "60/70/80MM-(YY)-BK-Z",
+    "Finish codes (YY)": "SN, AB, BM, RG",
+    "Variants": "Satin Nickel, Antique Brass, Black Matt, Rose Gold"
+   },
+   "priceRange": "₹900",
+   "image": "essential-bathroom-cylinder.png"
+  },
+  {
+   "name": "Yale Iron Disc Padlock",
+   "sku": "Y112",
+   "shortDescription": "Iron disc padlock with hardened steel shackle, tested to EN12320, 240-hour corrosion resistance and key retaining, in six sizes.",
+   "technicalSpecs": {
+    "Type": "Padlock",
+    "Body": "Iron",
+    "Shackle": "Hardened steel",
+    "Keys": "3",
+    "Corrosion resistance": "240 hours",
+    "Y112/30/121/1": "30 mm · shackle clearance 21 × 15 mm · CEN 1",
+    "Y112/30/137/1": "30 mm long shackle · clearance 37 × 15 mm · CEN 1",
+    "Y112/40/124/1": "40 mm · clearance 24.8 × 20 mm · CEN 2",
+    "Y112/50/128/1": "50 mm · clearance 28.5 × 25 mm · CEN 2",
+    "Y112/50/165/1": "50 mm long shackle · clearance 65.6 × 25 mm · CEN 2",
+    "Y112/60/132/1": "60 mm · clearance 32 × 30 mm · CEN 2",
+    "Variants": "30 mm, 30 mm long shackle, 40 mm, 50 mm, 50 mm long shackle, 60 mm"
+   },
+   "priceRange": "₹320",
+   "image": "All Pages-2-6"
+  }
+ ]
+}

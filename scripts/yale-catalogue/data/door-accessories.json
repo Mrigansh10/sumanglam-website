@@ -1,0 +1,44 @@
+{
+ "category": "door-accessories",
+ "siteCategory": "architectural-hardware",
+ "brand": "yale",
+ "source": "Yale Price List 2026 (w.e.f 24 April 2026)",
+ "products": [
+  {
+   "name": "Yale Magnetic Door Stopper",
+   "sku": "DS933",
+   "shortDescription": "SS202 magnetic door stopper.",
+   "technicalSpecs": {
+    "Material": "SS202",
+    "Product codes": "DS933-US15 (SS), DS933-US5 (AB)",
+    "Variants": "Satin Steel, Antique Brass"
+   },
+   "priceRange": "₹800",
+   "image": "Door stopper"
+  },
+  {
+   "name": "Yale 200° Door Viewer",
+   "sku": "V0403",
+   "shortDescription": "Door viewer with a 200° angle.",
+   "technicalSpecs": {
+    "Angle": "200°",
+    "Product codes": "V0403 US15 (SS), V0403 US5 (AB)",
+    "Variants": "Satin Steel, Antique Brass"
+   },
+   "priceRange": "₹1,020",
+   "image": "Door viewr"
+  },
+  {
+   "name": "Yale 180° Door Viewer",
+   "sku": "V0401A",
+   "shortDescription": "Door viewer with a 180° angle.",
+   "technicalSpecs": {
+    "Angle": "180°",
+    "Product codes": "V0401A US15 (SS), V0401A US5 (AB)",
+    "Variants": "Satin Steel, Antique Brass"
+   },
+   "priceRange": "₹900",
+   "image": "Door viewr"
+  }
+ ]
+}

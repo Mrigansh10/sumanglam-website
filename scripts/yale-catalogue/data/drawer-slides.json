@@ -1,0 +1,23 @@
+{
+ "category": "drawer-slides",
+ "siteCategory": "furniture-fittings",
+ "brand": "yale",
+ "source": "Yale Price List 2026 (w.e.f 24 April 2026)",
+ "products": [
+  {
+   "name": "Yale Full Extension Drawer Slides",
+   "sku": "YCDS01",
+   "shortDescription": "Full-extension ball-bearing drawer runners, 45 kg, from 250 to 600 mm.",
+   "technicalSpecs": {
+    "Type": "Drawer slide, full extension",
+    "Load": "45 kg",
+    "Sizes": "250, 300, 350, 400, 450, 500, 550, 600 mm",
+    "Product codes": "YCDS01-10 to YCDS01-24 (XX), one code per size",
+    "Finish codes (XX)": "Black, Zinc",
+    "Variants": "Black, Zinc"
+   },
+   "priceRange": "₹360",
+   "image": "All Pages-4-4"
+  }
+ ]
+}

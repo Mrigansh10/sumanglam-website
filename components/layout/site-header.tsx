@@ -112,6 +112,9 @@ const primaryNav: { label: string; href: string; mega?: MegaPanel }[] = [
           heading: "Categories",
           links: [
             { label: "Digital Locks", href: "/hardware/digital-locks" },
+            { label: "Handles", href: "/hardware/handles" },
+            { label: "Locks & Cylinders", href: "/hardware/locks-and-security" },
+            { label: "Safes", href: "/hardware/safes" },
             { label: "All Hardware", href: "/hardware" },
           ],
         },

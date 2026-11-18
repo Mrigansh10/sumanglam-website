@@ -1,0 +1,52 @@
+{
+ "category": "hinges",
+ "siteCategory": "hinges",
+ "brand": "yale",
+ "source": "Yale Price List 2026 (w.e.f 24 April 2026)",
+ "products": [
+  {
+   "name": "Yale 4\" Ball Bearing Butt Hinge",
+   "sku": "HIN2BB4",
+   "shortDescription": "SS304 butt hinge with two ball bearings, 4\" × 3\" × 3 mm.",
+   "technicalSpecs": {
+    "Size": "4\" × 3\" × 3 mm",
+    "Material": "SS304",
+    "Bearings": "2 ball bearings",
+    "Product codes": "HIN2BB433 (SS), HIN2BB403030-AB (AB), HIN2BB433-BM (BM)",
+    "Variants": "Satin Steel, Antique Brass, Black Matt"
+   },
+   "priceRange": "₹560",
+   "image": "Ball bearinh hinge"
+  },
+  {
+   "name": "Yale 5\" Ball Bearing Butt Hinge",
+   "sku": "HIN2BB5",
+   "shortDescription": "SS304 butt hinge with two ball bearings, 5\" × 3\" × 3 mm.",
+   "technicalSpecs": {
+    "Size": "5\" × 3\" × 3 mm",
+    "Material": "SS304",
+    "Bearings": "2 ball bearings",
+    "Product codes": "HIN2BB533 (SS), HIN2BB503030-AB (AB), HIN2BB533-BM (BM)",
+    "Variants": "Satin Steel, Antique Brass, Black Matt"
+   },
+   "priceRange": "₹670",
+   "image": "Ball bearinh hinge"
+  },
+  {
+   "name": "Yale Soft Close Cabinet Auto Hinge",
+   "sku": "YCAHSC",
+   "shortDescription": "Soft-close 3D cabinet hinge with 4 holes, for 15–19 mm doors, in full overlay, half overlay and insert versions.",
+   "technicalSpecs": {
+    "Door thickness": "15 – 19 mm",
+    "Tested": "40,000 cycles, 48 h salt spray",
+    "YCAHSC-0C-FORL-(XX)": "0 crank, 100°, full overlay",
+    "YCAHSC-9C-HORL-(XX)": "9 crank, 100°, half overlay",
+    "YCAHSC-16C-IN-(XX)": "16 crank, 100°, insert",
+    "Finish codes (XX)": "Black, NP (nickel plated)",
+    "Variants": "Black, Nickel plated"
+   },
+   "priceRange": "₹380",
+   "image": "cabinet-auto-hinge.png"
+  }
+ ]
+}
