@@ -18,15 +18,15 @@ updated: 2026-08-22
 | `/inspiration/[slug]` | `inspiration/[slug]/page.tsx` | — | ⛔ **308 → `/inspiration`** via `next.config.ts`. File kept; page body in git history |
 | `/kitchens` | `kitchens/page.tsx` | `getSpaceBySlug()`, taxonomy | ✅ Live. **Also hosts the Appliances section** — see the Category Structure Rule below |
 | `/wardrobes` | `wardrobes/page.tsx` | `getSpaceBySlug()` | ✅ Live. Hero still the older space render (pending content) |
-| `/hardware-appliances` | `hardware-appliances/page.tsx` | `getSpaceBySlug()`, `getBrands()` | ✅ Live. **Hardware only** — appliances moved to `/kitchens`; nav label is "Hardware" |
+| `/hardware` | `hardware/page.tsx` | `server/hardware.ts` | ✅ Live 2026-11-18. Catalogue landing; `/hardware-appliances` and `/products` 308 here. See [[Decision - Hardware Catalogue Ask For Price]] |
+| `/hardware/[category]` | `hardware/[category]/page.tsx` | `getHardwareCategory()` + `components/hardware/category-browser.tsx` | ✅ Live. Search + per-category facets; 404 while a category has no published products |
 | `/brands` | `brands/page.tsx` | `getBrands()` | ✅ Live. 15 brands split Kitchens / Appliances / Hardware |
 | `/brands/[slug]` | `brands/[slug]/page.tsx` | `getBrandBySlug()` | ✅ Live. Catalog section renders **conditionally** (hidden while products are draft) |
 | `/nolte` | `nolte/page.tsx` | `features/brands/solution-brand-page.tsx` | ✅ Live. Kitchens only, never wardrobes |
 | `/mrida` | `mrida/page.tsx` | `features/brands/solution-brand-page.tsx` | ✅ Live. Kitchens + wardrobes + interiors |
 | `/appliances` | `appliances/page.tsx` | static | ✅ Live 2026-11-18. By-job guide to built-in appliances; menu "Built-in Appliances" and the Kitchens appliance section link here. See [[Decision - Brand Images On Appliances]] |
 | `/collections/[slug]` | `collections/[slug]/page.tsx` | `getCollectionBySlug()` | ⚠️ Built but effectively dormant — collections are unfilled pending the render batch |
-| `/products` | `products/page.tsx` | `listProducts()` | ⛔ Reachable by URL but **unlinked and empty** — all 38 products are `draft`. Removed from sitemap |
-| `/products/[slug]` | `products/[slug]/page.tsx` | `getProductBySlug()` | ⛔ Same. See [[Decision - Product Catalog Unpublished]] |
+| `/products/[slug]` | `products/[slug]/page.tsx` | `getProductBySlug()` | ✅ Live for published products (20 Yale smart locks). One cut-out image, no prices |
 | `/showroom` | `showroom/page.tsx` | `getShowroomSections()` | ⛔ **307 → `/contact`**. Restore checklist is in the page file. See [[Decision - Showroom Temporarily Offline]] |
 | `/book-consultation` | `book-consultation/page.tsx` | `features/consultations/consultation-form.tsx` → `POST /api/v1/consultations` | ✅ Live and **verified working on prod** since `4e744a4` |
 | `/about` | `about/page.tsx` | static | ✅ Live. Origin story is still placeholder copy |
@@ -47,7 +47,7 @@ uses query filters: `/inspiration?space=kitchen|wardrobe|hardware|appliances`.
 **Not in nav:** `/showroom` (removed), `/products` (removed), `/collections/*`.
 
 **In `app/sitemap.ts`:** `/`, `/inspiration`, `/kitchens`, `/wardrobes`,
-`/hardware-appliances`, `/brands`, `/nolte`, `/mrida`, `/appliances`, `/about`, `/contact`,
+`/hardware` (+ category and product pages), `/brands`, `/nolte`, `/mrida`, `/appliances`, `/about`, `/contact`,
 `/architects-designers`, `/book-consultation` — plus brand detail pages. Deliberately honest:
 no showroom, no products, no inspiration detail URLs. See [[SEO And Metadata]].
 

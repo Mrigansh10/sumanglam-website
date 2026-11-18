@@ -127,6 +127,12 @@ browse the internet and screenshot sites; the session built the structure that r
 **Unchanged:** the direction is still **NOT locked**, Round 2 is still a text-only round, nothing
 is built. Next step is the user's first real batch of screenshots, then "ingest".
 
+## Session 26b — 2026-11-18
+
+* **The hardware catalogue went live**: `/hardware`, category pages and V2 product pages, with 20 Yale smart locks. See [[Decision - Hardware Catalogue Ask For Price]].
+* Images are official Yale photos turned into baked cut-outs; the 18 placeholder products were archived.
+* **Next:** the other 20 Yale categories from the price list PDF.
+
 ## Session 26 — 2026-11-18
 
 * **The Appliances page went live** at `/appliances`, shipped as is from the prototype. Own showroom
