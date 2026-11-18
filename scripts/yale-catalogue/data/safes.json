@@ -1,0 +1,205 @@
+{
+ "category": "safes",
+ "siteCategory": "safes",
+ "brand": "yale",
+ "source": "Yale Price List 2026 (w.e.f 24 April 2026)",
+ "products": [
+  {
+   "name": "Yale Smart Safe",
+   "sku": "YSS-250-EB1",
+   "shortDescription": "Smart safe you can open with a PIN or the Yale Home app, with remote access codes and activity alerts.",
+   "technicalSpecs": {
+    "Key Features": "Yale Home app, PIN code, 3 years warranty",
+    "YSS/250/EB1": "250 × 350 × 300 mm · 12.1 L · 20.5 kg · Black"
+   },
+   "priceRange": "₹36,499",
+   "image": "yss-250-eb1.png"
+  },
+  {
+   "name": "Yale Smart Security Box",
+   "sku": "YSSB-BL",
+   "shortDescription": "Slim smart security box with PIN, Bluetooth and Yale Home app access, and built-in lighting.",
+   "technicalSpecs": {
+    "Key Features": "Yale Home app, PIN code, Bluetooth, Built-in lighting",
+    "YSSB-BL": "270 × 60 × 380 mm · 3.8 kg · Black"
+   },
+   "priceRange": "₹22,699",
+   "image": "smart-storage-1"
+  },
+  {
+   "name": "Yale Alarmed Digital Safe",
+   "sku": "YEC-DB3",
+   "shortDescription": "Digital safe with PIN and key access and a built-in alarm, in four sizes.",
+   "technicalSpecs": {
+    "Key Features": "PIN code, Mechanical key, Built-in alarm, 1 year warranty",
+    "YEC/200/DB3": "Small · 200 × 310 × 200 mm · 4 L · 8.6 kg · Black",
+    "YEC/250/DB3": "Medium · 250 × 350 × 250 mm · 5.8 L · 16.3 kg · Black",
+    "YEC/390/DB3": "Large · 390 × 350 × 360 mm · 12.5 L · 40 kg · Black",
+    "YLC/200/DB3": "Laptop · 200 × 430 × 350 mm · 7.7 L · 24 kg · Black",
+    "Variants": "Small, Medium, Large, Laptop"
+   },
+   "priceRange": "₹7,499",
+   "image": "1-282"
+  },
+  {
+   "name": "Yale Fire Rated Biometric Safe",
+   "sku": "YFF-FG2",
+   "shortDescription": "Fire-rated safe with fingerprint and PIN access.",
+   "technicalSpecs": {
+    "Key Features": "Biometric, PIN code, 1 year warranty",
+    "YFF/420/FG2": "Firesafe (125TFL) · 420 × 352 × 433 mm · 36 L · 25.3 kg · Grey",
+    "YFF/520/FG2": "Firesafe (530TFL) · 522 × 404 × 440 mm · 53 L · 36.9 kg · Grey"
+   },
+   "priceRange": "₹78,599",
+   "image": "d1c41-420"
+  },
+  {
+   "name": "Yale Fire Rated Digital Safe",
+   "sku": "YFM-FG2",
+   "shortDescription": "Fire-rated safe with PIN access, rated for 60 or 90 minutes.",
+   "technicalSpecs": {
+    "Key Features": "PIN code, 1 year warranty",
+    "YFM/420/FG2": "60 minutes fire rated · 420 × 352 × 433 mm · 36 L · 25.3 kg · Grey",
+    "YFM/520/FG2": "60 minutes fire rated · 522 × 404 × 440 mm · 53 L · 36.9 kg · Grey",
+    "YFM/695/FG2": "90 minutes fire rated · 695 × 500 × 500 mm · 90 L · 64 kg · Grey"
+   },
+   "priceRange": "₹49,599",
+   "image": "fdd9f-420"
+  },
+  {
+   "name": "Yale High Security Biometric Safe",
+   "sku": "YSFB-EB1",
+   "shortDescription": "High-security safe with fingerprint, PIN and key access, in compact, home, office and laptop sizes.",
+   "technicalSpecs": {
+    "Key Features": "Biometric, PIN code, Mechanical key, 3 years warranty",
+    "YSFB/200/EB1": "Compact · 200 × 350 × 200 mm · 8.5 L · 9.6 kg · Black",
+    "YSFB/250/EB1": "Home · 250 × 350 × 300 mm · 12.1 L · 20.5 kg · Black",
+    "YSFB/400/EB1": "Office · 400 × 350 × 340 mm · 17 L · 38.5 kg · Black",
+    "YLFB/200/EB1": "Laptop · 200 × 480 × 350 mm · 13.7 L · 26.9 kg · Black",
+    "Variants": "Compact, Home, Office, Laptop"
+   },
+   "priceRange": "₹23,199",
+   "image": "b6a46-250"
+  },
+  {
+   "name": "Yale High Security Digital Safe",
+   "sku": "YSEB-EB1",
+   "shortDescription": "High-security safe with PIN and key access, in five sizes.",
+   "technicalSpecs": {
+    "Key Features": "PIN code, Mechanical key, 3 years warranty",
+    "YSEB/200/EB1": "Compact · 200 × 350 × 200 mm · 8.5 L · 9.6 kg · Black",
+    "YSEB/250/EB1": "Home · 250 × 350 × 300 mm · 12.1 L · 20.5 kg · Black",
+    "YSEB/400/EB1": "Office · 400 × 350 × 340 mm · 17 L · 38.5 kg · Black",
+    "YSEB/520/EB1": "Professional · 520 × 350 × 360 mm · 22.5 L · 53.7 kg · Black",
+    "YLEB/200/EB1": "Laptop · 200 × 480 × 350 mm · 13.7 L · 26.9 kg · Black",
+    "Variants": "Compact, Home, Office, Professional, Laptop"
+   },
+   "priceRange": "₹21,499",
+   "image": "b096c-250"
+  },
+  {
+   "name": "Yale Maximum Security Biometric Safe",
+   "sku": "YSFM-EG1",
+   "shortDescription": "Maximum-security safe with fingerprint, PIN and key access.",
+   "technicalSpecs": {
+    "Key Features": "Biometric, PIN code, Mechanical key, 3 years warranty",
+    "YSFM/250/EG1": "Home · 250 × 350 × 300 mm · 15.7 L · 18.6 kg · Black",
+    "YSFM/400/EG1": "Office · 400 × 350 × 340 mm · 22 L · 35.5 kg · Black",
+    "YSFM/520/EG1": "Professional · 520 × 350 × 360 mm · 28 L · 49.8 kg · Black",
+    "YLFM/200/EG1": "Laptop · 200 × 480 × 350 mm · 18 L · 24.8 kg · Black",
+    "Variants": "Home, Office, Professional, Laptop"
+   },
+   "priceRange": "₹34,999",
+   "image": "db726-250"
+  },
+  {
+   "name": "Yale Maximum Security Digital Safe",
+   "sku": "YSEM-EG1",
+   "shortDescription": "Maximum-security safe with PIN and key access.",
+   "technicalSpecs": {
+    "Key Features": "PIN code, Mechanical key, 3 years warranty",
+    "YSEM/250/EG1": "Home · 250 × 350 × 300 mm · 15.7 L · 18.6 kg · Black",
+    "YSEM/400/EG1": "Office · 400 × 350 × 340 mm · 22 L · 35.5 kg · Black",
+    "YSEM/520/EG1": "Professional · 520 × 350 × 360 mm · 28 L · 49.8 kg · Black",
+    "YLEM/200/EG1": "Laptop · 200 × 480 × 350 mm · 18 L · 24.8 kg · Black",
+    "Variants": "Home, Office, Professional, Laptop"
+   },
+   "priceRange": "₹31,599",
+   "image": "a83e7-250"
+  },
+  {
+   "name": "Yale Heavy Duty Safe",
+   "sku": "YSELC",
+   "shortDescription": "Heavy-duty safe with 30 mm lock bolts, reinforced walls, alarms and fingerprint, PIN and key access.",
+   "technicalSpecs": {
+    "Key Features": "Biometric, PIN code, Mechanical key, 3 years warranty",
+    "Features": "30 mm solid lock bolts, reinforced walls and door, door-ajar / tamper / misuse alarms, vibration alert, LED screen, audit trail, low-battery indicator, key override, dual/triple authentication",
+    "YSELC/330/B1": "391 × 420 × 330 mm · 38.5 L · 32.8 kg · Black",
+    "YSELC/450/B1-W1": "511 × 420 × 360 mm · 50 L · 46.9 kg · Black / White",
+    "YSELC/580/B1-W1": "655 × 424 × 360 mm · 80.5 L · 59 kg · Black / White",
+    "YSELC/680/B1-W1": "756 × 454 × 400 mm · 101.5 L · 62.6 kg · Black / White",
+    "YSELC/900/B1-W1": "976 × 500 × 450 mm · 142.5 L · 117.6 kg · Black / White",
+    "YSELC/1100/B1-W1": "1174 × 600 × 500 mm · 197 L · 201.9 kg · Black / White",
+    "YSELC/1500/B1-W1": "1574 × 700 × 600 mm · 298 L · 429.7 kg · Black / White"
+   },
+   "priceRange": "₹51,499",
+   "image": "0c792-330"
+  },
+  {
+   "name": "Yale Stellar Biometric Safe",
+   "sku": "Stellar",
+   "shortDescription": "Biometric safe with fingerprint, PIN and key access, admin and user codes, and an emergency USB power port.",
+   "technicalSpecs": {
+    "Key Features": "Biometric, PIN code, Mechanical key, 2 years warranty",
+    "Stellar 250/DB2": "250 × 350 × 250 mm · 9 L · 16.7 kg · Black",
+    "Stellar 300/DB2": "300 × 380 × 300 mm · 11.5 L · 27.3 kg · Black",
+    "Stellar 390/DB2": "390 × 350 × 360 mm · 14 L · 41 kg · Black",
+    "Stellar 500/DB2": "500 × 416 × 350 mm · 17 L · 59 kg · Black",
+    "Stellar 250/GR": "250 × 350 × 250 mm · 9 L · 16.7 kg · Grey",
+    "Stellar 300/GR": "300 × 380 × 300 mm · 11.5 L · 27.3 kg · Grey",
+    "Stellar 390/GR": "390 × 350 × 360 mm · 14 L · 41 kg · Grey",
+    "Stellar 500/GR": "500 × 416 × 350 mm · 17 L · 59 kg · Grey",
+    "Variants": "Black, Grey"
+   },
+   "priceRange": "₹15,999",
+   "image": "4a01b-stellar250-db2"
+  },
+  {
+   "name": "Yale Classic Biometric Safe",
+   "sku": "YSS-580-W1",
+   "shortDescription": "Large white safe with fingerprint and key access.",
+   "technicalSpecs": {
+    "Key Features": "Biometric, Mechanical key, 3 years warranty",
+    "YSS/580/W1": "Large · 580 × 360 × 320 mm · 29.3 L · 48.7 kg · White"
+   },
+   "priceRange": "₹60,999",
+   "image": "823ac-img2519"
+  },
+  {
+   "name": "Yale Cosmos Safe",
+   "sku": "YSPC",
+   "shortDescription": "Grey digital safe with PIN and key access, in three sizes and a laptop version.",
+   "technicalSpecs": {
+    "Key Features": "PIN code, Mechanical key, 3 years warranty",
+    "YSPC/200": "200 × 310 × 200 mm · 7.5 L · 8.7 kg · Grey",
+    "YSPC/250": "250 × 350 × 250 mm · 10 L · 16.7 kg · Grey",
+    "YSPC/390": "390 × 350 × 360 mm · 13.7 L · 39 kg · Grey",
+    "YLPC/200": "Laptop · 200 × 430 × 350 mm · 10 L · 24 kg · Grey"
+   },
+   "priceRange": "₹10,799",
+   "image": "b9fcc-200"
+  },
+  {
+   "name": "Yale Guest Safe",
+   "sku": "YSG-DB1",
+   "shortDescription": "Digital safe for hotel rooms and guest rooms, with PIN and key access.",
+   "technicalSpecs": {
+    "Key Features": "PIN code, Mechanical key, 3 years warranty",
+    "YSG/250/DB1": "250 × 350 × 250 mm · 5.4 L · 16 kg · Black",
+    "YLG/200/DB1": "200 × 430 × 350 mm · 10.4 L · 24 kg · Black"
+   },
+   "priceRange": "₹13,099",
+   "image": "a3d7d-img2562"
+  }
+ ]
+}

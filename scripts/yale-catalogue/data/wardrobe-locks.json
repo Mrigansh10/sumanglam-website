@@ -1,0 +1,93 @@
+{
+ "category": "wardrobe-locks",
+ "siteCategory": "wardrobe-locks",
+ "brand": "yale",
+ "source": "Yale Price List 2026 (w.e.f 24 April 2026)",
+ "products": [
+  {
+   "name": "Yale Biometric Furniture Lock – Openable",
+   "sku": "YLDRPC",
+   "shortDescription": "Fingerprint lock for openable wardrobe and cabinet doors. No separate handle needed.",
+   "technicalSpecs": {
+    "Key Features": "Biometric, Up to 1 year warranty",
+    "Application": "Openable furniture doors",
+    "Product codes": "YLDRPC-BL (Black), YLDRPC-RG (Rose Gold)",
+    "Variants": "Black, Rose Gold"
+   },
+   "priceRange": "₹4,499",
+   "image": "YLDRPC-BL"
+  },
+  {
+   "name": "Yale Biometric Furniture Lock – Sliding",
+   "sku": "YLDRPSL",
+   "shortDescription": "Fingerprint lock for sliding wardrobe doors. No separate handle needed.",
+   "technicalSpecs": {
+    "Key Features": "Biometric, Up to 1 year warranty",
+    "Application": "Sliding wardrobe doors",
+    "Product codes": "YLDRPSL-BL (Black), YLDRPSL-RG (Rose Gold)",
+    "Variants": "Black, Rose Gold"
+   },
+   "priceRange": "₹4,699",
+   "image": "yldrpsl.png"
+  },
+  {
+   "name": "Yale Biometric Furniture Lock",
+   "sku": "YLDRPB",
+   "shortDescription": "Round fingerprint lock for drawers, wardrobes and cabinets.",
+   "technicalSpecs": {
+    "Key Features": "Biometric, Up to 1 year warranty",
+    "Product codes": "YLDRPB-BL (Black), YLDRPB-BR (Brown), YLDRPB-IV (Ivory)",
+    "Variants": "Black, Brown, Ivory"
+   },
+   "priceRange": "₹3,999",
+   "image": "1-44"
+  },
+  {
+   "name": "Yale Mesh Pin Digital Lock",
+   "sku": "Mesh-Pin",
+   "shortDescription": "PIN-code digital lock for openable wardrobes and cabinets.",
+   "technicalSpecs": {
+    "Key Features": "PIN code, Up to 1 year warranty",
+    "Function": "Openable"
+   },
+   "priceRange": "₹3,000",
+   "image": "cdf15-11000x1000"
+  },
+  {
+   "name": "Yale Automatic Pincode Wardrobe / Drawer Lock",
+   "sku": "ML81PA",
+   "shortDescription": "Automatic PIN-code lock for wardrobes and drawers, in horizontal or vertical versions.",
+   "technicalSpecs": {
+    "Key Features": "PIN code, Up to 1 year warranty",
+    "Product codes": "ML81PAH-U (Horizontal), ML81PAV-U (Vertical)",
+    "Variants": "Horizontal, Vertical"
+   },
+   "priceRange": "₹7,699",
+   "image": "facea-01_9c38cddb-3447-43c8-865c-4ff0a6dae481"
+  },
+  {
+   "name": "Yale Fingerprint Wardrobe Lock – Mounted",
+   "sku": "FP-F-B-02",
+   "shortDescription": "Surface-mounted fingerprint lock for openable or sliding wardrobe doors.",
+   "technicalSpecs": {
+    "Key Features": "Biometric, Up to 1 year warranty",
+    "Product codes": "FP-OP-F-B-02 (Openable door), FP-SL-F-B-02 (Sliding door)",
+    "Variants": "Openable door, Sliding door"
+   },
+   "priceRange": "₹8,699",
+   "image": "3219a-wardrobelock1"
+  },
+  {
+   "name": "Yale Fingerprint Wardrobe Lock – Handle",
+   "sku": "FP-H-B-01",
+   "shortDescription": "Fingerprint lock built into a pull handle, for openable or sliding wardrobe doors.",
+   "technicalSpecs": {
+    "Key Features": "Biometric, Up to 1 year warranty",
+    "Product codes": "FP-OP-H-B-01 (Openable door), FP-SL-H-B-01 (Sliding door)",
+    "Variants": "Openable door, Sliding door"
+   },
+   "priceRange": "₹9,399",
+   "image": "9d209-wardrobelockhandle1"
+  }
+ ]
+}

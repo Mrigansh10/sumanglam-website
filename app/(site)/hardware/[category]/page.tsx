@@ -45,7 +45,10 @@ export default async function HardwareCategoryPage({ params }: { params: Params 
       image: resolveImage(product.primaryImage, { width: 700 }),
       meta: facets.join(" · ") || undefined,
       facets,
-      haystack: [product.name, product.sku, product.shortDescription].join(" ").toLowerCase(),
+      // Spec values carry the per-variant codes (e.g. YPBL-801-SS), so search finds them too.
+      haystack: [product.name, product.sku, product.shortDescription, ...facts.specs.flat()]
+        .join(" ")
+        .toLowerCase(),
     };
   });
 

@@ -1,0 +1,106 @@
+{
+ "category": "digital-door-locks",
+ "siteCategory": "digital-locks",
+ "brand": "yale",
+ "source": "Yale Price List 2026 (w.e.f 24 April 2026)",
+ "products": [
+  {
+   "name": "Yale YDME 200NxT",
+   "sku": "YDME-200NxT",
+   "shortDescription": "Digital door lock with fingerprint, PIN, RFID card and mechanical key access. Gold and black finish.",
+   "technicalSpecs": {
+    "Key Features": "Biometric, PIN code, RFID card, Mechanical key, Up to 3 years warranty",
+    "Door thickness": "35 – 65 mm",
+    "Finish": "Gold & Black"
+   },
+   "priceRange": "₹29,999",
+   "image": "3-96"
+  },
+  {
+   "name": "Yale YDME 100NxT",
+   "sku": "YDME-100NxT",
+   "shortDescription": "Digital door lock with fingerprint, PIN, RFID card and mechanical key access. Black or brown.",
+   "technicalSpecs": {
+    "Key Features": "Biometric, PIN code, RFID card, Mechanical key, Up to 3 years warranty",
+    "Door thickness": "35 – 65 mm",
+    "Variants": "Black, Brown"
+   },
+   "priceRange": "₹26,499",
+   "image": "YDME 100 NxT_Black"
+  },
+  {
+   "name": "Yale YDME 50NxT",
+   "sku": "YDME-50NxT",
+   "shortDescription": "Compact digital door lock with fingerprint, PIN, RFID card and mechanical key access. Black or brown.",
+   "technicalSpecs": {
+    "Key Features": "Biometric, PIN code, RFID card, Mechanical key, Up to 3 years warranty",
+    "Door thickness": "35 – 65 mm",
+    "Variants": "Black, Brown"
+   },
+   "priceRange": "₹18,999",
+   "image": "YDME 50 NxT Black"
+  },
+  {
+   "name": "Yale YDME 50Pro",
+   "sku": "YDME-50Pro",
+   "shortDescription": "Digital door lock with PIN, RFID card and mechanical key access. Black finish.",
+   "technicalSpecs": {
+    "Key Features": "PIN code, RFID card, Mechanical key, Up to 3 years warranty",
+    "Door thickness": "35 – 65 mm",
+    "Finish": "Black"
+   },
+   "priceRange": "₹15,499",
+   "image": "YDME 50 Pro"
+  },
+  {
+   "name": "Yale YDAL Lock for Openable Aluminium Doors",
+   "sku": "YDAL-Opening",
+   "shortDescription": "Digital lock for openable aluminium profile doors, with fingerprint, PIN, RFID card and mechanical key access.",
+   "technicalSpecs": {
+    "Key Features": "Biometric, PIN code, RFID card, Mechanical key, Up to 1 year warranty",
+    "Application": "Openable aluminium profile doors",
+    "Door thickness": "25 – 65 mm",
+    "Variants": "Black, Silver"
+   },
+   "priceRange": "₹23,099",
+   "image": "YDAL Aeries 3-1"
+  },
+  {
+   "name": "Yale YDAL Lock for Sliding Aluminium Doors",
+   "sku": "YDAL-Sliding",
+   "shortDescription": "Digital lock for sliding aluminium profile doors, with fingerprint, PIN, RFID card and mechanical key access.",
+   "technicalSpecs": {
+    "Key Features": "Biometric, PIN code, RFID card, Mechanical key, Up to 1 year warranty",
+    "Application": "Sliding aluminium profile doors",
+    "Door thickness": "25 – 65 mm",
+    "Variants": "Black, Silver"
+   },
+   "priceRange": "₹23,099",
+   "image": "YDAL Aeries 3-2"
+  },
+  {
+   "name": "Yale Reflecta Biometric Lock",
+   "sku": "YREFB",
+   "shortDescription": "Slim digital lock with fingerprint and PIN access. Silver finish.",
+   "technicalSpecs": {
+    "Key Features": "Biometric, PIN code, Up to 1 year warranty",
+    "Door thickness": "30 – 50 mm",
+    "Finish": "Silver"
+   },
+   "priceRange": "₹10,499",
+   "image": "reflecta-biometric-1"
+  },
+  {
+   "name": "Yale Tye",
+   "sku": "Tye",
+   "shortDescription": "Digital lock with PIN and mechanical key access.",
+   "technicalSpecs": {
+    "Key Features": "PIN code, Mechanical key, Up to 1 year warranty",
+    "Door thickness": "35 – 65 mm",
+    "Variants": "Black, Silver"
+   },
+   "priceRange": "₹14,999",
+   "image": "2-59"
+  }
+ ]
+}

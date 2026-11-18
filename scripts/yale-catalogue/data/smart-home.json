@@ -1,0 +1,172 @@
+{
+ "category": "smart-home",
+ "siteCategory": "smart-home",
+ "brand": "yale",
+ "source": "Yale Price List 2026 (w.e.f 24 April 2026)",
+ "products": [
+  {
+   "name": "Yale Smart Video Doorbell",
+   "sku": "Smart-Video-Doorbell",
+   "shortDescription": "1080p Full HD video doorbell with live view, night vision, two-way audio and real-time alerts in the Yale Home app.",
+   "technicalSpecs": {
+    "Key Features": "App control, Real-time alerts, Two-way audio, Activity monitoring, 1 year warranty",
+    "Video": "1080p Full HD",
+    "Night vision": "Yes"
+   },
+   "priceRange": "₹18,999",
+   "image": "smart-video-door-bell"
+  },
+  {
+   "name": "Yale Video Doorbell Chime",
+   "sku": "Doorbell-Chime",
+   "shortDescription": "Indoor chime that rings when someone presses the Yale Smart Video Doorbell.",
+   "technicalSpecs": {
+    "Key Features": "1 year warranty",
+    "Works with": "Yale Smart Video Doorbell"
+   },
+   "priceRange": "₹3,199",
+   "image": "doorbell-chime-one"
+  },
+  {
+   "name": "Yale Smart Indoor Camera",
+   "sku": "Smart-Indoor-Camera",
+   "shortDescription": "Wi-Fi indoor camera with 1080p HD video, live view, motion-triggered recording, night vision, built-in battery and two-way audio.",
+   "technicalSpecs": {
+    "Key Features": "App control, Two-way audio, Night vision, 1 year warranty",
+    "Video": "1080p HD",
+    "Power": "Built-in battery"
+   },
+   "priceRange": "₹5,999",
+   "image": "Indoor_Camera_Main2-11"
+  },
+  {
+   "name": "Yale Smart Outdoor Camera",
+   "sku": "Smart-Outdoor-Camera",
+   "shortDescription": "Outdoor security camera with 1080p HD video, colour night vision, motion-triggered spotlight and recording, two-way audio and built-in battery.",
+   "technicalSpecs": {
+    "Key Features": "App control, Two-way audio, Colour night vision, Spotlight, 1 year warranty",
+    "Video": "1080p HD",
+    "Power": "Built-in battery"
+   },
+   "priceRange": "₹11,999",
+   "image": "Smart-outdoor-camera"
+  },
+  {
+   "name": "Yale Camera Solar Panel Charger",
+   "sku": "Camera-Solar-Panel",
+   "shortDescription": "Solar panel that keeps the Yale Smart Outdoor Camera charged.",
+   "technicalSpecs": {
+    "Key Features": "1 year warranty",
+    "Works with": "Yale Smart Outdoor Camera"
+   },
+   "priceRange": "₹2,999",
+   "image": "camera-solar-panel.png"
+  },
+  {
+   "name": "Yale Camera AC Power Adapter",
+   "sku": "Camera-AC-Adapter",
+   "shortDescription": "Mains power adapter for Yale smart cameras.",
+   "technicalSpecs": {
+    "Key Features": "1 year warranty",
+    "Works with": "Yale smart cameras"
+   },
+   "priceRange": "₹1,999",
+   "image": "5052847126134.PT01"
+  },
+  {
+   "name": "Yale Video Door Phone JB-305 M",
+   "sku": "JB-305-M",
+   "shortDescription": "Essential video door phone kit with memory: outdoor unit and indoor screen.",
+   "technicalSpecs": {
+    "Kit": "Essential complete kit with memory",
+    "Product codes": "JB-305 M (kit), JB-305 M Indoor (indoor unit)"
+   },
+   "priceRange": "₹14,999",
+   "image": "JB-305 M Indoor"
+  },
+  {
+   "name": "Yale Video Door Phone JB-305 E",
+   "sku": "JB-305-E",
+   "shortDescription": "Essential video door phone kit: grey outdoor unit and indoor screen.",
+   "technicalSpecs": {
+    "Kit": "Essential complete kit",
+    "Product codes": "JB-305 E (kit), JB-305 E Indoor (indoor unit), JB-305-E Outdoor (outdoor unit)",
+    "Colour": "Grey"
+   },
+   "priceRange": "₹13,999",
+   "image": "JB-305 E Indoor"
+  },
+  {
+   "name": "Yale YRM 20N Receiver Module",
+   "sku": "YRM-20N",
+   "shortDescription": "Receiver module fitted inside a Yale digital lock's back panel, to pair it with a remote control or video door phone.",
+   "technicalSpecs": {
+    "Key Features": "1 year warranty",
+    "Works with": "Yale remote controls and video door phones"
+   },
+   "priceRange": "₹7,699",
+   "image": "393dc-yrm20n_99fe4304-33b7-49b1-82ea-4721e9f61cc6"
+  },
+  {
+   "name": "Yale YRM 20 AMC Transmitter Module",
+   "sku": "YRM-20-AMC",
+   "shortDescription": "Transmitter module that connects a video door phone to a Yale digital lock.",
+   "technicalSpecs": {
+    "Works with": "Video door phones"
+   },
+   "priceRange": "₹8,799",
+   "image": "464f6-transmitter_a470aa7a-395d-495d-a474-d9d0a3fb21e1"
+  },
+  {
+   "name": "Yale Home Bluetooth Module",
+   "sku": "Yale-Home-Bluetooth-Module",
+   "shortDescription": "Bluetooth module that connects a compatible Yale lock to the Yale Home app.",
+   "technicalSpecs": {
+    "Works with": "Yale Home app"
+   },
+   "priceRange": "₹5,499",
+   "image": "bluetooth-3"
+  },
+  {
+   "name": "Yale RC 100 Remote Control",
+   "sku": "RC-100",
+   "shortDescription": "Optional remote control for unlocking your front door.",
+   "technicalSpecs": {
+    "Works with": "Yale digital locks"
+   },
+   "priceRange": "₹7,799",
+   "image": "rc-100.png"
+  },
+  {
+   "name": "Yale YRC 300 Remote Control",
+   "sku": "YRC-300",
+   "shortDescription": "Remote control to lock and unlock a digital lock from inside the home.",
+   "technicalSpecs": {
+    "Works with": "Yale digital locks"
+   },
+   "priceRange": "₹5,299",
+   "image": "58b81-01_ac2459fc-f0bd-4c24-99d2-960438e9cf28"
+  },
+  {
+   "name": "Yale Connect Wi-Fi Bridge",
+   "sku": "Connect-WiFi-Bridge",
+   "shortDescription": "Connects a Yale smart lock to Wi-Fi for remote control from the Yale Home app.",
+   "technicalSpecs": {
+    "Works with": "Yale smart locks, Yale Home app"
+   },
+   "priceRange": "₹8,799",
+   "image": "b2c2e-linus_bridge_1092x1200px"
+  },
+  {
+   "name": "Yale ConnectX 4:1 Multi Bridge",
+   "sku": "ConnectX-4-1",
+   "shortDescription": "Connects up to four Yale smart devices to Wi-Fi.",
+   "technicalSpecs": {
+    "Connects": "Up to 4 devices",
+    "Works with": "Yale Home app"
+   },
+   "priceRange": "₹9,499",
+   "image": "connectx-4-1.png"
+  }
+ ]
+}

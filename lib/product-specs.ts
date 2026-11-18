@@ -75,6 +75,22 @@ export const CATEGORY_FACETS: Record<
       { value: "App", keywords: ["bluetooth", "ble"] },
     ],
   },
+  "wardrobe-locks": {
+    label: "Opens with",
+    options: [
+      { value: "Fingerprint", keywords: ["biometric", "fingerprint"] },
+      { value: "PIN", keywords: ["pin code", "pincode"] },
+    ],
+  },
+  safes: {
+    label: "Opens with",
+    options: [
+      { value: "Fingerprint", keywords: ["biometric", "fingerprint"] },
+      { value: "PIN", keywords: ["pin code"] },
+      { value: "Key", keywords: ["mechanical key"] },
+      { value: "App", keywords: ["yale home app"] },
+    ],
+  },
 };
 
 export function facetValues(
