@@ -2,40 +2,34 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Container } from "@/components/layout/container";
-import { Section } from "@/components/layout/section";
-import { Heading } from "@/components/layout/heading";
-import { VisualCard } from "@/components/shared/visual-card";
-import { ProductCard } from "@/components/shared/product-card";
 import { PageViewTracker } from "@/components/shared/page-view-tracker";
-import { Reveal } from "@/components/motion/reveal";
-import { Stagger } from "@/components/motion/stagger";
-import { SplitHeadline } from "@/components/motion/split-headline";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { WhatsAppButton } from "@/features/whatsapp/whatsapp-button";
+import { arrowButtonClasses as c } from "@/components/home/arrow-button";
+import { ArrowLink } from "@/components/home/arrow-button";
+import { WhatsAppArrowButton } from "@/components/home/whatsapp-arrow-button";
+import { HardwareProductCard } from "@/components/hardware/product-card";
+import { CopyCode } from "@/components/hardware/copy-code";
 import { getProductBySlug } from "@/server/products";
+import { getHardwareCategory } from "@/server/hardware";
 import { safeQuery } from "@/server/safe";
 import { resolveImage } from "@/lib/images";
+import { facetValues, productFacts, CATEGORY_FACETS } from "@/lib/product-specs";
+import { displayName, sentenceCase } from "@/lib/hardware";
+import { siteConfig } from "@/lib/site";
+import { cn } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
 
 type Params = Promise<{ slug: string }>;
-
-// Keys are the lowercase Supabase enum representation.
-const availabilityCopy: Record<string, { label: string; variant: "success" | "warning" | "error" | "default" }> = {
-  available: { label: "Available at showroom", variant: "success" },
-  limited: { label: "Limited availability", variant: "warning" },
-  discontinued: { label: "Discontinued", variant: "error" },
-  coming_soon: { label: "Coming soon", variant: "default" },
-};
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { slug } = await params;
   const data = await safeQuery(() => getProductBySlug(slug), null);
   if (!data) return { title: "Product" };
   return {
-    title: data.brand ? `${data.product.name} — ${data.brand.name}` : data.product.name,
+    // "Yale Luna Pro", never "Yale Luna Pro — Yale"
+    title: data.brand
+      ? `${data.brand.name} ${displayName(data.product.name, data.brand.name)}`
+      : data.product.name,
     description: data.product.shortDescription ?? undefined,
     openGraph: data.product.primaryImage
       ? { images: [resolveImage(data.product.primaryImage, { width: 1200 })] }
@@ -48,207 +42,184 @@ export default async function ProductDetailPage({ params }: { params: Params }) 
   const data = await safeQuery(() => getProductBySlug(slug), null);
   if (!data) notFound();
 
-  const { product, brand, categories, inspirations, relatedProducts } = data;
-  // brand_id / product_type_id are non-null columns, so the joins always
-  // resolve; the optional types only reflect supabase-js's uncertainty.
-  if (!brand || !product.productType) notFound();
-  const productType = product.productType;
-  const specs =
-    product.technicalSpecs && typeof product.technicalSpecs === "object"
-      ? Object.entries(product.technicalSpecs as Record<string, string>)
-      : [];
-  const availability = availabilityCopy[product.availabilityStatus?.toLowerCase()];
+  const { product, brand, categories } = data;
+  if (!brand) notFound();
+  const category = categories[0];
+  const name = displayName(product.name, brand.name);
+  const facts = productFacts(product.technicalSpecs);
+  const opensWith = facetValues(category?.slug, facts, product.shortDescription);
+  const facet = category ? CATEGORY_FACETS[category.slug] : undefined;
+
+  // "More like this": the rest of the product's category, in catalogue order.
+  const siblings = category
+    ? ((await safeQuery(() => getHardwareCategory(category.slug), null))?.products ?? [])
+        .filter((other) => other.id !== product.id)
+        .slice(0, 4)
+    : [];
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    sku: product.sku ?? undefined,
+    brand: { "@type": "Brand", name: brand.name },
+    description: product.shortDescription ?? undefined,
+    image: product.primaryImage ? resolveImage(product.primaryImage, { width: 1200 }) : undefined,
+    url: `${siteConfig.url.replace(/\/$/, "")}/products/${product.slug}`,
+  };
 
   return (
-    <>
+    <div className="font-tight">
       <PageViewTracker event="product_viewed" sourceType="product" sourceId={product.slug} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+      />
 
-      <Section spacing="compact" className="pt-28 sm:pt-32">
-        <Container size="wide">
-          <nav aria-label="Breadcrumb" className="text-xs text-ink-faint animate-fade-up">
-            <Link href="/hardware-appliances" className="hover:text-ink">
-              Hardware & Appliances
-            </Link>
-            {categories[0] ? (
-              <>
-                {" / "}
-                <Link
-                  href={`/products?type=${productType.slug}&category=${categories[0].slug}`}
-                  className="hover:text-ink"
-                >
-                  {categories[0].name}
-                </Link>
-              </>
-            ) : null}
-            {" / "}
-            <span className="text-ink-soft">{product.name}</span>
-          </nav>
-
-          <div className="mt-8 grid gap-10 lg:grid-cols-2">
-            {/* Gallery */}
-            <div className="space-y-4 animate-fade-up [animation-delay:80ms]">
-              <div className="relative aspect-square overflow-hidden bg-sand">
-                <Image
-                  src={resolveImage(product.primaryImage, { width: 1200 })}
-                  alt={product.name}
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              {product.galleryImages.length > 1 ? (
-                <div className="grid grid-cols-3 gap-4">
-                  {product.galleryImages.slice(1, 4).map((image, index) => (
-                    <div key={index} className="relative aspect-square overflow-hidden bg-sand">
-                      <Image
-                        src={resolveImage(image, { width: 400 })}
-                        alt={`${product.name} — view ${index + 2}`}
-                        fill
-                        sizes="(min-width: 1024px) 16vw, 33vw"
-                        className="object-cover"
-                      />
-                    </div>
-                  ))}
-                </div>
-              ) : null}
-            </div>
-
-            {/* Details */}
-            <div>
-              <Link
-                href={`/brands/${brand.slug}`}
-                className="inline-block text-sm font-medium text-accent-deep hover:underline animate-fade-up"
-              >
-                {brand.name}
+      <section className="mx-auto max-w-[1480px] px-[22px] pt-[120px] lg:px-10 lg:pt-[136px]">
+        <nav aria-label="Breadcrumb" className="flex flex-wrap gap-2 text-sm text-fg/60 animate-fade-up">
+          <Link href="/hardware" className="hover:text-fg">
+            Hardware
+          </Link>
+          {category ? (
+            <>
+              <span aria-hidden>/</span>
+              <Link href={`/hardware/${category.slug}`} className="hover:text-fg">
+                {sentenceCase(category.name)}
               </Link>
-              <SplitHeadline
-                delay={0.1}
-                className="mt-2 font-display text-3xl font-medium tracking-tight sm:text-4xl"
-              >
-                {product.name}
-              </SplitHeadline>
-              {product.sku ? (
-                <p className="mt-1 text-xs text-ink-faint animate-fade-up [animation-delay:160ms]">
-                  SKU: {product.sku}
-                </p>
-              ) : null}
+            </>
+          ) : null}
+          <span aria-hidden>/</span>
+          <span>{name}</span>
+        </nav>
 
-              <div className="mt-4 flex flex-wrap items-center gap-2 animate-fade-up [animation-delay:220ms]">
-                {availability ? (
-                  <Badge variant={availability.variant}>{availability.label}</Badge>
-                ) : null}
-                {categories.map((category) => (
-                  <Link
-                    key={category.id}
-                    href={`/products?type=${productType.slug}&category=${category.slug}`}
-                  >
-                    <Badge variant="outline" className="hover:border-accent">
-                      {category.name}
-                    </Badge>
-                  </Link>
-                ))}
-              </div>
-
-              {product.priceRange ? (
-                <p className="mt-6 font-display text-xl text-ink animate-fade-up [animation-delay:300ms]">
-                  {product.priceRange}
-                  <span className="ml-2 align-middle text-xs font-sans text-ink-faint">
-                    indicative range — confirmed during consultation
-                  </span>
-                </p>
-              ) : null}
-
-              {product.shortDescription ? (
-                <p className="mt-5 text-base leading-relaxed text-ink-soft animate-fade-up [animation-delay:380ms]">
-                  {product.shortDescription}
-                </p>
-              ) : null}
-
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row animate-fade-up [animation-delay:460ms]">
-                <WhatsAppButton
-                  sourceType="product"
-                  sourceId={product.slug}
-                  subject={product.name}
-                  variant="primary"
-                  size="lg"
-                  label="Inquire on WhatsApp"
-                />
-                <Button href="/book-consultation" variant="outline" size="lg">
-                  Book Consultation
-                </Button>
-              </div>
-
-              {/* Technical specifications */}
-              {specs.length > 0 ? (
-                <div className="mt-10 animate-fade-up [animation-delay:540ms]">
-                  <h2 className="text-[13px] text-ink-faint">
-                    Technical Specifications
-                  </h2>
-                  <dl className="mt-4 divide-y divide-line border-y border-line">
-                    {specs.map(([key, value]) => (
-                      <div key={key} className="grid grid-cols-2 gap-4 py-3 text-sm">
-                        <dt className="text-ink-soft">{key}</dt>
-                        <dd className="text-ink">{String(value)}</dd>
-                      </div>
-                    ))}
-                  </dl>
-                </div>
-              ) : null}
+        <div className="mt-7 grid gap-9 lg:grid-cols-[1.15fr_1fr] lg:gap-[72px]">
+          {/* One image per product, the same cut-out treatment as the grid */}
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[20px] bg-card/55 animate-fade-up lg:sticky lg:top-6 lg:self-start">
+            <div className="absolute inset-x-[14%] inset-y-[9%]">
+              <Image
+                src={resolveImage(product.primaryImage, { width: 1400 })}
+                alt={product.name}
+                fill
+                priority
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-contain"
+              />
             </div>
           </div>
-        </Container>
-      </Section>
 
-      {/* Related inspirations — reconnect product to spaces */}
-      {inspirations.length > 0 ? (
-        <Section tone="clay">
-          <Container size="wide">
-            <Reveal>
-              <Heading
-                eyebrow="In Context"
-                title="Spaces using this product"
-                description="See how this detail behaves in a finished design."
+          <div className="grid content-start gap-[22px] animate-fade-up [animation-delay:120ms]">
+            <Link href={`/brands/${brand.slug}`} className="justify-self-start text-[15px] text-fg/60 hover:text-fg">
+              {brand.name}
+            </Link>
+            <h1 className="-mt-2 text-[clamp(40px,4.6vw,72px)] font-semibold leading-[0.95] tracking-[-0.04em]">
+              {name}
+            </h1>
+            {product.sku ? <CopyCode code={product.sku} /> : null}
+            {product.shortDescription ? (
+              <p className="max-w-[46ch] text-[17px] leading-normal text-fg/60">{product.shortDescription}</p>
+            ) : null}
+
+            {opensWith.length > 0 && facet ? (
+              <div>
+                <p className="mb-2.5 text-sm text-fg/60">{facet.label}</p>
+                <ul className="flex flex-wrap gap-2">
+                  {opensWith.map((value) => (
+                    <li key={value} className="rounded-lg bg-card/55 px-[13px] py-[9px] text-sm">
+                      {value}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+
+            {facts.variants.length > 0 ? (
+              <div>
+                <p className="mb-2.5 text-sm text-fg/60">Available in</p>
+                <ul className="flex flex-wrap gap-2">
+                  {facts.variants.map((variant) => (
+                    <li key={variant} className="rounded-lg bg-card/55 px-[13px] py-[9px] text-sm">
+                      {variant}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+
+            <div className="grid gap-2.5">
+              <WhatsAppArrowButton
+                sourceType="product"
+                subject={product.sku ? `${product.name} (code ${product.sku})` : product.name}
+                size="lg"
+                label="Ask for price on WhatsApp"
+                block
               />
-            </Reveal>
-            <Stagger className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-              {inspirations.map((inspiration) => (
-                <VisualCard
-                  key={inspiration.id}
-                  image={inspiration.primaryImage}
-                  eyebrow={inspiration.space?.title}
-                  title={inspiration.title}
-                  description={inspiration.shortDescription}
-                />
-              ))}
-            </Stagger>
-          </Container>
-        </Section>
-      ) : null}
+              <Link href="/showroom" className={cn(c.root, "flex w-full")}>
+                <span className={cn("flex-1 text-fg ring-1 ring-inset ring-fg/15", c.size.lg.label)}>
+                  See it at the showroom
+                </span>
+                <span aria-hidden className={cn(c.arrow, c.size.lg.arrow)}>
+                  →
+                </span>
+              </Link>
+              <p className="text-[13px] text-fg/60">
+                We confirm the price and stock for your order. Nothing is sold online.
+              </p>
+            </div>
 
-      {/* Related products */}
-      {relatedProducts.length > 0 ? (
-        <Section>
-          <Container size="wide">
-            <Reveal>
-              <Heading eyebrow="Compare" title="Related products" />
-            </Reveal>
-            <Stagger className="mt-10 grid grid-cols-2 gap-x-5 gap-y-10 lg:grid-cols-4" each={0.06}>
-              {relatedProducts.map((related) => (
-                <ProductCard
-                  key={related.id}
-                  href={`/products/${related.slug}`}
-                  name={related.name}
-                  brandName={related.brand?.name}
-                  priceRange={related.priceRange}
-                  primaryImage={related.primaryImage}
-                  availabilityStatus={related.availabilityStatus}
-                />
-              ))}
-            </Stagger>
-          </Container>
-        </Section>
+            {facts.specs.length > 0 ? (
+              <div className="mt-3">
+                <h2 className="mb-2 text-[22px] font-semibold tracking-[-0.03em]">Specifications</h2>
+                <dl>
+                  {facts.specs.map(([key, value]) => (
+                    <div
+                      key={key}
+                      className="grid grid-cols-[1fr_1.4fr] gap-4 border-b border-fg/10 py-[13px] text-[15px]"
+                    >
+                      <dt className="text-fg/60">{key}</dt>
+                      <dd>{value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            ) : null}
+          </div>
+        </div>
+      </section>
+
+      {siblings.length > 0 && category ? (
+        <section
+          aria-labelledby="more-heading"
+          className="mx-auto max-w-[1480px] px-[22px] pt-[120px] lg:px-10"
+        >
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-5">
+            <h2
+              id="more-heading"
+              className="text-[clamp(32px,3.6vw,56px)] font-medium leading-none tracking-[-0.04em]"
+            >
+              More {sentenceCase(category.name).toLowerCase()}
+            </h2>
+            <ArrowLink href={`/hardware/${category.slug}`}>See all</ArrowLink>
+          </div>
+          <div className="grid grid-cols-2 gap-x-3.5 gap-y-8 sm:grid-cols-3 lg:grid-cols-4 lg:gap-x-5">
+            {siblings.map((other) => (
+              <HardwareProductCard
+                key={other.id}
+                product={{
+                  slug: other.slug,
+                  name: displayName(other.name, other.brand?.name),
+                  brand: other.brand?.name ?? "",
+                  image: resolveImage(other.primaryImage, { width: 700 }),
+                  meta:
+                    facetValues(category.slug, productFacts(other.technicalSpecsJson), other.shortDescription).join(
+                      " · ",
+                    ) || undefined,
+                }}
+              />
+            ))}
+          </div>
+        </section>
       ) : null}
-    </>
+    </div>
   );
 }

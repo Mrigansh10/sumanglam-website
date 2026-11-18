@@ -2,7 +2,7 @@
 export const homeNav = [
   { label: "Kitchens", href: "/kitchens" },
   { label: "Wardrobes", href: "/wardrobes" },
-  { label: "Hardware", href: "/hardware-appliances" },
+  { label: "Hardware", href: "/hardware" },
   { label: "Inspiration", href: "/inspiration" },
   { label: "Contact", href: "/contact" },
 ];

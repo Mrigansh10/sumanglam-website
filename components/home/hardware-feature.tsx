@@ -88,7 +88,7 @@ export function HardwareFeature({ logos }: { logos: HomepageBrandLogo[] }) {
         ) : null}
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3.5">
           <WhatsAppArrowButton sourceType="hardware" />
-          <ArrowLink href="/hardware-appliances">Explore hardware</ArrowLink>
+          <ArrowLink href="/hardware">Explore hardware</ArrowLink>
         </div>
       </div>
     </section>

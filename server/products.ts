@@ -1,5 +1,6 @@
 import { supabase, rows, camelizeRecord } from "@/lib/supabase";
 import type { Inspiration, Product, ProductType, ProductSubcategory } from "@/lib/db-types";
+import { VISIBLE_STATUSES } from "@/server/hardware";
 
 type ProductCategoryRef = { id: string; name: string; slug: string };
 
@@ -105,7 +106,7 @@ export async function getProductBySlug(slug: string) {
     .from("products")
     .select("*, brand:brands(*), productType:product_types(*), subcategory:product_subcategories(*)")
     .eq("slug", slug)
-    .eq("status", "published")
+    .in("status", VISIBLE_STATUSES)
     .limit(1);
 
   if (!raw?.length) return null;

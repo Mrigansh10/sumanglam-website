@@ -11,22 +11,28 @@ export function WhatsAppArrowButton({
   subject,
   tone = "dark",
   size = "md",
+  label = "Ask on WhatsApp",
+  block = false,
 }: {
   sourceType: WhatsAppContext["sourceType"];
   subject?: string;
-  tone?: "dark" | "outline";
+  tone?: "dark" | "light" | "outline";
   size?: "md" | "lg";
+  label?: string;
+  /** Full width, label stretching to the arrow. */
+  block?: boolean;
 }) {
   const handleClick = useWhatsAppInquiry({ sourceType, subject });
   return (
-    <button type="button" onClick={handleClick} className={c.root}>
+    <button type="button" onClick={handleClick} className={cn(c.root, block && "flex w-full")}>
       <span
         className={cn(
-          tone === "dark" ? c.label.dark : "text-fg ring-1 ring-inset ring-fg/15",
+          tone === "outline" ? "text-fg ring-1 ring-inset ring-fg/15" : c.label[tone],
           c.size[size].label,
+          block && "flex-1 text-left",
         )}
       >
-        Ask on WhatsApp
+        {label}
       </span>
       <span aria-hidden className={cn(c.arrow, c.size[size].arrow)}>
         →

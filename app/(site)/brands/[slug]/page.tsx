@@ -6,11 +6,13 @@ import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/layout/heading";
 import { PageHero } from "@/components/shared/page-hero";
 import { VisualCard } from "@/components/shared/visual-card";
-import { ProductCard } from "@/components/shared/product-card";
+import { HardwareProductCard } from "@/components/hardware/product-card";
 import { PageViewTracker } from "@/components/shared/page-view-tracker";
 import { Button } from "@/components/ui/button";
 import { WhatsAppButton } from "@/features/whatsapp/whatsapp-button";
 import { getBrandBySlug } from "@/server/brands";
+import { resolveImage } from "@/lib/images";
+import { displayName } from "@/lib/hardware";
 import { safeQuery } from "@/server/safe";
 
 export const dynamic = "force-dynamic";
@@ -121,14 +123,14 @@ export default async function BrandDetailPage({ params }: { params: Params }) {
             <Heading eyebrow="Catalog" title={`${brand.name} products`} />
             <div className="mt-10 grid grid-cols-2 gap-x-5 gap-y-10 lg:grid-cols-4">
               {products.slice(0, 8).map((product) => (
-                <ProductCard
+                <HardwareProductCard
                   key={product.id}
-                  href={`/products/${product.slug}`}
-                  name={product.name}
-                  brandName={brand.name}
-                  priceRange={product.priceRange}
-                  primaryImage={product.primaryImage}
-                  availabilityStatus={product.availabilityStatus}
+                  product={{
+                    slug: product.slug,
+                    name: displayName(product.name, brand.name),
+                    brand: brand.name,
+                    image: resolveImage(product.primaryImage, { width: 700 }),
+                  }}
                 />
               ))}
             </div>

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { supabase } from "@/lib/supabase";
 import { siteConfig } from "@/lib/site";
+import { getHardwareCategories } from "@/server/hardware";
 
 export const dynamic = "force-dynamic";
 
@@ -19,8 +20,8 @@ async function fetchSlugs(table: string) {
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = siteConfig.url.replace(/\/$/, "");
 
-  // NOTE: /products and /showroom are intentionally absent (catalog unpublished
-  // for launch; showroom offline until photography). Inspiration DETAIL urls are
+  // NOTE: /showroom is intentionally absent (offline until photography).
+  // Hardware category and product pages are listed below, published only. Inspiration DETAIL urls are
   // absent because the pages were removed in the visual-only restyle — they 308
   // to /inspiration via next.config redirects.
   const staticRoutes = [
@@ -31,7 +32,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/mrida",
     "/appliances",
     "/wardrobes",
-    "/hardware-appliances",
+    "/hardware",
     "/brands",
     "/architects-designers",
     "/about",
@@ -44,13 +45,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: path === "" ? 1 : 0.7,
   }));
 
-  const [collections, brands] = await Promise.all([
+  const [collections, brands, products, categories] = await Promise.all([
     fetchSlugs("collections"),
     fetchSlugs("brands"),
+    fetchSlugs("products"),
+    getHardwareCategories().catch(() => []),
   ]);
 
   return [
     ...staticRoutes,
+    ...categories.map((category) => ({
+      url: `${base}/hardware/${category.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+    })),
+    ...products.map((item) => ({
+      url: `${base}/products/${item.slug}`,
+      lastModified: item.updatedAt,
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    })),
     ...collections.map((item) => ({
       url: `${base}/collections/${item.slug}`,
       lastModified: item.updatedAt,

@@ -48,6 +48,10 @@ const nextConfig: NextConfig = {
       // restyle (Session 9). Real 308s replace the page-level soft redirect
       // so crawlers consolidate onto /inspiration.
       { source: "/inspiration/:slug", destination: "/inspiration", permanent: true },
+      // PERMANENT: Hardware moved to /hardware with category pages (2026-11-18).
+      // The old product list is replaced by the category pages.
+      { source: "/hardware-appliances", destination: "/hardware", permanent: true },
+      { source: "/products", destination: "/hardware", permanent: true },
     ];
   },
   images: {

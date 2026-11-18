@@ -22,7 +22,7 @@ const businesses = [
     slot: "hardware",
     title: "Hardware",
     line: "Hettich, Blum, Häfele, Yale and more",
-    href: "/hardware-appliances",
+    href: "/hardware",
     position: "30% 62%",
   },
 ] as const;

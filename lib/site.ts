@@ -39,7 +39,7 @@ export const navigation = {
   main: [
     { label: "Kitchens", href: "/kitchens" },
     { label: "Inspiration", href: "/inspiration" },
-    { label: "Hardware", href: "/hardware-appliances" },
+    { label: "Hardware", href: "/hardware" },
     { label: "Brands", href: "/brands" },
     { label: "Architects & Designers", href: "/architects-designers" },
     { label: "About", href: "/about" },
@@ -49,7 +49,7 @@ export const navigation = {
     explore: [
       { label: "Kitchens", href: "/kitchens" },
       { label: "Inspiration", href: "/inspiration" },
-      { label: "Hardware", href: "/hardware-appliances" },
+      { label: "Hardware", href: "/hardware" },
       { label: "Brands", href: "/brands" },
     ],
     solutions: [

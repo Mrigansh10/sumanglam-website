@@ -102,19 +102,17 @@ const primaryNav: { label: string; href: string; mega?: MegaPanel }[] = [
   },
   {
     label: "Hardware",
-    href: "/hardware-appliances",
+    href: "/hardware",
     mega: {
       kind: "columns",
       title: "Hardware",
-      titleHref: "/hardware-appliances",
+      titleHref: "/hardware",
       sections: [
         {
           heading: "Categories",
           links: [
-            { label: "Furniture Fittings", href: "/hardware-appliances" },
-            { label: "Handles & Locks", href: "/hardware-appliances" },
-            { label: "Sliding Systems", href: "/hardware-appliances" },
-            { label: "Kitchen Accessories", href: "/hardware-appliances" },
+            { label: "Digital Locks", href: "/hardware/digital-locks" },
+            { label: "All Hardware", href: "/hardware" },
           ],
         },
         {
@@ -141,7 +139,7 @@ const mobileNav: NavLink[] = [
   { label: "Kitchens", href: "/kitchens" },
   { label: "Inspiration", href: "/inspiration" },
   { label: "Wardrobes", href: "/wardrobes" },
-  { label: "Hardware", href: "/hardware-appliances" },
+  { label: "Hardware", href: "/hardware" },
   { label: "Brands", href: "/brands" },
   { label: "Architects & Designers", href: "/architects-designers" },
   { label: "About", href: "/about" },
