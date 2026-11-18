@@ -43,7 +43,7 @@ const primaryNav: { label: string; href: string; mega?: MegaPanel }[] = [
           links: [
             { label: "German Kitchens", href: "/nolte" },
             { label: "Modular Kitchens", href: "/mrida" },
-            { label: "Built-in Appliances", href: "/kitchens" },
+            { label: "Built-in Appliances", href: "/appliances" },
             { label: "Kitchen Inspirations", href: "/inspiration?space=kitchen" },
           ],
         },

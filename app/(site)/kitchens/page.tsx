@@ -300,6 +300,7 @@ export default async function KitchensPage() {
             From <span className="font-medium text-fg">Bosch, Siemens, Liebherr, Häfele</span> and{" "}
             <span className="font-medium text-fg">Blaupunkt</span>.
           </p>
+          <ArrowLink href="/appliances">All appliances</ArrowLink>
         </div>
         <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-card lg:rounded-[20px]">
           <FadeInImage

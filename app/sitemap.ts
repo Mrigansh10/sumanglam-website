@@ -29,6 +29,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/kitchens",
     "/nolte",
     "/mrida",
+    "/appliances",
     "/wardrobes",
     "/hardware-appliances",
     "/brands",
