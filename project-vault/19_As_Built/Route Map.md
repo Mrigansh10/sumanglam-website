@@ -26,7 +26,7 @@ updated: 2026-08-22
 | `/mrida` | `mrida/page.tsx` | `features/brands/solution-brand-page.tsx` | ✅ Live. Kitchens + wardrobes + interiors |
 | `/appliances` | `appliances/page.tsx` | static | ✅ Live 2026-11-18. By-job guide to built-in appliances; menu "Built-in Appliances" and the Kitchens appliance section link here. See [[Decision - Brand Images On Appliances]] |
 | `/collections/[slug]` | `collections/[slug]/page.tsx` | `getCollectionBySlug()` | ⚠️ Built but effectively dormant — collections are unfilled pending the render batch |
-| `/products/[slug]` | `products/[slug]/page.tsx` | `getProductBySlug()` | ✅ Live for published products (20 Yale smart locks). One cut-out image, no prices |
+| `/products/[slug]` | `products/[slug]/page.tsx` | `getProductBySlug()` | ✅ Live for published products (163 Yale products). One cut-out image, no prices |
 | `/showroom` | `showroom/page.tsx` | `getShowroomSections()` | ⛔ **307 → `/contact`**. Restore checklist is in the page file. See [[Decision - Showroom Temporarily Offline]] |
 | `/book-consultation` | `book-consultation/page.tsx` | `features/consultations/consultation-form.tsx` → `POST /api/v1/consultations` | ✅ Live and **verified working on prod** since `4e744a4` |
 | `/about` | `about/page.tsx` | static | ✅ Live. Origin story is still placeholder copy |

@@ -127,6 +127,11 @@ browse the internet and screenshot sites; the session built the structure that r
 **Unchanged:** the direction is still **NOT locked**, Round 2 is still a text-only round, nothing
 is built. Next step is the user's first real batch of screenshots, then "ingest".
 
+## Session 26c — 2026-11-18
+
+* **The full Yale range is live**: 163 products in 10 hardware categories, from the 2026 price list, with official or price-list photos as baked cut-outs and no prices.
+* **Next:** a Tally stock link, either Excel export matching or a sync agent; the user will come back to it. Other brands' catalogues to follow.
+
 ## Session 26b — 2026-11-18
 
 * **The hardware catalogue went live**: `/hardware`, category pages and V2 product pages, with 20 Yale smart locks. See [[Decision - Hardware Catalogue Ask For Price]].

@@ -1000,6 +1000,14 @@ Mrida, Brands → About, Architects, products.
 - A `next build` once failed inside `next/font` while fetching Google Fonts. It was a network hiccup and passed on retry.
 - **Next:** the Appliances page. Its plan is in the `phase2-brand-pages-in-progress` memory and is still unapproved, so prototype it first.
 
+### Session 26c — 2026-11-18 (full Yale range LIVE)
+- **163 Yale products are published** across 10 hardware categories: digital locks (28), handles (42), locks & cylinders (38, category renamed "Locks & Cylinders", slug still `locks-and-security`), smart home (15, new), safes (14), wardrobe & cabinet locks (10, new `wardrobe-locks`), door controls (9), hinges (3), architectural hardware (3), furniture fittings (1). The user stocks every category in the price list.
+- **One product per design**: finishes and versions go in `Variants`, and per-variant codes go in spec rows, which search matches. Prices are never shown.
+- **Photos**: Yale official site first. About 25 are crops from the price-list PDF (`scripts/yale-catalogue/crops/`) where Yale has no image online. Weak spots: YMEL-708 (faint box), and a few products share one photo because Yale uses one image for both.
+- **Importer** `scripts/yale-catalogue/import-category.mjs <key>` uses the service-role key, uploads the official photo, bakes the cut-out and inserts as a draft; `--images SKU,SKU` re-bakes a photo under a new asset name (re-using the name serves stale CDN images). Data lives in `scripts/yale-catalogue/data/*.json`, each with a `siteCategory`.
+- **Hardware page** categories are now a two-column grid; the Hardware menu links Digital Locks, Handles, Locks & Cylinders, Safes. Filters are configured in `CATEGORY_FACETS` (lib/product-specs.ts); copy in `CATEGORY_COPY` (lib/hardware.ts).
+- **Next (user, later): Tally stock link.** Option 1: the user exports Stock Summary to Excel (Alt+E) and I match items to SKUs and set availability. Option 2: a sync agent on the Tally PC reads Tally's XML/HTTP interface and pushes to Supabase. Proposed display: "In stock" / "Ask for availability", never quantities or prices. A design is in stock if any finish is. The user hasn't sent an export yet. Other brands' catalogues are still to come.
+
 ### Session 26b — 2026-11-18 (Hardware catalogue LIVE)
 - **`/hardware` is live** (`ba34c18`), replacing `/hardware-appliances` (308). `/products` also 308s to `/hardware`. Sections: header, "Browse by category." (tiles only for categories with published products), "Worth a closer look." featured row, charcoal trade band ("Know the code? Send it to us."), "Brands we carry.", closing CTA.
 - **Category pages** `/hardware/[category]`: search by name or code, quick filters per category from `CATEGORY_FACETS` in `lib/product-specs.ts` (digital locks: "Opens with" Face/Fingerprint/PIN/Card/App), brand filter appears only with 2+ brands, "Can't find it here?" WhatsApp prompt.
