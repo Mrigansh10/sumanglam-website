@@ -1,6 +1,6 @@
 # HANDOFF — Sumanglam Digital Showroom
 
-**Last updated:** 2026-11-05
+**Last updated:** 2026-11-18
 **Repo:** https://github.com/Mrigansh10/sumanglam-website
 **Dev server:** `npm run dev` → http://localhost:3000
 
@@ -999,6 +999,13 @@ Mrida, Brands → About, Architects, products.
 - The user approved the copy as shown ("good enough"). It was never answered whether Pooja units belong in the interiors list or whether the two classic kitchens should stay.
 - A `next build` once failed inside `next/font` while fetching Google Fonts. It was a network hiccup and passed on retry.
 - **Next:** the Appliances page. Its plan is in the `phase2-brand-pages-in-progress` memory and is still unapproved, so prototype it first.
+
+### Session 26 — 2026-11-18 (Appliances page LIVE)
+- **`/appliances` is live** (`da2de02`), shipped "as is" from the approved prototype; the user will revise it later. Sections: header, "Planned in, not added on." (4 points incl. installation with the brand's expert on site), "What goes in." by job (Cooking, Chimneys & hoods, Coffee, Cooling, Cleaning), a charcoal "See them in our kitchens." band (own photos only), "Five brands." linking to `/brands/*`, and a closing CTA.
+- **Images** are in Cloudinary `sumanglam/appliances/*`: 7 own showroom photos plus 5 credited Bosch/Siemens website images. See the vault's Decision - Brand Images On Appliances.
+- Menu "Built-in Appliances" now goes to `/appliances`; the Kitchens appliance section gained an "All appliances" link; added to the sitemap.
+- **Open:** more Häfele images (hafeleindia.com blocks automated downloads, so they need a rep, catalogue PDF or manual save); whether Siemens fridges are sold; the 1640px header image may look soft.
+- **Still uncommitted, on purpose:** the `AGENTS.md` grant rule and `scripts/security/rls-lockdown.sql`.
 
 ### Session 25 — 2026-11-05 (normal scroll LIVE)
 - **Lenis smooth scroll removed; the site now uses the browser's normal scroll.** The user felt the smoothed scroll was heavy and chose normal after comparing. Deleted `components/motion/smooth-scroll.tsx`, the `lenis` dependency and `data-lenis-prevent` on `ideas-rail.tsx`. Scroll-triggered animations stay on GSAP ScrollTrigger.

@@ -23,6 +23,7 @@ updated: 2026-08-22
 | `/brands/[slug]` | `brands/[slug]/page.tsx` | `getBrandBySlug()` | ✅ Live. Catalog section renders **conditionally** (hidden while products are draft) |
 | `/nolte` | `nolte/page.tsx` | `features/brands/solution-brand-page.tsx` | ✅ Live. Kitchens only, never wardrobes |
 | `/mrida` | `mrida/page.tsx` | `features/brands/solution-brand-page.tsx` | ✅ Live. Kitchens + wardrobes + interiors |
+| `/appliances` | `appliances/page.tsx` | static | ✅ Live 2026-11-18. By-job guide to built-in appliances; menu "Built-in Appliances" and the Kitchens appliance section link here. See [[Decision - Brand Images On Appliances]] |
 | `/collections/[slug]` | `collections/[slug]/page.tsx` | `getCollectionBySlug()` | ⚠️ Built but effectively dormant — collections are unfilled pending the render batch |
 | `/products` | `products/page.tsx` | `listProducts()` | ⛔ Reachable by URL but **unlinked and empty** — all 38 products are `draft`. Removed from sitemap |
 | `/products/[slug]` | `products/[slug]/page.tsx` | `getProductBySlug()` | ⛔ Same. See [[Decision - Product Catalog Unpublished]] |
@@ -46,7 +47,7 @@ uses query filters: `/inspiration?space=kitchen|wardrobe|hardware|appliances`.
 **Not in nav:** `/showroom` (removed), `/products` (removed), `/collections/*`.
 
 **In `app/sitemap.ts`:** `/`, `/inspiration`, `/kitchens`, `/wardrobes`,
-`/hardware-appliances`, `/brands`, `/nolte`, `/mrida`, `/about`, `/contact`,
+`/hardware-appliances`, `/brands`, `/nolte`, `/mrida`, `/appliances`, `/about`, `/contact`,
 `/architects-designers`, `/book-consultation` — plus brand detail pages. Deliberately honest:
 no showroom, no products, no inspiration detail URLs. See [[SEO And Metadata]].
 

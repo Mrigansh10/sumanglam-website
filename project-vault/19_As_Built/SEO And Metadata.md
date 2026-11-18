@@ -24,7 +24,7 @@ Facebook pages go live, collect the URLs and add them to the `sameAs` array on b
 `app/sitemap.ts` is deliberately **honest** — it lists only URLs that actually render:
 
 `/`, `/inspiration`, `/kitchens`, `/wardrobes`, `/hardware-appliances`, `/brands`, `/nolte`,
-`/mrida`, `/about`, `/contact`, `/architects-designers`, `/book-consultation`, plus brand
+`/mrida`, `/appliances`, `/about`, `/contact`, `/architects-designers`, `/book-consultation`, plus brand
 detail pages.
 
 Removed on purpose: inspiration **detail** URLs (now real 308s), `/products`, `/showroom`.

@@ -25,6 +25,7 @@ updated: 2026-08-22
 | [[Decision - Product Catalog Unpublished]] | 2026-07-04 | Yes — republish and restore links |
 | [[Decision - Showroom Temporarily Offline]] | 2026-07-06 | **Yes, and intended to be** — needs real photos |
 | [[Decision - Native Scroll Over Lenis]] | 2026-11-05 | Yes — reinstall Lenis and restore the wrapper |
+| [[Decision - Brand Images On Appliances]] | 2026-11-18 | Yes — swap the credited images for own or brand-supplied ones |
 
 ## Experience
 

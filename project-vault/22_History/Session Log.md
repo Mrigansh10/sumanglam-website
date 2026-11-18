@@ -127,6 +127,13 @@ browse the internet and screenshot sites; the session built the structure that r
 **Unchanged:** the direction is still **NOT locked**, Round 2 is still a text-only round, nothing
 is built. Next step is the user's first real batch of screenshots, then "ingest".
 
+## Session 26 — 2026-11-18
+
+* **The Appliances page went live** at `/appliances`, shipped as is from the prototype. Own showroom
+  photos plus credited Bosch/Siemens website images; see [[Decision - Brand Images On Appliances]].
+* Menu "Built-in Appliances" and the Kitchens appliance section now link to it.
+* **Open:** more Häfele images, Siemens fridge question, soft header image.
+
 ## Session 25 — 2026-11-05
 
 * **Native scroll went live.** Lenis was removed because the user felt the scroll was heavy. See
