@@ -1,0 +1,152 @@
+{
+ "brand": "dorset",
+ "siteCategory": "hinges",
+ "source": "Dorset Price List v6.2 (w.e.f. 15.04.2026)",
+ "imageBase": "https://www.dorsetindia.com/Uploads/ProductsImage/",
+ "products": [
+  {
+   "name": "Dorset Stainless steel door hinge",
+   "sku": "HG 1151",
+   "shortDescription": "Ball-bearing stainless steel door hinge.",
+   "technicalSpecs": {
+    "Sizes": "76×64×2, 102×76×2.5, 102×76×3, 127×76×2.5, 127×76×3 mm",
+    "Material": "Stainless steel (SS 304 option)",
+    "Product codes": "HG 1150–1154, HG 1151 A–1154 A (SS 304)",
+    "Key Features": "Ball bearing, Fire rated versions (HG 1253, HG 1154 M)"
+   },
+   "priceRange": null,
+   "image": "HG1150.webp"
+  },
+  {
+   "name": "Dorset Pin type welded hinge",
+   "sku": "HG5150SS",
+   "shortDescription": "Stainless steel pin-type welded hinge.",
+   "technicalSpecs": {
+    "Sizes": "75, 100, 125 mm",
+    "Material": "Stainless steel",
+    "Product codes": "HG5150SS–HG5152HSS"
+   },
+   "priceRange": null,
+   "image": "HG1001.webp"
+  },
+  {
+   "name": "Dorset Round corner hinge",
+   "sku": "HGRC6051SS",
+   "shortDescription": "Stainless steel round-corner door hinge.",
+   "technicalSpecs": {
+    "Sizes": "100×75×2.5 mm",
+    "Material": "Stainless steel",
+    "Product codes": "HGRC6051SS, HGRC 1152 A, HGRC 1153 A (fire rated)"
+   },
+   "priceRange": null,
+   "image": "HGRC.webp"
+  },
+  {
+   "name": "Dorset Gen slide-on hinge",
+   "sku": "IG0C4H",
+   "shortDescription": "Slide-on cabinet hinge with a 4-hole mounting plate.",
+   "technicalSpecs": {
+    "Type": "Cabinet hinge",
+    "Options": "Crank 0 (full overlay), 9 (half overlay), 18 (inset)",
+    "Product codes": "IG0C4H, IG9C4H, IG18C4H; SS0C4H, SS9C4H, SS18C4H (stainless steel)",
+    "Sold as": "Pair"
+   },
+   "priceRange": null,
+   "image": "4holef.webp"
+  },
+  {
+   "name": "Dorset Gen soft-close slide-on hinge",
+   "sku": "IGSOSC0C",
+   "shortDescription": "Soft-close slide-on cabinet hinge with a 4-hole mounting plate.",
+   "technicalSpecs": {
+    "Type": "Cabinet hinge",
+    "Key Features": "Soft close",
+    "Options": "Crank 0 (full overlay), 9 (half overlay), 18 (inset)",
+    "Product codes": "IGSOSC0C, IGSOSC9C, IGSOSC18C",
+    "Sold as": "Pair"
+   },
+   "priceRange": null,
+   "image": "softclose4holemountingplate.webp"
+  },
+  {
+   "name": "Dorset Gen soft-close clip-on hinge",
+   "sku": "IGSC0C",
+   "shortDescription": "Soft-close clip-on cabinet hinge with a 4-hole mounting plate.",
+   "technicalSpecs": {
+    "Type": "Cabinet hinge",
+    "Key Features": "Soft close, Clip-on",
+    "Options": "Crank 0 (full overlay), 9 (half overlay), 18 (inset)",
+    "Product codes": "IGSC0C, IGSC9C, IGSC18C; SSSC0C, SSSC9C, SSSC18C (stainless steel 2D)",
+    "Sold as": "Pair"
+   },
+   "priceRange": null,
+   "image": "SS2DSoftCloseHinge.webp"
+  },
+  {
+   "name": "Dorset Gen soft-close 3D hinge",
+   "sku": "IGSC3D0C",
+   "shortDescription": "Soft-close clip-on cabinet hinge with a 3D adjustable mounting plate.",
+   "technicalSpecs": {
+    "Type": "Cabinet hinge",
+    "Key Features": "Soft close, 3D adjustable",
+    "Options": "Crank 0 (full overlay), 9 (half overlay), 18 (inset)",
+    "Product codes": "IGSC3D0C, IGSC3D9C, IGSC3D18C; SSSC3D0C, SSSC3D9C, SSSC3D18C (stainless steel)",
+    "Sold as": "Pair"
+   },
+   "priceRange": null,
+   "image": "softclose3dadjustabblehinge.webp"
+  },
+  {
+   "name": "Dorset Gen soft-close SS 304 hinge",
+   "sku": "IGSCSS0C",
+   "shortDescription": "Soft-close clip-on cabinet hinge in SS 304 stainless steel.",
+   "technicalSpecs": {
+    "Type": "Cabinet hinge",
+    "Key Features": "Soft close, SS 304",
+    "Options": "Crank 0 (full overlay), 9 (half overlay), 18 (inset)",
+    "Product codes": "IGSCSS0C, IGSCSS9C, IGSCSS18C",
+    "Sold as": "Pair"
+   },
+   "priceRange": null,
+   "image": "softclosess304.webp"
+  },
+  {
+   "name": "Dorset Gen thick door hinge",
+   "sku": "IGTD0C",
+   "shortDescription": "Cabinet hinge for thick doors, standard or soft close.",
+   "technicalSpecs": {
+    "Type": "Cabinet hinge",
+    "Key Features": "For thick doors",
+    "Options": "Crank 0 (full overlay), 9 (half overlay), 18 (inset)",
+    "Product codes": "IGTD0C, IGTD9C, IGTD18C; IGSCTD0C, IGSCTD9C, IGSCTD18C (soft close)",
+    "Sold as": "Pair"
+   },
+   "priceRange": null,
+   "image": "thickdoor.webp"
+  },
+  {
+   "name": "Dorset Gen corner hinges",
+   "sku": "IGBLDCR90",
+   "shortDescription": "Blind-corner 90° and Pi-corner 165° cabinet hinges, standard or soft close.",
+   "technicalSpecs": {
+    "Type": "Cabinet hinge",
+    "Product codes": "IGBLDCR90, IGBLDCRSC90 (blind corner 90°), IGPICR165, IGPICRSC165 (Pi corner 165°)",
+    "Sold as": "Pair"
+   },
+   "priceRange": null,
+   "image": "picorner165hinge.webp"
+  },
+  {
+   "name": "Dorset Gen bi-fold hinge",
+   "sku": "IGBFH",
+   "shortDescription": "Hinge for bi-fold cabinet doors.",
+   "technicalSpecs": {
+    "Type": "Cabinet hinge",
+    "Product codes": "IGBFH",
+    "Sold as": "Pair"
+   },
+   "priceRange": null,
+   "image": "bifoldhinge.webp"
+  }
+ ]
+}

@@ -1,0 +1,151 @@
+{
+ "brand": "dorset",
+ "siteCategory": "furniture-fittings",
+ "source": "Dorset Price List v6.2 (w.e.f. 15.04.2026)",
+ "imageBase": "https://www.dorsetindia.com/Uploads/ProductsImage/",
+ "products": [
+  {
+   "name": "Dorset I Slide ball bearing drawer slide",
+   "sku": "ISBB",
+   "shortDescription": "Full-extension ball-bearing drawer channel, 46 mm.",
+   "technicalSpecs": {
+    "Type": "Drawer slide",
+    "Load": "35 kg or 45 kg",
+    "Sizes": "250, 300, 350, 400, 450, 500, 550, 600 mm",
+    "Sold as": "Pair",
+    "Product codes": "ISBB250–ISBB600 (45 kg), ISBB35250–ISBB35600 (35 kg); BL suffix for black",
+    "Variants": "Zinc, Black"
+   },
+   "priceRange": null,
+   "image": "bbfullextnslidezinc.webp"
+  },
+  {
+   "name": "Dorset I Slide stainless steel drawer slide",
+   "sku": "ISBB35SS",
+   "shortDescription": "Full-extension stainless steel ball-bearing drawer channel, 43 mm.",
+   "technicalSpecs": {
+    "Type": "Drawer slide",
+    "Load": "35 kg",
+    "Sizes": "350, 400, 450, 500, 550 mm",
+    "Sold as": "Pair",
+    "Product codes": "ISBB35350SS–ISBB35550SS",
+    "Material": "Stainless steel"
+   },
+   "priceRange": null,
+   "image": "2.jpg"
+  },
+  {
+   "name": "Dorset I Slide heavy duty drawer slide",
+   "sku": "ISBBHD",
+   "shortDescription": "Heavy-duty full-extension ball-bearing channel, 53 mm.",
+   "technicalSpecs": {
+    "Type": "Drawer slide",
+    "Load": "90 kg or 120 kg",
+    "Sizes": "750, 900, 1050, 1200 mm",
+    "Sold as": "Pair",
+    "Product codes": "ISBB90HD750–1200, ISBB120HD750–1200"
+   },
+   "priceRange": null,
+   "image": "ISBB90HD750.webp"
+  },
+  {
+   "name": "Dorset I Move soft-close drawer slide",
+   "sku": "IMBBSC",
+   "shortDescription": "Full-extension ball-bearing channel with soft close, 46 mm.",
+   "technicalSpecs": {
+    "Type": "Drawer slide",
+    "Load": "35 kg",
+    "Sizes": "300, 350, 400, 450, 500, 550, 600 mm",
+    "Sold as": "Pair",
+    "Product codes": "IMBB300SC–IMBB600SC; BL suffix for black",
+    "Variants": "Zinc, Black"
+   },
+   "priceRange": null,
+   "image": "bbfullextnsoftcloseslidezinc.webp"
+  },
+  {
+   "name": "Dorset I Trax undermount slide",
+   "sku": "ITRAX",
+   "shortDescription": "Concealed undermount drawer runner with soft close.",
+   "technicalSpecs": {
+    "Type": "Drawer slide",
+    "Load": "40 kg",
+    "Sizes": "300, 350, 400, 450, 500, 550 mm",
+    "Sold as": "Pair",
+    "Product codes": "ITRAX300–ITRAX550"
+   },
+   "priceRange": null,
+   "image": "Untitled-45copy.webp"
+  },
+  {
+   "name": "Dorset I Box drawer system",
+   "sku": "IBOX",
+   "shortDescription": "Double-wall drawer system with soft close, in four heights.",
+   "technicalSpecs": {
+    "Type": "Drawer system",
+    "Load": "40 kg",
+    "Heights": "89, 127, 174, 206 mm",
+    "Sizes": "350, 400, 450, 500, 550, 600 mm",
+    "Key Features": "Gallery railing available",
+    "Product codes": "IBOX + length + GR / AN / MO + height (e.g. IBOX450GR127)",
+    "Variants": "Grey, Anthracite, Mocha"
+   },
+   "priceRange": null,
+   "image": "iboxgrey.webp"
+  },
+  {
+   "name": "Dorset Glass drawer system",
+   "sku": "GLBOX",
+   "shortDescription": "Drawer system with glass sides, in anthracite.",
+   "technicalSpecs": {
+    "Type": "Drawer system",
+    "Load": "35 kg",
+    "Heights": "84, 116, 167, 199 mm",
+    "Sizes": "450, 500, 550 mm",
+    "Product codes": "GLBOX + length + AN + height (e.g. GLBOX500AN116)",
+    "Variants": "Anthracite"
+   },
+   "priceRange": null,
+   "image": "GLASSDRAWERSYSTEM.jpg"
+  },
+  {
+   "name": "Dorset I Lift gas piston",
+   "sku": "IL",
+   "shortDescription": "Gas piston that holds cabinet flaps open, standard, soft close or heavy duty.",
+   "technicalSpecs": {
+    "Type": "Lift system",
+    "Options": "Standard 60–250 N, soft close 60–150 N, heavy duty 12\" 200–350 N",
+    "Sold as": "Pair",
+    "Product codes": "IL60N–IL250N, IL60SC–IL150SC, ILHD200N–ILHD350N"
+   },
+   "priceRange": null,
+   "image": "gaspiston.webp"
+  },
+  {
+   "name": "Dorset I Lift flap and bi-fold lift-up",
+   "sku": "ILFLPD",
+   "shortDescription": "Lift-up fittings for flap and bi-fold wall cabinet doors.",
+   "technicalSpecs": {
+    "Type": "Lift system",
+    "Options": "Flap door 60, 90, 150 N; bi-fold 90, 150 N",
+    "Sold as": "Pair",
+    "Product codes": "ILFLPD60N, ILFLPD90N, ILFLPD150N, ILBIFD90N, ILBIFD150N"
+   },
+   "priceRange": null,
+   "image": "dorset/ilift-flap.png"
+  },
+  {
+   "name": "Dorset I Lift bed fitting",
+   "sku": "ILBFF",
+   "shortDescription": "Lift-up storage bed frame with gas pumps.",
+   "technicalSpecs": {
+    "Type": "Bed fitting",
+    "Sizes": "Frame 900 or 1500",
+    "Options": "Gas pumps 750–2500 N",
+    "Product codes": "ILBFF900, ILBFF1500, ILBFGPSC75–ILBFGPSC250"
+   },
+   "priceRange": null,
+   "image": "BedFitting.webp"
+  }
+ ]
+}

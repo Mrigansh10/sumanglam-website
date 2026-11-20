@@ -1,0 +1,119 @@
+{
+ "brand": "godrej",
+ "siteCategory": "furniture-fittings",
+ "source": "Godrej Price List (w.e.f. 1.07.2026)",
+ "products": [
+  {
+   "name": "Godrej Regular drawer channel",
+   "sku": "Drawer Channel",
+   "shortDescription": "Ball-bearing drawer channel in 35 or 45 kg load ratings.",
+   "technicalSpecs": {
+    "Type": "Drawer slide",
+    "Load": "35 kg or 45 kg",
+    "Sold as": "Pair",
+    "Extension Length": "Full Length",
+    "Load Capacity": "45 Kgs",
+    "Variants": "Zinc, Black"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/PBA_00588_d1d0a8348a.webp"
+  },
+  {
+   "name": "Godrej SS 304 drawer channel",
+   "sku": "SS304 Channel",
+   "shortDescription": "Stainless steel SS 304 ball-bearing drawer channel.",
+   "technicalSpecs": {
+    "Type": "Drawer slide",
+    "Load": "45 kg",
+    "Sold as": "Pair",
+    "Extension Length": "Full Length",
+    "Load Capacity": "45 Kgs",
+    "Variants": "SS 304"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/SS_304_Product_Images_918x1028px_f63ef163d8.webp"
+  },
+  {
+   "name": "Godrej Undermount channel",
+   "sku": "Undermount",
+   "shortDescription": "Concealed undermount drawer channel with 3D adjustment.",
+   "technicalSpecs": {
+    "Type": "Drawer slide",
+    "Variants": "Zinc"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_a1e12926cb.webp"
+  },
+  {
+   "name": "Godrej Slim Ergo drawer system",
+   "sku": "Slim Ergo",
+   "shortDescription": "Slim-wall drawer system in 4, 6 and 8 inch heights.",
+   "technicalSpecs": {
+    "Type": "Drawer system",
+    "Heights": "4, 6, 8 inch",
+    "Key Features": "Square rails and front fascia rails available",
+    "Variants": "Anthracite, Black"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/slim_ergo_6_anthracite_1_0da707c233.webp"
+  },
+  {
+   "name": "Godrej Super Slim Ergo drawer system",
+   "sku": "Super Slim Ergo",
+   "shortDescription": "Super slim drawer system in 4, 6 and 8 inch heights.",
+   "technicalSpecs": {
+    "Type": "Drawer system",
+    "Heights": "4, 6, 8 inch",
+    "Variants": "Anthracite, Black"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/super_slim_ergo_6_anthracite_1_0dac222790.webp"
+  },
+  {
+   "name": "Godrej Lift-up flap and bi-fold system",
+   "sku": "Lift Up",
+   "shortDescription": "Lift-up fittings for flap and bi-fold wall cabinet doors.",
+   "technicalSpecs": {
+    "Type": "Lift system",
+    "Options": "Flap, bi-fold, bi-fold heavy",
+    "Variants": "Anthracite"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/918x1028_Bi_fold_3_Photoroom_557d526b6e.webp"
+  },
+  {
+   "name": "Godrej Gas spring",
+   "sku": "Gas Spring",
+   "shortDescription": "Gas spring that holds cabinet flaps open.",
+   "technicalSpecs": {
+    "Type": "Lift system",
+    "Options": "60, 80, 100, 120, 150, 200, 250 N"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_1_aeb781ff43.webp"
+  },
+  {
+   "name": "Godrej Neulift bed fittings",
+   "sku": "Neulift",
+   "shortDescription": "Lift-up storage bed arms, frames and gas springs.",
+   "technicalSpecs": {
+    "Type": "Bed fitting",
+    "Options": "Normal, regular, extended and heavy duty arms; gas springs 500–2500 N",
+    "Variants": "Anthracite"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/918x1028_bed_Neulift_regular_arm_2237_Photoroom_c232193965.webp"
+  },
+  {
+   "name": "Godrej Murphy bed fittings",
+   "sku": "Murphy Bed",
+   "shortDescription": "Fittings for vertical and horizontal wall (Murphy) beds.",
+   "technicalSpecs": {
+    "Type": "Bed fitting",
+    "Options": "Vertical, horizontal, folding leg"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/Wall_Mounted_Bed_Horizontal_jpg_8456fccff3.webp"
+  }
+ ]
+}

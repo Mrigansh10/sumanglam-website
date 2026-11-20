@@ -1,0 +1,37 @@
+{
+ "brand": "godrej",
+ "siteCategory": "architectural-hardware",
+ "source": "Godrej Price List (w.e.f. 1.07.2026)",
+ "products": [
+  {
+   "name": "Godrej Aldrop",
+   "sku": "Aldrop",
+   "shortDescription": "Stainless steel and brass aldrops, including inner aldrops.",
+   "technicalSpecs": {
+    "Variants": "Stainless Steel, Brass, Matte Black, Antique Brass"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/9438_b944cbc312.webp"
+  },
+  {
+   "name": "Godrej Door stopper",
+   "sku": "Door Stopper",
+   "shortDescription": "Door stopper in satin steel, antique brass or matte black.",
+   "technicalSpecs": {
+    "Variants": "Satin Steel, Antique Brass, Matte Black"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/DSC_4872_bb419de642.webp"
+  },
+  {
+   "name": "Godrej Tower bolt",
+   "sku": "Tower Bolt",
+   "shortDescription": "Regular stainless steel and designer tower bolts.",
+   "technicalSpecs": {
+    "Variants": "Stainless Steel, Antique Brass, Matte Black"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/9364_PNG_2_8d99e64539.webp"
+  }
+ ]
+}

@@ -58,8 +58,9 @@ export function productFacts(raw: unknown): ProductFacts {
 }
 
 /**
- * Category-specific quick filters, matched against a product's features and
- * description. Categories without an entry just get search.
+ * Category-specific quick filters, matched against a product's features,
+ * variants, "Type" and "Access" rows and description. Categories without an
+ * entry just get search. Options are written to work across brands.
  */
 export const CATEGORY_FACETS: Record<
   string,
@@ -72,7 +73,7 @@ export const CATEGORY_FACETS: Record<
       { value: "Fingerprint", keywords: ["biometric", "fingerprint"] },
       { value: "PIN", keywords: ["pin"] },
       { value: "Card", keywords: ["rfid"] },
-      { value: "App", keywords: ["bluetooth", "ble"] },
+      { value: "App", keywords: ["bluetooth", "ble", "app\\b"] },
     ],
   },
   "wardrobe-locks": {
@@ -88,7 +89,7 @@ export const CATEGORY_FACETS: Record<
     options: [
       { value: "Mortise locks", keywords: ["mortise"] },
       { value: "Rim locks", keywords: ["rim lock"] },
-      { value: "Cylinders", keywords: ["euro profile"] },
+      { value: "Cylinders", keywords: ["euro profile", "cylinder\\b"] },
       { value: "Locksets", keywords: ["lockset"] },
       { value: "Electric", keywords: ["electric"] },
       { value: "Padlocks", keywords: ["padlock"] },
@@ -106,10 +107,10 @@ export const CATEGORY_FACETS: Record<
   handles: {
     label: "Finish",
     options: [
-      { value: "Satin steel", keywords: ["satin steel"] },
-      { value: "Antique brass", keywords: ["antique brass"] },
-      { value: "Black matt", keywords: ["black matt"] },
-      { value: "Rose gold", keywords: ["rose gold"] },
+      { value: "Silver & steel", keywords: ["satin steel", "silver", "satin matt", "satin nickel", "stainless"] },
+      { value: "Gold", keywords: ["gold"] },
+      { value: "Black & graphite", keywords: ["black", "graphite", "matt black"] },
+      { value: "Bronze & antique", keywords: ["antique", "bronze", "copper", "merlot"] },
     ],
   },
   "door-controls": {
@@ -117,6 +118,24 @@ export const CATEGORY_FACETS: Record<
     options: [
       { value: "Surface mounted", keywords: ["surface"] },
       { value: "Concealed", keywords: ["concealed"] },
+      { value: "Floor springs", keywords: ["floor spring"] },
+      { value: "Panic bars", keywords: ["panic"] },
+    ],
+  },
+  hinges: {
+    label: "Type",
+    options: [
+      { value: "Door hinges", keywords: ["door hinge", "welded hinge"] },
+      { value: "Cabinet hinges", keywords: ["cabinet hinge"] },
+    ],
+  },
+  "furniture-fittings": {
+    label: "Type",
+    options: [
+      { value: "Drawer slides", keywords: ["drawer slide"] },
+      { value: "Drawer systems", keywords: ["drawer system"] },
+      { value: "Lift systems", keywords: ["lift system"] },
+      { value: "Bed fittings", keywords: ["bed fitting"] },
     ],
   },
 };
@@ -128,7 +147,8 @@ export function facetValues(
 ): string[] {
   const facet = categorySlug ? CATEGORY_FACETS[categorySlug] : undefined;
   if (!facet) return [];
-  const haystack = `${facts.features.join(" ")} ${facts.variants.join(" ")} ${description ?? ""}`.toLowerCase();
+  const rows = facts.specs.filter(([key]) => key === "Type" || key === "Access").map(([, value]) => value);
+  const haystack = `${facts.features.join(" ")} ${facts.variants.join(" ")} ${rows.join(" ")} ${description ?? ""}`.toLowerCase();
   return facet.options
     .filter((option) => option.keywords.some((keyword) => new RegExp(`\\b${keyword}`).test(haystack)))
     .map((option) => option.value);

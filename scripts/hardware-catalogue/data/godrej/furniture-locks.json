@@ -1,0 +1,86 @@
+{
+ "brand": "godrej",
+ "siteCategory": "wardrobe-locks",
+ "source": "Godrej Price List (w.e.f. 1.07.2026)",
+ "products": [
+  {
+   "name": "Godrej Curvo Duo SS 304 lock",
+   "sku": "Curvo Duo",
+   "shortDescription": "Stainless steel wardrobe and drawer lock.",
+   "technicalSpecs": {
+    "Access": "Mechanical key",
+    "Sizes": "20, 25, 32 mm",
+    "Material": "Stainless steel SS 304",
+    "Variants": "Stainless Steel",
+    "Product codes": "8010 (25 mm), 8011 (32 mm), 8086 (32 mm), 8012 (20 mm), 8013 (25 mm), 8085 (20 mm)"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_5_3ac3429fba.webp"
+  },
+  {
+   "name": "Godrej Nuvo pin cylinder lock",
+   "sku": "Nuvo",
+   "shortDescription": "Pin cylinder lock for wardrobes and drawers.",
+   "technicalSpecs": {
+    "Access": "Mechanical key",
+    "Sizes": "20, 25, 32 mm",
+    "Panel Thickness": "20 mm",
+    "Variants": "Satin Steel, Black",
+    "Product codes": "16 codes in the price list, from 4374"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_0f90ccd26b.webp"
+  },
+  {
+   "name": "Godrej Supernova lock",
+   "sku": "Supernova",
+   "shortDescription": "Wardrobe and drawer lock.",
+   "technicalSpecs": {
+    "Access": "Mechanical key",
+    "Variants": "Satin Steel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_8597f08606.webp"
+  },
+  {
+   "name": "Godrej Sliding wardrobe lock",
+   "sku": "Sliding Duo",
+   "shortDescription": "Lock for sliding wardrobe doors, centre or side locking.",
+   "technicalSpecs": {
+    "Access": "Mechanical key",
+    "Sizes": "19, 25, 32 mm",
+    "Options": "Centre locking, side locking",
+    "Door Thickness": "19 mm",
+    "Variants": "Black",
+    "Product codes": "4501 (25 mm), 4502 (32 mm), 4503 (25 mm), 4504 (32 mm), 4505 (19 mm), 4506 (25 mm), 4507 (32 mm)"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_6aaad61695.webp"
+  },
+  {
+   "name": "Godrej Cam lock",
+   "sku": "Cam Lock",
+   "shortDescription": "Cam lock for drawers and cabinets.",
+   "technicalSpecs": {
+    "Access": "Mechanical key",
+    "Options": "5 lever, 10 lever pedestal, straight, long",
+    "Product codes": "3097 (12 mm), 5248 (12 mm), 5249 (12 mm), 5251 (12 mm)"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_2_e8af7c45a0.webp"
+  },
+  {
+   "name": "Godrej Multi-purpose lock",
+   "sku": "Multipurpose",
+   "shortDescription": "Wafer tumbler lock for drawers and cupboards.",
+   "technicalSpecs": {
+    "Access": "Mechanical key",
+    "Sizes": "20, 21, 25, 32 mm",
+    "Variants": "Black, Chrome",
+    "Product codes": "6666 (Turmeric Yellow /), 8000 (20 mm), 5300 (32 mm), 9350 (25 mm), 9353 (25 mm), 8817 (25 mm), 3098 (21 mm)"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_1_ff5d547f5f.webp"
+  }
+ ]
+}

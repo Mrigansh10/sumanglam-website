@@ -1,5 +1,6 @@
 import { supabase, rows, camelizeRecord } from "@/lib/supabase";
 import type { Brand } from "@/lib/db-types";
+import { VISIBLE_STATUSES } from "@/server/hardware";
 
 export async function getBrands() {
   const { data } = await supabase
@@ -55,7 +56,7 @@ export async function getBrandBySlug(slug: string) {
         .from("products")
         .select("*, brand:brands(id, name, slug, logo)")
         .eq("brand_id", brand.id)
-        .eq("status", "published")
+        .in("status", VISIBLE_STATUSES)
         .order("is_featured", { ascending: false })
         .order("name", { ascending: true })
         .limit(12),

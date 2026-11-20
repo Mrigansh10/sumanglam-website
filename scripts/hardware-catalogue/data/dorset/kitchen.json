@@ -1,0 +1,119 @@
+{
+ "brand": "dorset",
+ "siteCategory": "kitchen-accessories",
+ "source": "Dorset Price List v6.2 (w.e.f. 15.04.2026)",
+ "imageBase": "https://www.dorsetindia.com/Uploads/ProductsImage/",
+ "products": [
+  {
+   "name": "Dorset I Wave swing tray",
+   "sku": "IWAVEST",
+   "shortDescription": "Swing-out trays for a blind corner cabinet, left or right hand.",
+   "technicalSpecs": {
+    "Options": "Left (IWAVESTL), right (IWAVESTR)"
+   },
+   "priceRange": null,
+   "image": "BK.4010SwingTray.webp"
+  },
+  {
+   "name": "Dorset I Wave universal magic corner",
+   "sku": "IWAVEUMCG",
+   "shortDescription": "Pull-out baskets that bring a blind corner into reach, for 900 mm cabinets.",
+   "technicalSpecs": {
+    "Sizes": "900 mm",
+    "Product codes": "IWAVEUMCG-F (frame), IWAVEUMCG-B (basket)",
+    "Variants": "Grey"
+   },
+   "priceRange": null,
+   "image": "universal-magic-corner.webp"
+  },
+  {
+   "name": "Dorset I Wave corner carousel",
+   "sku": "IWAVECC",
+   "shortDescription": "Three-quarter carousel for an L-shaped corner cabinet.",
+   "technicalSpecs": {
+    "Product codes": "IWAVECC"
+   },
+   "priceRange": null,
+   "image": "BK.422734Carousel600mmDia.webp"
+  },
+  {
+   "name": "Dorset I Tu Pantry Duo",
+   "sku": "ITUPDG",
+   "shortDescription": "Tall pantry unit that opens out from the cabinet, 1820 mm high.",
+   "technicalSpecs": {
+    "Sizes": "450 mm (380×1820), 600 mm (480×1820)",
+    "Product codes": "ITUPDG450, ITUPDG600",
+    "Variants": "Grey"
+   },
+   "priceRange": null,
+   "image": "2805pductimg_2736pductimg_Pantryduo.webp"
+  },
+  {
+   "name": "Dorset I Bin waste bin",
+   "sku": "IBIN14L",
+   "shortDescription": "14-litre stainless steel waste bin with a plastic inner.",
+   "technicalSpecs": {
+    "Product codes": "IBIN14L"
+   },
+   "priceRange": null,
+   "image": "WB.014414LBin.webp"
+  },
+  {
+   "name": "Dorset I Form cutlery tray",
+   "sku": "ICT",
+   "shortDescription": "Cutlery tray insert for kitchen drawers.",
+   "technicalSpecs": {
+    "Sizes": "450, 500, 600, 700, 800, 900 mm",
+    "Product codes": "ICT450–ICT900"
+   },
+   "priceRange": null,
+   "image": "CutleryTray.webp"
+  },
+  {
+   "name": "Dorset I Form glass tray and plate tray",
+   "sku": "IGTPT",
+   "shortDescription": "Pull-out with a glass tray and plate rack.",
+   "technicalSpecs": {
+    "Sizes": "600, 900 mm",
+    "Product codes": "IGTPT600, IGTPT900; plate tray IPT600"
+   },
+   "priceRange": null,
+   "image": "BK.8010GTPT.webp"
+  },
+  {
+   "name": "Dorset I Form wicker basket",
+   "sku": "WB-PVC",
+   "shortDescription": "PVC wicker basket on wooden runners.",
+   "technicalSpecs": {
+    "Sizes": "450 or 600 mm wide; 100, 150, 200 mm high",
+    "Product codes": "WB450PVC100–WB600PVC200"
+   },
+   "priceRange": null,
+   "image": "WickerBasket.webp"
+  },
+  {
+   "name": "Dorset I Form rolling shutter",
+   "sku": "RS",
+   "shortDescription": "Roll-up shutter for an appliance or counter cabinet.",
+   "technicalSpecs": {
+    "Sizes": "450, 600, 900 mm",
+    "Product codes": "RSSI / RSBL / RSGR + 450, 600, 900",
+    "Variants": "Silver, Black, Grey"
+   },
+   "priceRange": null,
+   "image": "rolling-shutter.webp"
+  },
+  {
+   "name": "Dorset Glass bottle pull-out",
+   "sku": "BPO",
+   "shortDescription": "Two or three tier bottle pull-out with glass shelves.",
+   "technicalSpecs": {
+    "Sizes": "200, 250, 300 mm",
+    "Options": "2 tier, 3 tier",
+    "Product codes": "BPO2T200N–BPO3T300N"
+   },
+   "priceRange": null,
+   "image": "BOTTLEPULLOUT.webp"
+  }
+ ]
+}

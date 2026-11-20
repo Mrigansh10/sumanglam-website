@@ -1,9 +1,9 @@
-// Yale catalogue → hardware product catalog importer.
+// Brand price list → hardware product catalog importer.
 //
-// For each product in data/<key>.json:
-//   1. upload its official studio photo to Cloudinary (sumanglam/hardware/yale/official/<slug>)
+// For each product in data/<brand>/<key>.json:
+//   1. upload its official studio photo to Cloudinary (sumanglam/hardware/<brand>/official/<slug>)
 //   2. remove the background (e_background_removal/e_trim) and store the cut-out
-//      as its own asset (sumanglam/hardware/yale/cutouts/<slug>), so visitors
+//      as its own asset (sumanglam/hardware/<brand>/cutouts/<slug>), so visitors
 //      never wait for the background removal to run
 //   3. insert the product as a DRAFT and map it to its site category
 //
@@ -11,14 +11,14 @@
 // Prices are stored in price_range for reference only; the site never shows them.
 //
 // Usage:
-//   node scripts/yale-catalogue/import-category.mjs <data-key> [--dry-run]
-//   node scripts/yale-catalogue/import-category.mjs <data-key> --images <SKU,SKU>
+//   node scripts/hardware-catalogue/import-category.mjs <brand>/<data-key> [--dry-run]
+//   node scripts/hardware-catalogue/import-category.mjs <brand>/<data-key> --images <SKU,SKU>
 //     re-bakes the photo for those existing products (after changing `image`)
 //
-// Data file shape: { siteCategory, products: [{ name, sku, shortDescription,
-//   technicalSpecs, priceRange, image }] } where `image` is an ASSA ABLOY
-//   asset id (gw-assets.assaabloy.com/is/image/assaabloy/<id>), a full URL, or
-//   a path under crops/.
+// Data file shape: { brand, siteCategory, imageBase?, products: [{ name, sku,
+//   shortDescription, technicalSpecs, priceRange, image }] } where `image` is a
+//   full URL, a path under crops/, a file name under `imageBase`, or (Yale) an
+//   ASSA ABLOY asset id (gw-assets.assaabloy.com/is/image/assaabloy/<id>).
 
 import { readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -43,7 +43,6 @@ const KEY = env.SUPABASE_SERVICE_ROLE_KEY;
 const CLOUD = env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || "de9turgsy";
 cloudinary.config({ cloud_name: CLOUD, api_key: env.CLOUDINARY_API_KEY, api_secret: env.CLOUDINARY_API_SECRET });
 
-const BRAND_ID = "cmqapqic7000frqrcsen3lz97"; // Yale
 const PRODUCT_TYPE_ID = "cmqapqjrr000jrqrcr2nnu8g4"; // Hardware
 
 const sb = (path, opts = {}) =>
@@ -60,28 +59,29 @@ function cuid() {
 }
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-function imageSource(image) {
+function imageSource(image, imageBase) {
   if (!image) return null;
   if (/^https?:\/\//.test(image)) return image;
   const crop = join(__dirname, "crops", image);
   if (existsSync(crop)) return crop;
+  if (imageBase) return encodeURI(imageBase + image);
   return `https://gw-assets.assaabloy.com/is/image/assaabloy/${image}?wid=2000&fmt=png-alpha`;
 }
 
 async function bakeCutout(slug, source) {
   const official = await cloudinary.uploader.upload(source, {
-    public_id: `sumanglam/hardware/yale/official/${slug}`,
+    public_id: `sumanglam/hardware/${BRAND}/official/${slug}`,
     overwrite: true,
   });
   // Background removal runs on first request and answers 423 until it's done.
   const derived = `https://res.cloudinary.com/${CLOUD}/image/upload/e_background_removal/e_trim/f_png/${official.public_id}`;
-  for (let attempt = 0; attempt < 20; attempt++) {
+  for (let attempt = 0; attempt < 60; attempt++) {
     const res = await fetch(derived, { method: "HEAD" });
     if (res.ok) break;
     await sleep(3000);
   }
   const cut = await cloudinary.uploader.upload(derived, {
-    public_id: `sumanglam/hardware/yale/cutouts/${slug}`,
+    public_id: `sumanglam/hardware/${BRAND}/cutouts/${slug}`,
     overwrite: true,
   });
   return cut.public_id;
@@ -93,10 +93,17 @@ const imagesFlag = process.argv.indexOf("--images");
 const refresh = imagesFlag > -1 ? new Set(process.argv[imagesFlag + 1].split(",")) : null;
 const file = join(__dirname, "data", `${key}.json`);
 if (!key || !existsSync(file)) {
-  console.error(`No data file for "${key}" in scripts/yale-catalogue/data/`);
+  console.error(`No data file for "${key}" in scripts/hardware-catalogue/data/ (use <brand>/<key>)`);
   process.exit(1);
 }
 const data = JSON.parse(readFileSync(file, "utf8"));
+const BRAND = data.brand;
+const brandRes = await sb(`brands?select=id&slug=eq.${BRAND}`);
+const BRAND_ID = (await brandRes.json())[0]?.id;
+if (!BRAND_ID) {
+  console.error(`Brand "${BRAND}" does not exist.`);
+  process.exit(1);
+}
 
 const catRes = await sb(`product_categories?select=id&slug=eq.${data.siteCategory}&product_type_id=eq.${PRODUCT_TYPE_ID}`);
 const CATEGORY_ID = (await catRes.json())[0]?.id;
@@ -114,7 +121,7 @@ for (const p of data.products) {
     if (existing.length && refresh?.has(p.sku)) {
       const slugRow = await (await sb(`products?select=slug&id=eq.${existing[0].id}`)).json();
       // New asset name, so CDN and image-optimiser caches can't serve the old photo.
-      const primary = await bakeCutout(`${slugRow[0].slug}-r${Date.now().toString(36)}`, imageSource(p.image));
+      const primary = await bakeCutout(`${slugRow[0].slug}-r${Date.now().toString(36)}`, imageSource(p.image, data.imageBase));
       await sb(`products?id=eq.${existing[0].id}`, {
         method: "PATCH",
         body: JSON.stringify({ primary_image: primary, gallery_images: [primary], updated_at: new Date().toISOString() }),
@@ -134,7 +141,7 @@ for (const p of data.products) {
     const taken = await (await sb(`products?select=id&slug=eq.${slug}&limit=1`)).json();
     if (taken.length) slug = `${slug}-${slugify(p.sku)}`;
 
-    const source = imageSource(p.image);
+    const source = imageSource(p.image, data.imageBase);
     if (!source) noImage++;
     if (dry) {
       console.log(`  ✓ ${p.name}  slug=${slug}  image=${source ? "yes" : "MISSING"}`);

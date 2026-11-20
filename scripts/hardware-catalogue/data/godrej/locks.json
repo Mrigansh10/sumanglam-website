@@ -1,0 +1,371 @@
+{
+ "brand": "godrej",
+ "siteCategory": "locks-and-security",
+ "source": "Godrej Price List (w.e.f. 1.07.2026)",
+ "products": [
+  {
+   "name": "Godrej Euro mortise lock body",
+   "sku": "Euro Lock Body",
+   "shortDescription": "Euro profile mortise lock body in 176 and 240 mm.",
+   "technicalSpecs": {
+    "Type": "Mortise lock",
+    "Sizes": "176, 240 mm; eco version available",
+    "Backset": "60 mm",
+    "Door Thickness": "28 mm",
+    "Variants": "Chrome, Antique Brass, Matte Black, Satin Steel, Sunset Rose Gold, Rose Gold, Matte Black Nickel, Glossy Black, Antique Copper",
+    "Product codes": "2795 (Chrome), 2796 (Antique Brass), 2151 (Matte Black), 8447 (Satin Steel), 8489 (Antique Brass), 6882 (Sunset Rose Gold), 3174 (Rose Gold), 3175 (Matte Black Nickel), 7576 (Satin Steel), 6700 (Satin Steel), 3110 (Antique Brass), 3951 (Glossy Black), 3952 (Antique Copper), 3751 (Rose Gold)"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/Mortise_lb_240_lockbody_60mm_BS_ss_fff5df21e4.webp"
+  },
+  {
+   "name": "Godrej Roller mortise lock body",
+   "sku": "Roller Lock Body",
+   "shortDescription": "240 mm mortise lock body with a roller latch.",
+   "technicalSpecs": {
+    "Type": "Mortise lock",
+    "Sizes": "240 mm, 50 mm backset",
+    "Backset": "50 mm",
+    "Door Thickness": "28 mm",
+    "Variants": "Chrome, Antique Brass, Antique Copper, Glossy Black, Rose Gold",
+    "Product codes": "9029 (Chrome), 9030 (Antique Brass), 9031 (Antique Copper), 9032 (Glossy Black), 9033 (Rose Gold)"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/Mortise_lb_240_Roller_lockbody50_glossyblack_7003353e2f.webp"
+  },
+  {
+   "name": "Godrej Narrow stile mortise lock",
+   "sku": "Narrow Stile",
+   "shortDescription": "Narrow stile euro mortise lock and hookbolt for aluminium and sliding doors.",
+   "technicalSpecs": {
+    "Type": "Mortise lock",
+    "Sizes": "180, 240 mm",
+    "Backset": "20 mm",
+    "Door Thickness": "25 mm",
+    "Variants": "Satin Steel",
+    "Product codes": "6617 (Satin Steel), 7275 (Satin Steel)"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/6617_7a1f9ea4fe.webp"
+  },
+  {
+   "name": "Godrej Euro deadlock",
+   "sku": "Euro Deadlock 160",
+   "shortDescription": "160 mm euro mortise deadlock with rose rings.",
+   "technicalSpecs": {
+    "Type": "Mortise lock",
+    "Sizes": "160 mm",
+    "Backset": "50 mm",
+    "Door Thickness": "28 mm - 45 mm",
+    "Variants": "Satin Steel",
+    "Product codes": "7470 (Satin Steel)"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/Mortise_lb_160_Deadlock_Rose_Ring_02d63df545.webp"
+  },
+  {
+   "name": "Godrej Lever mortise lock",
+   "sku": "Lever Mortise",
+   "shortDescription": "4, 6 and 7 lever mortise locks and deadlocks.",
+   "technicalSpecs": {
+    "Type": "Mortise lock",
+    "Sizes": "4 lever narrow, 4 lever hookbolt, 6 lever, 7 lever",
+    "Backset": "48.5 mm",
+    "Door Thickness": "25 mm - 45 mm",
+    "Variants": "Satin Steel",
+    "Product codes": "7387 (Satin Steel), 7388 (Satin Steel), 9158 (Satin Steel), 9159 (Satin Steel), 6997 (Satin Steel), 8815 (Satin Steel)"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/6997_9d0eda6c81.webp"
+  },
+  {
+   "name": "Godrej Euro profile pin cylinder",
+   "sku": "Pin Cylinder",
+   "shortDescription": "Euro profile pin cylinder with key and knob, both-side key or keyless; also in high-security Ulturo Ultra XL+.",
+   "technicalSpecs": {
+    "Type": "Euro profile cylinder",
+    "Sizes": "40 (half), 60, 70, 80, 90, 100 mm",
+    "Backset": "50 mm",
+    "Door Thickness": "40 mm",
+    "Variants": "Satin Steel, Antique Brass, Matte Black, Matte Black Nickel, Rose Gold, Antique Copper, Brass, PVD Rose Gold",
+    "Product codes": "70 codes in the price list, from 5476"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/5_0b8a7b3088.webp"
+  },
+  {
+   "name": "Godrej Pentabolt Aries 3KS",
+   "sku": "Pentabolt Aries",
+   "shortDescription": "Five-bolt main door rim lock with EVVA 3KS key technology.",
+   "technicalSpecs": {
+    "Type": "Rim lock",
+    "Key Features": "Safety strength 4 (EVVA 3KS)",
+    "Backset": "50 mm",
+    "Deadbolt Throw": "10 mm + 10 mm = 20 mm",
+    "Door Thickness": "28 mm To 40 mm",
+    "Variants": "Roman Silver, Vegas Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_1_e53a60010e.webp"
+  },
+  {
+   "name": "Godrej Pentabolt EXS+",
+   "sku": "Pentabolt EXS+",
+   "shortDescription": "Five-bolt main door rim lock with EXS+ key technology.",
+   "technicalSpecs": {
+    "Type": "Rim lock",
+    "Key Features": "Safety strength 3 (EXS+)",
+    "Variants": "Antique Brass"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_1_e8265ee50b.webp"
+  },
+  {
+   "name": "Godrej Centaur EXS+",
+   "sku": "Centaur EXS+",
+   "shortDescription": "Main door rim lock with EXS+ key technology.",
+   "technicalSpecs": {
+    "Type": "Rim lock",
+    "Key Features": "Safety strength 3 (EXS+)",
+    "Backset": "60 mm",
+    "Variants": "Antique Brass"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_66a74ef742.webp"
+  },
+  {
+   "name": "Godrej Centaur Ultra XL+",
+   "sku": "Centaur Ultra XL+",
+   "shortDescription": "Main door rim lock with Ultra XL+ key technology.",
+   "technicalSpecs": {
+    "Type": "Rim lock",
+    "Key Features": "Safety strength 2 (Ultra XL+)",
+    "Backset": "60 mm",
+    "Variants": "Antique Brass, Antique Copper"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/Rimlocks_918_x_1028px_Centaur_Ultra_XL_f3c8862965.webp"
+  },
+  {
+   "name": "Godrej Tribolt Ultra XL+",
+   "sku": "Tribolt Ultra XL+",
+   "shortDescription": "Three-bolt main door rim lock with Ultra XL+ key technology.",
+   "technicalSpecs": {
+    "Type": "Rim lock",
+    "Key Features": "Safety strength 2 (Ultra XL+)",
+    "Backset": "69 mm",
+    "Door Thickness": "25 mm To 90 mm",
+    "Variants": "Antique Brass, Matte Black Nickel, Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_3_abe83a57d0.webp"
+  },
+  {
+   "name": "Godrej Tribolt Ultra",
+   "sku": "Tribolt Ultra",
+   "shortDescription": "Three-bolt main door rim lock.",
+   "technicalSpecs": {
+    "Type": "Rim lock",
+    "Key Features": "Ultra key",
+    "Backset": "69mm",
+    "Door Thickness": "30 mm to 60 mm",
+    "Variants": "Antique Brass"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/2_63624f6ba9.webp"
+  },
+  {
+   "name": "Godrej Twinbolt Ultra XL+",
+   "sku": "Twinbolt Ultra XL+",
+   "shortDescription": "Two-bolt main door rim lock with Ultra XL+ key technology.",
+   "technicalSpecs": {
+    "Type": "Rim lock",
+    "Key Features": "Safety strength 2 (Ultra XL+)",
+    "Backset": "60 mm",
+    "Door Thickness": "25 mm To 90 mm",
+    "Variants": "Antique Brass, Matte Black Nickel, Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_4_8217feb7e7.webp"
+  },
+  {
+   "name": "Godrej Vertibolt Ultra XL+",
+   "sku": "Vertibolt Ultra XL+",
+   "shortDescription": "Vertical-bolt rim lock for main doors.",
+   "technicalSpecs": {
+    "Type": "Rim lock",
+    "Key Features": "Ultra XL+ and Ultra versions",
+    "Backset": "63mm",
+    "Door Thickness": "25 mm to 90 mm",
+    "Variants": "Antique Brass, Rose Gold, Matte Black Nickel, Satin Steel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_b2f3b8d50c.webp"
+  },
+  {
+   "name": "Godrej Rim deadbolt Ultra XL+",
+   "sku": "Rim Deadbolt",
+   "shortDescription": "Rim deadbolt with Ultra XL+ key technology.",
+   "technicalSpecs": {
+    "Type": "Rim lock",
+    "Key Features": "Safety strength 2 (Ultra XL+)",
+    "Variants": "Antique Brass, Matte Black Nickel, Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/Deadbolt_Compact_918_w_x_1028_h_px_copy_b3ed4d4209.png"
+  },
+  {
+   "name": "Godrej Compact rim locks",
+   "sku": "Compact",
+   "shortDescription": "Compact reversible deadbolt, twinbolt and tribolt rim locks.",
+   "technicalSpecs": {
+    "Type": "Rim lock",
+    "Key Features": "Reversible",
+    "Variants": "Black"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/Deadbolt_Compact_918_w_x_1028_h_px_copy_b3ed4d4209.png"
+  },
+  {
+   "name": "Godrej Night latch",
+   "sku": "Night Latch",
+   "shortDescription": "7-lever night latch and super night latch.",
+   "technicalSpecs": {
+    "Type": "Rim lock",
+    "Key Features": "7 levers",
+    "Backset": "60 mm",
+    "Door Thickness": "25 mm To 60 mm"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/Rimlocks_918_x_1028px_Night_Latch_72f29f05d8.webp"
+  },
+  {
+   "name": "Godrej Khatakhat lock Ultra XL+",
+   "sku": "Khatakhat",
+   "shortDescription": "Rim lock that locks automatically when the door shuts.",
+   "technicalSpecs": {
+    "Type": "Rim lock",
+    "Key Features": "Auto locking",
+    "Variants": "Silver"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/Rimlocks_918_x_1028px_Khatakhat_Locks_d25a8a1c96.webp"
+  },
+  {
+   "name": "Godrej Premium cylindrical lock",
+   "sku": "Premium Cylindrical",
+   "shortDescription": "Premium knob lockset, keyed for entrance doors or keyless for bathrooms.",
+   "technicalSpecs": {
+    "Type": "Cylindrical lockset",
+    "Options": "Keyed (entrance), keyless (bathroom)",
+    "Backset": "60mm",
+    "Door Thickness": "32 to 45mm",
+    "Variants": "Brass, Stainless Steel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_b49ead1ce5.webp"
+  },
+  {
+   "name": "Godrej Classic cylindrical lock",
+   "sku": "Classic Cylindrical",
+   "shortDescription": "Knob lockset, keyed for entrance doors or keyless for bathrooms.",
+   "technicalSpecs": {
+    "Type": "Cylindrical lockset",
+    "Options": "Keyed (entrance), keyless (bathroom); 60 or 70 mm backset",
+    "Backset": "60mm",
+    "Door Thickness": "32 to 45mm",
+    "Variants": "Brass, Stainless Steel, Antique Brass, Rose Gold, Matte Black"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_a774b20cc4.webp"
+  },
+  {
+   "name": "Godrej NavTal Ultra XL+ padlock",
+   "sku": "NavTal Ultra XL+",
+   "shortDescription": "Brass padlock with Ultra XL+ key technology.",
+   "technicalSpecs": {
+    "Type": "Padlock",
+    "Variants": "Brass"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_e43aa7e28d.webp"
+  },
+  {
+   "name": "Godrej NavTal padlock",
+   "sku": "NavTal",
+   "shortDescription": "Classic brass lever padlock in 5 to 8 lever versions.",
+   "technicalSpecs": {
+    "Type": "Padlock",
+    "Variants": "Brass"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_5b7ce44b01.webp"
+  },
+  {
+   "name": "Godrej Godrej No. 1 padlock",
+   "sku": "No. 1",
+   "shortDescription": "Solid brass pin cylinder padlock.",
+   "technicalSpecs": {
+    "Type": "Padlock",
+    "Variants": "Brass"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_bc68486a95.webp"
+  },
+  {
+   "name": "Godrej Duralock Ultra XL+ padlock",
+   "sku": "Duralock",
+   "shortDescription": "Stainless steel padlock with Ultra XL+ key technology.",
+   "technicalSpecs": {
+    "Type": "Padlock",
+    "Variants": "Stainless Steel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_563746deba.webp"
+  },
+  {
+   "name": "Godrej Shutter lock Ultra",
+   "sku": "Shutter Lock",
+   "shortDescription": "Centre and side locks for rolling shutters.",
+   "technicalSpecs": {
+    "Type": "Padlock",
+    "Variants": "Black"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_83b93ce600.webp"
+  },
+  {
+   "name": "Godrej Ace Pro SS 304 padlock",
+   "sku": "Ace Pro",
+   "shortDescription": "Stainless steel lever padlock.",
+   "technicalSpecs": {
+    "Type": "Padlock",
+    "Variants": "Satin Steel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_ed753a7149.webp"
+  },
+  {
+   "name": "Godrej Square padlock",
+   "sku": "Square Padlock",
+   "shortDescription": "Satin steel square lever padlock.",
+   "technicalSpecs": {
+    "Type": "Padlock",
+    "Variants": "Satin Steel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_36893f30ff.webp"
+  },
+  {
+   "name": "Godrej Kaditala padlock",
+   "sku": "Kaditala",
+   "shortDescription": "Traditional kadi (hasp) padlock.",
+   "technicalSpecs": {
+    "Type": "Padlock",
+    "Variants": "Chrome"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_7872279009.webp"
+  }
+ ]
+}

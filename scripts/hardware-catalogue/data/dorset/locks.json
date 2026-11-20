@@ -1,0 +1,437 @@
+{
+ "brand": "dorset",
+ "siteCategory": "locks-and-security",
+ "source": "Dorset Price List v6.2 (w.e.f. 15.04.2026)",
+ "imageBase": "https://www.dorsetindia.com/Uploads/ProductsImage/",
+ "products": [
+  {
+   "name": "Dorset ML 124 mortise lock",
+   "sku": "ML 124",
+   "shortDescription": "Heavy-duty mortise lock with a 60 mm backset and a 3-stroke dead bolt.",
+   "technicalSpecs": {
+    "Type": "Mortise lock",
+    "Key Features": "60 mm backset, 3-stroke dead bolt",
+    "Product codes": "ML 124 + finish",
+    "Variants": "Silver Satin, Antique, Satin Matt, Titanium Matt, Graphite Matt, Cognac Bronze, Merlot, Hamilton Gold, Roma Bronze, Antique Gold, Full Gold, Nitrium"
+   },
+   "priceRange": null,
+   "image": "dorset/ml-124.png"
+  },
+  {
+   "name": "Dorset ML 100 mortise lock",
+   "sku": "ML 100",
+   "shortDescription": "Mortise lock in a premium (ML 100) or standard (ML 110) version.",
+   "technicalSpecs": {
+    "Type": "Mortise lock",
+    "Product codes": "ML 100 (premium), ML 110 (standard) + finish",
+    "Variants": "Hamilton Gold, Antique Gold, Full Gold, Roma Bronze, Silver Satin, Antique, Satin Matt, Titanium Matt, Graphite Matt, Cognac Bronze, Merlot, Nitrium, Nickel"
+   },
+   "priceRange": null,
+   "image": "ML100SS.webp"
+  },
+  {
+   "name": "Dorset ML 124 R mortise roller lock",
+   "sku": "ML 124 R",
+   "shortDescription": "Mortise lock with a roller latch, 60 mm backset and 3-stroke dead bolt.",
+   "technicalSpecs": {
+    "Type": "Mortise lock",
+    "Key Features": "Roller latch, 60 mm backset, 3-stroke dead bolt",
+    "Product codes": "ML 124 R + finish",
+    "Variants": "Silver Satin, Antique, Graphite Matt, Titanium Matt, Satin Matt"
+   },
+   "priceRange": null,
+   "image": "RollerLock.webp"
+  },
+  {
+   "name": "Dorset MGT 602 magnetic mortise lock",
+   "sku": "MGT 602",
+   "shortDescription": "Silent magnetic mortise lock with a 60 mm backset.",
+   "technicalSpecs": {
+    "Type": "Mortise lock",
+    "Key Features": "Silent magnetic latch, 60 mm backset",
+    "Product codes": "MGT 602 + finish",
+    "Variants": "Silver Satin, Antique, Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "MagnaticLock.webp"
+  },
+  {
+   "name": "Dorset MGT 603 magnetic latch & lock",
+   "sku": "MGT 603",
+   "shortDescription": "Silent magnetic mortise latch and lock with a 60 mm backset.",
+   "technicalSpecs": {
+    "Type": "Mortise lock",
+    "Key Features": "Silent magnetic latch, 60 mm backset",
+    "Product codes": "MGT 603 + finish",
+    "Variants": "Satin Matt, Antique, Full Gold, Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "dorset/mgt-603.png"
+  },
+  {
+   "name": "Dorset ML 121 heavy-duty 4-bolt mortise lock",
+   "sku": "ML 121",
+   "shortDescription": "Heavy-duty mortise lock with four round-corner pins and a 60 mm backset.",
+   "technicalSpecs": {
+    "Type": "Mortise lock",
+    "Key Features": "4 pins, Round corner, 60 mm backset",
+    "Product codes": "ML 121 + finish; ML 120 SS/PT, FG (4 pin); MLRC 110 SS (standard)",
+    "Variants": "Silver Satin, Antique, Graphite Matt, Satin Matt, Titanium Matt, Hamilton Gold, Full Gold, Roma Bronze"
+   },
+   "priceRange": null,
+   "image": "ML121.webp"
+  },
+  {
+   "name": "Dorset ML 111 3 square bolt mortise lock",
+   "sku": "ML 111",
+   "shortDescription": "Mortise lock with three square bolts.",
+   "technicalSpecs": {
+    "Type": "Mortise lock",
+    "Key Features": "3 square bolts",
+    "Product codes": "ML 111 + finish",
+    "Variants": "Nickel, Silver Satin, Graphite Matt, Satin Matt, Titanium Matt, Hamilton Gold, Full Gold"
+   },
+   "priceRange": null,
+   "image": "ML111.webp"
+  },
+  {
+   "name": "Dorset ML 112 mortise dead lock",
+   "sku": "ML 112",
+   "shortDescription": "Mortise dead lock with a key rose, in standard and premium versions.",
+   "technicalSpecs": {
+    "Type": "Mortise lock",
+    "Key Features": "Dead lock, Key rose",
+    "Product codes": "ML 112 (standard), ML 102 (premium, also HG/FG, AG, RB, NM), ML 104 SS (60 mm backset) + finish",
+    "Variants": "Nickel, Silver Satin, Antique, Graphite Matt, Titanium Matt, Satin Matt, Cognac Bronze, Merlot"
+   },
+   "priceRange": null,
+   "image": "ML112.webp"
+  },
+  {
+   "name": "Dorset ML 103 mortise latch",
+   "sku": "ML 103",
+   "shortDescription": "Mortise latch for internal doors.",
+   "technicalSpecs": {
+    "Type": "Mortise lock",
+    "Key Features": "Latch only",
+    "Product codes": "ML 103, ML 103 A + finish",
+    "Variants": "Silver Satin, Antique, Roma Bronze, Hamilton Gold, Full Gold, Antique Gold, Nitrium, Graphite Matt, Satin Matt, Titanium Matt, Cognac Bronze, Merlot"
+   },
+   "priceRange": null,
+   "image": "ML103SS.webp"
+  },
+  {
+   "name": "Dorset Sliding door mortise lock",
+   "sku": "ML 140",
+   "shortDescription": "Narrow mortise lock with a hook bolt for sliding doors and narrow stiles, 21 mm backset.",
+   "technicalSpecs": {
+    "Type": "Mortise lock",
+    "Key Features": "Hook bolt, 21 mm backset, For sliding doors and narrow stiles",
+    "Product codes": "ML 140 NI (latch & hook bolt), ML 141 NI (hook bolt), ML 142 SS (dead bolt, narrow stile), ML 144 SS (latch & hook bolt, narrow stile)",
+    "Variants": "Nickel, Silver Satin"
+   },
+   "priceRange": null,
+   "image": "ML140.webp"
+  },
+  {
+   "name": "Dorset 6-lever mortise lock",
+   "sku": "ML 160",
+   "shortDescription": "Six-lever mortise lock and dead lock.",
+   "technicalSpecs": {
+    "Type": "Mortise lock",
+    "Key Features": "6 levers",
+    "Product codes": "ML 160 NI (ECO), ML 166 SS / PT / GM (dead lock)",
+    "Variants": "Nickel, Silver Satin, Antique, Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "ML160.webp"
+  },
+  {
+   "name": "Dorset Mortise lock for steel doors",
+   "sku": "ML 135",
+   "shortDescription": "Mortise lock and latch with a 35 mm backset for steel doors.",
+   "technicalSpecs": {
+    "Type": "Mortise lock",
+    "Key Features": "35 mm backset, For steel doors",
+    "Product codes": "ML 135 (lock), ML 135 A (latch), ML 115 (dead lock)",
+    "Variants": "Silver Satin"
+   },
+   "priceRange": null,
+   "image": "ML100DSS.webp"
+  },
+  {
+   "name": "Dorset Fire rated mortise lock",
+   "sku": "ML 100 SS (FR)",
+   "shortDescription": "Stainless steel mortise sash, latch and dead locks fire rated up to 120 minutes.",
+   "technicalSpecs": {
+    "Type": "Mortise lock",
+    "Key Features": "Fire rated up to 120 minutes, SS 304, 50 or 55 mm backset",
+    "Product codes": "ML 100 / 101 SS (FR) sash, ML 100L / 101L SS (FR) latch, ML 100D / 101D SS (FR) dead, ML 103L / 103D SS (FR)",
+    "Variants": "Silver Satin"
+   },
+   "priceRange": null,
+   "image": "Ml100L.webp"
+  },
+  {
+   "name": "Dorset Euro profile cylinder",
+   "sku": "CL 100",
+   "shortDescription": "Euro profile cylinder with both-side key, key and knob, or coin and knob.",
+   "technicalSpecs": {
+    "Type": "Euro profile cylinder",
+    "Key Features": "Master key and grand master key on request",
+    "Options": "Both-side key, key & knob, coin & knob",
+    "Sizes": "60, 70, 80, 90, 100, 110, 120 mm",
+    "Product codes": "CL 100–108 (60–70 mm), CL 200–222 (60–120 mm)",
+    "Variants": "Silver Satin, Antique, Satin Matt, Titanium Matt, Graphite Matt, Cognac Bronze, Merlot, Antique Gold, Roma Bronze, Hamilton Gold, Full Gold, Nitrium"
+   },
+   "priceRange": null,
+   "image": "1976pductimg_CL200IN.webp"
+  },
+  {
+   "name": "Dorset Hybrid two-track computerized cylinder",
+   "sku": "CL 400",
+   "shortDescription": "Computerized key cylinder with hybrid two-track key technology.",
+   "technicalSpecs": {
+    "Type": "Euro profile cylinder",
+    "Key Features": "Master key and grand master key on request",
+    "Options": "Both-side key, key & knob, coin & knob",
+    "Sizes": "60, 70, 80, 90, 100, 110, 120 mm",
+    "Product codes": "CL 400 series (3 keys), CL 500 series (5 keys)",
+    "Variants": "Silver Satin, Antique, Satin Matt, Titanium Matt, Graphite Matt, Cognac Bronze, Merlot, Antique Gold, Roma Bronze, Hamilton Gold, Full Gold, Nitrium"
+   },
+   "priceRange": null,
+   "image": "CL500SS.webp"
+  },
+  {
+   "name": "Dorset Euro profile half cylinder",
+   "sku": "CL 200 H",
+   "shortDescription": "One-side key or knob half cylinder.",
+   "technicalSpecs": {
+    "Type": "Euro profile cylinder",
+    "Key Features": "Master key and grand master key on request",
+    "Options": "One-side key, one-side knob",
+    "Sizes": "60, 70, 80, 90, 110, 120 mm",
+    "Product codes": "CL 200 H–221 H, CL 400 H–415 H (computerized)",
+    "Variants": "Silver Satin, Antique, Satin Matt, Titanium Matt, Graphite Matt, Cognac Bronze, Merlot, Hamilton Gold, Full Gold"
+   },
+   "priceRange": null,
+   "image": "CL200H.webp"
+  },
+  {
+   "name": "Dorset Construction key cylinder",
+   "sku": "CL 400 C",
+   "shortDescription": "Cylinder with a separate construction key that stops working once the owner key is used.",
+   "technicalSpecs": {
+    "Type": "Euro profile cylinder",
+    "Key Features": "Master key and grand master key on request",
+    "Options": "Both-side key, key & knob",
+    "Sizes": "60–100 mm",
+    "Product codes": "CL 400 series with construction keys",
+    "Variants": "Silver Satin, Antique"
+   },
+   "priceRange": null,
+   "image": "Constractionkey.webp"
+  },
+  {
+   "name": "Dorset DF euro profile cylinder",
+   "sku": "DF 200",
+   "shortDescription": "Euro profile cylinder with both-side key or key and knob.",
+   "technicalSpecs": {
+    "Type": "Euro profile cylinder",
+    "Key Features": "Master key and grand master key on request",
+    "Options": "Both-side key, key & knob",
+    "Sizes": "60, 70, 80 mm",
+    "Product codes": "DF 200, 201, 203, 204, 206, 207",
+    "Variants": "Silver Satin, Antique, Satin Matt, Titanium Matt, Hamilton Gold, Cognac Bronze, Merlot, Nitrium, Full Gold, Roma Bronze"
+   },
+   "priceRange": null,
+   "image": "Defender02.webp"
+  },
+  {
+   "name": "Dorset Xena rim lock",
+   "sku": "XENA",
+   "shortDescription": "Rim lock with both-side key or key and knob.",
+   "technicalSpecs": {
+    "Type": "Rim lock",
+    "Options": "Both-side key (Xena 201), key & knob (Xena 202)",
+    "Product codes": "Xena 201, Xena 202",
+    "Variants": "Antique, Satin Matt, Graphite Matt, Cognac Bronze, Champagne Matt"
+   },
+   "priceRange": null,
+   "image": "BOLT201GMFRONTANGLE.jpg"
+  },
+  {
+   "name": "Dorset Rover rim lock",
+   "sku": "ROVER 601",
+   "shortDescription": "Key and knob rim lock in dual-tone finishes.",
+   "technicalSpecs": {
+    "Type": "Rim lock",
+    "Options": "Key & knob",
+    "Product codes": "Rover 601",
+    "Variants": "Antique-Titanium Matt, Satin Matt-Wood, Graphite Matt-Hamilton Gold, Cognac Bronze-Wood, Champagne Matt-Full Gold"
+   },
+   "priceRange": null,
+   "image": "dorset/rover.png"
+  },
+  {
+   "name": "Dorset Cubolt rim lock",
+   "sku": "CUBOLT",
+   "shortDescription": "Rim lock with both-side key or key and knob.",
+   "technicalSpecs": {
+    "Type": "Rim lock",
+    "Options": "Both-side key (Cubolt 200), key & knob (Cubolt 201)",
+    "Product codes": "Cubolt 200, Cubolt 201",
+    "Variants": "Antique, Satin Matt, Graphite Matt, Cognac Bronze, Champagne Matt"
+   },
+   "priceRange": null,
+   "image": "CUBOLT-CB.jpg"
+  },
+  {
+   "name": "Dorset Torq rim lock",
+   "sku": "TORQ",
+   "shortDescription": "Main-door rim lock with both-side key or key and knob.",
+   "technicalSpecs": {
+    "Type": "Rim lock",
+    "Options": "Both-side key (Torq 300), key & knob (Torq 301)",
+    "Product codes": "Torq 300, Torq 301",
+    "Variants": "Antique, Satin Matt, Graphite Matt, Titanium Matt, Champagne Matt-Full Gold"
+   },
+   "priceRange": null,
+   "image": "dorset/torq.png"
+  },
+  {
+   "name": "Dorset Phantom trio lock",
+   "sku": "PHA 300",
+   "shortDescription": "Main-door rim lock with a triple bolt, for inside or outside opening doors.",
+   "technicalSpecs": {
+    "Type": "Rim lock",
+    "Key Features": "Suits 30–60 mm main doors",
+    "Options": "Both-side key, key & knob, dead bolt versions",
+    "Product codes": "PHA 300, 301 (trio lock), PHA 302, 303 (trio lock dead bolt)",
+    "Variants": "Ivory, Satin Nickel, Antique, Graphite Matt, Titanium Matt, Satin Matt, Hamilton Gold-Full Gold"
+   },
+   "priceRange": null,
+   "image": "PHA300HGFE.webp"
+  },
+  {
+   "name": "Dorset Phantom night latch",
+   "sku": "PHA 100",
+   "shortDescription": "Night latch rim lock for inside or outside opening doors.",
+   "technicalSpecs": {
+    "Type": "Rim lock",
+    "Key Features": "Suits 30–60 mm main doors",
+    "Options": "Both-side key, key & knob",
+    "Product codes": "PHA 100, 101, 104, 105",
+    "Variants": "Ivory, Satin Nickel, Antique"
+   },
+   "priceRange": null,
+   "image": "PHA100NS.webp"
+  },
+  {
+   "name": "Dorset Phantom dead lock",
+   "sku": "PHA 102",
+   "shortDescription": "Rim dead lock.",
+   "technicalSpecs": {
+    "Type": "Rim lock",
+    "Key Features": "Suits 30–60 mm main doors",
+    "Options": "Both-side key, key & knob",
+    "Product codes": "PHA 102, 103",
+    "Variants": "Ivory, Satin Nickel, Antique"
+   },
+   "priceRange": null,
+   "image": "PHA102NS.webp"
+  },
+  {
+   "name": "Dorset Phantom verti lock",
+   "sku": "PHA 200",
+   "shortDescription": "Vertical-bolt rim lock.",
+   "technicalSpecs": {
+    "Type": "Rim lock",
+    "Key Features": "Suits 30–60 mm main doors",
+    "Options": "Both-side key, key & knob",
+    "Product codes": "PHA 200, 201",
+    "Variants": "Ivory, Satin Nickel, Antique, Satin Matt, Graphite Matt, Hamilton Gold-Full Gold"
+   },
+   "priceRange": null,
+   "image": "PHA200NS.webp"
+  },
+  {
+   "name": "Dorset Smart series night latch",
+   "sku": "SM 100",
+   "shortDescription": "Night latch rim lock that can share one master key with the home's internal doors.",
+   "technicalSpecs": {
+    "Type": "Rim lock",
+    "Key Features": "Suits 30–60 mm main doors",
+    "Options": "Both-side key, key & knob",
+    "Product codes": "SM 100, 101, 104, 105",
+    "Variants": "Ivory, Satin Nickel, Antique"
+   },
+   "priceRange": null,
+   "image": "SM100NS.webp"
+  },
+  {
+   "name": "Dorset Smart series dead lock",
+   "sku": "SM 102",
+   "shortDescription": "Rim dead lock.",
+   "technicalSpecs": {
+    "Type": "Rim lock",
+    "Key Features": "Suits 30–60 mm main doors",
+    "Options": "Both-side key, key & knob",
+    "Product codes": "SM 102, 103",
+    "Variants": "Ivory, Satin Nickel, Antique"
+   },
+   "priceRange": null,
+   "image": "SM103SS.webp"
+  },
+  {
+   "name": "Dorset Vanguard square padlock",
+   "sku": "PD 60 SQ",
+   "shortDescription": "Square padlock, with a long shackle option.",
+   "technicalSpecs": {
+    "Type": "Padlock",
+    "Sizes": "52, 60 mm",
+    "Product codes": "PD 52 SQ, PD 60 SQ, PD 60 SQC, PD 60 SQ LS (long shackle)",
+    "Variants": "Stainless steel, Brass"
+   },
+   "priceRange": null,
+   "image": "PADLOCKSquare.webp"
+  },
+  {
+   "name": "Dorset Master round padlock",
+   "sku": "PD 65 RO",
+   "shortDescription": "Round padlock, with a long shackle option.",
+   "technicalSpecs": {
+    "Type": "Padlock",
+    "Sizes": "65 mm",
+    "Product codes": "PD 65 RO, PD 65 RO LS (long shackle)",
+    "Variants": "Stainless steel, Brass"
+   },
+   "priceRange": null,
+   "image": "PADLOCK-MASTER.webp"
+  },
+  {
+   "name": "Dorset Diskuss disc padlock",
+   "sku": "DISKUSS",
+   "shortDescription": "Disc padlock with a shrouded shackle.",
+   "technicalSpecs": {
+    "Type": "Padlock",
+    "Sizes": "70, 90 mm"
+   },
+   "priceRange": null,
+   "image": "PADLOCK-DISCUSS.webp"
+  },
+  {
+   "name": "Dorset Knob lockset",
+   "sku": "ETTO",
+   "shortDescription": "Cylindrical knob lock for entrance or privacy doors.",
+   "technicalSpecs": {
+    "Type": "Lockset",
+    "Options": "Entrance (ETTO, ETTO SM), privacy (PRTO, PRTO SM)",
+    "Product codes": "ETTO, PRTO, ETTO SM, PRTO SM",
+    "Variants": "Stainless steel"
+   },
+   "priceRange": null,
+   "image": "ETTOSS.webp"
+  }
+ ]
+}

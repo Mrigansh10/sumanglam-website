@@ -1,0 +1,936 @@
+{
+ "brand": "godrej",
+ "siteCategory": "handles",
+ "source": "Godrej Price List (w.e.f. 1.07.2026)",
+ "products": [
+  {
+   "name": "Godrej NEH 06",
+   "sku": "NEH 06",
+   "shortDescription": "NEH 06 door handle set, on a plate or a rose.",
+   "technicalSpecs": {
+    "Collection": "NEH (popular mortise)",
+    "Mounting": "Handle on a plate with lock body and cylinder (200 or 240 mm), on a rose, or as a baby latch set",
+    "Door Thickness": "28 mm to 40 mm",
+    "Variants": "Satin Steel, Matte Black Rose, Black Antique Copper, Matte Black Nickel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_48d87ea183.webp"
+  },
+  {
+   "name": "Godrej NEH 07",
+   "sku": "NEH 07",
+   "shortDescription": "NEH 07 door handle set, on a plate or a rose.",
+   "technicalSpecs": {
+    "Collection": "NEH (popular mortise)",
+    "Mounting": "Handle on a plate with lock body and cylinder (200 or 240 mm), on a rose, or as a baby latch set",
+    "Door Thickness": "28 mm to 40 mm",
+    "Variants": "Satin Steel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/HDH_II_918_x_1028px_NEH_07_ss_afd700e2e6.webp"
+  },
+  {
+   "name": "Godrej NEH 15",
+   "sku": "NEH 15",
+   "shortDescription": "NEH 15 door handle set, on a plate or a rose.",
+   "technicalSpecs": {
+    "Collection": "NEH (popular mortise)",
+    "Mounting": "Handle on a plate with lock body and cylinder (200 or 240 mm), on a rose, or as a baby latch set",
+    "Door Thickness": "28 mm to 40 mm",
+    "Variants": "Satin Steel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/HDH_Re_Neh15_ss_eed58e83b2.webp"
+  },
+  {
+   "name": "Godrej NEH 16",
+   "sku": "NEH 16",
+   "shortDescription": "NEH 16 door handle set, on a plate or a rose.",
+   "technicalSpecs": {
+    "Collection": "NEH (popular mortise)",
+    "Mounting": "Handle on a plate with lock body and cylinder (200 or 240 mm), on a rose, or as a baby latch set",
+    "Door Thickness": "28 mm to 40 mm",
+    "Variants": "Satin Steel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/HDH_Re_Neh16_ss_d8b6d14faa.webp"
+  },
+  {
+   "name": "Godrej NEH 17",
+   "sku": "NEH 17",
+   "shortDescription": "NEH 17 door handle set, on a plate or a rose.",
+   "technicalSpecs": {
+    "Collection": "NEH (popular mortise)",
+    "Mounting": "Handle on a plate with lock body and cylinder (200 or 240 mm), on a rose, or as a baby latch set",
+    "Door Thickness": "28 mm to 40 mm",
+    "Variants": "Satin Steel, Antique Brass"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/HDH_II_918_x_1028px_NEH_17_ss_6b5a1915cf.webp"
+  },
+  {
+   "name": "Godrej NEH 19",
+   "sku": "NEH 19",
+   "shortDescription": "NEH 19 door handle set, on a plate or a rose.",
+   "technicalSpecs": {
+    "Collection": "NEH (popular mortise)",
+    "Mounting": "Handle on a plate with lock body and cylinder (200 or 240 mm), on a rose, or as a baby latch set",
+    "Backset": "50 mm",
+    "Deadbolt Throw": "10 mm + 10 mm = 20 mm",
+    "Door Thickness": "28 mm - 40 mm",
+    "Variants": "Satin Steel, Antique Brass, Matte Black Rose, Black Antique Copper, Matte Black Nickel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/NEH_19_Satin_Steel_2663_20cm_1_CK_e50a25d9f8.webp"
+  },
+  {
+   "name": "Godrej NEH 20",
+   "sku": "NEH 20",
+   "shortDescription": "NEH 20 door handle set, on a plate or a rose.",
+   "technicalSpecs": {
+    "Collection": "NEH (popular mortise)",
+    "Mounting": "Handle on a plate with lock body and cylinder (200 or 240 mm), on a rose, or as a baby latch set",
+    "Backset": "50 mm",
+    "Deadbolt Throw": "10 mm + 10 mm = 20 mm",
+    "Door Thickness": "28 mm - 40 mm",
+    "Variants": "Satin Steel, Antique Brass, Matte Black, Antique Copper, Matte Black Nickel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/NEH_20_Satin_Steel_2948_20cm_1_CK_ccc4158d6e.webp"
+  },
+  {
+   "name": "Godrej NEH 21",
+   "sku": "NEH 21",
+   "shortDescription": "NEH 21 door handle set, on a plate or a rose.",
+   "technicalSpecs": {
+    "Collection": "NEH (popular mortise)",
+    "Mounting": "Handle on a plate with lock body and cylinder (200 or 240 mm), on a rose, or as a baby latch set",
+    "Door Thickness": "28 mm to 40 mm",
+    "Variants": "Satin Steel, Antique Brass, Matte Black Rose, Black Antique Copper"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/HDH_II_918_x_1028px_NEH_21_ss_a4e8a777c4.webp"
+  },
+  {
+   "name": "Godrej NEH 22",
+   "sku": "NEH 22",
+   "shortDescription": "NEH 22 door handle set, on a plate or a rose.",
+   "technicalSpecs": {
+    "Collection": "NEH (popular mortise)",
+    "Mounting": "Handle on a plate with lock body and cylinder (200 or 240 mm), on a rose, or as a baby latch set",
+    "Door Thickness": "28 mm to 40 mm",
+    "Variants": "Satin Steel, Antique Brass, Matte Black Rose, Black Antique Copper"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/HDH_II_918_x_1028px_NEH_22_ss_2964552e6c.webp"
+  },
+  {
+   "name": "Godrej NEH 23",
+   "sku": "NEH 23",
+   "shortDescription": "NEH 23 door handle set, on a plate or a rose.",
+   "technicalSpecs": {
+    "Collection": "NEH (popular mortise)",
+    "Mounting": "Handle on a plate with lock body and cylinder (200 or 240 mm), on a rose, or as a baby latch set",
+    "Backset": "50 mm",
+    "Door Thickness": "28 mm - 40 mm",
+    "Variants": "Satin Steel, Antique Brass, Matte Black Rose, Black Antique Copper"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/8932_PNG_2_99cc41cf55.webp"
+  },
+  {
+   "name": "Godrej NEH 24",
+   "sku": "NEH 24",
+   "shortDescription": "NEH 24 door handle set, on a plate or a rose.",
+   "technicalSpecs": {
+    "Collection": "NEH (popular mortise)",
+    "Mounting": "Handle on a plate with lock body and cylinder (200 or 240 mm), on a rose, or as a baby latch set",
+    "Backset": "50 mm",
+    "Door Thickness": "28 mm - 40 mm",
+    "Variants": "Satin Steel, Antique Brass, Matte Black Rose, Black Antique Copper"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/8958_PNG_6_65e3910771.webp"
+  },
+  {
+   "name": "Godrej NEH 25",
+   "sku": "NEH 25",
+   "shortDescription": "New NEH 25 door handle set, on a plate or a rose.",
+   "technicalSpecs": {
+    "Collection": "NEH (popular mortise)",
+    "Mounting": "Handle on a plate with lock body and cylinder (200 or 240 mm), on a rose, or as a baby latch set",
+    "Key Features": "New design",
+    "Variants": "Satin Steel, Antique Brass, Matte Black Rose"
+   },
+   "priceRange": null,
+   "image": "godrej/neh-25.png"
+  },
+  {
+   "name": "Godrej NEH 26",
+   "sku": "NEH 26",
+   "shortDescription": "New NEH 26 door handle set, on a plate or a rose.",
+   "technicalSpecs": {
+    "Collection": "NEH (popular mortise)",
+    "Mounting": "Handle on a plate with lock body and cylinder (200 or 240 mm), on a rose, or as a baby latch set",
+    "Key Features": "New design",
+    "Variants": "Satin Steel, Matte Black Rose, Antique Brass"
+   },
+   "priceRange": null,
+   "image": "godrej/neh-26.png"
+  },
+  {
+   "name": "Godrej EM 06",
+   "sku": "EM 06",
+   "shortDescription": "New EM 06 door handle set, on a plate or a rose.",
+   "technicalSpecs": {
+    "Collection": "EM (essential mortise)",
+    "Mounting": "Handle on a plate with lock body and cylinder (200 or 240 mm), on a rose, or as a baby latch set",
+    "Key Features": "New design",
+    "Variants": "Satin Steel, Matte Black, Antique Brass"
+   },
+   "priceRange": null,
+   "image": "godrej/em-06.png"
+  },
+  {
+   "name": "Godrej EM 07",
+   "sku": "EM 07",
+   "shortDescription": "New EM 07 door handle set, on a plate or a rose.",
+   "technicalSpecs": {
+    "Collection": "EM (essential mortise)",
+    "Mounting": "Handle on a plate with lock body and cylinder (200 or 240 mm), on a rose, or as a baby latch set",
+    "Key Features": "New design",
+    "Variants": "Satin Steel, Matte Black, Antique Brass"
+   },
+   "priceRange": null,
+   "image": "godrej/em-07.png"
+  },
+  {
+   "name": "Godrej Gloria",
+   "sku": "Gloria",
+   "shortDescription": "Gloria door handle set, on a plate or a rose, with an optional Victor cylinder.",
+   "technicalSpecs": {
+    "Collection": "Popular mortise",
+    "Mounting": "Handle on a plate with lock body and cylinder (200 or 240 mm), on a rose, or as a baby latch set",
+    "Door Thickness": "28 mm to 40 mm",
+    "Variants": "Satin Steel, Antique Brass, Matte Black Rose, Black Antique Copper, Matte Black Nickel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_9602c7d16b.webp"
+  },
+  {
+   "name": "Godrej BM 01",
+   "sku": "BM 01",
+   "shortDescription": "BM 01 door handle set on a 175 mm plate.",
+   "technicalSpecs": {
+    "Collection": "BM (popular mortise)",
+    "Mounting": "Handle on a 175 mm plate with lock body and cylinder",
+    "Backset": "50 mm",
+    "Door Thickness": "28 mm - 40 mm",
+    "Variants": "Satin Steel, Antique Brass"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/BM_01_4492_4dd96fbc46.webp"
+  },
+  {
+   "name": "Godrej BM 02",
+   "sku": "BM 02",
+   "shortDescription": "BM 02 door handle set on a 175 mm plate.",
+   "technicalSpecs": {
+    "Collection": "BM (popular mortise)",
+    "Mounting": "Handle on a 175 mm plate with lock body and cylinder",
+    "Backset": "50 mm",
+    "Door Thickness": "28 mm - 40 mm",
+    "Variants": "Satin Steel, Antique Brass"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/BM_02_4493_aa76e2c6d8.webp"
+  },
+  {
+   "name": "Godrej BM 09",
+   "sku": "BM 09",
+   "shortDescription": "BM 09 door handle set on a 175 mm plate.",
+   "technicalSpecs": {
+    "Collection": "BM (popular mortise)",
+    "Mounting": "Handle on a 175 mm plate with lock body and cylinder",
+    "Backset": "50 mm",
+    "Door Thickness": "28 mm - 40 mm",
+    "Variants": "Satin Steel, Antique Brass, Rose Gold, Matte Black Nickel, Matte Black"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/BM_09_Satin_Steel_324779bb80.webp"
+  },
+  {
+   "name": "Godrej BM 10",
+   "sku": "BM 10",
+   "shortDescription": "BM 10 door handle set on a 175 mm plate.",
+   "technicalSpecs": {
+    "Collection": "BM (popular mortise)",
+    "Mounting": "Handle on a 175 mm plate with lock body and cylinder",
+    "Backset": "50 mm",
+    "Door Thickness": "28 mm - 40 mm",
+    "Variants": "Satin Steel, Antique Brass, Rose Gold, Matte Black Nickel, Matte Black"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/BM_10_SS_af9cc6fad7.webp"
+  },
+  {
+   "name": "Godrej EM 01",
+   "sku": "EM 01",
+   "shortDescription": "EM 01 essential door handle set, on a plate, cover plate or rose.",
+   "technicalSpecs": {
+    "Collection": "EM (essential mortise)",
+    "Mounting": "On a plate, cover plate or rose, with lock body and cylinder",
+    "Backset": "50 mm",
+    "Door Thickness": "28 mm - 40 mm",
+    "Variants": "Satin Steel, Antique Brass, Matte Black"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/EM_01_SS_e0d496bb4a.webp"
+  },
+  {
+   "name": "Godrej EM 02",
+   "sku": "EM 02",
+   "shortDescription": "EM 02 essential door handle set, on a plate, cover plate or rose.",
+   "technicalSpecs": {
+    "Collection": "EM (essential mortise)",
+    "Mounting": "On a plate, cover plate or rose, with lock body and cylinder",
+    "Backset": "50 mm",
+    "Door Thickness": "28 mm - 40 mm",
+    "Variants": "Satin Steel, Antique Brass, Matte Black"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/EM_02_SS_b3b7a243da.webp"
+  },
+  {
+   "name": "Godrej EM 03",
+   "sku": "EM 03",
+   "shortDescription": "EM 03 essential door handle set, on a plate, cover plate or rose.",
+   "technicalSpecs": {
+    "Collection": "EM (essential mortise)",
+    "Mounting": "On a plate, cover plate or rose, with lock body and cylinder",
+    "Backset": "50 mm",
+    "Door Thickness": "28 mm - 40 mm",
+    "Variants": "Satin Steel, Antique Brass, Matte Black"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_934948ad8e.webp"
+  },
+  {
+   "name": "Godrej EM 04",
+   "sku": "EM 04",
+   "shortDescription": "EM 04 essential door handle set, on a plate, cover plate or rose.",
+   "technicalSpecs": {
+    "Collection": "EM (essential mortise)",
+    "Mounting": "On a plate, cover plate or rose, with lock body and cylinder",
+    "Backset": "50 mm",
+    "Door Thickness": "28 mm - 40 mm",
+    "Variants": "Satin Steel, Antique Brass, Matte Black"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_265e1d1f58.webp"
+  },
+  {
+   "name": "Godrej EM 05",
+   "sku": "EM 05",
+   "shortDescription": "EM 05 essential door handle set, on a plate, cover plate or rose.",
+   "technicalSpecs": {
+    "Collection": "EM (essential mortise)",
+    "Mounting": "On a plate, cover plate or rose, with lock body and cylinder",
+    "Backset": "50 mm",
+    "Door Thickness": "28 mm - 40 mm",
+    "Variants": "Satin Steel, Antique Brass, Matte Black"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_b4d8f43ea6.webp"
+  },
+  {
+   "name": "Godrej ELC 01 lever lock set",
+   "sku": "ELC 01",
+   "shortDescription": "ELC 01 door handle on a plate with a 6-lever mortise lock.",
+   "technicalSpecs": {
+    "Collection": "ELC (lever mortise)",
+    "Mounting": "Handle on a plate with a 6-lever mortise lock",
+    "Backset": "48.5 mm",
+    "Door Thickness": "25 mm - 45 mm",
+    "Variants": "Satin Steel, Antique Brass, Rose Gold, Matte Black, Matte Black Nickel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_a98308c3e7.webp"
+  },
+  {
+   "name": "Godrej ELC 09 lever lock set",
+   "sku": "ELC 09",
+   "shortDescription": "ELC 09 door handle on a plate with a 6-lever mortise lock.",
+   "technicalSpecs": {
+    "Collection": "ELC (lever mortise)",
+    "Mounting": "Handle on a plate with a 6-lever mortise lock",
+    "Backset": "48.5 mm",
+    "Door Thickness": "25 mm - 45 mm",
+    "Variants": "Satin Steel, Antique Brass, Rose Gold, Matte Black, Matte Black Nickel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_b0abca3ab5.webp"
+  },
+  {
+   "name": "Godrej ELC 10 lever lock set",
+   "sku": "ELC 10",
+   "shortDescription": "ELC 10 door handle on a plate with a 6-lever mortise lock.",
+   "technicalSpecs": {
+    "Collection": "ELC (lever mortise)",
+    "Mounting": "Handle on a plate with a 6-lever mortise lock",
+    "Backset": "48.5 mm",
+    "Door Thickness": "25 mm - 45 mm",
+    "Variants": "Satin Steel, Antique Brass, Rose Gold, Matte Black, Matte Black Nickel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_03763f1937.webp"
+  },
+  {
+   "name": "Godrej ELC 19 lever lock set",
+   "sku": "ELC 19",
+   "shortDescription": "ELC 19 door handle on a plate with a 6-lever mortise lock.",
+   "technicalSpecs": {
+    "Collection": "ELC (lever mortise)",
+    "Mounting": "Handle on a plate with a 6-lever mortise lock",
+    "Backset": "48.5 mm",
+    "Door Thickness": "25 mm - 45 mm",
+    "Variants": "Satin Steel, Antique Brass, Matte Black Rose"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/Mortise_ELC_19_ss_a774f19182.webp"
+  },
+  {
+   "name": "Godrej Cameo handle",
+   "sku": "Cameo",
+   "shortDescription": "Cameo lever handle on a rose or a 250 mm plate.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Mazak (zinc alloy)",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Steel, Antique Brass, Sunset Rose Gold, Matte Black Nickel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_7df3618bb6.webp"
+  },
+  {
+   "name": "Godrej Ugo handle",
+   "sku": "Ugo",
+   "shortDescription": "Ugo lever handle on a rose or a 250 mm plate.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Mazak (zinc alloy)",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Steel, Antique Brass, Sunset Rose Gold, Matte Black Nickel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/HDH_I_918_x_1028px_Ugo_ss_2_631faddb75.webp"
+  },
+  {
+   "name": "Godrej Twist handle",
+   "sku": "Twist",
+   "shortDescription": "Twist lever handle on a rose.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Mazak (zinc alloy)",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Steel, Antique Brass, Sunset Rose Gold, Matte Black Nickel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_f294ada9ab.webp"
+  },
+  {
+   "name": "Godrej Ecstacy handle",
+   "sku": "Ecstacy",
+   "shortDescription": "Ecstacy lever handle on a rose.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Mazak (zinc alloy)",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Steel, Antique Brass, Sunset Rose Gold, Matte Black Nickel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_90af67307c.webp"
+  },
+  {
+   "name": "Godrej Orso handle",
+   "sku": "Orso",
+   "shortDescription": "Orso lever handle on a rose.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Mazak (zinc alloy)",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Steel, Antique Brass, Sunset Rose Gold, Matte Black Nickel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/HDH_I_918_x_1028px_Orso_ss_7cf9368733.webp"
+  },
+  {
+   "name": "Godrej Remo handle",
+   "sku": "Remo",
+   "shortDescription": "Remo lever handle on a rose.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Mazak (zinc alloy)",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Steel, Antique Brass, Sunset Rose Gold, Matte Black Nickel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_28b9aae5b7.webp"
+  },
+  {
+   "name": "Godrej Smooth handle",
+   "sku": "Smooth",
+   "shortDescription": "Smooth lever handle on a rose.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Mazak (zinc alloy)",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Steel, Antique Brass, Sunset Rose Gold, Matte Black Nickel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_d2f316ebb1.webp"
+  },
+  {
+   "name": "Godrej Calla handle",
+   "sku": "Calla",
+   "shortDescription": "Calla lever handle on a rose.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Mazak (zinc alloy)",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Steel, Sunset Rose Gold, Matte Black Nickel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_4d6b512164.webp"
+  },
+  {
+   "name": "Godrej Alpine handle",
+   "sku": "Alpine",
+   "shortDescription": "Alpine lever handle on a rose.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Mazak (zinc alloy)",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Steel, Antique Brass"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_53bf3ca50e.webp"
+  },
+  {
+   "name": "Godrej Chris handle",
+   "sku": "Chris",
+   "shortDescription": "Chris lever handle on a rose.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Mazak (zinc alloy)",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Steel, Antique Brass"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_dcc61c1416.webp"
+  },
+  {
+   "name": "Godrej Evolve handle",
+   "sku": "Evolve",
+   "shortDescription": "Evolve lever handle on a rose.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Mazak (zinc alloy)",
+    "Door Thickness": "28 mm to 60 mm",
+    "Variants": "Satin Steel, Antique Brass"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/HDH_I_918_x_1028px_Evolve_ss_a2c2c00f47.webp"
+  },
+  {
+   "name": "Godrej Arsa Udaan handle",
+   "sku": "Arsa Udaan",
+   "shortDescription": "Solid brass Arsa Udaan handle in a traditional-inspired design, on a rose or a 355 mm plate.",
+   "technicalSpecs": {
+    "Collection": "Arsa (smart ethnic)",
+    "Material": "Brass",
+    "Door Thickness": "28 mm to 70 mm",
+    "Variants": "Antique Brass, Antique Copper"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/HDH_I_918_x_1028px_Arsa_Udaan_ab1_3117e36b60.webp"
+  },
+  {
+   "name": "Godrej Arsa Kalasam handle",
+   "sku": "Arsa Kalasam",
+   "shortDescription": "Solid brass Arsa Kalasam handle in a traditional-inspired design, on a rose or a 355 mm plate.",
+   "technicalSpecs": {
+    "Collection": "Arsa (smart ethnic)",
+    "Material": "Brass",
+    "Door Thickness": "Door Thickness",
+    "Variants": "Antique Brass, Antique Copper"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/HDH_I_918_x_1028px_Arsa_Kalasam_ab1_4b4e6dd9f2.webp"
+  },
+  {
+   "name": "Godrej Arsa Bel handle",
+   "sku": "Arsa Bel",
+   "shortDescription": "Solid brass Arsa Bel handle in a traditional-inspired design, on a rose or a 355 mm plate.",
+   "technicalSpecs": {
+    "Collection": "Arsa (smart ethnic)",
+    "Material": "Brass",
+    "Door Thickness": "28 mm to 70 mm",
+    "Variants": "Antique Brass, Antique Copper"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/HDH_I_918_x_1028px_Arsa_Bel_ab1_b15568d497.webp"
+  },
+  {
+   "name": "Godrej Arsa Mor handle",
+   "sku": "Arsa Mor",
+   "shortDescription": "Solid brass Arsa Mor handle in a traditional-inspired design, on a rose or a 355 mm plate.",
+   "technicalSpecs": {
+    "Collection": "Arsa (smart ethnic)",
+    "Material": "Brass",
+    "Door Thickness": "28 mm to 70 mm",
+    "Variants": "Antique Brass, Antique Copper"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/HDH_I_918_x_1028px_Arsa_Mor_ab1_854a7ae9fb.webp"
+  },
+  {
+   "name": "Godrej SEH 03 handle",
+   "sku": "SEH 03",
+   "shortDescription": "Smart ethnic lever handle in antique brass.",
+   "technicalSpecs": {
+    "Collection": "Smart ethnic",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Antique Brass"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/HDH_I_918_x_1028px_SEH_03_ab_f518b92c68.webp"
+  },
+  {
+   "name": "Godrej HDH 01 handle",
+   "sku": "HDH 01",
+   "shortDescription": "HDH 01 lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Mazak (zinc alloy)",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Steel, Antique Brass, Matte Black, Matte Black Nickel, PVD Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_d0015c2664.webp"
+  },
+  {
+   "name": "Godrej HDH 02 handle",
+   "sku": "HDH 02",
+   "shortDescription": "HDH 02 lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Mazak (zinc alloy)",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Steel, Antique Brass, Matte Black, Matte Black Nickel, PVD Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_3fa471c814.webp"
+  },
+  {
+   "name": "Godrej HDH 03 handle",
+   "sku": "HDH 03",
+   "shortDescription": "HDH 03 lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Mazak (zinc alloy)",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Steel, Antique Brass, Matte Black, Matte Black Nickel, PVD Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_c20392697b.webp"
+  },
+  {
+   "name": "Godrej HDH 04 handle",
+   "sku": "HDH 04",
+   "shortDescription": "HDH 04 lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Mazak (zinc alloy)",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Steel, Antique Brass, Matte Black, Matte Black Nickel, PVD Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_c5f3a6cda0.webp"
+  },
+  {
+   "name": "Godrej HDH 05 handle",
+   "sku": "HDH 05",
+   "shortDescription": "HDH 05 lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Mazak (zinc alloy)",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Matte, Matte Antique Brass, Matte Black, Matte Black Nickel, PVD Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_f13b1a71a1.webp"
+  },
+  {
+   "name": "Godrej HDH 06 handle",
+   "sku": "HDH 06",
+   "shortDescription": "HDH 06 lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Mazak (zinc alloy)",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Antique Brass Walnut, Matte Black Rose, Matte Black Nickel, PVD Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_4b62c04d08.webp"
+  },
+  {
+   "name": "Godrej HDH 07 handle",
+   "sku": "HDH 07",
+   "shortDescription": "HDH 07 lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Mazak (zinc alloy)",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Antique Brass Walnut, Matte Black Rose, Matte Black Nickel, PVD Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_d619b0703a.webp"
+  },
+  {
+   "name": "Godrej HDH 08 handle",
+   "sku": "HDH 08",
+   "shortDescription": "HDH 08 lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Mazak (zinc alloy)",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Matte, Matte Antique Brass, Matte Black, Matte Black Nickel, PVD Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_87ff0078f5.webp"
+  },
+  {
+   "name": "Godrej HDH 09 handle",
+   "sku": "HDH 09",
+   "shortDescription": "HDH 09 lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Brass",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Matte, Matte Antique Brass, Matte Black, Matte Black Nickel, PVD Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_84f4fd4941.webp"
+  },
+  {
+   "name": "Godrej HDH 10 handle",
+   "sku": "HDH 10",
+   "shortDescription": "HDH 10 lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Brass",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Matte Antique Brass, Matte Black, Matte Black Nickel, PVD Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_9d46bdea95.webp"
+  },
+  {
+   "name": "Godrej HDH 11 handle",
+   "sku": "HDH 11",
+   "shortDescription": "HDH 11 lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Brass",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Matte, Antique Brass, Matte Black, PVD Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/HDH_I_918_x_1028px_HDH_11_mb_a52362a846.webp"
+  },
+  {
+   "name": "Godrej HDH 12 handle",
+   "sku": "HDH 12",
+   "shortDescription": "HDH 12 lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Brass",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Matte, Antique Brass, Matte Black, PVD Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/9328_20e1325ec8.webp"
+  },
+  {
+   "name": "Godrej HDH 13 handle",
+   "sku": "HDH 13",
+   "shortDescription": "HDH 13 lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Brass",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Matte, Antique Brass, Matte Black, PVD Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/HDH_II_918_x_1028px_HDH_13_mb_739d9ecb59.png"
+  },
+  {
+   "name": "Godrej HDH 14 handle",
+   "sku": "HDH 14",
+   "shortDescription": "HDH 14 lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Brass",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Antique Brass Walnut, Matte Black Rose, PVD Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/HDH_II_918_x_1028px_HDH_14_mbr_ee5c4ad9e6.webp"
+  },
+  {
+   "name": "Godrej HDH 15 handle",
+   "sku": "HDH 15",
+   "shortDescription": "HDH 15 lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Brass",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Steel, Antique Brass, Matte Black, PVD Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/D003_1483_32696a3838.webp"
+  },
+  {
+   "name": "Godrej HDH 16 handle",
+   "sku": "HDH 16",
+   "shortDescription": "HDH 16 lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Brass",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Steel, Antique Brass, Matte Black, PVD Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/D003_1441_d0579f1323.webp"
+  },
+  {
+   "name": "Godrej HDH 17 handle",
+   "sku": "HDH 17",
+   "shortDescription": "HDH 17 lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Brass",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Steel, Antique Brass, Matte Black, PVD Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_08cb6c2870.webp"
+  },
+  {
+   "name": "Godrej HDH 18 handle",
+   "sku": "HDH 18",
+   "shortDescription": "HDH 18 lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Brass",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Steel, Antique Brass, Matte Black, PVD Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_3d6a6090b8.webp"
+  },
+  {
+   "name": "Godrej HDH 19 handle",
+   "sku": "HDH 19",
+   "shortDescription": "HDH 19 lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Brass",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Antique Brass Walnut, Matte Black Rose, PVD Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/HDH_II_918_x_1028px_HDH_19_mbr_6102ca2f94.webp"
+  },
+  {
+   "name": "Godrej HDH 20 handle",
+   "sku": "HDH 20",
+   "shortDescription": "HDH 20 lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Brass",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Steel, Antique Brass Walnut, Matte Black Rose, PVD Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/HDH_II_918_x_1028px_HDH_20_ss_4b3e971f19.webp"
+  },
+  {
+   "name": "Godrej HDH 21 handle",
+   "sku": "HDH 21",
+   "shortDescription": "HDH 21 lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Brass",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Steel, Antique Brass Walnut, Matte Black Rose, PVD Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/HDH_II_918_x_1028px_HDH_21_ss_6304370c8c.webp"
+  },
+  {
+   "name": "Godrej HDH 22 handle",
+   "sku": "HDH 22",
+   "shortDescription": "HDH 22 lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Brass",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Steel, Antique Brass Walnut, Matte Black Rose, PVD Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/HDH_II_918_x_1028px_HDH_22_ss_befe36a392.webp"
+  },
+  {
+   "name": "Godrej HDH 23 handle",
+   "sku": "HDH 23",
+   "shortDescription": "HDH 23 lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Material": "Brass",
+    "Door Thickness": "28 mm to 55 mm",
+    "Variants": "Satin Steel, Antique Brass Walnut, Matte Black Rose, PVD Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/HDH_II_918_x_1028px_HDH_23_ss_18a34f067e.webp"
+  },
+  {
+   "name": "Godrej Anoushka pull handle",
+   "sku": "Anoushka",
+   "shortDescription": "Pull handle for main doors, in full and mini sizes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Type": "Pull handle",
+    "Door Thickness": "Suitable for all door thickness",
+    "Variants": "Brass, Satin Steel, Antique Brass, Matte Black, Matte Black Nickel, Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/HDH_II_918_x_1028px_Anoushka_ss2_49efc10506.webp"
+  },
+  {
+   "name": "Godrej Marin pull handle",
+   "sku": "Marin",
+   "shortDescription": "Pull handle for main doors, in 240 mm and 200 mm (mini) sizes.",
+   "technicalSpecs": {
+    "Collection": "Home décor handles",
+    "Type": "Pull handle",
+    "Sizes": "200, 240 mm",
+    "Door Thickness": "Suitable for all door thickness",
+    "Variants": "Antique Brass, Satin Steel, Matte Black, Matte Black Nickel, Rose Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/Godrej_0000s_0000s_0017s_0008s_0000_HDH_II_918_x_1028px_Marin_ss_3619068dc6.webp"
+  }
+ ]
+}

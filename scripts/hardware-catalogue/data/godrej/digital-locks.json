@@ -1,0 +1,170 @@
+{
+ "brand": "godrej",
+ "siteCategory": "digital-locks",
+ "source": "Godrej Price List (w.e.f. 1.07.2026)",
+ "products": [
+  {
+   "name": "Godrej Advantis IoT9",
+   "sku": "Advantis IoT9",
+   "shortDescription": "Digital mortise lock with a built-in video display, face recognition and Wi-Fi.",
+   "technicalSpecs": {
+    "Access": "3D face, fingerprint, PIN, RFID card, mechanical key, app (Wi-Fi)",
+    "Key Features": "9-in-1 access, Video display, Wi-Fi built in, Video door phone module available",
+    "Backset": "70 mm",
+    "Door Thickness": "35 mm – 75 mm",
+    "Variants": "Titanium Grey, Gunmetal Black, Roman Silver, Vegas Gold, Rose Gold, Oak Wood, Walnut",
+    "Product codes": "2400 (Titanium Grey), 2396 (Gunmetal Black), 2397 (Roman Silver), 2398 (Vegas Gold), 2408 (Rose Gold), 2409 (Oak Wood), 2500 (Walnut)"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/Banner_Image_Advantis_Io_T_9_Desktop_7023cd294f.webp"
+  },
+  {
+   "name": "Godrej Advantis Revolution",
+   "sku": "Advantis Revolution",
+   "shortDescription": "Digital mortise lock in black or gold.",
+   "technicalSpecs": {
+    "Access": "Fingerprint, PIN, RFID card, mechanical key",
+    "Key Features": "Video door phone module available",
+    "Backset": "70 mm",
+    "Door Thickness": "40 mm – 60 mm",
+    "Variants": "Black, Gold",
+    "Product codes": "4967 (Black), 2998 (Gold)"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/Advantis_Revolution_82e8b474f8.webp"
+  },
+  {
+   "name": "Godrej Advantis GSL D1",
+   "sku": "Advantis GSL D1",
+   "shortDescription": "7-in-1 digital mortise lock in black or rose gold.",
+   "technicalSpecs": {
+    "Access": "Fingerprint, PIN, RFID card, mechanical key, app",
+    "Key Features": "7-in-1 access",
+    "Variants": "Black, Rose Gold",
+    "Product codes": "4406 (Black), 4407 (Rose Gold)"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/Banner_Procut_Image_Desktop_e9684050a3.webp"
+  },
+  {
+   "name": "Godrej Advantis GSL D1R",
+   "sku": "Advantis GSL D1R",
+   "shortDescription": "Digital lock for left or right, inside or outside opening doors.",
+   "technicalSpecs": {
+    "Access": "Fingerprint, PIN, RFID card, mechanical key",
+    "Key Features": "Handed versions for left/right and inside/outside opening",
+    "Backset": "62 mm",
+    "Door Thickness": "35mm - 65 mm",
+    "Door Type": "Wooden Doors and Wooden Frames",
+    "Variants": "Black, Silver",
+    "Product codes": "9680 (Black), 9681 (Black), 9682 (Silver), 9683 (Silver), 8997 (Black), 8998 (Black), 8999 (Silver), 9000 (Silver)"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/limbo_image3_a2fea5ea2e.webp"
+  },
+  {
+   "name": "Godrej Neo Pro-View",
+   "sku": "Neo Pro-View",
+   "shortDescription": "Digital mortise lock with a built-in video display.",
+   "technicalSpecs": {
+    "Access": "Fingerprint, PIN, RFID card, mechanical key, app (Wi-Fi)",
+    "Key Features": "Video display, Wi-Fi built in",
+    "Backset": "60 mm",
+    "Door Thickness": "35 mm - 65 mm",
+    "Door Type": "Wooden Doors and Wooden Frames",
+    "Variants": "Black",
+    "Product codes": "9690 (Black)"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/lifestyle_banner1_1d5e282507.webp"
+  },
+  {
+   "name": "Godrej Neo Connect",
+   "sku": "Neo Connect",
+   "shortDescription": "Wi-Fi digital mortise lock you can open and monitor from the Godrej app.",
+   "technicalSpecs": {
+    "Access": "Fingerprint, PIN, RFID card, mechanical key, app (Wi-Fi)",
+    "Key Features": "Wi-Fi built in, Up to 100 fingerprints, cards and PINs",
+    "Backset": "60 mm",
+    "Door Thickness": "35 mm - 65 mm",
+    "Door Type": "Wooden Doors and Wooden Frames",
+    "Variants": "Black, Rose Gold",
+    "Product codes": "9687 (Black), 9688 (Rose Gold)"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/2_ee53a5ba0f.webp"
+  },
+  {
+   "name": "Godrej Neo Prime",
+   "sku": "Neo Prime",
+   "shortDescription": "Digital mortise lock with fingerprint, PIN, card and key access.",
+   "technicalSpecs": {
+    "Access": "Fingerprint, PIN, RFID card, mechanical key",
+    "Backset": "60 mm",
+    "Door Thickness": "35 mm - 65 mm",
+    "Door Type": "Wooden Doors and Wooden Frames",
+    "Variants": "Rose Gold, Titanium Grey",
+    "Product codes": "9685 (Rose Gold), 9686 (Titanium Grey)"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/2_370de1b2e1.webp"
+  },
+  {
+   "name": "Godrej Neo Advantage",
+   "sku": "Neo Advantage",
+   "shortDescription": "Entry-level digital mortise lock.",
+   "technicalSpecs": {
+    "Access": "Fingerprint, PIN, RFID card, mechanical key",
+    "Backset": "60 mm",
+    "Door Thickness": "35 mm - 65 mm",
+    "Door Type": "Wooden Doors and Wooden Frames",
+    "Variants": "Black",
+    "Product codes": "9684 (Black)"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_834b90493f.webp"
+  },
+  {
+   "name": "Godrej Advantis Rimtronic",
+   "sku": "Rimtronic",
+   "shortDescription": "Digital lock for rim doors.",
+   "technicalSpecs": {
+    "Access": "Fingerprint, PIN, RFID card, mechanical key",
+    "Key Features": "Rim lock",
+    "Lock Type": "Rim Lock",
+    "Variants": "Black",
+    "Product codes": "4101 (Black), 3000 (Black), 2997 (Black)"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_edb9fdbc9d.webp"
+  },
+  {
+   "name": "Godrej Advantis Rimtronic RF",
+   "sku": "Rimtronic RF",
+   "shortDescription": "Digital rim lock with RFID card access.",
+   "technicalSpecs": {
+    "Access": "RFID card, PIN, mechanical key",
+    "Key Features": "Rim lock",
+    "Lock Type": "Rim Lock",
+    "Variants": "Black",
+    "Product codes": "3000 (Black)"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_c23aa73dd6.webp"
+  },
+  {
+   "name": "Godrej Advantis Rimtronic Verti",
+   "sku": "Rimtronic Verti",
+   "shortDescription": "Digital rim lock with a vertical bolt.",
+   "technicalSpecs": {
+    "Access": "Fingerprint, PIN, RFID card, mechanical key",
+    "Key Features": "Rim lock, Vertical bolt",
+    "Door Thickness": "12 mm",
+    "Variants": "Black",
+    "Product codes": "2997 (Black)"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_ad22bfee98.webp"
+  }
+ ]
+}

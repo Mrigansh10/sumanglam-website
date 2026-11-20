@@ -1,0 +1,34 @@
+{
+ "brand": "dorset",
+ "siteCategory": "sliding-systems",
+ "source": "Dorset Price List v6.2 (w.e.f. 15.04.2026)",
+ "imageBase": "https://www.dorsetindia.com/Uploads/ProductsImage/",
+ "products": [
+  {
+   "name": "Dorset I Flow slim track wardrobe sliding system",
+   "sku": "IFLOWINSLM",
+   "shortDescription": "Soft-close sliding system for two or three wardrobe doors on a slim track.",
+   "technicalSpecs": {
+    "Load": "65 kg per door",
+    "Options": "2 door (2440 mm track), 3 door (3660 mm track)",
+    "Key Features": "Soft close",
+    "Product codes": "IFLOWINSLM2D, IFLOWINSLM3D; tracks IFLOWTT/BT-SLD-2440 / 3660-ANS"
+   },
+   "priceRange": null,
+   "image": "IDoorNeo.jpg"
+  },
+  {
+   "name": "Dorset I Flow top-hanging wardrobe sliding system",
+   "sku": "IFLOWOSLM2D",
+   "shortDescription": "Soft-close top-hanging sliding system for two wardrobe doors.",
+   "technicalSpecs": {
+    "Load": "60 kg per door",
+    "Options": "2 door, 2440 mm track",
+    "Key Features": "Soft close, Top hanging",
+    "Product codes": "IFLOWOSLM2D; tracks IFLOWTT-HNG-2440-ANS, IFLOWBT-HNG-2440-ANS"
+   },
+   "priceRange": null,
+   "image": "IDoorTop.jpg"
+  }
+ ]
+}

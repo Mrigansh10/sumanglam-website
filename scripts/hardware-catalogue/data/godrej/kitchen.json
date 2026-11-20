@@ -1,0 +1,117 @@
+{
+ "brand": "godrej",
+ "siteCategory": "kitchen-accessories",
+ "source": "Godrej Price List (w.e.f. 1.07.2026)",
+ "products": [
+  {
+   "name": "Godrej SKIDO wire baskets and organisers",
+   "sku": "SKIDO",
+   "shortDescription": "Wire baskets with jar, bottle and container organisers.",
+   "technicalSpecs": {
+    "Variants": "Stainless Steel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_6_f56c571e18.webp"
+  },
+  {
+   "name": "Godrej Universal SKIDO organisers",
+   "sku": "Universal SKIDO",
+   "shortDescription": "Drawer organisers for cups and saucers, thalis, jars, cutlery and woks.",
+   "technicalSpecs": {
+    "Variants": "Anthracite"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_aeb858f622.webp"
+  },
+  {
+   "name": "Godrej Super SKIDO corner solutions",
+   "sku": "Super SKIDO",
+   "shortDescription": "Swing and slide-out corner units for blind corner cabinets.",
+   "technicalSpecs": {
+    "Variants": "Anthracite"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_ffda62664a.webp"
+  },
+  {
+   "name": "Godrej Pantry unit",
+   "sku": "Pantry Unit",
+   "shortDescription": "Tall pull-out pantry unit.",
+   "technicalSpecs": {
+    "Variants": "Anthracite, Stainless Steel, SS 304"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_ea9c55ab36.webp"
+  },
+  {
+   "name": "Godrej Stainless steel plain basket",
+   "sku": "Plain Basket SS",
+   "shortDescription": "Stainless steel wire basket for kitchen drawers.",
+   "technicalSpecs": {
+    "Variants": "Stainless Steel, SS 304"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_2_3086794e64.webp"
+  },
+  {
+   "name": "Godrej Cup and saucer basket",
+   "sku": "Cup Saucer Basket",
+   "shortDescription": "Stainless steel wire basket for cups and saucers.",
+   "technicalSpecs": {
+    "Variants": "Stainless Steel, SS 304"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_1f7d8db0e9.webp"
+  },
+  {
+   "name": "Godrej Perforated cutlery basket",
+   "sku": "Cutlery Basket",
+   "shortDescription": "Stainless steel perforated basket for cutlery.",
+   "technicalSpecs": {
+    "Variants": "Stainless Steel, SS 304"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_85059e4281.webp"
+  },
+  {
+   "name": "Godrej Thali basket",
+   "sku": "Thali Basket",
+   "shortDescription": "Stainless steel wire basket for thalis and plates.",
+   "technicalSpecs": {
+    "Variants": "Stainless Steel, SS 304"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_4_ab00234f81.webp"
+  },
+  {
+   "name": "Godrej Pull-out",
+   "sku": "Pull Out SS",
+   "shortDescription": "Two or three shelf stainless steel pull-out.",
+   "technicalSpecs": {
+    "Variants": "Stainless Steel, SS 304"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/two_shelf_pull_out_7ac443172a.webp"
+  },
+  {
+   "name": "Godrej Grain trolley",
+   "sku": "Grain Trolley",
+   "shortDescription": "Stainless steel pull-out grain storage trolley.",
+   "technicalSpecs": {
+    "Variants": "Stainless Steel, SS 304"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_1_27f379c609.webp"
+  },
+  {
+   "name": "Godrej Waste bin",
+   "sku": "Waste Bin",
+   "shortDescription": "Pull-out waste bin with holder and shutter.",
+   "technicalSpecs": {
+    "Variants": "Black, Stainless Steel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_1_5a1292e522.webp"
+  }
+ ]
+}

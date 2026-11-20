@@ -1,0 +1,46 @@
+{
+ "brand": "godrej",
+ "siteCategory": "door-controls",
+ "source": "Godrej Price List (w.e.f. 1.07.2026)",
+ "products": [
+  {
+   "name": "Godrej Cerus door closer",
+   "sku": "Cerus",
+   "shortDescription": "Universal surface-mounted door closer, with a standard or pelmet (hold-open) arm.",
+   "technicalSpecs": {
+    "Type": "Surface mounted",
+    "Door weight": "Up to 85 kg",
+    "Mounting Type": "Surface Mounted",
+    "Variants": "Silver, Matte Black, Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/cerus_silver_door_d543ec4fcc.webp"
+  },
+  {
+   "name": "Godrej Hercules door closer",
+   "sku": "Hercules",
+   "shortDescription": "Surface-mounted door closer, also in Incrust gold and matte black.",
+   "technicalSpecs": {
+    "Type": "Surface mounted",
+    "Door weight": "Up to 60 kg",
+    "Mounting Type": "Surface Mounted",
+    "Variants": "Silver, Matte Black, Gold"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/hercules_02354305b0.webp"
+  },
+  {
+   "name": "Godrej Concealed door closer",
+   "sku": "Concealed DC",
+   "shortDescription": "Door closer hidden inside the door and frame.",
+   "technicalSpecs": {
+    "Type": "Concealed",
+    "Door weight": "Up to 85 kg",
+    "Mounting Type": "Surface Mounted",
+    "Variants": "Silver"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_1e1aa7a588.webp"
+  }
+ ]
+}

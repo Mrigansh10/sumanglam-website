@@ -1,0 +1,72 @@
+{
+ "brand": "dorset",
+ "siteCategory": "architectural-hardware",
+ "source": "Dorset Price List v6.2 (w.e.f. 15.04.2026)",
+ "imageBase": "https://www.dorsetindia.com/Uploads/ProductsImage/",
+ "products": [
+  {
+   "name": "Dorset Glass door combo set",
+   "sku": "CS 80",
+   "shortDescription": "Patch fittings for a frameless glass door, with or without a lock patch.",
+   "technicalSpecs": {
+    "Door weight": "Up to 70, 80 or 100 kg",
+    "Product codes": "CS 70, CS 80, CS 100 (without lock patch); CS 70 WL, CS 80 WL, CS 100 WL (with lock patch)"
+   },
+   "priceRange": null,
+   "image": "80kg.webp"
+  },
+  {
+   "name": "Dorset Glass patch fittings",
+   "sku": "DPF-323",
+   "shortDescription": "Over-panel and corner patch fittings for glass doors.",
+   "technicalSpecs": {
+    "Product codes": "DPF-323 (over panel with pivot), DPF-324 (over panel and side corner), DPF-328 (top corner, glass to glass)"
+   },
+   "priceRange": null,
+   "image": "DPF320.webp"
+  },
+  {
+   "name": "Dorset Tower bolt",
+   "sku": "SMTS",
+   "shortDescription": "Stainless steel tower bolt.",
+   "technicalSpecs": {
+    "Sizes": "4, 6, 8, 10, 12, 18 inch",
+    "Product codes": "SMTS-410, 610, 810, 1010, 1210, 1810",
+    "Material": "Stainless steel"
+   },
+   "priceRange": null,
+   "image": "TS4.webp"
+  },
+  {
+   "name": "Dorset Double door attachment",
+   "sku": "DDML",
+   "shortDescription": "Brass attachment that locks the second leaf of a double door.",
+   "technicalSpecs": {
+    "Options": "For dead lock, for mortise lock, for ML 170",
+    "Material": "Brass, silver satin finish"
+   },
+   "priceRange": null,
+   "image": "DDML.webp"
+  },
+  {
+   "name": "Dorset Magnetic door catcher",
+   "sku": "MDC",
+   "shortDescription": "Magnetic catch that holds a door open.",
+   "technicalSpecs": {
+    "Product codes": "MDC SS304, MDC (Zamak)"
+   },
+   "priceRange": null,
+   "image": "MDCSS.webp"
+  },
+  {
+   "name": "Dorset Magneto concealed door stopper",
+   "sku": "MDS-CL",
+   "shortDescription": "Door stopper concealed in the floor and door.",
+   "technicalSpecs": {
+    "Product codes": "MDS-CL, MDS-GM"
+   },
+   "priceRange": null,
+   "image": "MagnetoClear.webp"
+  }
+ ]
+}

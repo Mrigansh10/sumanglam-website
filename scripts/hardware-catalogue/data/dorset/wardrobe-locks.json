@@ -1,0 +1,106 @@
+{
+ "brand": "dorset",
+ "siteCategory": "wardrobe-locks",
+ "source": "Dorset Price List v6.2 (w.e.f. 15.04.2026)",
+ "imageBase": "https://www.dorsetindia.com/Uploads/ProductsImage/",
+ "products": [
+  {
+   "name": "Dorset Code DG 303",
+   "sku": "DG 303",
+   "shortDescription": "Fingerprint lock for cabinets, wardrobes and drawers that doubles as a knob.",
+   "technicalSpecs": {
+    "Key Features": "Fingerprint access, Can be used as a handle knob, USB Type-C emergency power, Low battery alarm, Sliding shutter version (DG 303 SL)",
+    "Access": "Up to 20 fingerprints",
+    "Door thickness": "14–22 mm",
+    "Product codes": "DG 303 GM, DG 303 FG, DG 303 SL (sliding shutter)",
+    "Variants": "Full Gold, Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "DG303.webp"
+  },
+  {
+   "name": "Dorset Code+ DG 307",
+   "sku": "DG 307",
+   "shortDescription": "Fingerprint knob lock for cabinets, wardrobes and drawers.",
+   "technicalSpecs": {
+    "Key Features": "Fingerprint access, Can be used as a handle knob, Smart registration, USB Type-C emergency power, Low battery alarm",
+    "Access": "Up to 20 fingerprints",
+    "Door thickness": "14–22 mm",
+    "Product codes": "DG 307 GM",
+    "Variants": "Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "DG307.jpg"
+  },
+  {
+   "name": "Dorset Code Pro DG 308",
+   "sku": "DG 308",
+   "shortDescription": "Fingerprint knob lock for cabinets, wardrobes and drawers, in full gold.",
+   "technicalSpecs": {
+    "Key Features": "Fingerprint access, Can be used as a handle knob, Smart registration, USB Type-C emergency power, Low battery alarm",
+    "Access": "Up to 20 fingerprints",
+    "Door thickness": "14–22 mm",
+    "Product codes": "DG 308 FG",
+    "Variants": "Full Gold"
+   },
+   "priceRange": null,
+   "image": "DG308.jpg"
+  },
+  {
+   "name": "Dorset Zap DG 302",
+   "sku": "DG 302",
+   "shortDescription": "Compact fingerprint lock for cabinets, wardrobes and drawers.",
+   "technicalSpecs": {
+    "Key Features": "Fingerprint access, Low power consumption, USB Type-C emergency power, Low battery alarm",
+    "Access": "Up to 40 fingerprints",
+    "Door thickness": "14–22 mm",
+    "Product codes": "DG 302 GM",
+    "Variants": "Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "DG302.jpg"
+  },
+  {
+   "name": "Dorset Zap DG 304",
+   "sku": "DG 304",
+   "shortDescription": "Fingerprint lock for cabinets, wardrobes, drawers and sliding shutters.",
+   "technicalSpecs": {
+    "Key Features": "Fingerprint access, Low power consumption, USB Type-C emergency power, Low battery alarm, Sliding shutter version (DG 304 SL)",
+    "Access": "Up to 40 fingerprints",
+    "Door thickness": "14–22 mm",
+    "Product codes": "DG 304 GM, DG 304 SL (sliding shutter)",
+    "Variants": "Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "DG304.webp"
+  },
+  {
+   "name": "Dorset Craft DG 305",
+   "sku": "DG 305",
+   "shortDescription": "Fingerprint lock with an integrated pull handle for cabinets and wardrobes.",
+   "technicalSpecs": {
+    "Key Features": "Fingerprint access, Integrated pull handle, USB Type-C emergency power, Low battery alarm",
+    "Access": "Up to 40 fingerprints",
+    "Door thickness": "14–22 mm",
+    "Product codes": "DG 305",
+    "Variants": "Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "DG305.jpg"
+  },
+  {
+   "name": "Dorset Key Bit DG 306",
+   "sku": "DG 306",
+   "shortDescription": "Password lock with a backup key for cabinets, wardrobes and drawers.",
+   "technicalSpecs": {
+    "Key Features": "Admin control, Intrusion detection, USB Type-C emergency power, Low battery alarm",
+    "Access": "PIN code (4–15 digits), mechanical key",
+    "Door thickness": "14–22 mm",
+    "Product codes": "DG 306",
+    "Variants": "Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "DG306p.webp"
+  }
+ ]
+}

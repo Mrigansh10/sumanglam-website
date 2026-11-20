@@ -1,0 +1,98 @@
+{
+ "brand": "dorset",
+ "siteCategory": "door-controls",
+ "source": "Dorset Price List v6.2 (w.e.f. 15.04.2026)",
+ "imageBase": "https://www.dorsetindia.com/Uploads/ProductsImage/",
+ "products": [
+  {
+   "name": "Dorset Door closer with palmet arm",
+   "sku": "DC 80 PDC",
+   "shortDescription": "Surface-mounted door closer, standard or with a palmet (hold-open) arm.",
+   "technicalSpecs": {
+    "Type": "Surface mounted",
+    "Door weight": "60, 80, 120 kg",
+    "Product codes": "DC 60 WP, DC 80 PDC, DC 80 PDC (WP), DC 80 Ext (WP), DC 120 Ext WP",
+    "Variants": "Silver Satin, Antique, Graphite Matt, Hamilton Gold, Full Gold"
+   },
+   "priceRange": null,
+   "image": "DC80PDC.webp"
+  },
+  {
+   "name": "Dorset Fire rated door closer",
+   "sku": "FR 80",
+   "shortDescription": "Surface-mounted door closer fire rated up to 120 minutes.",
+   "technicalSpecs": {
+    "Type": "Surface mounted",
+    "Key Features": "Fire rated up to 120 minutes",
+    "Door weight": "60, 80, 120 kg",
+    "Product codes": "FR 60, FR 80, FR 120"
+   },
+   "priceRange": null,
+   "image": "DC80EXT.STANDARDARM_WPARMPAINT.webp"
+  },
+  {
+   "name": "Dorset Smart door closer",
+   "sku": "DC 60 SM",
+   "shortDescription": "Compact surface-mounted door closer for lighter doors.",
+   "technicalSpecs": {
+    "Type": "Surface mounted",
+    "Door weight": "40, 60 kg",
+    "Product codes": "DC 40 SM, DC 60 SM",
+    "Variants": "Silver Satin, Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "DC60SM.webp"
+  },
+  {
+   "name": "Dorset Concealed door closer",
+   "sku": "DC 65 CO",
+   "shortDescription": "Door closer hidden inside the door and frame.",
+   "technicalSpecs": {
+    "Type": "Concealed",
+    "Door weight": "40, 40–65, 60–85, 80 kg",
+    "Product codes": "DC 40 CO, DC 60 CO, DC 65 CO, DC 85 CO",
+    "Variants": "Silver Satin, Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "DC65CO.webp"
+  },
+  {
+   "name": "Dorset Concealed cam action door closer",
+   "sku": "DC 120 CO",
+   "shortDescription": "Concealed cam-action door closer for doors up to 120 kg.",
+   "technicalSpecs": {
+    "Type": "Concealed",
+    "Key Features": "Cam action",
+    "Door weight": "120 kg",
+    "Product codes": "DC 120 CO CAM",
+    "Variants": "Silver Satin, Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "DC120CO.jpg"
+  },
+  {
+   "name": "Dorset Floor spring",
+   "sku": "FS 100",
+   "shortDescription": "Floor-mounted door closer for heavy and glass doors.",
+   "technicalSpecs": {
+    "Type": "Floor spring",
+    "Product codes": "FS 100, FS 120, FS 150, FS 6080, FS 6120, FS 7070; top and bottom pivot FS TP/BP"
+   },
+   "priceRange": null,
+   "image": "FS100.webp"
+  },
+  {
+   "name": "Dorset Panic bar",
+   "sku": "PB-1P00NS",
+   "shortDescription": "Push-bar exit device with one, two or three point locking.",
+   "technicalSpecs": {
+    "Type": "Panic bar",
+    "Key Features": "Fire rated",
+    "Options": "Single, two and three point locking; external trim (PB-ET01NS)",
+    "Product codes": "PB-1P00NS, PB-2P22NS, PB-2P24NS, PB-3P22NS, PB-3P24NS"
+   },
+   "priceRange": null,
+   "image": "SinglepointLocking.webp"
+  }
+ ]
+}

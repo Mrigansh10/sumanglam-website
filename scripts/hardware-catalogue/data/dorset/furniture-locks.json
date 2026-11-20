@@ -1,0 +1,112 @@
+{
+ "brand": "dorset",
+ "siteCategory": "wardrobe-locks",
+ "source": "Dorset Price List v6.2 (w.e.f. 15.04.2026)",
+ "imageBase": "https://www.dorsetindia.com/Uploads/ProductsImage/",
+ "products": [
+  {
+   "name": "Dorset Secura wardrobe lock",
+   "sku": "AL 400",
+   "shortDescription": "Wardrobe lock with a dimple key.",
+   "technicalSpecs": {
+    "Key Features": "Dimple key, Master key available",
+    "Access": "Mechanical key",
+    "Sizes": "20, 25, 32, 38 mm",
+    "Product codes": "AL 400 (20 mm), AL 400 (25 mm), AL 401 (32 mm), AL 402 (38 mm)",
+    "Variants": "Silver Satin, Graphite Matt, Antique, Rose Gold"
+   },
+   "priceRange": null,
+   "image": "AL400.webp"
+  },
+  {
+   "name": "Dorset Smart Secura wardrobe lock",
+   "sku": "SM 400",
+   "shortDescription": "Stainless steel wardrobe lock.",
+   "technicalSpecs": {
+    "Access": "Mechanical key",
+    "Sizes": "23, 32 mm",
+    "Product codes": "SM 400 (23 mm), SM 401 (32 mm)",
+    "Variants": "Silver Satin"
+   },
+   "priceRange": null,
+   "image": "SM400.webp"
+  },
+  {
+   "name": "Dorset Secura drawer lock",
+   "sku": "AL 210",
+   "shortDescription": "Drawer lock with a dimple key.",
+   "technicalSpecs": {
+    "Key Features": "Dimple key, Master key available",
+    "Access": "Mechanical key",
+    "Sizes": "20, 25, 32 mm",
+    "Product codes": "AL 210 (20 mm), AL 211 (25 mm), AL 212 (32 mm), AL 412 (32 mm)",
+    "Variants": "Silver Satin, Graphite Matt, Antique, Rose Gold"
+   },
+   "priceRange": null,
+   "image": "AL410.webp"
+  },
+  {
+   "name": "Dorset Smart Secura drawer lock",
+   "sku": "SM 210",
+   "shortDescription": "Drawer lock in stainless steel or ivory.",
+   "technicalSpecs": {
+    "Access": "Mechanical key",
+    "Product codes": "SM 210 SS / IV, SM 212 SS / IV",
+    "Variants": "Silver Satin, Ivory"
+   },
+   "priceRange": null,
+   "image": "AL402.webp"
+  },
+  {
+   "name": "Dorset Cam lock",
+   "sku": "CML NI 20",
+   "shortDescription": "Threaded cam lock for drawers and cabinets.",
+   "technicalSpecs": {
+    "Access": "Mechanical key",
+    "Sizes": "20, 25, 30 mm",
+    "Product codes": "CML NI 20, CML NI 25, CML NI 30",
+    "Variants": "Nickel"
+   },
+   "priceRange": null,
+   "image": "CAMLOCK.webp"
+  },
+  {
+   "name": "Dorset Multi-point drawer lock",
+   "sku": "MP 403",
+   "shortDescription": "One lock for a stack of three or four drawers.",
+   "technicalSpecs": {
+    "Access": "Mechanical key",
+    "Sizes": "500, 580 mm",
+    "Product codes": "MP 403 (3 drawers, 500 mm), MP 404 (4 drawers, 580 mm)",
+    "Variants": "Nickel"
+   },
+   "priceRange": null,
+   "image": "product-dorset.webp"
+  },
+  {
+   "name": "Dorset Hextech cupboard lock",
+   "sku": "AL 450",
+   "shortDescription": "Cupboard lock.",
+   "technicalSpecs": {
+    "Access": "Mechanical key",
+    "Product codes": "AL 450 SS",
+    "Variants": "Silver Satin"
+   },
+   "priceRange": null,
+   "image": "AL450.webp"
+  },
+  {
+   "name": "Dorset Sliding door wardrobe lock",
+   "sku": "AL 500",
+   "shortDescription": "Lock for sliding wardrobe doors.",
+   "technicalSpecs": {
+    "Access": "Mechanical key",
+    "Sizes": "25, 32 mm",
+    "Product codes": "AL 500 (25 mm), AL 501 (32 mm)",
+    "Variants": "Satin Nickel"
+   },
+   "priceRange": null,
+   "image": "AL500(1).webp"
+  }
+ ]
+}

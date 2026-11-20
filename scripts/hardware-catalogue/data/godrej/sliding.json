@@ -1,0 +1,41 @@
+{
+ "brand": "godrej",
+ "siteCategory": "sliding-systems",
+ "source": "Godrej Price List (w.e.f. 1.07.2026)",
+ "products": [
+  {
+   "name": "Godrej Hikido Inline sliding system",
+   "sku": "Hikido Inline",
+   "shortDescription": "Inline sliding system for wardrobe doors that close flush.",
+   "technicalSpecs": {
+    "Door Thickness": "18 mm - 50 mm",
+    "Max. Door Weight": "50 Kg"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/Up_Track_287405cb17.webp"
+  },
+  {
+   "name": "Godrej Hikido Topper sliding system",
+   "sku": "Hikido Topper",
+   "shortDescription": "Top-hung sliding system for two or three wardrobe doors.",
+   "technicalSpecs": {
+    "Door Thickness": "18 mm - 40 mm",
+    "Max. Door Weight": "80 Kg",
+    "Variants": "Anthracite"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/1_14fb3e85b1.webp"
+  },
+  {
+   "name": "Godrej Hikido Inset sliding system",
+   "sku": "Hikido Inset",
+   "shortDescription": "Sliding system for two or three doors set inside the wardrobe frame.",
+   "technicalSpecs": {
+    "Door Thickness": "18 mm - 25 mm",
+    "Max. Door Weight": "50 Kg"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/damper_ee12bb1641.webp"
+  }
+ ]
+}

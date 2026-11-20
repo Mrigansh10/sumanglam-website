@@ -1,0 +1,98 @@
+{
+ "brand": "godrej",
+ "siteCategory": "hinges",
+ "source": "Godrej Price List (w.e.f. 1.07.2026)",
+ "products": [
+  {
+   "name": "Godrej Plain joint door hinge",
+   "sku": "Door Hinge",
+   "shortDescription": "Stainless steel, SS 304 and Incrust plain joint door hinges.",
+   "technicalSpecs": {
+    "Type": "Door hinge",
+    "Variants": "Stainless Steel, SS 304, Antique Brass, Matte Black, Satin Steel"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/GK_0_1193_c05b4e2f05.webp"
+  },
+  {
+   "name": "Godrej Slip-on cabinet hinge",
+   "sku": "Slip On Regular",
+   "shortDescription": "Slip-on cabinet hinge with a 2-hole mounting plate.",
+   "technicalSpecs": {
+    "Type": "Cabinet hinge",
+    "Options": "Full overlay, half overlay, inset"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_13f40cf15b.webp"
+  },
+  {
+   "name": "Godrej Clip-on cabinet hinge",
+   "sku": "Clip On Regular",
+   "shortDescription": "Clip-on cabinet hinge with a 2-hole mounting plate.",
+   "technicalSpecs": {
+    "Type": "Cabinet hinge",
+    "Options": "Full overlay, half overlay, inset",
+    "Cup Diameter": "35 mm",
+    "Material": "CRCA Steel",
+    "Maximum Opening Angle": "105°",
+    "Panel Thickness": "15 mm to 22 mm"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_7445232edf.webp"
+  },
+  {
+   "name": "Godrej Slip-on soft-close cabinet hinge",
+   "sku": "Slip On Soft Close",
+   "shortDescription": "Soft-close slip-on cabinet hinge.",
+   "technicalSpecs": {
+    "Type": "Cabinet hinge",
+    "Options": "Full overlay, half overlay, inset",
+    "Panel Thickness": "14 mm To 20 mm",
+    "Cup Diameter": "35 mm",
+    "Material": "CRCA Steel",
+    "Maximum Opening Angle": "105°"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_4_5f207e7f34.webp"
+  },
+  {
+   "name": "Godrej Clip-on soft-close cabinet hinge",
+   "sku": "Clip On Soft Close",
+   "shortDescription": "Soft-close clip-on cabinet hinge, also in SS 304 with a 4-hole plate.",
+   "technicalSpecs": {
+    "Type": "Cabinet hinge",
+    "Options": "Full overlay, half overlay, inset"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_b19d979055.webp"
+  },
+  {
+   "name": "Godrej Clip-on 3D soft-close cabinet hinge",
+   "sku": "Clip On 3D",
+   "shortDescription": "Soft-close clip-on cabinet hinge with a 3D adjustable 4-hole plate.",
+   "technicalSpecs": {
+    "Type": "Cabinet hinge",
+    "Options": "Full overlay, half overlay, inset",
+    "Panel Thickness": "16mm - 22mm",
+    "Cup Diameter": "35 mm",
+    "Maximum Opening Angle": "98°"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/2510_PNG_2_b09dea8193.webp"
+  },
+  {
+   "name": "Godrej Special cabinet hinges",
+   "sku": "Special Hinge",
+   "shortDescription": "165° Pi-corner, zero-protrusion 155° and bi-fold cabinet hinges.",
+   "technicalSpecs": {
+    "Type": "Cabinet hinge",
+    "Options": "Full overlay, half overlay, inset",
+    "Panel Thickness": "12mm - 26mm",
+    "Cup Diameter": "35 mm",
+    "Maximum Opening Angle": "165°"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/6843_35ad093293.webp"
+  }
+ ]
+}

@@ -2,14 +2,16 @@
 export const CATEGORY_COPY: Record<string, string> = {
   "digital-locks": "Smart locks that open with a fingerprint, PIN, card, app or your face.",
   "wardrobe-locks": "Fingerprint, PIN and key locks for wardrobes, drawers and cabinets.",
-  "smart-home": "Video doorbells, cameras, video door phones and add-ons for Yale smart locks.",
+  "smart-home": "Video doorbells, cameras, video door phones and add-ons for smart locks.",
   safes: "Home, office and laptop safes that open with a fingerprint, PIN, key or app.",
-  handles: "Lever handles on a rose or backplate, in brass, stainless steel and PVD finishes.",
-  "door-controls": "Surface-mounted and concealed door closers, sized to the door's width and weight.",
+  handles: "Lever and pull handles on a rose or plate, in brass, stainless steel and PVD finishes.",
+  "door-controls": "Door closers, floor springs and panic bars, sized to the door's width and weight.",
   "locks-and-security": "Mortise and rim locks, cylinders, locksets and padlocks for every kind of door.",
   hinges: "Ball-bearing door hinges and soft-close cabinet hinges.",
-  "furniture-fittings": "Drawer runners and the fittings that make cabinets move smoothly.",
-  "architectural-hardware": "Door stoppers, door viewers and the small fittings that finish a door.",
+  "furniture-fittings": "Drawer slides, drawer systems, lift-ups and bed fittings that make furniture move smoothly.",
+  "sliding-systems": "Soft-close sliding systems for wardrobe doors.",
+  "kitchen-accessories": "Corner units, pantry pull-outs, bottle pull-outs and drawer inserts for the kitchen.",
+  "architectural-hardware": "Glass door fittings, tower bolts, door stoppers and the small fittings that finish a door.",
 };
 
 /** "Digital Locks" → "Digital locks", to match the site's sentence-case headings. */

@@ -1,0 +1,48 @@
+{
+ "brand": "godrej",
+ "siteCategory": "wardrobe-locks",
+ "source": "Godrej Price List (w.e.f. 1.07.2026)",
+ "products": [
+  {
+   "name": "Godrej Advantis digital cabinet lock",
+   "sku": "Advantis Cabinet",
+   "shortDescription": "Digital lock for cabinets and drawers.",
+   "technicalSpecs": {
+    "Key Features": "Fingerprint access",
+    "Access": "Fingerprint, PIN",
+    "Variants": "Black",
+    "Product codes": "2999 (Black)"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/01_1_bc73ea4708.webp"
+  },
+  {
+   "name": "Godrej Astron digital cabinet lock",
+   "sku": "Astron",
+   "shortDescription": "Digital lock for wardrobes, cabinets and drawers.",
+   "technicalSpecs": {
+    "Access": "Fingerprint, PIN",
+    "Door Type": "Suitable for left- and right-handed hinged wooden cabinets, wardrobes",
+    "Backset": "60mm",
+    "Variants": "Black",
+    "Product codes": "9799 (Black)"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/astron_limbo_image_f54bda1826.webp"
+  },
+  {
+   "name": "Godrej Rion digital cabinet lock",
+   "sku": "Rion",
+   "shortDescription": "Digital lock for wardrobes, cabinets and drawers.",
+   "technicalSpecs": {
+    "Access": "Fingerprint, PIN",
+    "Door Type": "Suitable for left- and right-handed hinged wooden cabinets, wardrobes",
+    "Backset": "60mm",
+    "Variants": "Black",
+    "Product codes": "9800 (Black)"
+   },
+   "priceRange": null,
+   "image": "https://static.godrejenterprises.com/rion_limbo_image_1_4a76220029.webp"
+  }
+ ]
+}

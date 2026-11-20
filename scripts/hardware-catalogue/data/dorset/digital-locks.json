@@ -1,0 +1,311 @@
+{
+ "brand": "dorset",
+ "siteCategory": "digital-locks",
+ "source": "Dorset Price List v6.2 (w.e.f. 15.04.2026)",
+ "imageBase": "https://www.dorsetindia.com/Uploads/ProductsImage/",
+ "products": [
+  {
+   "name": "Dorset Vogue+ DG 406",
+   "sku": "DG 406",
+   "shortDescription": "Push-pull digital mortise lock with 3D face recognition, palm vein scan and a built-in video display.",
+   "technicalSpecs": {
+    "Key Features": "7-in-1 access, Integrated video display, 24x7 surveillance camera, Wi-Fi built in, Automatic roller latch, Video door phone compatible",
+    "Access": "3D face, palm vein, fingerprint, PIN, RFID card, mechanical key, app (Wi-Fi)",
+    "Door thickness": "35–100 mm",
+    "Product codes": "DG 406 MGM",
+    "Variants": "Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "Dg406.png"
+  },
+  {
+   "name": "Dorset Vogue+ DG 405",
+   "sku": "DG 405",
+   "shortDescription": "Push-pull digital mortise lock with palm vein scan, fingerprint and an integrated camera.",
+   "technicalSpecs": {
+    "Key Features": "6-in-1 access, Integrated video camera, Wi-Fi built in, Automatic roller latch, Video door phone compatible",
+    "Access": "Palm vein, fingerprint, PIN, RFID card, mechanical key, app (Wi-Fi)",
+    "Door thickness": "35–90 mm",
+    "Product codes": "DG 405 MCM (Champagne Matt), DG 405 MGM (Graphite Matt)",
+    "Variants": "Champagne Matt, Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "DG405.webp"
+  },
+  {
+   "name": "Dorset Vogue DG 404",
+   "sku": "DG 404",
+   "shortDescription": "Push-pull digital mortise lock with fingerprint access, Wi-Fi and an integrated camera.",
+   "technicalSpecs": {
+    "Key Features": "5-in-1 access, Integrated video camera, Wi-Fi built in, Automatic roller latch, Video door phone compatible",
+    "Access": "Fingerprint, PIN, RFID card, mechanical key, app (Wi-Fi)",
+    "Door thickness": "35–90 mm",
+    "Product codes": "DG 404 MCM (Champagne Matt), DG 404 MGM (Graphite Matt)",
+    "Variants": "Champagne Matt, Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "DG404.webp"
+  },
+  {
+   "name": "Dorset Vogue DG 402",
+   "sku": "DG 402",
+   "shortDescription": "Push-pull digital mortise lock with palm vein scan, fingerprint and Wi-Fi.",
+   "technicalSpecs": {
+    "Key Features": "6-in-1 access, Wi-Fi built in, Automatic roller latch, Video door phone compatible",
+    "Access": "Palm vein, fingerprint, PIN, RFID card, mechanical key, app (Wi-Fi)",
+    "Door thickness": "35–90 mm",
+    "Product codes": "DG 402 MCM (Champagne Matt), DG 402 MGM (Graphite Matt)",
+    "Variants": "Champagne Matt, Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "dorset/dg-402.png"
+  },
+  {
+   "name": "Dorset Vogue DG 400",
+   "sku": "DG 400",
+   "shortDescription": "Push-pull digital mortise lock with an integrated pull handle.",
+   "technicalSpecs": {
+    "Key Features": "4-in-1 access, Integrated pull handle, Automatic roller latch, Video door phone compatible",
+    "Access": "Fingerprint, PIN, RFID card, mechanical key",
+    "Door thickness": "35–90 mm",
+    "Product codes": "DG 400 MCM (Champagne Matt), DG 400 MGM (Graphite Matt)",
+    "Variants": "Champagne Matt, Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "dorset/dg-400.png"
+  },
+  {
+   "name": "Dorset Zest+ DG 206",
+   "sku": "DG 206",
+   "shortDescription": "Digital mortise lock with 3D face recognition, palm vein scan and a built-in video display.",
+   "technicalSpecs": {
+    "Key Features": "7-in-1 access, Integrated video display, 24x7 surveillance camera, Wi-Fi built in, Video door phone compatible",
+    "Access": "3D face, palm vein, fingerprint, PIN, RFID card, mechanical key, app (Wi-Fi)",
+    "Door thickness": "35–100 mm",
+    "Product codes": "DG 206 MGM",
+    "Variants": "Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "Dg206.webp"
+  },
+  {
+   "name": "Dorset Zest+ DG 205",
+   "sku": "DG 205",
+   "shortDescription": "Digital mortise lock with 3D face recognition, Wi-Fi and a surveillance camera.",
+   "technicalSpecs": {
+    "Key Features": "6-in-1 access, 24x7 surveillance camera, Wi-Fi built in, Video door phone compatible",
+    "Access": "3D face, fingerprint, PIN, RFID card, mechanical key, app (Wi-Fi)",
+    "Door thickness": "35–100 mm",
+    "Product codes": "DG 205 MGM",
+    "Variants": "Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "dorset/dg-205.png"
+  },
+  {
+   "name": "Dorset Zest DG 204 Pro",
+   "sku": "DG 204 PRO",
+   "shortDescription": "Digital mortise lock with Wi-Fi, an HD camera and a gateway that works with any electric doorbell.",
+   "technicalSpecs": {
+    "Key Features": "5-in-1 access, HD video camera, Doorbell gateway (bell and switch not included), Wi-Fi built in, Video door phone compatible",
+    "Access": "Fingerprint, PIN, RFID card, mechanical key, app (Wi-Fi)",
+    "Door thickness": "35–90 mm",
+    "Product codes": "DG 204 MGM PRO",
+    "Variants": "Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "dorset/dg-204-pro.png"
+  },
+  {
+   "name": "Dorset Zest DG 204",
+   "sku": "DG 204",
+   "shortDescription": "Digital mortise lock with fingerprint access, Wi-Fi and an integrated HD camera.",
+   "technicalSpecs": {
+    "Key Features": "5-in-1 access, HD video camera, Wi-Fi built in, Video door phone compatible",
+    "Access": "Fingerprint, PIN, RFID card, mechanical key, app (Wi-Fi)",
+    "Door thickness": "35–90 mm",
+    "Product codes": "DG 204 MRG (Rose Gold), DG 204 MGM (Graphite Matt)",
+    "Variants": "Rose Gold, Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "ZESTDG204.webp"
+  },
+  {
+   "name": "Dorset Zest DG 203 Pro",
+   "sku": "DG 203 PRO",
+   "shortDescription": "Digital mortise lock with Bluetooth app access and a Wi-Fi gateway in the box.",
+   "technicalSpecs": {
+    "Key Features": "5-in-1 access, Bluetooth built in, Wi-Fi gateway module included, Video door phone compatible",
+    "Access": "Fingerprint, PIN, RFID card, mechanical key, app (Bluetooth)",
+    "Door thickness": "35–90 mm",
+    "Product codes": "DG 203 IRG / MRG (Rose Gold), DG 203 IGM / MGM (Graphite Matt), DG 203 MPT (Antique)",
+    "Variants": "Rose Gold, Graphite Matt, Antique"
+   },
+   "priceRange": null,
+   "image": "dorset/dg-203-pro.png"
+  },
+  {
+   "name": "Dorset Zest DG 203",
+   "sku": "DG 203",
+   "shortDescription": "Digital mortise lock with fingerprint, PIN, card and Bluetooth app access.",
+   "technicalSpecs": {
+    "Key Features": "5-in-1 access, Bluetooth built in, Video door phone compatible",
+    "Access": "Fingerprint, PIN, RFID card, mechanical key, app (Bluetooth)",
+    "Door thickness": "35–90 mm",
+    "Product codes": "DG 203 IRG / MRG (Rose Gold), DG 203 IGM / MGM (Graphite Matt), DG 203 MPT (Antique)",
+    "Variants": "Rose Gold, Graphite Matt, Antique"
+   },
+   "priceRange": null,
+   "image": "203-07.webp"
+  },
+  {
+   "name": "Dorset Zest DG 201",
+   "sku": "DG 201",
+   "shortDescription": "Digital mortise lock that opens with a fingerprint, PIN, card or key.",
+   "technicalSpecs": {
+    "Key Features": "4-in-1 access, Video door phone compatible",
+    "Access": "Fingerprint, PIN, RFID card, mechanical key",
+    "Door thickness": "35–90 mm",
+    "Product codes": "DG 201 IRG / MRG (Rose Gold), DG 201 IGM / MGM (Graphite Matt), DG 201 IPT / MPT (Antique)",
+    "Variants": "Rose Gold, Graphite Matt, Antique"
+   },
+   "priceRange": null,
+   "image": "dorset/dg-201.png"
+  },
+  {
+   "name": "Dorset Pro Tech DG 104",
+   "sku": "DG 104",
+   "shortDescription": "Digital mortise lock with fingerprint access, Wi-Fi and admin control.",
+   "technicalSpecs": {
+    "Key Features": "5-in-1 access, Wi-Fi built in, Video door phone compatible",
+    "Access": "Fingerprint, PIN, RFID card, mechanical key, app (Wi-Fi)",
+    "Door thickness": "35–90 mm",
+    "Product codes": "DG 104 ICM / MCM (Champagne Matt), DG 104 IGM / MGM (Graphite Matt), DG 104 ICU / MCU (Copper), DG 104 MPT (Antique)",
+    "Variants": "Champagne Matt, Graphite Matt, Copper, Antique"
+   },
+   "priceRange": null,
+   "image": "DG102MGM.webp"
+  },
+  {
+   "name": "Dorset Pro Tech DG 102",
+   "sku": "DG 102",
+   "shortDescription": "Digital mortise lock that opens with a fingerprint, PIN, card or key, with admin control.",
+   "technicalSpecs": {
+    "Key Features": "4-in-1 access, Admin control, Video door phone compatible",
+    "Access": "Fingerprint, PIN, RFID card, mechanical key",
+    "Door thickness": "35–90 mm",
+    "Product codes": "DG 102 ICM / MCM (Champagne Matt), DG 102 IGM / MGM (Graphite Matt), DG 102 ICU / MCU (Copper), DG 102 MPT (Antique)",
+    "Variants": "Champagne Matt, Graphite Matt, Copper, Antique"
+   },
+   "priceRange": null,
+   "image": "102.webp"
+  },
+  {
+   "name": "Dorset Aero+ DG 904",
+   "sku": "DG 904",
+   "shortDescription": "Digital rim lock with 3D face recognition, palm vein scan and Wi-Fi.",
+   "technicalSpecs": {
+    "Key Features": "7-in-1 access, Rim lock, Wi-Fi built in, Video door phone compatible",
+    "Access": "3D face, palm vein, fingerprint, PIN, RFID card, mechanical key, app (Wi-Fi)",
+    "Door thickness": "35–90 mm",
+    "Product codes": "DG 904 AC (Antique Copper), DG 904 GM (Graphite Matt)",
+    "Variants": "Antique Copper, Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "DG904.webp"
+  },
+  {
+   "name": "Dorset Aero+ DG 905",
+   "sku": "DG 905",
+   "shortDescription": "Digital rim lock with fingerprint access, Wi-Fi and an integrated camera.",
+   "technicalSpecs": {
+    "Key Features": "5-in-1 access, Rim lock, Integrated video camera, Wi-Fi built in, Video door phone compatible",
+    "Access": "Fingerprint, PIN, RFID card, mechanical key, app (Wi-Fi)",
+    "Door thickness": "35–90 mm",
+    "Product codes": "DG 905 AB (Antique Brass), DG 905 GM (Graphite Matt)",
+    "Variants": "Antique Brass, Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "DG905.png"
+  },
+  {
+   "name": "Dorset Edge DG 902",
+   "sku": "DG 902",
+   "shortDescription": "Digital rim lock with fingerprint access and Wi-Fi built in.",
+   "technicalSpecs": {
+    "Key Features": "5-in-1 access, Rim lock, Wi-Fi built in, Video door phone compatible",
+    "Access": "Fingerprint, PIN, RFID card, mechanical key, app (Wi-Fi)",
+    "Door thickness": "35–90 mm",
+    "Product codes": "DG 902 GM",
+    "Variants": "Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "DG-902.webp"
+  },
+  {
+   "name": "Dorset Tera DG 706",
+   "sku": "DG 706",
+   "shortDescription": "Retrofit digital lock for glass doors, including sliding glass doors.",
+   "technicalSpecs": {
+    "Key Features": "5-in-1 access, For glass doors, Sliding glass door version, Wi-Fi built in",
+    "Access": "Fingerprint, PIN, RFID card, mechanical key, app (Wi-Fi)",
+    "Door thickness": "10–12 mm glass",
+    "Product codes": "DG 706 GM; double door striker plate DG DDA 706",
+    "Variants": "Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "DG706.png"
+  },
+  {
+   "name": "Dorset Tera DG 705",
+   "sku": "DG 705",
+   "shortDescription": "Retrofit digital lock for glass doors, with a remote control.",
+   "technicalSpecs": {
+    "Key Features": "3-in-1 access with remote, For glass doors, Anti-theft password, Admin control",
+    "Access": "Fingerprint, PIN, RFID card, remote",
+    "Door thickness": "12 mm glass",
+    "Product codes": "DG 705 GM (R); double door striker plate DG DDA",
+    "Variants": "Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "TERA.jpg"
+  },
+  {
+   "name": "Dorset Signature DG 110 hotel lock",
+   "sku": "DG 110 HL",
+   "shortDescription": "Card and key hotel room lock, managed with Dorset's encoder and software.",
+   "technicalSpecs": {
+    "Access": "RFID card, mechanical key",
+    "Key Features": "2-in-1 access, For hotels and serviced apartments, Card encoder, data retriever and software available",
+    "Product codes": "DG 110 HL; DG ENC (encoder), DG SW01 (software), DG DTR 01 (data retriever), DG MI (Mi Fare card), DG ERS (energy saver)"
+   },
+   "priceRange": null,
+   "image": "DG110HLmerge.jpg"
+  },
+  {
+   "name": "Dorset Trilliom DG 111 hotel lock",
+   "sku": "DG 111 HL",
+   "shortDescription": "Card and key hotel room lock, managed with Dorset's encoder and software.",
+   "technicalSpecs": {
+    "Access": "RFID card, mechanical key",
+    "Key Features": "2-in-1 access, For hotels and serviced apartments, Card encoder, data retriever and software available",
+    "Product codes": "DG 111 HL; DG ENC (encoder), DG SW01 (software), DG DTR 01 (data retriever), DG MI (Mi Fare card), DG ERS (energy saver)"
+   },
+   "priceRange": null,
+   "image": "DG111HL.jpg"
+  },
+  {
+   "name": "Dorset F-Lux customisable digital lock",
+   "sku": "FLUX",
+   "shortDescription": "Digital mortise lock you build around a Dorset lever handle: pick the design and the finish.",
+   "technicalSpecs": {
+    "Key Features": "World's first customisable digital lock, Choice of seven handle designs, Brass handle options",
+    "Handle designs": "Gravello, Fortilo, Cadila, Roccia, Drop, Celisa, Polar",
+    "Product codes": "FLUX GVE, FLUX FTL, FLUX CAD, FLUX ROC, FLUX DRP, FLUX CLS, FLUX POL + finish code (e.g. FLUX GVE GM)",
+    "Variants": "Graphite Matt, Satin Matt, Antique, Full Gold, Champagne Matt"
+   },
+   "priceRange": null,
+   "image": "GravelloPT.jpg"
+  }
+ ]
+}

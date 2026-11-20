@@ -1,0 +1,946 @@
+{
+ "brand": "dorset",
+ "siteCategory": "handles",
+ "source": "Dorset Price List v6.2 (w.e.f. 15.04.2026)",
+ "imageBase": "https://www.dorsetindia.com/Uploads/ProductsImage/",
+ "products": [
+  {
+   "name": "Dorset Touch+",
+   "sku": "TPLUS",
+   "shortDescription": "Fully concealed flush door lockset with a magnetic lock and a knob.",
+   "technicalSpecs": {
+    "Collection": "Minimalist Mute",
+    "Key Features": "Fully concealed and flush, Magnetic locking, Silent",
+    "Door thickness": "38–60 mm",
+    "Product codes": "TPLUS-GM, TPLUS-PT, TPLUS-SN",
+    "Variants": "Graphite Matt, Antique, Satin Matt"
+   },
+   "priceRange": null,
+   "image": "dorset/touch-plus.png"
+  },
+  {
+   "name": "Dorset Leva",
+   "sku": "LEV OR",
+   "shortDescription": "Lever handle on a rose, designed by Paolo Zani.",
+   "technicalSpecs": {
+    "Collection": "Abitare (Italian design by Paolo Zani)",
+    "Mounting": "On rose",
+    "Product codes": "LEV OR PT, LEV OR SN, LEV OR TM",
+    "Variants": "Antique, Satin Matt, Titanium Matt"
+   },
+   "priceRange": null,
+   "image": "LevaSN02.webp"
+  },
+  {
+   "name": "Dorset Torsa",
+   "sku": "TOR OR",
+   "shortDescription": "Twisted lever handle on a rose, designed by Paolo Zani.",
+   "technicalSpecs": {
+    "Collection": "Abitare (Italian design by Paolo Zani)",
+    "Mounting": "On rose",
+    "Product codes": "TOR OR PT, TOR OR SN/TM, TOR OR RB, TOR OR MR, TOR OR FG",
+    "Variants": "Antique, Satin Matt, Titanium Matt, Roma Bronze, Merlot, Full Gold"
+   },
+   "priceRange": null,
+   "image": "2462pductimg_TORSOSN02.webp"
+  },
+  {
+   "name": "Dorset Globo",
+   "sku": "GLO OR",
+   "shortDescription": "Lever handle on a rose, designed by Paolo Zani.",
+   "technicalSpecs": {
+    "Collection": "Abitare (Italian design by Paolo Zani)",
+    "Mounting": "On rose",
+    "Product codes": "GLO OR PT, GLO OR SN, GLO OR GM",
+    "Variants": "Antique, Satin Matt, Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "GLOBOGM02.webp"
+  },
+  {
+   "name": "Dorset T Twirl",
+   "sku": "TWR OR",
+   "shortDescription": "Lever handle on a rose, designed by Paolo Zani.",
+   "technicalSpecs": {
+    "Collection": "Abitare (Italian design by Paolo Zani)",
+    "Mounting": "On rose",
+    "Product codes": "TWR OR PT, TWR OR SN, TWR OR HG, TWR OR TM, TWR OR AG/FG",
+    "Variants": "Antique, Satin Matt, Hamilton Gold, Titanium Matt, Antique Gold, Full Gold"
+   },
+   "priceRange": null,
+   "image": "TWIRLFE02.webp"
+  },
+  {
+   "name": "Dorset Deco",
+   "sku": "DEC OR",
+   "shortDescription": "Lever handle on a rose, designed by Paolo Zani.",
+   "technicalSpecs": {
+    "Collection": "Abitare (Italian design by Paolo Zani)",
+    "Mounting": "On rose",
+    "Product codes": "DEC OR PT, DEC OR SN, DEC OR TM",
+    "Variants": "Antique, Satin Matt, Titanium Matt"
+   },
+   "priceRange": null,
+   "image": "DECOPT02.webp"
+  },
+  {
+   "name": "Dorset Nestro",
+   "sku": "NES OR",
+   "shortDescription": "Nestro lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "NES OR GM, NES OR CB, NES OR FG, NES OR CM",
+    "Variants": "Graphite Matt, Cognac Bronze, Full Gold, Champagne Matt, Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "NESORGM.webp"
+  },
+  {
+   "name": "Dorset Stroma",
+   "sku": "STR OR",
+   "shortDescription": "Stroma lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "STR OR GM, STR OR AG/FG",
+    "Variants": "Graphite Matt, Antique Gold, Full Gold, Silver Satin (solid brass), Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "STRORAG.jpg"
+  },
+  {
+   "name": "Dorset Velario",
+   "sku": "VLR OR",
+   "shortDescription": "Velario lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "VLR OR CBGM, VLR OR CMFG, VLR OR GMCB",
+    "Variants": "Cognac Bronze-Graphite Matt, Champagne Matt-Full Gold, Graphite Matt-Cognac Bronze, Satin Matt-Wood (solid brass), Antique-Titanium Matt (solid brass)"
+   },
+   "priceRange": null,
+   "image": "dorset/velario.png"
+  },
+  {
+   "name": "Dorset Fortilo",
+   "sku": "FTL OR",
+   "shortDescription": "Fortilo lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "FTL OR GM, FTL OR SN, FTL OR FG, FTL OR CM",
+    "Variants": "Graphite Matt, Satin Matt, Full Gold, Champagne Matt, Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "FTLORFG(1)(2).webp"
+  },
+  {
+   "name": "Dorset Feromma",
+   "sku": "FRM OR",
+   "shortDescription": "Feromma lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "FRM OR SN, FRM OR RB, FRM OR GM, FRM OR AG/FG",
+    "Variants": "Satin Matt, Roma Bronze, Graphite Matt, Antique Gold, Full Gold, Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "FRMORSN.jpg"
+  },
+  {
+   "name": "Dorset Gravello",
+   "sku": "GVE OR",
+   "shortDescription": "Gravello lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "GVE OR GM, GVE OR SN, GVE OR FG, GVE OR CM",
+    "Variants": "Graphite Matt, Satin Matt, Full Gold, Champagne Matt, Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "GVEORFG(1).webp"
+  },
+  {
+   "name": "Dorset Verossa",
+   "sku": "VRS OR",
+   "shortDescription": "Verossa lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "VRS OR SN, VRS OR CM, VRS OR RB, VRS OR GM",
+    "Variants": "Satin Matt, Champagne Matt, Roma Bronze, Graphite Matt, Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "dorset/verossa.png"
+  },
+  {
+   "name": "Dorset Groove",
+   "sku": "GRV OR",
+   "shortDescription": "Groove lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "GRV OR NM, GRV OR FG/HG, GRV OR GM, GRV OR SN",
+    "Variants": "Nitrium, Full Gold, Hamilton Gold, Graphite Matt, Satin Matt, Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "GRVORNM.webp"
+  },
+  {
+   "name": "Dorset Addiena",
+   "sku": "ADD OR",
+   "shortDescription": "Addiena lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "ADD OR BNHG, ADD OR FGGM, ADD OR GMHG, ADD OR AGGM",
+    "Variants": "Black Nickel-Hamilton Gold, Full Gold-Graphite Matt, Graphite Matt-Hamilton Gold, Antique Gold-Graphite Matt, Satin Matt (solid brass), Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "ADDORSN.png"
+  },
+  {
+   "name": "Dorset Shayne",
+   "sku": "SHY OR",
+   "shortDescription": "Shayne lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "SHY OR NM, SHY OR FG, SHY OR GM, SHY OR RB",
+    "Variants": "Nitrium, Full Gold, Graphite Matt, Roma Bronze, Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "SHYORNM.webp"
+  },
+  {
+   "name": "Dorset Cinzia",
+   "sku": "CNZ OR",
+   "shortDescription": "Cinzia lever handle on a rose or a plate, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose or on plate",
+    "Product codes": "CNZ OR SN, CNZ OR HG, CNZ OR FG, CNZ OR GM, CNZ OR AG, CNZ OR NM, CNZ 10 FG, CNZ 10 NM, CNZ 10 HG, CNZ 10 GM, CNZ 10 AG, CNZ 10 SN",
+    "Variants": "Satin Matt, Hamilton Gold, Full Gold, Graphite Matt, Antique Gold, Nitrium, Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "CNZORSN.png"
+  },
+  {
+   "name": "Dorset Cadila",
+   "sku": "CAD OR",
+   "shortDescription": "Cadila lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "CAD OR HG/FG, CAD OR GM, CAD OR CB/MR",
+    "Variants": "Hamilton Gold, Full Gold, Graphite Matt, Cognac Bronze, Merlot, Silver Satin (solid brass), Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "CadillaHG.webp"
+  },
+  {
+   "name": "Dorset Hester",
+   "sku": "HST OR",
+   "shortDescription": "Hester lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "HST OR HG, HST OR FG, HST OR GM, HST OR NM",
+    "Variants": "Hamilton Gold, Full Gold, Graphite Matt, Nitrium, Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "HSTORNM.png"
+  },
+  {
+   "name": "Dorset Roccia",
+   "sku": "ROC OR",
+   "shortDescription": "Roccia lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "ROC OR AG, ROC OR HG/FG, ROC OR GM, ROC OR MR/CB",
+    "Variants": "Antique Gold, Hamilton Gold, Full Gold, Graphite Matt, Merlot, Cognac Bronze, Antique-Titanium Matt (solid brass), Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "RocciaHG.webp"
+  },
+  {
+   "name": "Dorset Oblesh",
+   "sku": "OBS OR",
+   "shortDescription": "Oblesh lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "OBS OR BN, OBS OR FG, OBS OR GM, OBS OR NM",
+    "Variants": "Black Nickel, Full Gold, Graphite Matt, Nitrium, Satin Matt (solid brass), Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "OBSORNM.png"
+  },
+  {
+   "name": "Dorset Luna",
+   "sku": "LUN OR",
+   "shortDescription": "Luna lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "LUN OR NM/AG, LUN OR FG/HG, LUN OR GM",
+    "Variants": "Nitrium, Antique Gold, Full Gold, Hamilton Gold, Graphite Matt, Antique-Titanium Matt (solid brass), Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "LUNAORNM.webp"
+  },
+  {
+   "name": "Dorset Jura",
+   "sku": "JUR OR",
+   "shortDescription": "Jura lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "JUR OR GMHG, JUR OR HG, JUR OR FGGM, JUR OR GMFG, JUR OR GM",
+    "Variants": "Graphite Matt-Hamilton Gold, Hamilton Gold, Full Gold-Graphite Matt, Graphite Matt-Full Gold, Graphite Matt"
+   },
+   "priceRange": null,
+   "image": "JURAORGM.webp"
+  },
+  {
+   "name": "Dorset Anika",
+   "sku": "ANK OR",
+   "shortDescription": "Anika lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "ANK OR SN, ANK OR FG/HG, ANK OR TM",
+    "Variants": "Satin Matt, Full Gold, Hamilton Gold, Titanium Matt, Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "ANKORFG.webp"
+  },
+  {
+   "name": "Dorset Pod",
+   "sku": "POD OR",
+   "shortDescription": "Pod lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "POD OR SN, POD OR HG, POD OR FG, POD OR GM",
+    "Variants": "Satin Matt, Hamilton Gold, Full Gold, Graphite Matt, Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "PODORGM.webp"
+  },
+  {
+   "name": "Dorset Juliet",
+   "sku": "JL OR",
+   "shortDescription": "Juliet lever handle on a rose or a plate, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose or on plate",
+    "Product codes": "JL OR GMHG, JL OR HGGM, JL OR TMHG, JL 10 SS, JL 10 PT",
+    "Variants": "Graphite Matt-Hamilton Gold, Hamilton Gold-Graphite Matt, Titanium Matt-Hamilton Gold, Silver Satin, Antique, Silver Satin (solid brass), Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "JulietWeb.webp"
+  },
+  {
+   "name": "Dorset Due",
+   "sku": "DUE OR",
+   "shortDescription": "Due lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "DUE OR SN, DUE OR HG, DUE OR GM, DUE OR FG",
+    "Variants": "Satin Matt, Hamilton Gold, Graphite Matt, Full Gold, Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "WebImages-17.webp"
+  },
+  {
+   "name": "Dorset Blob",
+   "sku": "BB OR",
+   "shortDescription": "Blob lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "BB OR HG, BB OR GM",
+    "Variants": "Hamilton Gold, Graphite Matt, Silver Satin (solid brass), Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "2492pductimg_BLORHG.webp"
+  },
+  {
+   "name": "Dorset Riva",
+   "sku": "RIV OR",
+   "shortDescription": "Riva lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "RIV OR SN, RIV OR HG/AG, RIV OR MR/CB, RIV OR NM",
+    "Variants": "Satin Matt, Hamilton Gold, Antique Gold, Merlot, Cognac Bronze, Nitrium, Silver Satin (solid brass), Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "RivaHG.webp"
+  },
+  {
+   "name": "Dorset Infinito",
+   "sku": "INF OR",
+   "shortDescription": "Infinito lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "INF OR GMHG, INF OR FGGM, INF OR RBGM",
+    "Variants": "Graphite Matt-Hamilton Gold, Full Gold-Graphite Matt, Roma Bronze-Graphite Matt, Satin Matt-Silver Satin (solid brass), Antique-Titanium Matt (solid brass)"
+   },
+   "priceRange": null,
+   "image": "dorset/infinito.png"
+  },
+  {
+   "name": "Dorset Drop",
+   "sku": "DRP OR",
+   "shortDescription": "Drop lever handle on a rose or a plate, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose or on plate",
+    "Product codes": "DRP OR SN/TM, DRP OR AG, DRP OR HG/FG/RB, DRP OR CB/MR, DRP 10 SN, DRP 10 GM",
+    "Variants": "Satin Matt, Titanium Matt, Antique Gold, Hamilton Gold, Full Gold, Roma Bronze, Cognac Bronze, Merlot, Graphite Matt, Silver Satin (solid brass), Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "DROORTM.webp"
+  },
+  {
+   "name": "Dorset Trase",
+   "sku": "TRA OR",
+   "shortDescription": "Trase lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "TRA OR GMHG/TMHG, TRA OR FGGM/AGGM, TRA OR RBGM, TRA OR CBMR",
+    "Variants": "Graphite Matt-Hamilton Gold, Titanium Matt-Hamilton Gold, Full Gold-Graphite Matt, Antique Gold-Graphite Matt, Roma Bronze-Graphite Matt, Cognac Bronze-Merlot, Satin Matt-Wood (solid brass), Satin Matt-Silver Satin (solid brass), Antique-Titanium Matt (solid brass)"
+   },
+   "priceRange": null,
+   "image": "dorset/trase.png"
+  },
+  {
+   "name": "Dorset Velvet",
+   "sku": "VLV OR",
+   "shortDescription": "Velvet lever handle on a rose or a plate, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose or on plate",
+    "Product codes": "VLV OR SN/CB, VLV OR RB, VLV OR HG/FG/AG, VLV OR NM, VLV 10 SN, VLV 10 GM",
+    "Variants": "Satin Matt, Cognac Bronze, Roma Bronze, Hamilton Gold, Full Gold, Antique Gold, Nitrium, Graphite Matt, Silver Satin (solid brass), Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "VEORTB.webp"
+  },
+  {
+   "name": "Dorset Flo",
+   "sku": "FLL OR",
+   "shortDescription": "Flo lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "FLL OR TMSN, FLL OR FGGM/RBGM, FLL OR GMHG, FLL OR MR, FLL OR NM",
+    "Variants": "Titanium Matt-Satin Matt, Full Gold-Graphite Matt, Roma Bronze-Graphite Matt, Graphite Matt-Hamilton Gold, Merlot, Nitrium, Silver Satin (solid brass), Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "FLLORGMHG.webp"
+  },
+  {
+   "name": "Dorset Atelier",
+   "sku": "ATL OR",
+   "shortDescription": "Atelier lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "ATL OR SN/TM, ATL OR GM, ATL OR HG/FG/AG, ATL OR NM",
+    "Variants": "Satin Matt, Titanium Matt, Graphite Matt, Hamilton Gold, Full Gold, Antique Gold, Nitrium, Silver Satin (solid brass), Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "ATLORHG.webp"
+  },
+  {
+   "name": "Dorset Polar",
+   "sku": "POL OR",
+   "shortDescription": "Polar lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "POL OR SN/TM, POL OR HG, POL OR CB, POL OR NM",
+    "Variants": "Satin Matt, Titanium Matt, Hamilton Gold, Cognac Bronze, Nitrium, Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "POLSN.webp"
+  },
+  {
+   "name": "Dorset Ryder",
+   "sku": "RYD OR",
+   "shortDescription": "Ryder lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "RYD OR TM, RYD OR CB/MR",
+    "Variants": "Titanium Matt, Cognac Bronze, Merlot, Silver Satin (solid brass), Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "!dsl7664.webp"
+  },
+  {
+   "name": "Dorset Celisa",
+   "sku": "CLS OR",
+   "shortDescription": "Celisa lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "CLS OR SN/TM, CLS OR GM, CLS OR HG/FG/RB, CLS OR NM",
+    "Variants": "Satin Matt, Titanium Matt, Graphite Matt, Hamilton Gold, Full Gold, Roma Bronze, Nitrium, Silver Satin (solid brass), Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "CEORGM.webp"
+  },
+  {
+   "name": "Dorset Madeleine",
+   "sku": "MDL OR",
+   "shortDescription": "Madeleine lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "MDL OR NMGM, MDL OR FGGM, MDL OR HGGM, MDL OR RB, MDL OR SN, MDL OR PT",
+    "Variants": "Nitrium-Graphite Matt, Full Gold-Graphite Matt, Hamilton Gold-Graphite Matt, Roma Bronze, Satin Matt, Antique"
+   },
+   "priceRange": null,
+   "image": "MDLORFGGM.jpg"
+  },
+  {
+   "name": "Dorset Cloe",
+   "sku": "CLO OR",
+   "shortDescription": "Cloe lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "CLO OR NM, CLO OR HG, CLO OR AG, CLO OR TM, CLO OR SN, CLO OR PT",
+    "Variants": "Nitrium, Hamilton Gold, Antique Gold, Titanium Matt, Satin Matt, Antique"
+   },
+   "priceRange": null,
+   "image": "CLOORAG.jpg"
+  },
+  {
+   "name": "Dorset Reflex",
+   "sku": "REF OR",
+   "shortDescription": "Reflex lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "REF OR SN/TM, REF OR HG/RB",
+    "Variants": "Satin Matt, Titanium Matt, Hamilton Gold, Roma Bronze, Silver Satin (solid brass), Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "REFORSM.webp"
+  },
+  {
+   "name": "Dorset Elenora",
+   "sku": "ENA OR",
+   "shortDescription": "Elenora lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "ENA OR GM, ENA OR FGGM, ENA OR CMGM, ENA OR AG, ENA OR SS/PT",
+    "Variants": "Graphite Matt, Full Gold-Graphite Matt, Champagne Matt-Graphite Matt, Antique Gold, Silver Satin, Antique"
+   },
+   "priceRange": null,
+   "image": "ENAORAG.jpg"
+  },
+  {
+   "name": "Dorset Cornus",
+   "sku": "COR OR",
+   "shortDescription": "Cornus lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "COR OR BNGM",
+    "Variants": "Black Nickel-Graphite Matt, Satin Matt-Wood (solid brass), Antique-Titanium Matt (solid brass)"
+   },
+   "priceRange": null,
+   "image": "2413pductimg_Cornus(1).webp"
+  },
+  {
+   "name": "Dorset Arete",
+   "sku": "ARE OR",
+   "shortDescription": "Arete lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "ARE OR FG, ARE OR RB, ARE OR NM, ARE OR SN, ARE OR SS/PT",
+    "Variants": "Full Gold, Roma Bronze, Nitrium, Satin Matt, Silver Satin, Antique"
+   },
+   "priceRange": null,
+   "image": "AREORFG.jpg"
+  },
+  {
+   "name": "Dorset Optio",
+   "sku": "OPT OR",
+   "shortDescription": "Optio lever handle on a rose, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose",
+    "Product codes": "OPT OR SN, OPT OR GM, OPT OR TM, OPT OR HG",
+    "Variants": "Satin Matt, Graphite Matt, Titanium Matt, Hamilton Gold"
+   },
+   "priceRange": null,
+   "image": "OPTORTM.webp"
+  },
+  {
+   "name": "Dorset Morphos",
+   "sku": "MOR OR",
+   "shortDescription": "Morphos lever handle on a rose or a plate, in single and dual-tone finishes.",
+   "technicalSpecs": {
+    "Collection": "Farretto",
+    "Mounting": "On rose or on plate",
+    "Product codes": "MOR OR CB, MOR OR MR, MOR 10 SS, MOR 10 PT",
+    "Variants": "Cognac Bronze, Merlot, Silver Satin, Antique, Silver Satin (solid brass), Antique (solid brass)"
+   },
+   "priceRange": null,
+   "image": "MORORSS.webp"
+  },
+  {
+   "name": "Dorset Liberte",
+   "sku": "LIB OR",
+   "shortDescription": "Solid brass Liberte lever handle on a rose.",
+   "technicalSpecs": {
+    "Collection": "Prestige Line (solid brass)",
+    "Mounting": "On rose",
+    "Product codes": "LIB OR WD, LIB OR SC",
+    "Variants": "Wood, Silver Chrome",
+    "Material": "Solid brass"
+   },
+   "priceRange": null,
+   "image": "LIBORSC.webp"
+  },
+  {
+   "name": "Dorset Nika",
+   "sku": "NK OR",
+   "shortDescription": "Solid brass Nika lever handle on a rose or a plate.",
+   "technicalSpecs": {
+    "Collection": "Prestige Line (solid brass)",
+    "Mounting": "On rose or on plate",
+    "Product codes": "NK OR SS, NK OR PT, NK 10 SS, NK 10 PT",
+    "Variants": "Silver Satin, Antique",
+    "Material": "Solid brass"
+   },
+   "priceRange": null,
+   "image": "NKORSS.webp"
+  },
+  {
+   "name": "Dorset Edge",
+   "sku": "EDG OR",
+   "shortDescription": "Solid brass Edge lever handle on a rose.",
+   "technicalSpecs": {
+    "Collection": "Prestige Line (solid brass)",
+    "Mounting": "On rose",
+    "Product codes": "EDG OR SS, EDG OR PT",
+    "Variants": "Silver Satin, Antique",
+    "Material": "Solid brass"
+   },
+   "priceRange": null,
+   "image": "EDGORSS.webp"
+  },
+  {
+   "name": "Dorset Madonna",
+   "sku": "MA OR",
+   "shortDescription": "Solid brass Madonna lever handle on a rose.",
+   "technicalSpecs": {
+    "Collection": "Prestige Line (solid brass)",
+    "Mounting": "On rose",
+    "Product codes": "MA OR SS, MA OR PT",
+    "Variants": "Silver Satin, Antique",
+    "Material": "Solid brass"
+   },
+   "priceRange": null,
+   "image": "MadonnaWeb.webp"
+  },
+  {
+   "name": "Dorset Dana",
+   "sku": "DA OR",
+   "shortDescription": "Solid brass Dana lever handle on a rose or a plate.",
+   "technicalSpecs": {
+    "Collection": "Prestige Line (solid brass)",
+    "Mounting": "On rose or on plate",
+    "Product codes": "DA OR SS, DA OR PT, DA 10 SS, DA 10 PT",
+    "Variants": "Silver Satin, Antique",
+    "Material": "Solid brass"
+   },
+   "priceRange": null,
+   "image": "DanaWeb.webp"
+  },
+  {
+   "name": "Dorset Zenith",
+   "sku": "ZE OR",
+   "shortDescription": "Solid brass Zenith lever handle on a rose or a plate.",
+   "technicalSpecs": {
+    "Collection": "Prestige Line (solid brass)",
+    "Mounting": "On rose or on plate",
+    "Product codes": "ZE OR SS, ZE OR PT, ZE 10 SS, ZE 10 PT",
+    "Variants": "Silver Satin, Antique",
+    "Material": "Solid brass"
+   },
+   "priceRange": null,
+   "image": "1958pductimg_ZEORSS.webp"
+  },
+  {
+   "name": "Dorset Sana",
+   "sku": "SN OR",
+   "shortDescription": "Solid brass Sana lever handle on a rose or a plate.",
+   "technicalSpecs": {
+    "Collection": "Prestige Line (solid brass)",
+    "Mounting": "On rose or on plate",
+    "Product codes": "SN OR SS, SN OR PT, SN 10 SS, SN 10 PT",
+    "Variants": "Silver Satin, Antique",
+    "Material": "Solid brass"
+   },
+   "priceRange": null,
+   "image": "2151pductimg_SNORSS.webp"
+  },
+  {
+   "name": "Dorset Terza",
+   "sku": "TER OR",
+   "shortDescription": "Solid brass Terza lever handle on a rose or a plate.",
+   "technicalSpecs": {
+    "Collection": "Prestige Line (solid brass)",
+    "Mounting": "On rose or on plate",
+    "Product codes": "TER OR PT, TER 10 PT",
+    "Variants": "Antique",
+    "Material": "Solid brass"
+   },
+   "priceRange": null,
+   "image": "TERORSC.webp"
+  },
+  {
+   "name": "Dorset Orius stainless steel handle",
+   "sku": "ORS OR SS",
+   "shortDescription": "Solid stainless steel lever handle on a rose, fire rated up to 2 hours.",
+   "technicalSpecs": {
+    "Collection": "Stainless steel (SS304)",
+    "Key Features": "Solid stainless steel, Fire rated up to 2 hours",
+    "Material": "Stainless steel SS304",
+    "Product codes": "ORS OR SS",
+    "Variants": "Silver Satin"
+   },
+   "priceRange": null,
+   "image": "ORSORSS.webp"
+  },
+  {
+   "name": "Dorset Cella stainless steel handle",
+   "sku": "CLA OR SS",
+   "shortDescription": "Solid stainless steel lever handle on a rose, fire rated up to 2 hours.",
+   "technicalSpecs": {
+    "Collection": "Stainless steel (SS304)",
+    "Key Features": "Solid stainless steel, Fire rated up to 2 hours",
+    "Material": "Stainless steel SS304",
+    "Product codes": "CLA OR SS",
+    "Variants": "Silver Satin"
+   },
+   "priceRange": null,
+   "image": "CLAORSS.webp"
+  },
+  {
+   "name": "Dorset Merina stainless steel handle",
+   "sku": "MER OR SS",
+   "shortDescription": "Stainless steel lever handle on a rose, fire rated up to 2 hours.",
+   "technicalSpecs": {
+    "Collection": "Stainless steel (SS304)",
+    "Key Features": "Fire rated up to 2 hours",
+    "Material": "Stainless steel SS304",
+    "Product codes": "MER OR SS",
+    "Variants": "Silver Satin"
+   },
+   "priceRange": null,
+   "image": "MERORSS.webp"
+  },
+  {
+   "name": "Dorset Axor stainless steel handle",
+   "sku": "AXO OR SS",
+   "shortDescription": "Stainless steel lever handle on a rose, fire rated up to 2 hours.",
+   "technicalSpecs": {
+    "Collection": "Stainless steel (SS304)",
+    "Key Features": "Fire rated up to 2 hours",
+    "Material": "Stainless steel SS304",
+    "Product codes": "AXO OR SS",
+    "Variants": "Silver Satin"
+   },
+   "priceRange": null,
+   "image": "AXOORSS.webp"
+  },
+  {
+   "name": "Dorset D type stainless steel handle",
+   "sku": "SD OR",
+   "shortDescription": "Stainless steel D-shaped lever handle on a rose or plate, in 19 or 22 mm tube.",
+   "technicalSpecs": {
+    "Collection": "Stainless steel (SS304)",
+    "Key Features": "Fire rated up to 2 hours, 19 or 22 mm diameter, Plate versions SD OP SS 1 (175×175 mm) and SD OP SS 2 (210×55 mm), 35 mm backset version (SD OR SS-OVL)",
+    "Material": "Stainless steel SS304",
+    "Product codes": "SD OR SS, SD OR GM, SD OR TM",
+    "Variants": "Silver Satin, Graphite Matt, Titanium Matt"
+   },
+   "priceRange": null,
+   "image": "SDORSS.webp"
+  },
+  {
+   "name": "Dorset SLP stainless steel handle",
+   "sku": "SLP OR",
+   "shortDescription": "Stainless steel lever handle on a rose.",
+   "technicalSpecs": {
+    "Collection": "Stainless steel (SS304)",
+    "Key Features": "Fire rated up to 2 hours, 35 mm backset version (SLP OR SS-OVL)",
+    "Material": "Stainless steel SS304",
+    "Product codes": "SLP OR SS, SLP OR GM, SLP OR TM",
+    "Variants": "Silver Satin, Graphite Matt, Titanium Matt"
+   },
+   "priceRange": null,
+   "image": "SLPORSS.webp"
+  },
+  {
+   "name": "Dorset L type stainless steel handle",
+   "sku": "SL OR SS",
+   "shortDescription": "Stainless steel L-shaped lever handle on a rose, in 19 or 22 mm tube.",
+   "technicalSpecs": {
+    "Collection": "Stainless steel (SS304)",
+    "Key Features": "Fire rated up to 2 hours, 19 or 22 mm diameter",
+    "Material": "Stainless steel SS304",
+    "Product codes": "SL OR SS",
+    "Variants": "Silver Satin"
+   },
+   "priceRange": null,
+   "image": "SLORSS.webp"
+  },
+  {
+   "name": "Dorset C type stainless steel handle",
+   "sku": "SC OR SS",
+   "shortDescription": "Stainless steel C-shaped lever handle on a rose.",
+   "technicalSpecs": {
+    "Collection": "Stainless steel (SS304)",
+    "Key Features": "Fire rated up to 2 hours",
+    "Material": "Stainless steel SS304",
+    "Product codes": "SC OR SS",
+    "Variants": "Silver Satin"
+   },
+   "priceRange": null,
+   "image": "SCORSS.webp"
+  },
+  {
+   "name": "Dorset SO stainless steel handle",
+   "sku": "SO OR SS",
+   "shortDescription": "Stainless steel lever handle on a rose.",
+   "technicalSpecs": {
+    "Collection": "Stainless steel (SS304)",
+    "Material": "Stainless steel SS304",
+    "Product codes": "SO OR SS",
+    "Variants": "Silver Satin"
+   },
+   "priceRange": null,
+   "image": "SOORSS.webp"
+  },
+  {
+   "name": "Dorset SEP stainless steel handle",
+   "sku": "SEP OR SS",
+   "shortDescription": "Stainless steel lever handle on a rose.",
+   "technicalSpecs": {
+    "Collection": "Stainless steel (SS304)",
+    "Key Features": "Fire rated up to 2 hours",
+    "Material": "Stainless steel SS304",
+    "Product codes": "SEP OR SS",
+    "Variants": "Silver Satin"
+   },
+   "priceRange": null,
+   "image": "SEPORSS.webp"
+  },
+  {
+   "name": "Dorset Teesta pull handle",
+   "sku": "TES",
+   "shortDescription": "Pull handle sold singly or in pairs, with or without a rose.",
+   "technicalSpecs": {
+    "Collection": "Farretto pull handles",
+    "Type": "Pull handle",
+    "Sizes": "300 mm (12\"), 450 mm (18\")",
+    "Product codes": "TES12P / TES18P (with rose), TES12PR / TES18PR (without rose) + SS, PT, SN, TM",
+    "Variants": "Silver Satin, Antique, Satin Matt, Titanium Matt"
+   },
+   "priceRange": null,
+   "image": "TeestaSN.webp"
+  },
+  {
+   "name": "Dorset Forza pull handle",
+   "sku": "FRZ",
+   "shortDescription": "Pull handle sold singly or in pairs, with or without a rose.",
+   "technicalSpecs": {
+    "Collection": "Farretto pull handles",
+    "Type": "Pull handle",
+    "Sizes": "300 mm (12\"), 450 mm (18\")",
+    "Product codes": "FRZ12P / FRZ18P (with rose), FRZ12PR / FRZ18PR (without rose) + SS, PT, SN, TM, HG",
+    "Variants": "Silver Satin, Antique, Satin Matt, Titanium Matt, Hamilton Gold"
+   },
+   "priceRange": null,
+   "image": "FORZASN.webp"
+  },
+  {
+   "name": "Dorset Zorro pull handle",
+   "sku": "ZR08PRS",
+   "shortDescription": "Compact pull handle on a rose.",
+   "technicalSpecs": {
+    "Collection": "Farretto pull handles",
+    "Type": "Pull handle",
+    "Sizes": "200 mm (8\")",
+    "Product codes": "ZR08PRSSN, ZR08PRSGM, ZR08PRSHG",
+    "Variants": "Satin Matt, Graphite Matt, Hamilton Gold"
+   },
+   "priceRange": null,
+   "image": "ZoroHG.webp"
+  },
+  {
+   "name": "Dorset D type pull handle",
+   "sku": "SD-P",
+   "shortDescription": "Stainless steel D pull handle, fire rated up to 2 hours.",
+   "technicalSpecs": {
+    "Collection": "Stainless steel (SS304)",
+    "Type": "Pull handle",
+    "Key Features": "Fire rated up to 2 hours",
+    "Material": "Stainless steel SS304",
+    "Sizes": "150, 200, 250, 300, 400, 450, 500, 600, 750, 900, 1200 mm",
+    "Product codes": "SD06P–SD48P SS; SD08P–SD16P GM / TM",
+    "Variants": "Silver Satin, Graphite Matt, Titanium Matt"
+   },
+   "priceRange": null,
+   "image": "SD06PSS.webp"
+  },
+  {
+   "name": "Dorset H type pull handle",
+   "sku": "SH-P",
+   "shortDescription": "Stainless steel H pull handle.",
+   "technicalSpecs": {
+    "Collection": "Stainless steel (SS304)",
+    "Type": "Pull handle",
+    "Material": "Stainless steel SS304",
+    "Sizes": "200, 250, 300, 350, 400 mm",
+    "Product codes": "SH 08 P, SH 10 P, SH 12 P, SH 14 P, SH 16 P + GM / TM",
+    "Variants": "Graphite Matt, Titanium Matt"
+   },
+   "priceRange": null,
+   "image": "SHF10PSS.webp"
+  },
+  {
+   "name": "Dorset SO pull handle",
+   "sku": "SO-P",
+   "shortDescription": "Stainless steel pull handle.",
+   "technicalSpecs": {
+    "Collection": "Stainless steel (SS304)",
+    "Type": "Pull handle",
+    "Material": "Stainless steel SS304",
+    "Sizes": "200, 250, 300 mm",
+    "Product codes": "SO 08 P SS, SO 10 P SS, SO 12 P SS",
+    "Variants": "Silver Satin"
+   },
+   "priceRange": null,
+   "image": "SOP10PSS.webp"
+  }
+ ]
+}
